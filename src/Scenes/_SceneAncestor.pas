@@ -14,7 +14,8 @@ uses
   FMX.Controls,
   FMX.Forms,
   FMX.Dialogs,
-  FMX.StdCtrls, Gamolf.FMX.HelpBar;
+  FMX.StdCtrls,
+  Gamolf.FMX.HelpBar;
 
 type
   T__SceneAncestor = class(TFrame)
