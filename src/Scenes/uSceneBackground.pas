@@ -31,25 +31,25 @@ type
 implementation
 
 {$R *.fmx}
-{ T__SceneAncestor1 }
 
 procedure TSceneBackground.FinalizeScene;
 begin
   inherited;
-
+  // TODO : stop your background features and free it's memory if it's not owned by Self
 end;
 
 procedure TSceneBackground.InitializeScene;
 begin
   inherited;
-  Align := TAlignLayout.Contents;
   SendToBack;
+
+  // TODO : start what you want to do in your game background, remove the default TRectangle or do anything else
 end;
 
 procedure TSceneBackground.TranslateTexts(const Language: string);
 begin
   inherited;
-
+  // TODO : use it if you have texts in the background scene
 end;
 
 end.
