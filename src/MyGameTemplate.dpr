@@ -32,7 +32,8 @@ uses
   uTranslate in 'uTranslate.pas',
   uConfig in 'uConfig.pas',
   _SceneAncestor in 'Scenes\_SceneAncestor.pas' {__SceneAncestor: TFrame},
-  uSceneBackground in 'Scenes\uSceneBackground.pas' {SceneBackground: TFrame};
+  uSceneBackground in 'Scenes\uSceneBackground.pas' {SceneBackground: TFrame},
+  uScene in 'uScene.pas';
 
 {$R *.res}
 
