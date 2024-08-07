@@ -30,7 +30,7 @@ const
   /// <summary>
   /// The website URL of your game (used in the About box)
   /// </summary>
-  CAboutGameURL = '';
+  CAboutGameURL = 'https://gametemplate.developpeur-pascal.fr/';
 
   /// <summary>
   /// Default language used if the system language is not supported
@@ -56,7 +56,49 @@ const
   // For other compilations (including RELEASE)
   COpenGameInFullScreenMode = true;
 {$ENDIF}
+  /// <summary>
+  /// Used as a folder name to store your game folder
+  /// </summary>
+  /// <remarks>
+  /// Don't use a path, only a name to use a a folder name.
+  /// The real paths are calculated automatically depending on the platform.
+  /// </remarks>
+  CEditorFolderName = 'Test';
+  // for example your name, label or company name (avoid spaces, accents and special characters
+
+  /// <summary>
+  /// Used as a folder name to store the settings and scores
+  /// </summary>
+  /// Don't use a path, only a name to use a a folder name.
+  /// The real paths are calculated automatically depending on the platform.
+  /// </remarks>
+  CGameFolderName = 'Test';
+  // for exemple your game title (avoid spaces, accents and special characters)
 
 implementation
+
+uses
+  System.SysUtils;
+
+initialization
+
+if CAboutGameTitle.Trim.IsEmpty then
+  raise Exception.Create
+    ('Please give a title to your game in CAboutGameTitle !');
+
+if CEditorFolderName.Trim.IsEmpty then
+  raise Exception.Create
+    ('Please give an editor folder name in CEditorFolderName !');
+
+if CGameFolderName.Trim.IsEmpty then
+  raise Exception.Create('Please give a game folder name in CGameFolderName !');
+
+if CDefaultLanguage.Trim.IsEmpty then
+  raise Exception.Create
+    ('Please specify a default language ISO code in CDefaultLanguage !');
+
+if (CDefaultLanguage <> CDefaultLanguage.Trim.ToLower) then
+  raise Exception.Create('Please use "' + CDefaultLanguage.Trim.ToLower +
+    '" as CDefaultLanguage value.');
 
 end.
