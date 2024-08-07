@@ -4,9 +4,24 @@ object frmMain: TfrmMain
   Caption = 'Form1'
   ClientHeight = 480
   ClientWidth = 640
+  Position = ScreenCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
   OnKeyDown = FormKeyDown
   DesignerMasterStyle = 0
+  object MainMenu: TMainMenu
+    Left = 456
+    Top = 56
+    object mnuMacOSAppname: TMenuItem
+      Text = 'mnuMacOSAppname'
+      object mnuAbout: TMenuItem
+        Locked = True
+        Text = 'mnuAbout'
+        OnClick = mnuAboutClick
+      end
+    end
+  end
 end
