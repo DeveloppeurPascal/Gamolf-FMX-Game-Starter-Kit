@@ -40,7 +40,8 @@ uses
   uSceneGameOverWin in 'Scenes\uSceneGameOverWin.pas' {SceneGameOverWin: TFrame},
   uSceneOptions in 'Scenes\uSceneOptions.pas' {SceneOptions: TFrame},
   uSceneCredits in 'Scenes\uSceneCredits.pas' {SceneCredits: TFrame},
-  uSceneHallOfFame in 'Scenes\uSceneHallOfFame.pas' {SceneHallOfFame: TFrame};
+  uSceneHallOfFame in 'Scenes\uSceneHallOfFame.pas' {SceneHallOfFame: TFrame},
+  uUIElements in 'uUIElements.pas';
 
 {$R *.res}
 
