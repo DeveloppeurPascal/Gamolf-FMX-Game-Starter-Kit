@@ -24,6 +24,7 @@ type
   public
     class function Current: TAboutBox;
     class procedure ShowModal;
+    class function GetCaption: string;
   end;
 
 implementation
@@ -77,6 +78,12 @@ begin
     TranslateTexts, true);
 end;
 
+class function TAboutBox.GetCaption: string;
+begin
+  // TODO : à remplacer par mieux un jour, cf https://github.com/DeveloppeurPascal/AboutDialog-Delphi-Component/issues/59
+  result := 'About ' + Current.OlfAboutDialog1.Titre;
+end;
+
 function TAboutBox.OlfAboutDialog1GetText(const ALang: TOlfAboutDialogLang;
   const ATxtID: TOlfAboutDialogTxtID): string;
 begin
@@ -114,6 +121,9 @@ procedure TAboutBox.TranslateTexts(const Sender: TObject; const Msg: TMessage);
 var
   ttm: TTranslateTextsMessage;
 begin
+  if not assigned(self) then
+    exit;
+
   if assigned(Msg) and (Msg is TTranslateTextsMessage) then
   begin
     ttm := Msg as TTranslateTextsMessage;
