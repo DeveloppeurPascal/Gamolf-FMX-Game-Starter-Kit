@@ -55,6 +55,7 @@ end;
 
 procedure T__SceneAncestor.InitializeScene;
 begin
+  Align := TAlignLayout.Contents;
   TranslateTexts(tconfig.Current.Language);
   TMessageManager.DefaultManager.SubscribeToMessage(TTranslateTextsMessage,
     DoTranslateTexts);
