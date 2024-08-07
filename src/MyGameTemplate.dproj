@@ -639,6 +639,41 @@
             <Form>frmMain</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="..\lib-externes\AboutDialog-Delphi-Component\src\Olf.FMX.AboutDialog.pas"/>
+        <DCCReference Include="..\lib-externes\AboutDialog-Delphi-Component\src\Olf.FMX.AboutDialogForm.pas">
+            <Form>OlfAboutDialogForm</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="..\lib-externes\librairies\src\u_urlOpen.pas"/>
+        <DCCReference Include="uConsts.pas"/>
+        <DCCReference Include="..\lib-externes\librairies\src\Olf.RTL.Language.pas"/>
+        <DCCReference Include="..\lib-externes\librairies\src\Olf.RTL.CryptDecrypt.pas"/>
+        <DCCReference Include="..\lib-externes\librairies\src\Olf.RTL.Params.pas"/>
+        <DCCReference Include="..\lib-externes\librairies\src\Olf.Skia.SVGToBitmap.pas"/>
+        <DCCReference Include="uDMAboutBox.pas">
+            <Form>AboutBox</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="uDMAboutBoxLogoStorrage.pas">
+            <Form>dmAboutBoxLogo</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="uTxtAboutLicense.pas"/>
+        <DCCReference Include="uTxtAboutDescription.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.HelpBar.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.Joystick.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.MusicLoop.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.GamepadDetected.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.Joystick.DirectInput.Win.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.Joystick.Helpers.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.Joystick.Mac.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.Joystick.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.Scores.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.UIElements.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\iOSapi.GameController.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Macapi.GameController.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
