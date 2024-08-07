@@ -24,7 +24,7 @@ implementation
 uses
   System.SysUtils,
   System.Classes,
-  uConsts;
+  uConfig;
 
 { TTranslateTextsMessage }
 
@@ -45,13 +45,12 @@ begin
   inherited Create;
   FLanguage := ALanguage.ToLower;
   if FLanguage.IsEmpty then
-    FLanguage := CDefaultLanguage;
+    FLanguage := tconfig.Current.Language;
 end;
 
 procedure init;
 begin
-  // TODO : prendre la langue configurée dans les paramètres du programme plutôt que la langue par défaut
-  TTranslateTextsMessage.Broadcast(CDefaultLanguage);
+  TTranslateTextsMessage.Broadcast(tconfig.Current.Language);
 end;
 
 initialization
