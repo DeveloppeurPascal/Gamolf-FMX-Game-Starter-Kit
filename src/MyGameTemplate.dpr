@@ -3,6 +3,7 @@ program MyGameTemplate;
 uses
   System.StartUpCopy,
   FMX.Forms,
+  FMX.Skia,
   fMain in 'fMain.pas' {frmMain},
   Olf.FMX.AboutDialog in '..\lib-externes\AboutDialog-Delphi-Component\src\Olf.FMX.AboutDialog.pas',
   Olf.FMX.AboutDialogForm in '..\lib-externes\AboutDialog-Delphi-Component\src\Olf.FMX.AboutDialogForm.pas' {OlfAboutDialogForm},
@@ -32,6 +33,7 @@ uses
 {$R *.res}
 
 begin
+  GlobalUseSkia := True;
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);
   Application.Run;
