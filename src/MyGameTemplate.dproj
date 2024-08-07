@@ -135,6 +135,30 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Cfg_2)'=='true') or '$(Cfg_2_iOSDevice64)'!=''">
+        <Cfg_2_iOSDevice64>true</Cfg_2_iOSDevice64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSSimARM64' and '$(Cfg_2)'=='true') or '$(Cfg_2_iOSSimARM64)'!=''">
+        <Cfg_2_iOSSimARM64>true</Cfg_2_iOSSimARM64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Linux64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Linux64)'!=''">
+        <Cfg_2_Linux64>true</Cfg_2_Linux64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSX64)'!=''">
+        <Cfg_2_OSX64>true</Cfg_2_OSX64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='OSXARM64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSXARM64)'!=''">
         <Cfg_2_OSXARM64>true</Cfg_2_OSXARM64>
         <CfgParent>Cfg_2</CfgParent>
@@ -501,36 +525,127 @@
     <PropertyGroup Condition="'$(Cfg_2_Android)'!=''">
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_Build>1</VerInfo_Build>
-        <IncludeAndroid_AdaptiveIcon>true</IncludeAndroid_AdaptiveIcon>
-        <IncludeAndroid_VectorizedSplash>true</IncludeAndroid_VectorizedSplash>
         <Android_BackgroundColor>#FFFFFF</Android_BackgroundColor>
         <Android_DarkBackgroundColor>#000000</Android_DarkBackgroundColor>
         <IncludeAndroid_NotificationAccentColor>false</IncludeAndroid_NotificationAccentColor>
+        <Android_LauncherIcon36>..\assets\icons\gameicon-36x36.png</Android_LauncherIcon36>
+        <Android_LauncherIcon48>..\assets\icons\gameicon-48x48.png</Android_LauncherIcon48>
+        <Android_LauncherIcon72>..\assets\icons\gameicon-72x72.png</Android_LauncherIcon72>
+        <Android_LauncherIcon96>..\assets\icons\gameicon-96x96.png</Android_LauncherIcon96>
+        <Android_LauncherIcon144>..\assets\icons\gameicon-144x144.png</Android_LauncherIcon144>
+        <Android_LauncherIcon192>..\assets\icons\gameicon-192x192.png</Android_LauncherIcon192>
+        <Android_SplashImage426>..\assets\icons\gameicon-426x320.png</Android_SplashImage426>
+        <Android_SplashImage470>..\assets\icons\gameicon-470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>..\assets\icons\gameicon-640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>..\assets\icons\gameicon-960x720.png</Android_SplashImage960>
+        <Android_SplashTileMode>disabled</Android_SplashTileMode>
+        <Android_SplashGravity>center</Android_SplashGravity>
+        <IncludeAndroid_Splash>false</IncludeAndroid_Splash>
+        <Android_NotificationIcon24>..\assets\icons\gameicon-24x24.png</Android_NotificationIcon24>
+        <Android_NotificationIcon36>..\assets\icons\gameicon-36x36.png</Android_NotificationIcon36>
+        <Android_NotificationIcon48>..\assets\icons\gameicon-48x48.png</Android_NotificationIcon48>
+        <Android_NotificationIcon72>..\assets\icons\gameicon-72x72.png</Android_NotificationIcon72>
+        <IncludeAndroid_AdaptiveIcon>true</IncludeAndroid_AdaptiveIcon>
+        <Android_NotificationIcon96>..\assets\icons\gameicon-96x96.png</Android_NotificationIcon96>
+        <IncludeAndroid_VectorizedSplash>true</IncludeAndroid_VectorizedSplash>
         <IncludeAndroid_VectorizedNotificationIcon>true</IncludeAndroid_VectorizedNotificationIcon>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Android64)'!=''">
         <DCC_GenerateAndroidAppBundleFile>true</DCC_GenerateAndroidAppBundleFile>
         <VerInfo_Build>1</VerInfo_Build>
-        <IncludeAndroid_AdaptiveIcon>true</IncludeAndroid_AdaptiveIcon>
-        <IncludeAndroid_VectorizedSplash>true</IncludeAndroid_VectorizedSplash>
         <Android_BackgroundColor>#FFFFFF</Android_BackgroundColor>
         <Android_DarkBackgroundColor>#000000</Android_DarkBackgroundColor>
         <IncludeAndroid_NotificationAccentColor>false</IncludeAndroid_NotificationAccentColor>
-        <Android_NotificationAccentColor>#000000</Android_NotificationAccentColor>
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <Android_LauncherIcon36>..\assets\icons\gameicon-36x36.png</Android_LauncherIcon36>
+        <Android_LauncherIcon48>..\assets\icons\gameicon-48x48.png</Android_LauncherIcon48>
+        <Android_LauncherIcon72>..\assets\icons\gameicon-72x72.png</Android_LauncherIcon72>
+        <Android_LauncherIcon96>..\assets\icons\gameicon-96x96.png</Android_LauncherIcon96>
+        <Android_LauncherIcon144>..\assets\icons\gameicon-144x144.png</Android_LauncherIcon144>
+        <Android_LauncherIcon192>..\assets\icons\gameicon-192x192.png</Android_LauncherIcon192>
+        <Android_SplashImage426>..\assets\icons\gameicon-426x320.png</Android_SplashImage426>
+        <Android_SplashImage470>..\assets\icons\gameicon-470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>..\assets\icons\gameicon-640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>..\assets\icons\gameicon-960x720.png</Android_SplashImage960>
+        <Android_SplashTileMode>disabled</Android_SplashTileMode>
+        <Android_SplashGravity>center</Android_SplashGravity>
+        <Android_NotificationIcon24>..\assets\icons\gameicon-24x24.png</Android_NotificationIcon24>
+        <IncludeAndroid_Splash>false</IncludeAndroid_Splash>
+        <Android_NotificationIcon36>..\assets\icons\gameicon-36x36.png</Android_NotificationIcon36>
+        <Android_NotificationIcon48>..\assets\icons\gameicon-48x48.png</Android_NotificationIcon48>
+        <Android_NotificationIcon72>..\assets\icons\gameicon-72x72.png</Android_NotificationIcon72>
+        <IncludeAndroid_AdaptiveIcon>true</IncludeAndroid_AdaptiveIcon>
+        <IncludeAndroid_VectorizedSplash>true</IncludeAndroid_VectorizedSplash>
+        <Android_NotificationIcon96>..\assets\icons\gameicon-96x96.png</Android_NotificationIcon96>
         <IncludeAndroid_VectorizedNotificationIcon>true</IncludeAndroid_VectorizedNotificationIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_iOSDevice64)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
+        <VerInfo_BundleId>gamolf.fmxgametemplate.$(ModuleName)</VerInfo_BundleId>
+        <iPhone_AppIcon120>..\assets\icons\gameicon-120x120.png</iPhone_AppIcon120>
+        <iPhone_AppIcon180>..\assets\icons\gameicon-180x180.png</iPhone_AppIcon180>
+        <iOS_AppStore1024>..\assets\icons\gameicon-1024x1024.png</iOS_AppStore1024>
+        <iPhone_Spotlight80>..\assets\icons\gameicon-80x80.png</iPhone_Spotlight80>
+        <iPhone_Spotlight120>..\assets\icons\gameicon-120x120.png</iPhone_Spotlight120>
+        <iPhone_Setting58>..\assets\icons\gameicon-58x58.png</iPhone_Setting58>
+        <iPhone_Setting87>..\assets\icons\gameicon-87x87.png</iPhone_Setting87>
+        <iPhone_Notification40>..\assets\icons\gameicon-40x40.png</iPhone_Notification40>
+        <iPhone_Notification60>..\assets\icons\gameicon-60x60.png</iPhone_Notification60>
+        <iPhone_Launch2x>..\assets\icons\gameicon-256x256.png</iPhone_Launch2x>
+        <iPhone_LaunchDark2x>..\assets\icons\gameicon-256x256.png</iPhone_LaunchDark2x>
+        <iPhone_Launch3x>..\assets\icons\gameicon-512x512.png</iPhone_Launch3x>
+        <iPhone_LaunchDark3x>..\assets\icons\gameicon-512x512.png</iPhone_LaunchDark3x>
+        <iPad_AppIcon152>..\assets\icons\gameicon-152x152.png</iPad_AppIcon152>
+        <iPad_AppIcon167>..\assets\icons\gameicon-167x167.png</iPad_AppIcon167>
+        <iPad_SpotLight80>..\assets\icons\gameicon-80x80.png</iPad_SpotLight80>
+        <iPad_Setting58>..\assets\icons\gameicon-58x58.png</iPad_Setting58>
+        <iPad_Notification40>..\assets\icons\gameicon-40x40.png</iPad_Notification40>
+        <iPad_Launch2x>..\assets\icons\gameicon-512x512.png</iPad_Launch2x>
+        <iPad_LaunchDark2x>..\assets\icons\gameicon-512x512.png</iPad_LaunchDark2x>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_iOSSimARM64)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Linux64)'!=''">
+        <Icon_MainIcon>..\assets\icons\gameicon.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\gameicon.icns</Icns_MainIcns>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_OSX64)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <Icon_MainIcon>..\assets\icons\gameicon.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\gameicon.icns</Icns_MainIcns>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_OSXARM64)'!=''">
         <DCC_GenerateOSXUniversalBinaryFile>true</DCC_GenerateOSXUniversalBinaryFile>
         <Debugger_Launcher>/usr/X11/bin/xterm -e &quot;%debuggee%&quot;</Debugger_Launcher>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <Manifest_File>(vide)</Manifest_File>
-        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <Icon_MainIcon>..\assets\icons\gameicon.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\gameicon.icns</Icns_MainIcns>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Icon_MainIcon>..\assets\icons\gameicon.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\gameicon.icns</Icns_MainIcns>
+        <UWP_DelphiLogo44>..\assets\icons\gameicon-44x44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\assets\icons\gameicon-150x150.png</UWP_DelphiLogo150>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Icon_MainIcon>..\assets\icons\gameicon.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\gameicon.icns</Icns_MainIcns>
+        <UWP_DelphiLogo44>..\assets\icons\gameicon-44x44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\assets\icons\gameicon-150x150.png</UWP_DelphiLogo150>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -605,6 +720,34 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="..\assets\icons\debuggameicon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets\</RemoteDir>
+                        <RemoteName>Logo44x44.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\assets\icons\gameicon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets\</RemoteDir>
+                        <RemoteName>Logo150x150.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\assets\icons\gameicon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150">
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets\</RemoteDir>
+                        <RemoteName>Logo150x150.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\assets\icons\gameicon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets\</RemoteDir>
+                        <RemoteName>Logo44x44.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\assets\icons\gameicon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
                     <Platform Name="Win64">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo44x44.png</RemoteName>
