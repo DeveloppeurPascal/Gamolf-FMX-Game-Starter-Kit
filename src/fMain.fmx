@@ -24,4 +24,9 @@ object frmMain: TfrmMain
       end
     end
   end
+  object DGEGamepadDetected1: TDGEGamepadDetected
+    Duration = 5.000000000000000000
+    Left = 304
+    Top = 224
+  end
 end

@@ -15,13 +15,15 @@ uses
   FMX.Graphics,
   FMX.Dialogs,
   FMX.Menus,
-  uSceneBackground;
+  uSceneBackground,
+  Gamolf.RTL.GamepadDetected;
 
 type
   TfrmMain = class(TForm)
     MainMenu: TMainMenu;
     mnuMacOSAppname: TMenuItem;
     mnuAbout: TMenuItem;
+    DGEGamepadDetected1: TDGEGamepadDetected;
     procedure FormKeyDown(Sender: TObject; var Key: Word; var KeyChar: WideChar;
       Shift: TShiftState);
     procedure mnuAboutClick(Sender: TObject);
