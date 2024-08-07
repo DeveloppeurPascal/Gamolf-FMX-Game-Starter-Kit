@@ -35,7 +35,8 @@ implementation
 
 uses
   uTranslate,
-  uConfig;
+  uConfig,
+  uUIElements;
 
 { TSceneAncestor }
 
@@ -54,6 +55,8 @@ begin
   TMessageManager.DefaultManager.Unsubscribe(TTranslateTextsMessage,
     DoTranslateTexts, true);
 
+  TUIItemsList.Current.RemoveLayout;
+
   DGEFMXHelpBar1.CloseHelpBar;
 end;
 
@@ -62,6 +65,8 @@ begin
   Align := TAlignLayout.Contents;
 
   DGEFMXHelpBar1.Clear;
+
+  TUIItemsList.Current.NewLayout;
 
   TranslateTexts(tconfig.Current.Language);
   TMessageManager.DefaultManager.SubscribeToMessage(TTranslateTextsMessage,
