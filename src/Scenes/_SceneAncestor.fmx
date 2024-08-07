@@ -2,4 +2,14 @@ object __SceneAncestor: T__SceneAncestor
   Size.Width = 320.000000000000000000
   Size.Height = 240.000000000000000000
   Size.PlatformDefault = False
+  object DGEFMXHelpBar1: TDGEFMXHelpBar
+    IconMarginRight = 5.000000000000000000
+    TextMarginRight = 20.000000000000000000
+    BackgroundOpacity = 0.600000023841857900
+    BackgroundXRadius = 15.000000000000000000
+    BackgroundYRadius = 10.000000000000000000
+    Height = 50.000000000000000000
+    Left = 144
+    Top = 104
+  end
 end

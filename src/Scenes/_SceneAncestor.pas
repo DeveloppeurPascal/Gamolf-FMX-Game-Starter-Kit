@@ -14,10 +14,11 @@ uses
   FMX.Controls,
   FMX.Forms,
   FMX.Dialogs,
-  FMX.StdCtrls;
+  FMX.StdCtrls, Gamolf.FMX.HelpBar;
 
 type
   T__SceneAncestor = class(TFrame)
+    DGEFMXHelpBar1: TDGEFMXHelpBar;
   private
   protected
     procedure DoTranslateTexts(const Sender: TObject; const Msg: TMessage);
@@ -51,11 +52,16 @@ procedure T__SceneAncestor.FinalizeScene;
 begin
   TMessageManager.DefaultManager.Unsubscribe(TTranslateTextsMessage,
     DoTranslateTexts, true);
+
+  DGEFMXHelpBar1.CloseHelpBar;
 end;
 
 procedure T__SceneAncestor.InitializeScene;
 begin
   Align := TAlignLayout.Contents;
+
+  DGEFMXHelpBar1.Clear;
+
   TranslateTexts(tconfig.Current.Language);
   TMessageManager.DefaultManager.SubscribeToMessage(TTranslateTextsMessage,
     DoTranslateTexts);
