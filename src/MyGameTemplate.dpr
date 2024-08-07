@@ -29,7 +29,8 @@ uses
   Gamolf.RTL.UIElements in '..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.UIElements.pas',
   iOSapi.GameController in '..\lib-externes\Delphi-Game-Engine\src\iOSapi.GameController.pas',
   Macapi.GameController in '..\lib-externes\Delphi-Game-Engine\src\Macapi.GameController.pas',
-  uTranslate in 'uTranslate.pas';
+  uTranslate in 'uTranslate.pas',
+  uConfig in 'uConfig.pas';
 
 {$R *.res}
 
