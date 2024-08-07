@@ -1,5 +1,6 @@
 object AboutBox: TAboutBox
   OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
   Height = 480
   Width = 640
   object OlfAboutDialog1: TOlfAboutDialog
@@ -7,6 +8,7 @@ object AboutBox: TAboutBox
       item
       end>
     onURLClick = OlfAboutDialog1URLClick
+    onGetText = OlfAboutDialog1GetText
     Left = 304
     Top = 224
   end
