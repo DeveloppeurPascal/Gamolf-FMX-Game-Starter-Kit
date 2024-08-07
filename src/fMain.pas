@@ -14,7 +14,8 @@ uses
   FMX.Forms,
   FMX.Graphics,
   FMX.Dialogs,
-  FMX.Menus;
+  FMX.Menus,
+  uSceneBackground;
 
 type
   TfrmMain = class(TForm)
@@ -27,6 +28,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   private
+    BackgroundScene: TSceneBackground;
   protected
     procedure TranslateTexts(const Sender: TObject; const Msg: TMessage);
   public
@@ -51,6 +53,11 @@ begin
 {$ELSE}
   freeandnil(MainMenu);
 {$ENDIF}
+  BackgroundScene := TSceneBackground.Create(self);
+  BackgroundScene.parent := self;
+  BackgroundScene.Align := TAlignLayout.Contents;
+  BackgroundScene.InitializeScene;
+
   TMessageManager.DefaultManager.SubscribeToMessage(TTranslateTextsMessage,
     TranslateTexts);
 end;
@@ -59,6 +66,8 @@ procedure TfrmMain.FormDestroy(Sender: TObject);
 begin
   TMessageManager.DefaultManager.Unsubscribe(TTranslateTextsMessage,
     TranslateTexts, true);
+  BackgroundScene.FinalizeScene;
+  BackgroundScene.Free;
 end;
 
 procedure TfrmMain.FormKeyDown(Sender: TObject; var Key: Word;
