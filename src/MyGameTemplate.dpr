@@ -30,7 +30,9 @@ uses
   iOSapi.GameController in '..\lib-externes\Delphi-Game-Engine\src\iOSapi.GameController.pas',
   Macapi.GameController in '..\lib-externes\Delphi-Game-Engine\src\Macapi.GameController.pas',
   uTranslate in 'uTranslate.pas',
-  uConfig in 'uConfig.pas';
+  uConfig in 'uConfig.pas',
+  _SceneAncestor in 'Scenes\_SceneAncestor.pas' {__SceneAncestor: TFrame},
+  uSceneBackground in 'Scenes\uSceneBackground.pas' {SceneBackground: TFrame};
 
 {$R *.res}
 

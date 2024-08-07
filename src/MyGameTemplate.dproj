@@ -677,6 +677,16 @@
         <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Macapi.GameController.pas"/>
         <DCCReference Include="uTranslate.pas"/>
         <DCCReference Include="uConfig.pas"/>
+        <DCCReference Include="Scenes\_SceneAncestor.pas">
+            <Form>__SceneAncestor</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Scenes\uSceneBackground.pas">
+            <Form>SceneBackground</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
