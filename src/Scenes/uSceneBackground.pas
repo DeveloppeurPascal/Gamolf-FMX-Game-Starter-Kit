@@ -14,7 +14,8 @@ uses
   FMX.Forms,
   FMX.Dialogs,
   FMX.StdCtrls,
-  _SceneAncestor, FMX.Objects;
+  _SceneAncestor,
+  FMX.Objects;
 
 type
   TSceneBackground = class(T__SceneAncestor)
@@ -41,7 +42,8 @@ end;
 procedure TSceneBackground.InitializeScene;
 begin
   inherited;
-
+  Align := TAlignLayout.Contents;
+  SendToBack;
 end;
 
 procedure TSceneBackground.TranslateTexts(const Language: string);
