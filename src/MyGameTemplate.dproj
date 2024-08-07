@@ -5,10 +5,11 @@
         <FrameworkType>FMX</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">OSXARM64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>693395</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>MyGameTemplate.dpr</MainSource>
+        <ProjectName Condition="'$(ProjectName)'==''">MyGameTemplate</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -674,6 +675,7 @@
         <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.UIElements.pas"/>
         <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\iOSapi.GameController.pas"/>
         <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Macapi.GameController.pas"/>
+        <DCCReference Include="uTranslate.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
