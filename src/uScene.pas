@@ -19,7 +19,7 @@ type
   protected
   public
     /// <summary>
-    /// Register a new scene in the list of available scenes
+    /// Register a new scene in the list of available scenes and show it
     /// </summary>
     class procedure RegisterScene(const AType: TSceneType;
       const AScene: T__SceneAncestor);
@@ -51,7 +51,7 @@ uses
   System.Classes;
 
 type
-  TScenesList = class(TObjectDictionary<TSceneType, T__SceneAncestor>)
+  TScenesList = class(TDictionary<TSceneType, T__SceneAncestor>)
   private
   protected
   public
@@ -67,7 +67,14 @@ class procedure TScene.RegisterScene(const AType: TSceneType;
 begin
   UnRegisterScene(AType);
   if assigned(AScene) then
+  begin
     ScenesList.Add(AType, AScene);
+    tthread.ForceQueue(nil,
+      procedure
+      begin
+        Current := AType;
+      end);
+  end;
 end;
 
 class procedure TScene.SetCurrent(const Value: TSceneType);
@@ -87,6 +94,7 @@ begin
     FCurrent := Value;
     NewScene.InitializeScene;
     NewScene.Visible := true;
+    NewScene.BringToFront;
   end
   else
     TSceneFactory.Broadcast(Value);
@@ -122,7 +130,7 @@ end;
 initialization
 
 TScene.FCurrent := TSceneType.None;
-ScenesList := TScenesList.Create([TDictionaryOwnership.doOwnsValues]);
+ScenesList := TScenesList.Create;
 
 finalization
 
