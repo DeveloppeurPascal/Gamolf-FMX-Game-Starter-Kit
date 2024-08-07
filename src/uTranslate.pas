@@ -32,6 +32,7 @@ class procedure TTranslateTextsMessage.Broadcast(const ALanguage: string);
 var
   LLanguage: string;
 begin
+  LLanguage := ALanguage;
   tthread.Queue(nil,
     procedure
     begin
