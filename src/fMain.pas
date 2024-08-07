@@ -44,7 +44,8 @@ implementation
 uses
   uDMAboutBox,
   uConsts,
-  uTranslate;
+  uTranslate,
+  uScene;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
@@ -55,11 +56,16 @@ begin
 {$ENDIF}
   BackgroundScene := TSceneBackground.Create(self);
   BackgroundScene.parent := self;
-  BackgroundScene.Align := TAlignLayout.Contents;
   BackgroundScene.InitializeScene;
 
   TMessageManager.DefaultManager.SubscribeToMessage(TTranslateTextsMessage,
     TranslateTexts);
+
+  tthread.ForceQueue(nil,
+    procedure
+    begin
+      tscene.Current := TSceneType.Home;
+    end);
 end;
 
 procedure TfrmMain.FormDestroy(Sender: TObject);
@@ -71,7 +77,7 @@ begin
 end;
 
 procedure TfrmMain.FormKeyDown(Sender: TObject; var Key: Word;
-  var KeyChar: WideChar; Shift: TShiftState);
+var KeyChar: WideChar; Shift: TShiftState);
 begin
   if (Key = vkF1) and (KeyChar = #0) and (Shift = []) then
     TAboutBox.ShowModal;
