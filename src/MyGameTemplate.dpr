@@ -33,7 +33,14 @@ uses
   uConfig in 'uConfig.pas',
   _SceneAncestor in 'Scenes\_SceneAncestor.pas' {__SceneAncestor: TFrame},
   uSceneBackground in 'Scenes\uSceneBackground.pas' {SceneBackground: TFrame},
-  uScene in 'uScene.pas';
+  uScene in 'uScene.pas',
+  uSceneHome in 'Scenes\uSceneHome.pas' {SceneHome: TFrame},
+  uSceneGame in 'Scenes\uSceneGame.pas' {SceneGame: TFrame},
+  uSceneGameOverLost in 'Scenes\uSceneGameOverLost.pas' {SceneGameOverLost: TFrame},
+  uSceneGameOverWin in 'Scenes\uSceneGameOverWin.pas' {SceneGameOverWin: TFrame},
+  uSceneOptions in 'Scenes\uSceneOptions.pas' {SceneOptions: TFrame},
+  uSceneCredits in 'Scenes\uSceneCredits.pas' {SceneCredits: TFrame},
+  uSceneHallOfFame in 'Scenes\uSceneHallOfFame.pas' {SceneHallOfFame: TFrame};
 
 {$R *.res}
 

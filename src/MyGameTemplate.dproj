@@ -688,6 +688,41 @@
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="uScene.pas"/>
+        <DCCReference Include="Scenes\uSceneHome.pas">
+            <Form>SceneHome</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Scenes\uSceneGame.pas">
+            <Form>SceneGame</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Scenes\uSceneGameOverLost.pas">
+            <Form>SceneGameOverLost</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Scenes\uSceneGameOverWin.pas">
+            <Form>SceneGameOverWin</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Scenes\uSceneOptions.pas">
+            <Form>SceneOptions</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Scenes\uSceneCredits.pas">
+            <Form>SceneCredits</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Scenes\uSceneHallOfFame.pas">
+            <Form>SceneHallOfFame</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
