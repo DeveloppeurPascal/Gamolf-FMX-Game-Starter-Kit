@@ -63,6 +63,14 @@ begin
   TMessageManager.DefaultManager.SubscribeToMessage(TTranslateTextsMessage,
     TranslateTexts);
 
+  TMessageManager.DefaultManager.SubscribeToMessage(TSceneFactory,
+    procedure(const Sender: TObject; const Msg: TMessage)
+    begin
+      if (Msg is TSceneFactory) and
+        ((Msg as TSceneFactory).SceneType = TSceneType.Exit) then
+        close;
+    end);
+
   tthread.ForceQueue(nil,
     procedure
     begin
@@ -95,7 +103,7 @@ procedure TfrmMain.TranslateTexts(const Sender: TObject; const Msg: TMessage);
 // ttm: TTranslateTextsMessage;
 begin
   if not assigned(self) then
-    exit;
+    Exit;
 
   if assigned(Msg) and (Msg is TTranslateTextsMessage) then
   begin
