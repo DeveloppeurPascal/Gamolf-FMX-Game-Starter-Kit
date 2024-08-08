@@ -77,6 +77,8 @@ type
   protected
     FPath: string;
     FHasChanged: boolean;
+    FIsPlaying: boolean;
+    FIsPaused: boolean;
   public
     /// <summary>
     /// It's the current player score
@@ -90,6 +92,16 @@ type
     /// It's the current player pseudo (if it has been asked)
     /// </summary>
     property UserPseudo: string read FUserPseudo write SetUserPseudo;
+    /// <summary>
+    /// Returns True after a load() or a pausegame()
+    /// Returns False after a Clear()
+    /// </summary>
+    property IsPaused: boolean read FIsPaused;
+    /// <summary>
+    /// Returns True after a StartANewGame() or ContinueGame()
+    /// Returns False after a PauseGame() or StopGame()
+    /// </summary>
+    property IsPlaying: boolean read FIsPlaying;
     /// <summary>
     /// Path to the folder where games will be saved
     /// </summary>
@@ -163,6 +175,14 @@ type
     /// </remarks>
     procedure ContinueGame; virtual;
     /// <summary>
+    /// Call it when you pause (stop temporary) a game and want to continue it in the future
+    /// </summary>
+    procedure PauseGame; virtual;
+    /// <summary>
+    /// Call it when you stop a game
+    /// </summary>
+    procedure StopGame; virtual;
+    /// <summary>
     /// Used to clean current instance and reset all properties and fields to
     /// their default values
     /// </summary>
@@ -176,7 +196,8 @@ uses
   System.IOUtils,
   uConfig,
   Olf.RTL.Streams,
-  Olf.RTL.CryptDecrypt, uConsts;
+  Olf.RTL.CryptDecrypt,
+  uConsts;
 
 var
   LDefaultGameData: TGameData;
@@ -232,11 +253,15 @@ begin
   UserPseudo := '';
   FFilePath := '';
   FHasChanged := false;
+  FIsPlaying := false;
+  FIsPaused := false;
 end;
 
 procedure TGameData.ContinueGame;
 begin
   // nothing to do at this level for the game template
+  FIsPlaying := true;
+  FIsPaused := false;
 end;
 
 constructor TGameData.Create;
@@ -248,6 +273,8 @@ begin
   FPath := '';
   FFilePath := '';
   FHasChanged := false;
+  FIsPlaying := false;
+  FIsPaused := false;
 end;
 
 class function TGameData.DefaultGameData: TGameData;
@@ -332,6 +359,14 @@ begin
   end;
 
   FHasChanged := false;
+end;
+
+procedure TGameData.PauseGame;
+begin
+  // do what you need to do when you pause the game (stop threads, timers, ...)
+  // perhaps autosave the game
+  FIsPlaying := false;
+  FIsPaused := true;
 end;
 
 procedure TGameData.SaveToFile(const AFilePath: string);
@@ -424,6 +459,16 @@ procedure TGameData.StartANewGame;
 begin
   Clear;
   ContinueGame;
+end;
+
+procedure TGameData.StopGame;
+begin
+  // perhaps call PauseGame()
+  // do what you need to do when you stop the game (stop threads, timers, ...)
+  // perhaps save the score if it's not done in your game scene finalization or
+  // gameover(win/lost) scene
+  FIsPlaying := false;
+  FIsPaused := false;
 end;
 
 { TPseudoChangedMessage }
