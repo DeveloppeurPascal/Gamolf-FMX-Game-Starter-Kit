@@ -727,6 +727,7 @@
         <DCCReference Include="uGameData.pas"/>
         <DCCReference Include="..\lib-externes\librairies\src\Olf.RTL.Streams.pas"/>
         <DCCReference Include="..\lib-externes\librairies\src\Olf.RTL.Maths.Conversions.pas"/>
+        <DCCReference Include="uBackgroundMusic.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
