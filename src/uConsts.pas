@@ -88,14 +88,15 @@ type
 {$SCOPEDENUMS ON}
   /// <summary>
   /// List of scenes available in your game
-  /// "None" and "Home" are used by the template engine, you can add/remove the others
+  /// "None", "Home" and "Exit" are used by the template engine, you can add/remove the others
   /// </summary>
   /// <remarks>
   /// Change value of TScene.Current to autocreate and show the good scene.
   /// Create scenes screens by inheriting from /Scenes/_SceneAncestor.pas
   /// </remarks>
   TSceneType = (None (* "None" must stay *) , Home (* "Home" must stay *) ,
-    Game, GameOverLost, GameOverWin, Credits, Options, HallOfFame);
+    Exit (* "Exit" must stay *) , Game, GameOverLost, GameOverWin, Credits,
+    Options, HallOfFame);
 
 implementation
 
