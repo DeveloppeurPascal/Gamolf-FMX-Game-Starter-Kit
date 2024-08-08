@@ -1,4 +1,6 @@
 inherited SceneGame: TSceneGame
+  Size.Width = 837.000000000000000000
+  Size.Height = 528.000000000000000000
   object Label1: TLabel
     Align = Center
     AutoSize = True
@@ -7,5 +9,185 @@ inherited SceneGame: TSceneGame
     Size.PlatformDefault = False
     Text = 'Game'
     TabOrder = 0
+  end
+  object GridPanelLayout1: TGridPanelLayout
+    Align = Bottom
+    Position.Y = 478.000000000000000000
+    Size.Width = 837.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    ColumnCollection = <
+      item
+        Value = 30.000000000000000000
+      end
+      item
+        Value = 40.000000000000000000
+      end
+      item
+        Value = 30.000000000000000000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = lblScore
+        Row = 0
+      end
+      item
+        Column = 1
+        Control = lblUserPseudo
+        Row = 0
+      end
+      item
+        Column = 2
+        Control = lblLevel
+        Row = 0
+      end>
+    RowCollection = <
+      item
+        Value = 100.000000000000000000
+      end>
+    object lblScore: TLabel
+      Align = Client
+      Size.Width = 251.100006103515600000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      Text = 'lblScore'
+      TabOrder = 0
+      object GlowEffect1: TGlowEffect
+        Softness = 0.400000005960464400
+        GlowColor = claGold
+        Opacity = 0.899999976158142100
+      end
+    end
+    object lblUserPseudo: TLabel
+      Align = Client
+      Size.Width = 334.800018310546900000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      Text = 'lblUserPseudo'
+      TabOrder = 1
+      object GlowEffect2: TGlowEffect
+        Softness = 0.400000005960464400
+        GlowColor = claGold
+        Opacity = 0.899999976158142100
+      end
+    end
+    object lblLevel: TLabel
+      Align = Client
+      Size.Width = 251.099975585937500000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      Text = 'lblLevel'
+      TabOrder = 2
+      object GlowEffect3: TGlowEffect
+        Softness = 0.400000005960464400
+        GlowColor = claGold
+        Opacity = 0.899999976158142100
+      end
+    end
+  end
+  object FlowLayout1: TFlowLayout
+    Align = Top
+    Size.Width = 837.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Justify = Left
+    JustifyLastLine = Left
+    FlowDirection = LeftToRight
+    object btnScore: TButton
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'btnScore'
+      TextSettings.Trimming = None
+      OnClick = btnScoreClick
+    end
+    object btnLevel: TButton
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 95.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'btnLevel'
+      TextSettings.Trimming = None
+      OnClick = btnLevelClick
+    end
+    object btnPseudo: TButton
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 185.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'btnPseudo'
+      TextSettings.Trimming = None
+      OnClick = btnPseudoClick
+    end
+    object btnGoWin: TButton
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 275.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'btnGoWin'
+      TextSettings.Trimming = None
+      OnClick = btnGoWinClick
+    end
+    object btnGoLost: TButton
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 365.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Text = 'btnGoLost'
+      TextSettings.Trimming = None
+      OnClick = btnGoLostClick
+    end
+    object btnPause: TButton
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 455.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'btnPause'
+      TextSettings.Trimming = None
+      OnClick = btnPauseClick
+    end
   end
 end
