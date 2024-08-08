@@ -15,7 +15,8 @@ uses
   FMX.Dialogs,
   FMX.StdCtrls,
   _SceneAncestor,
-  FMX.Controls.Presentation;
+  FMX.Controls.Presentation,
+  Gamolf.FMX.HelpBar;
 
 type
   TSceneHome = class(T__SceneAncestor)

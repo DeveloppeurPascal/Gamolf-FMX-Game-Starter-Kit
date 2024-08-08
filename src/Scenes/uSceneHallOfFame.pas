@@ -14,7 +14,9 @@ uses
   FMX.Forms,
   FMX.Dialogs,
   FMX.StdCtrls,
-  _SceneAncestor, FMX.Controls.Presentation;
+  _SceneAncestor,
+  FMX.Controls.Presentation,
+  Gamolf.FMX.HelpBar;
 
 type
   TSceneHallOfFame = class(T__SceneAncestor)
