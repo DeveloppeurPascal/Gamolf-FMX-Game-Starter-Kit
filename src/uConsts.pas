@@ -75,6 +75,15 @@ const
   CGameFolderName = 'Test';
   // for exemple your game title (avoid spaces, accents and special characters)
 
+  /// <summary>
+  /// The GUID to use for this game when saving/loading files like game data
+  /// to check they are from this game and not an other one.
+  /// </summary>
+  CGameGUID = '{48AD6D06-1BED-4F33-ADCA-267E12D74417}';
+  // Use Shift+Ctrl+G to generate a new GUID and replace current value by the new one
+  // TODO : Set your game GUID. Each game must have it's GUID, don't use the same !
+{$MESSAGE WARN 'Set your game GUID, don't use the default value !!!'}
+
 implementation
 
 uses
@@ -100,5 +109,10 @@ if CDefaultLanguage.Trim.IsEmpty then
 if (CDefaultLanguage <> CDefaultLanguage.Trim.ToLower) then
   raise Exception.Create('Please use "' + CDefaultLanguage.Trim.ToLower +
     '" as CDefaultLanguage value.');
+
+{$IFDEF RELEASE}
+if (CGameGUID = '{48AD6D06-1BED-4F33-ADCA-267E12D74417}') then
+  raise Exception.Create('Wrong GUID. Change it in game settings !');
+{$ENDIF}
 
 end.
