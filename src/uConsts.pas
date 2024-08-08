@@ -2,7 +2,7 @@ unit uConsts;
 
 interface
 
-// TODO : personalize the game global settings
+// TODO : personalize the game global settings by saving this file in an other folder and changing defauls values
 {$MESSAGE WARN 'Personalize these constants'}
 
 const
@@ -15,7 +15,7 @@ const
   /// <summary>
   /// Version date of your game, change it when you publish a new public release
   /// </summary>
-  CAboutVersionDate = '20240807';
+  CAboutVersionDate = '20240808';
 
   /// <summary>
   /// Title of your game used in the About box and as the main form caption
@@ -83,6 +83,19 @@ const
   // Use Shift+Ctrl+G to generate a new GUID and replace current value by the new one
   // TODO : Set your game GUID. Each game must have it's GUID, don't use the same !
 {$MESSAGE WARN 'Set your game GUID, don't use the default value !!!'}
+
+type
+{$SCOPEDENUMS ON}
+  /// <summary>
+  /// List of scenes available in your game
+  /// "None" and "Home" are used by the template engine, you can add/remove the others
+  /// </summary>
+  /// <remarks>
+  /// Change value of TScene.Current to autocreate and show the good scene.
+  /// Create scenes screens by inheriting from /Scenes/_SceneAncestor.pas
+  /// </remarks>
+  TSceneType = (None (* "None" must stay *) , Home (* "Home" must stay *) ,
+    Game, GameOverLost, GameOverWin, Credits, Options, HallOfFame);
 
 implementation
 
