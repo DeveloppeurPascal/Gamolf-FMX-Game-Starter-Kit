@@ -51,7 +51,8 @@ uses
   System.Messaging,
   uScene,
   uGameData,
-  uConsts;
+  uConsts,
+  uSoundEffects;
 
 { TSceneHome }
 
@@ -91,6 +92,7 @@ procedure TSceneHome.FinalizeScene;
 begin
   inherited;
   // TODO : à compléter
+  TSoundEffects.Play(TSoundEffectType.demo);
 end;
 
 procedure TSceneHome.InitializeScene;
@@ -101,6 +103,7 @@ begin
 {$IF Defined(IOS) or Defined(ANDROID)}
   btnQuit.Visible := false;
 {$ENDIF}
+  TSoundEffects.Play(TSoundEffectType.demo);
 end;
 
 procedure TSceneHome.TranslateTexts(const Language: string);
