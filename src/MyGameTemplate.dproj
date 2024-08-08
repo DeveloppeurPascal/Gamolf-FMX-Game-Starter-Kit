@@ -736,6 +736,11 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="uSVGBitmapManager.pas"/>
+        <DCCReference Include="uDMHelpBarManager.pas">
+            <Form>HelpBarManager</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

@@ -14,12 +14,10 @@ uses
   FMX.Controls,
   FMX.Forms,
   FMX.Dialogs,
-  FMX.StdCtrls,
-  Gamolf.FMX.HelpBar;
+  FMX.StdCtrls;
 
 type
   T__SceneAncestor = class(TFrame)
-    DGEFMXHelpBar1: TDGEFMXHelpBar;
   private
   protected
     procedure DoTranslateTexts(const Sender: TObject; const Msg: TMessage);
@@ -36,7 +34,8 @@ implementation
 uses
   uTranslate,
   uConfig,
-  uUIElements;
+  uUIElements,
+  uDMHelpBarManager;
 
 { TSceneAncestor }
 
@@ -57,14 +56,14 @@ begin
 
   TUIItemsList.Current.RemoveLayout;
 
-  DGEFMXHelpBar1.CloseHelpBar;
+  THelpBarManager.Current.CloseHelpBar;
 end;
 
 procedure T__SceneAncestor.InitializeScene;
 begin
   Align := TAlignLayout.Contents;
 
-  DGEFMXHelpBar1.Clear;
+  THelpBarManager.Current.Clear;
 
   TUIItemsList.Current.NewLayout;
 

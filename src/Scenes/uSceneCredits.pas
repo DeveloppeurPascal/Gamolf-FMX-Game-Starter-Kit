@@ -16,7 +16,6 @@ uses
   FMX.StdCtrls,
   _SceneAncestor,
   FMX.Controls.Presentation,
-  Gamolf.FMX.HelpBar,
   FMX.Layouts;
 
 type
@@ -43,7 +42,9 @@ uses
   uScene,
   uConsts,
   uDMAboutBox,
-  uUIElements;
+  uUIElements,
+  USVGInputPrompts,
+  uDMHelpBarManager;
 
 { TSceneCredits }
 
@@ -63,6 +64,10 @@ begin
   inherited;
 
   TUIItemsList.Current.AddControl(btnBack, nil, nil, nil, nil, true, true);
+
+  THelpBarManager.Current.OpenHelpBar;
+  THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardEscape),
+    ord(TSVGInputPromptsIndex.SteamButtonColorXOutline), 'Back');
 
   Label2.Text := TAboutBox.Current.OlfAboutDialog1.Titre + slinebreak +
     TAboutBox.Current.OlfAboutDialog1.GetVersionDate + slinebreak +

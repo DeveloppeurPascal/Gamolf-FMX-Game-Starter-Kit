@@ -24,9 +24,21 @@ object frmMain: TfrmMain
       end
     end
   end
+  object DGEFMXHelpBar1: TDGEFMXHelpBar
+    IconMarginRight = 5.000000000000000000
+    TextMarginRight = 20.000000000000000000
+    BackgroundFill.Color = claSienna
+    BackgroundOpacity = 0.600000023841857900
+    BackgroundXRadius = 15.000000000000000000
+    BackgroundYRadius = 10.000000000000000000
+    HorzAlign = Right
+    Height = 50.000000000000000000
+    Left = 144
+    Top = 104
+  end
   object DGEGamepadDetected1: TDGEGamepadDetected
     Duration = 5.000000000000000000
     Left = 304
-    Top = 224
+    Top = 88
   end
 end

@@ -16,7 +16,7 @@ uses
   FMX.Dialogs,
   FMX.Menus,
   uSceneBackground,
-  Gamolf.RTL.GamepadDetected;
+  Gamolf.RTL.GamepadDetected, Gamolf.FMX.HelpBar;
 
 type
   TfrmMain = class(TForm)
@@ -24,6 +24,7 @@ type
     mnuMacOSAppname: TMenuItem;
     mnuAbout: TMenuItem;
     DGEGamepadDetected1: TDGEGamepadDetected;
+    DGEFMXHelpBar1: TDGEFMXHelpBar;
     procedure FormKeyDown(Sender: TObject; var Key: Word; var KeyChar: WideChar;
       Shift: TShiftState);
     procedure mnuAboutClick(Sender: TObject);

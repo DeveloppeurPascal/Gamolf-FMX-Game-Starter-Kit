@@ -49,7 +49,8 @@ uses
   uSoundEffects in 'uSoundEffects.pas',
   USVGInputPrompts in '..\assets\kenney_nl\InputPrompts\USVGInputPrompts.pas',
   uDMGameControllerCenter in 'uDMGameControllerCenter.pas' {DMGameControllerCenter: TDataModule},
-  uSVGBitmapManager in 'uSVGBitmapManager.pas';
+  uSVGBitmapManager in 'uSVGBitmapManager.pas',
+  uDMHelpBarManager in 'uDMHelpBarManager.pas' {HelpBarManager: TDataModule};
 
 {$R *.res}
 

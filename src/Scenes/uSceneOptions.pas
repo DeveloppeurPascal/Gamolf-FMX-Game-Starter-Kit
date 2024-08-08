@@ -15,8 +15,7 @@ uses
   FMX.Dialogs,
   FMX.StdCtrls,
   _SceneAncestor,
-  FMX.Controls.Presentation,
-  Gamolf.FMX.HelpBar;
+  FMX.Controls.Presentation;
 
 type
   TSceneOptions = class(T__SceneAncestor)
@@ -39,7 +38,9 @@ uses
   System.Messaging,
   uScene,
   uConsts,
-  uUIElements;
+  uUIElements,
+  USVGInputPrompts,
+  uDMHelpBarManager;
 
 { TSceneOptions }
 
@@ -58,6 +59,10 @@ procedure TSceneOptions.InitializeScene;
 begin
   inherited;
   TUIItemsList.Current.AddControl(btnBack, nil, nil, nil, nil, true, true);
+
+  THelpBarManager.Current.OpenHelpBar;
+  THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardEscape),
+    ord(TSVGInputPromptsIndex.SteamButtonColorXOutline), 'Back');
 end;
 
 procedure TSceneOptions.TranslateTexts(const Language: string);

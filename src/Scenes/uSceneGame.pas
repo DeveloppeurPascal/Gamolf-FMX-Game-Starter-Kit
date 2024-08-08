@@ -17,7 +17,6 @@ uses
   _SceneAncestor,
   System.Messaging,
   FMX.Controls.Presentation,
-  Gamolf.FMX.HelpBar,
   FMX.Layouts,
   FMX.Effects;
 
@@ -75,7 +74,9 @@ uses
   uGameData,
   uBackgroundMusic,
   uConfig,
-  uUIElements;
+  uUIElements,
+  USVGInputPrompts,
+  uDMHelpBarManager;
 
 { TSceneGame }
 
@@ -256,6 +257,16 @@ begin
     TUIItemsList.Current.AddControl(btnStopMusic, btnPause, nil, nil, btnPause)
   else
     TUIItemsList.Current.AddControl(btnStopMusic, nil, nil, nil, nil);
+
+  THelpBarManager.Current.OpenHelpBar;
+  THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardEscape),
+    ord(TSVGInputPromptsIndex.SteamButtonColorXOutline), 'Pause');
+  THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardArrowUp),
+    ord(TSVGInputPromptsIndex.SteamDpadHorizontalOutline));
+  THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardArrowDown),
+    ord(TSVGInputPromptsIndex.SteamDpadHorizontalOutline), 'Move');
+  THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardSpace),
+    ord(TSVGInputPromptsIndex.SteamButtonColorAOutline), 'Click');
 
   // start your game loop
   // start your workers

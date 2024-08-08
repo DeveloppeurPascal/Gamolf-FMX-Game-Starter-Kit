@@ -15,8 +15,7 @@ uses
   FMX.Dialogs,
   FMX.StdCtrls,
   _SceneAncestor,
-  FMX.Objects,
-  Gamolf.FMX.HelpBar;
+  FMX.Objects;
 
 type
   TSceneBackground = class(T__SceneAncestor)

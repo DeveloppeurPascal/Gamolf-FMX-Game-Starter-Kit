@@ -16,7 +16,6 @@ uses
   FMX.StdCtrls,
   _SceneAncestor,
   FMX.Controls.Presentation,
-  Gamolf.FMX.HelpBar,
   FMX.Layouts;
 
 type
@@ -53,7 +52,9 @@ uses
   uGameData,
   uConsts,
   uSoundEffects,
-  uUIElements;
+  uUIElements,
+  USVGInputPrompts,
+  uDMHelpBarManager;
 
 { TSceneHome }
 
@@ -132,6 +133,17 @@ begin
   else
     TUIItemsList.Current.AddControl(btnCredits, btnOptions, nil, nil,
       btnOptions);
+
+  THelpBarManager.Current.OpenHelpBar;
+  if btnQuit.Visible then
+    THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardEscape),
+      ord(TSVGInputPromptsIndex.SteamButtonColorXOutline), 'Quit');
+  THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardArrowUp),
+    ord(TSVGInputPromptsIndex.SteamDpadHorizontalOutline));
+  THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardArrowDown),
+    ord(TSVGInputPromptsIndex.SteamDpadHorizontalOutline), 'Move');
+  THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardSpace),
+    ord(TSVGInputPromptsIndex.SteamButtonColorAOutline), 'Click');
 
   TSoundEffects.Play(TSoundEffectType.demo);
 end;
