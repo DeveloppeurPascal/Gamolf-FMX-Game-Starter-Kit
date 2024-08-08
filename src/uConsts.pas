@@ -56,6 +56,16 @@ const
   // For other compilations (including RELEASE)
   COpenGameInFullScreenMode = true;
 {$ENDIF}
+  //
+  /// <summary>
+  /// Add the name of your WAV or MP3 file to use as background music
+  /// </summary>
+  /// <remarks>
+  /// For example : 'MyMusic.mp3', stored locally in _PRIVATE/musics,
+  /// added to deployment project options for DEBUG or RELEASE other than Windows
+  /// </remarks>
+  CBackgroundMusicFileName = 'SmoothRide.mp3';
+
   /// <summary>
   /// Used as a folder name to store your game folder
   /// </summary>
