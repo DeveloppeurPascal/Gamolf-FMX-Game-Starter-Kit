@@ -47,7 +47,9 @@ uses
   uDMAboutBox,
   uConsts,
   uTranslate,
-  uScene;
+  uScene,
+  uBackgroundMusic,
+  uConfig;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
@@ -70,6 +72,9 @@ begin
         ((Msg as TSceneFactory).SceneType = TSceneType.Exit) then
         close;
     end);
+
+  if TBackgroundMusic.Current.HasAValidBackgroundMusicFile then
+    TBackgroundMusic.Current.OnOff(tconfig.Current.BackgroundMusicOnOff);
 
   tthread.ForceQueue(nil,
     procedure
