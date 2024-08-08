@@ -42,7 +42,9 @@ uses
   uSceneCredits in 'Scenes\uSceneCredits.pas' {SceneCredits: TFrame},
   uSceneHallOfFame in 'Scenes\uSceneHallOfFame.pas' {SceneHallOfFame: TFrame},
   uUIElements in 'uUIElements.pas',
-  uGameData in 'uGameData.pas';
+  uGameData in 'uGameData.pas',
+  Olf.RTL.Streams in '..\lib-externes\librairies\src\Olf.RTL.Streams.pas',
+  Olf.RTL.Maths.Conversions in '..\lib-externes\librairies\src\Olf.RTL.Maths.Conversions.pas';
 
 {$R *.res}
 
