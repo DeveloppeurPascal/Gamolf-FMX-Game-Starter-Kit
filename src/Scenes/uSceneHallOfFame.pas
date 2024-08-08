@@ -21,6 +21,8 @@ uses
 type
   TSceneHallOfFame = class(T__SceneAncestor)
     Label1: TLabel;
+    btnBack: TButton;
+    procedure btnBackClick(Sender: TObject);
   private
   protected
   public
@@ -35,9 +37,15 @@ implementation
 
 uses
   System.Messaging,
-  uScene;
+  uScene,
+  uConsts;
 
 { TSceneHallOfFame }
+
+procedure TSceneHallOfFame.btnBackClick(Sender: TObject);
+begin
+  tscene.Current := TSceneType.Home;
+end;
 
 procedure TSceneHallOfFame.FinalizeScene;
 begin
