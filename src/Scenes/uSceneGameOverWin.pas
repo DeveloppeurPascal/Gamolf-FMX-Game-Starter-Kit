@@ -38,7 +38,8 @@ implementation
 uses
   System.Messaging,
   uScene,
-  uConsts;
+  uConsts,
+  uUIElements;
 
 { TSceneGameOverWin }
 
@@ -56,7 +57,7 @@ end;
 procedure TSceneGameOverWin.InitializeScene;
 begin
   inherited;
-  // TODO : à compléter
+  TUIItemsList.Current.AddControl(btnBack, nil, nil, nil, nil, true, true);
 end;
 
 procedure TSceneGameOverWin.TranslateTexts(const Language: string);

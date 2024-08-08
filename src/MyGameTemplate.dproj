@@ -729,6 +729,12 @@
         <DCCReference Include="..\lib-externes\librairies\src\Olf.RTL.Maths.Conversions.pas"/>
         <DCCReference Include="uBackgroundMusic.pas"/>
         <DCCReference Include="uSoundEffects.pas"/>
+        <DCCReference Include="..\assets\kenney_nl\InputPrompts\USVGInputPrompts.pas"/>
+        <DCCReference Include="uDMGameControllerCenter.pas">
+            <Form>DMGameControllerCenter</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

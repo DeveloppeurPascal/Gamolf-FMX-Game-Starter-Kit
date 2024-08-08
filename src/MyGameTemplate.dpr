@@ -46,7 +46,9 @@ uses
   Olf.RTL.Streams in '..\lib-externes\librairies\src\Olf.RTL.Streams.pas',
   Olf.RTL.Maths.Conversions in '..\lib-externes\librairies\src\Olf.RTL.Maths.Conversions.pas',
   uBackgroundMusic in 'uBackgroundMusic.pas',
-  uSoundEffects in 'uSoundEffects.pas';
+  uSoundEffects in 'uSoundEffects.pas',
+  USVGInputPrompts in '..\assets\kenney_nl\InputPrompts\USVGInputPrompts.pas',
+  uDMGameControllerCenter in 'uDMGameControllerCenter.pas' {DMGameControllerCenter: TDataModule};
 
 {$R *.res}
 
@@ -54,5 +56,6 @@ begin
   GlobalUseSkia := True;
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);
+  Application.CreateForm(TDMGameControllerCenter, DMGameControllerCenter);
   Application.Run;
 end.

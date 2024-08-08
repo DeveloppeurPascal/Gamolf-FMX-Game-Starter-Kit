@@ -49,7 +49,9 @@ uses
   uTranslate,
   uScene,
   uBackgroundMusic,
-  uConfig;
+  uConfig,
+  uUIElements,
+  Gamolf.RTL.UIElements;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
@@ -93,9 +95,27 @@ end;
 
 procedure TfrmMain.FormKeyDown(Sender: TObject; var Key: Word;
 var KeyChar: WideChar; Shift: TShiftState);
+var
+  item: TUIElement;
 begin
   if (Key = vkF1) and (KeyChar = #0) and (Shift = []) then
+  begin
+    Key := 0;
+    KeyChar := #0;
     TAboutBox.ShowModal;
+  end
+  else
+    TUIItemsList.Current.KeyDown(Key, KeyChar, Shift);
+  if (Key = vkReturn) or ((Key = 0) and (KeyChar = ' ')) then
+  begin
+    item := TUIItemsList.Current.Focused;
+    if assigned(item) then
+    begin
+      Key := 0;
+      KeyChar := #0;
+      item.DoClick;
+    end;
+  end;
 end;
 
 procedure TfrmMain.mnuAboutClick(Sender: TObject);

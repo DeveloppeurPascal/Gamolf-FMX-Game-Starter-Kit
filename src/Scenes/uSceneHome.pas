@@ -52,7 +52,8 @@ uses
   uScene,
   uGameData,
   uConsts,
-  uSoundEffects;
+  uSoundEffects,
+  uUIElements;
 
 { TSceneHome }
 
@@ -98,11 +99,40 @@ end;
 procedure TSceneHome.InitializeScene;
 begin
   inherited;
-  // TODO : à compléter
+
   btnContinue.Visible := TGameData.DefaultGameData.IsPaused;
 {$IF Defined(IOS) or Defined(ANDROID)}
   btnQuit.Visible := false;
 {$ENDIF}
+  if btnContinue.Visible then
+  begin
+    TUIItemsList.Current.AddControl(btnNewGame, nil, btnContinue, btnContinue,
+      nil, true);
+    TUIItemsList.Current.AddControl(btnContinue, btnNewGame, btnHallOfFame,
+      btnHallOfFame, btnNewGame);
+    TUIItemsList.Current.AddControl(btnHallOfFame, btnContinue, btnOptions,
+      btnOptions, btnContinue);
+  end
+  else
+  begin
+    TUIItemsList.Current.AddControl(btnNewGame, nil, btnHallOfFame,
+      btnHallOfFame, nil, true);
+    TUIItemsList.Current.AddControl(btnHallOfFame, btnNewGame, btnOptions,
+      btnOptions, btnNewGame);
+  end;
+  TUIItemsList.Current.AddControl(btnOptions, btnHallOfFame, btnCredits,
+    btnCredits, btnHallOfFame);
+  if btnQuit.Visible then
+  begin
+    TUIItemsList.Current.AddControl(btnCredits, btnOptions, btnQuit, btnQuit,
+      btnOptions);
+    TUIItemsList.Current.AddControl(btnQuit, btnCredits, nil, nil, btnCredits,
+      false, true);
+  end
+  else
+    TUIItemsList.Current.AddControl(btnCredits, btnOptions, nil, nil,
+      btnOptions);
+
   TSoundEffects.Play(TSoundEffectType.demo);
 end;
 

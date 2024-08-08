@@ -42,7 +42,8 @@ uses
   System.Messaging,
   uScene,
   uConsts,
-  uDMAboutBox;
+  uDMAboutBox,
+  uUIElements;
 
 { TSceneCredits }
 
@@ -60,7 +61,9 @@ end;
 procedure TSceneCredits.InitializeScene;
 begin
   inherited;
-  // TODO : à compléter
+
+  TUIItemsList.Current.AddControl(btnBack, nil, nil, nil, nil, true, true);
+
   Label2.Text := TAboutBox.Current.OlfAboutDialog1.Titre + slinebreak +
     TAboutBox.Current.OlfAboutDialog1.GetVersionDate + slinebreak +
     TAboutBox.Current.OlfAboutDialog1.Copyright + slinebreak + slinebreak +

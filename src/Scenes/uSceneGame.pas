@@ -74,7 +74,8 @@ uses
   uConsts,
   uGameData,
   uBackgroundMusic,
-  uConfig;
+  uConfig,
+  uUIElements;
 
 { TSceneGame }
 
@@ -138,6 +139,26 @@ begin
   begin
     btnPlayMusic.visible := not tconfig.Current.BackgroundMusicOnOff;
     btnStopMusic.visible := tconfig.Current.BackgroundMusicOnOff;
+    if btnPlayMusic.visible then
+    begin
+      TUIItemsList.Current.GetElementByTagObject(btnPlayMusic).LeftItem :=
+        TUIItemsList.Current.GetElementByTagObject(btnPause);
+      TUIItemsList.Current.GetElementByTagObject(btnPlayMusic).TopItem :=
+        TUIItemsList.Current.GetElementByTagObject(btnPause);
+    end
+    else if TUIItemsList.Current.GetElementByTagObject(btnPlayMusic).IsFocused
+    then
+      TUIItemsList.Current.GetElementByTagObject(btnStopMusic).SetFocus;
+    if btnStopMusic.visible then
+    begin
+      TUIItemsList.Current.GetElementByTagObject(btnStopMusic).LeftItem :=
+        TUIItemsList.Current.GetElementByTagObject(btnPause);
+      TUIItemsList.Current.GetElementByTagObject(btnStopMusic).TopItem :=
+        TUIItemsList.Current.GetElementByTagObject(btnPause);
+    end
+    else if TUIItemsList.Current.GetElementByTagObject(btnStopMusic).IsFocused
+    then
+      TUIItemsList.Current.GetElementByTagObject(btnPlayMusic).SetFocus;
   end;
 end;
 
@@ -213,6 +234,28 @@ begin
   end;
   TMessageManager.DefaultManager.SubscribeToMessage
     (TBackgroundMusicStatusMessage, DoBackgroundMusicStatusChanged);
+
+  TUIItemsList.Current.AddControl(btnScore, nil, btnLevel, btnLevel, nil, true);
+  TUIItemsList.Current.AddControl(btnLevel, btnScore, btnPseudo, btnPseudo,
+    btnScore);
+  TUIItemsList.Current.AddControl(btnPseudo, btnLevel, btnGoWin, btnGoWin,
+    btnLevel);
+  TUIItemsList.Current.AddControl(btnGoWin, btnPseudo, btnGoLost, btnGoLost,
+    btnPseudo);
+  TUIItemsList.Current.AddControl(btnGoLost, btnGoWin, btnPause, btnPause,
+    btnGoWin);
+  TUIItemsList.Current.AddControl(btnPause, btnGoLost, nil, nil, btnGoLost,
+    false, true);
+
+  if btnPlayMusic.visible then
+    TUIItemsList.Current.AddControl(btnPlayMusic, btnPause, nil, nil, btnPause)
+  else
+    TUIItemsList.Current.AddControl(btnPlayMusic, nil, nil, nil, nil);
+
+  if btnStopMusic.visible then
+    TUIItemsList.Current.AddControl(btnStopMusic, btnPause, nil, nil, btnPause)
+  else
+    TUIItemsList.Current.AddControl(btnStopMusic, nil, nil, nil, nil);
 
   // start your game loop
   // start your workers
