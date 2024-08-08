@@ -38,12 +38,16 @@ type
     GlowEffect1: TGlowEffect;
     GlowEffect2: TGlowEffect;
     GlowEffect3: TGlowEffect;
+    btnPlayMusic: TButton;
+    btnStopMusic: TButton;
     procedure btnGoWinClick(Sender: TObject);
     procedure btnGoLostClick(Sender: TObject);
     procedure btnScoreClick(Sender: TObject);
     procedure btnLevelClick(Sender: TObject);
     procedure btnPseudoClick(Sender: TObject);
     procedure btnPauseClick(Sender: TObject);
+    procedure btnPlayMusicClick(Sender: TObject);
+    procedure btnStopMusicClick(Sender: TObject);
   private
   protected
     procedure DoScoreChanged(const Sender: TObject; const Msg: TMessage);
@@ -52,6 +56,8 @@ type
     procedure ShowLevel;
     procedure DoUserPseudoChanged(const Sender: TObject; const Msg: TMessage);
     procedure ShowUserPseudo;
+    procedure DoBackgroundMusicStatusChanged(const Sender: TObject;
+      const Msg: TMessage);
   public
     procedure InitializeScene; override;
     procedure FinalizeScene; override;
@@ -66,7 +72,9 @@ uses
   FMX.DialogService,
   uScene,
   uConsts,
-  uGameData;
+  uGameData,
+  uBackgroundMusic,
+  uConfig;
 
 { TSceneGame }
 
@@ -93,6 +101,11 @@ begin
   TScene.Current := TSceneType.Home;
 end;
 
+procedure TSceneGame.btnPlayMusicClick(Sender: TObject);
+begin
+  TBackgroundMusic.Current.OnOff(true);
+end;
+
 procedure TSceneGame.btnPseudoClick(Sender: TObject);
 begin
   TDialogService.InputQuery('Please give me', ['Your pseudo or name'],
@@ -108,6 +121,24 @@ procedure TSceneGame.btnScoreClick(Sender: TObject);
 begin
   TGameData.DefaultGameData.Score := TGameData.DefaultGameData.Score +
     random(100) + 5;
+end;
+
+procedure TSceneGame.btnStopMusicClick(Sender: TObject);
+begin
+  TBackgroundMusic.Current.OnOff(false);
+end;
+
+procedure TSceneGame.DoBackgroundMusicStatusChanged(const Sender: TObject;
+const Msg: TMessage);
+begin
+  if not assigned(self) then
+    exit;
+
+  if assigned(Msg) and (Msg is TBackgroundMusicStatusMessage) then
+  begin
+    btnPlayMusic.visible := not tconfig.Current.BackgroundMusicOnOff;
+    btnStopMusic.visible := tconfig.Current.BackgroundMusicOnOff;
+  end;
 end;
 
 procedure TSceneGame.DoLevelChanged(const Sender: TObject; const Msg: TMessage);
@@ -147,6 +178,8 @@ begin
     DoLevelChanged, true);
   TMessageManager.DefaultManager.Unsubscribe(TPseudoChangedMessage,
     DoUserPseudoChanged, true);
+  TMessageManager.DefaultManager.Unsubscribe(TBackgroundMusicStatusMessage,
+    DoBackgroundMusicStatusChanged, true);
 
   // stop your game loop
   // stop your workers
@@ -167,6 +200,19 @@ begin
   ShowUserPseudo;
   TMessageManager.DefaultManager.SubscribeToMessage(TPseudoChangedMessage,
     DoUserPseudoChanged);
+
+  if TBackgroundMusic.Current.HasAValidBackgroundMusicFile then
+  begin
+    btnPlayMusic.visible := not tconfig.Current.BackgroundMusicOnOff;
+    btnStopMusic.visible := tconfig.Current.BackgroundMusicOnOff;
+  end
+  else
+  begin
+    btnPlayMusic.visible := false;
+    btnStopMusic.visible := false;
+  end;
+  TMessageManager.DefaultManager.SubscribeToMessage
+    (TBackgroundMusicStatusMessage, DoBackgroundMusicStatusChanged);
 
   // start your game loop
   // start your workers

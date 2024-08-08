@@ -169,7 +169,7 @@ inherited SceneGame: TSceneGame
       Size.Width = 80.000000000000000000
       Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 5
+      TabOrder = 7
       Text = 'btnGoLost'
       TextSettings.Trimming = None
       OnClick = btnGoLostClick
@@ -184,10 +184,40 @@ inherited SceneGame: TSceneGame
       Size.Width = 80.000000000000000000
       Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 4
+      TabOrder = 6
       Text = 'btnPause'
       TextSettings.Trimming = None
       OnClick = btnPauseClick
+    end
+    object btnPlayMusic: TButton
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 545.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Text = 'btnPlayMusic'
+      TextSettings.Trimming = None
+      OnClick = btnPlayMusicClick
+    end
+    object btnStopMusic: TButton
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 635.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'btnStopMusic'
+      TextSettings.Trimming = None
+      OnClick = btnStopMusicClick
     end
   end
 end
