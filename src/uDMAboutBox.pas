@@ -80,7 +80,7 @@ end;
 
 class function TAboutBox.GetCaption: string;
 begin
-  // TODO : à remplacer par mieux un jour, cf https://github.com/DeveloppeurPascal/AboutDialog-Delphi-Component/issues/59
+  // TODO -opprem : à remplacer par mieux un jour, cf https://github.com/DeveloppeurPascal/AboutDialog-Delphi-Component/issues/59
   result := 'About ' + Current.OlfAboutDialog1.Titre;
 end;
 
@@ -92,7 +92,7 @@ begin
   case ATxtID of
     TOlfAboutDialogTxtID.About:
       // used as "About "+GameTitle for the about box caption
-      // TODO : compléter un exemple avec la langue actuelle du projet
+      // TODO -opprem : compléter un exemple avec la langue actuelle du projet
       result := '';
     TOlfAboutDialogTxtID.Version:
       // used as "Version "+VersionNumber in the about box
