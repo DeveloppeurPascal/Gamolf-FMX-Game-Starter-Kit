@@ -21,6 +21,8 @@ uses
 type
   TSceneGameOverWin = class(T__SceneAncestor)
     Label1: TLabel;
+    btnBack: TButton;
+    procedure btnBackClick(Sender: TObject);
   private
   protected
   public
@@ -35,9 +37,15 @@ implementation
 
 uses
   System.Messaging,
-  uScene;
+  uScene,
+  uConsts;
 
 { TSceneGameOverWin }
+
+procedure TSceneGameOverWin.btnBackClick(Sender: TObject);
+begin
+  tscene.Current := TSceneType.Home;
+end;
 
 procedure TSceneGameOverWin.FinalizeScene;
 begin
