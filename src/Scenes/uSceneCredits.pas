@@ -16,11 +16,16 @@ uses
   FMX.StdCtrls,
   _SceneAncestor,
   FMX.Controls.Presentation,
-  Gamolf.FMX.HelpBar;
+  Gamolf.FMX.HelpBar,
+  FMX.Layouts;
 
 type
   TSceneCredits = class(T__SceneAncestor)
     Label1: TLabel;
+    Label2: TLabel;
+    ScrollBox1: TScrollBox;
+    btnBack: TButton;
+    procedure btnBackClick(Sender: TObject);
   private
   protected
   public
@@ -35,9 +40,16 @@ implementation
 
 uses
   System.Messaging,
-  uScene;
+  uScene,
+  uConsts,
+  uDMAboutBox;
 
 { TSceneCredits }
+
+procedure TSceneCredits.btnBackClick(Sender: TObject);
+begin
+  tscene.Current := TSceneType.Home;
+end;
 
 procedure TSceneCredits.FinalizeScene;
 begin
@@ -49,6 +61,11 @@ procedure TSceneCredits.InitializeScene;
 begin
   inherited;
   // TODO : à compléter
+  Label2.Text := TAboutBox.Current.OlfAboutDialog1.Titre + slinebreak +
+    TAboutBox.Current.OlfAboutDialog1.GetVersionDate + slinebreak +
+    TAboutBox.Current.OlfAboutDialog1.Copyright + slinebreak + slinebreak +
+    TAboutBox.Current.OlfAboutDialog1.Description.Text + slinebreak + slinebreak
+    + TAboutBox.Current.OlfAboutDialog1.Licence.Text + slinebreak + slinebreak;
 end;
 
 procedure TSceneCredits.TranslateTexts(const Language: string);
