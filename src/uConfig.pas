@@ -49,9 +49,29 @@ type
     /// </summary>
     property VirtualControlsOnOff: boolean read GetInterfaceTactileOnOff
       write SetInterfaceTactileOnOff;
+    /// <summary>
+    /// The language you should use on screen and messages to the gamer
+    /// </summary>
+    /// <remarks>
+    /// By default it's the operating system language
+    /// or the CDefaultLanguage constant if it's not available
+    /// </remarks>
     property Language: string read GetLanguage write SetLanguage;
+    /// <summary>
+    /// Return the instance to TConfig singleton
+    /// </summary>
     class function Current: TConfig;
+    /// <summary>
+    /// Returns current path of the config file
+    /// </summary>
+    function GetPath: string;
+    /// <summary>
+    /// Don't use the constructor, it's used only by the Current() method
+    /// </summary>
     constructor Create;
+    /// <summary>
+    /// Don't use the destructor, it's for internal use only
+    /// </summary>
     destructor Destroy; override;
   end;
 
@@ -171,6 +191,11 @@ begin
     lng := CDefaultLanguage;
 
   result := FParams.getValue('Language', lng);
+end;
+
+function TConfig.GetPath: string;
+begin
+  result := FParams.getFilePath;
 end;
 
 function TConfig.GetSoundEffects: boolean;
