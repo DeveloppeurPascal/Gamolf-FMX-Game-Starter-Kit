@@ -45,7 +45,8 @@ uses
   uGameData in 'uGameData.pas',
   Olf.RTL.Streams in '..\lib-externes\librairies\src\Olf.RTL.Streams.pas',
   Olf.RTL.Maths.Conversions in '..\lib-externes\librairies\src\Olf.RTL.Maths.Conversions.pas',
-  uBackgroundMusic in 'uBackgroundMusic.pas';
+  uBackgroundMusic in 'uBackgroundMusic.pas',
+  uSoundEffects in 'uSoundEffects.pas';
 
 {$R *.res}
 
