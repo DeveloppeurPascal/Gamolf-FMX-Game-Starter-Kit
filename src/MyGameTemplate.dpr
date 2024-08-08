@@ -41,7 +41,8 @@ uses
   uSceneOptions in 'Scenes\uSceneOptions.pas' {SceneOptions: TFrame},
   uSceneCredits in 'Scenes\uSceneCredits.pas' {SceneCredits: TFrame},
   uSceneHallOfFame in 'Scenes\uSceneHallOfFame.pas' {SceneHallOfFame: TFrame},
-  uUIElements in 'uUIElements.pas';
+  uUIElements in 'uUIElements.pas',
+  uGameData in 'uGameData.pas';
 
 {$R *.res}
 
