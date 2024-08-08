@@ -93,7 +93,7 @@ begin
   // deploy in .\assets\internal\
   Folder := System.IOUtils.tpath.GetDocumentsPath;
 {$ELSEIF defined(MSWINDOWS)}
-  // deploy in ;\
+  // deploy in .\
 {$IFDEF DEBUG}
   Folder := '..\..\..\_PRIVATE\musics\';
 {$ELSE}
@@ -106,6 +106,7 @@ begin
   // deploy in Contents\MacOS
   Folder := extractfilepath(paramstr(0));
 {$ELSEIF Defined(LINUX)}
+  // deploy in .\
   Folder := extractfilepath(paramstr(0));
 {$ELSE}
 {$MESSAGE FATAL 'OS non supporté'}
