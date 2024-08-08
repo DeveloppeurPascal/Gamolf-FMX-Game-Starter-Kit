@@ -4,14 +4,10 @@ interface
 
 uses
   System.Messaging,
-  _SceneAncestor;
+  _SceneAncestor,
+  uConsts;
 
 type
-{$SCOPEDENUMS ON}
-  TSceneType = (None, Home, Game, GameOverLost, GameOverWin, Credits, Options,
-    HallOfFame);
-  // add or remove values in this list depending on the scenes vailable in your game
-
   TScene = class
   private
     class var FCurrent: TSceneType;
