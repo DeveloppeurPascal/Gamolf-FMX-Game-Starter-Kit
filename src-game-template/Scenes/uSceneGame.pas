@@ -69,7 +69,6 @@ uses
 type
   TSceneGame = class(T__SceneAncestor)
     Label1: TLabel;
-    GridPanelLayout1: TGridPanelLayout;
     lblScore: TLabel;
     lblUserPseudo: TLabel;
     lblLevel: TLabel;
@@ -85,6 +84,9 @@ type
     GlowEffect3: TGlowEffect;
     btnPlayMusic: TButton;
     btnStopMusic: TButton;
+    GridPanelLayout2: TGridPanelLayout;
+    lblLives: TLabel;
+    GlowEffect4: TGlowEffect;
     procedure btnGoWinClick(Sender: TObject);
     procedure btnGoLostClick(Sender: TObject);
     procedure btnScoreClick(Sender: TObject);
@@ -97,6 +99,8 @@ type
   protected
     procedure DoScoreChanged(const Sender: TObject; const Msg: TMessage);
     procedure ShowScore;
+    procedure DoNbLivesChanged(const Sender: TObject; const Msg: TMessage);
+    procedure ShowNbLives;
     procedure DoLevelChanged(const Sender: TObject; const Msg: TMessage);
     procedure ShowLevel;
     procedure DoUserPseudoChanged(const Sender: TObject; const Msg: TMessage);
@@ -217,6 +221,16 @@ begin
     ShowLevel;
 end;
 
+procedure TSceneGame.DoNbLivesChanged(const Sender: TObject;
+const Msg: TMessage);
+begin
+  if not assigned(self) then
+    exit;
+
+  if assigned(Msg) and (Msg is TNbLivesChangedMessage) then
+    ShowNbLives;
+end;
+
 procedure TSceneGame.DoScoreChanged(const Sender: TObject; const Msg: TMessage);
 begin
   if not assigned(self) then
@@ -239,6 +253,8 @@ end;
 procedure TSceneGame.HideScene;
 begin
   inherited;
+  TMessageManager.DefaultManager.Unsubscribe(TNbLivesChangedMessage,
+    DoNbLivesChanged, true);
   TMessageManager.DefaultManager.Unsubscribe(TScoreChangedMessage,
     DoScoreChanged, true);
   TMessageManager.DefaultManager.Unsubscribe(TLevelChangedMessage,
@@ -256,6 +272,9 @@ end;
 procedure TSceneGame.ShowScene;
 begin
   inherited;
+  ShowNbLives;
+  TMessageManager.DefaultManager.SubscribeToMessage(TNbLivesChangedMessage,
+    DoNbLivesChanged);
   ShowScore;
   TMessageManager.DefaultManager.SubscribeToMessage(TScoreChangedMessage,
     DoScoreChanged);
@@ -319,6 +338,11 @@ end;
 procedure TSceneGame.ShowLevel;
 begin
   lblLevel.Text := 'Level ' + TGameData.DefaultGameData.Level.ToString;
+end;
+
+procedure TSceneGame.ShowNbLives;
+begin
+  lblLives.Text := 'Lives ' + TGameData.DefaultGameData.NbLives.ToString;
 end;
 
 procedure TSceneGame.ShowScore;

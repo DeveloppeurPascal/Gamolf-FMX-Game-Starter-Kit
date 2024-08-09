@@ -89,15 +89,27 @@ type
   end;
 
   /// <summary>
+  /// Subscribe to this message if you need to be informed about a lives number change
+  /// </summary>
+  TNbLivesChangedMessage = class(TMessage)
+  private
+    FNbLives: int64;
+  protected
+  public
+    property NbLives: int64 read FNbLives;
+    constructor Create(const ANbLives: int64);
+    class procedure Broadcast(const ANbLives: int64);
+  end;
+
+  /// <summary>
   /// Subscribe to this message if you need to be informed about a user pseudo change
   /// </summary>
   TPseudoChangedMessage = class(TMessage)
   private
     FPseudo: string;
-    procedure SetPseudo(const Value: string);
   protected
   public
-    property Pseudo: string read FPseudo write SetPseudo;
+    property Pseudo: string read FPseudo;
     constructor Create(const APseudo: string);
     class procedure Broadcast(const APseudo: string);
   end;
@@ -123,6 +135,8 @@ type
     FUserPseudo: string;
     FScore: int64;
     FFilePath: string;
+    FNbLives: int64;
+    procedure SetNbLives(const Value: int64);
     function GetFileName: string;
     function GetPath: string;
     procedure SetLevel(const Value: int64);
@@ -143,6 +157,10 @@ type
     /// It's the current player level
     /// </summary>
     property Level: int64 read FLevel write SetLevel;
+    /// <summary>
+    /// It's the current player lives number level
+    /// </summary>
+    property NbLives: int64 read FNbLives write SetNbLives;
     /// <summary>
     /// It's the current player pseudo (if it has been asked)
     /// </summary>
@@ -303,8 +321,9 @@ end;
 
 procedure TGameData.Clear;
 begin
-  Level := 0;
-  Score := 0;
+  FLevel := CDefaultLevel;
+  FScore := CDefaultScore;
+  FNbLives := CDefaultNbLives;
   UserPseudo := '';
   FFilePath := '';
   FHasChanged := false;
@@ -322,8 +341,9 @@ end;
 constructor TGameData.Create;
 begin
   inherited;
-  FLevel := 0;
-  FScore := 0;
+  FLevel := CDefaultLevel;
+  FScore := CDefaultScore;
+  FNbLives := CDefaultNbLives;
   FUserPseudo := '';
   FPath := '';
   FFilePath := '';
@@ -409,6 +429,9 @@ begin
     // Load the score
     if (sizeof(FScore) <> AStream.read(FScore, sizeof(FScore))) then
       raise exception.Create('Wrong File format !');
+    // Load the number of lives
+    if (sizeof(FNbLives) <> AStream.read(FNbLives, sizeof(FNbLives))) then
+      raise exception.Create('Wrong File format !');
     // Load user pseudo
     FUserPseudo := LoadStringFromStream(AStream);
   end;
@@ -470,6 +493,7 @@ begin
   AStream.Write(VersionNum, sizeof(VersionNum));
   AStream.Write(FLevel, sizeof(FLevel));
   AStream.Write(FScore, sizeof(FScore));
+  AStream.Write(FNbLives, sizeof(FNbLives));
   SaveStringToStream(FUserPseudo, AStream);
   FHasChanged := false;
 end;
@@ -481,6 +505,16 @@ begin
     FLevel := Value;
     FHasChanged := true;
     TLevelChangedMessage.Broadcast(FLevel);
+  end;
+end;
+
+procedure TGameData.SetNbLives(const Value: int64);
+begin
+  if (FNbLives <> Value) then
+  begin
+    FNbLives := Value;
+    FHasChanged := true;
+    TNbLivesChangedMessage.Broadcast(FNbLives);
   end;
 end;
 
@@ -547,9 +581,25 @@ begin
   FPseudo := APseudo;
 end;
 
-procedure TPseudoChangedMessage.SetPseudo(const Value: string);
+{ TNbLivesChangedMessage }
+
+class procedure TNbLivesChangedMessage.Broadcast(const ANbLives: int64);
+var
+  LNbLives: int64;
 begin
-  FPseudo := Value;
+  LNbLives := ANbLives;
+  tthread.Queue(nil,
+    procedure
+    begin
+      TMessageManager.DefaultManager.SendMessage(nil,
+        TLevelChangedMessage.Create(LNbLives));
+    end);
+end;
+
+constructor TNbLivesChangedMessage.Create(const ANbLives: int64);
+begin
+  inherited Create;
+  FNbLives := ANbLives;
 end;
 
 initialization

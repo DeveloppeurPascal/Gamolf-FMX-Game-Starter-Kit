@@ -10,92 +10,12 @@ inherited SceneGame: TSceneGame
     Text = 'Game'
     TabOrder = 0
   end
-  object GridPanelLayout1: TGridPanelLayout
-    Align = Bottom
-    Position.Y = 478.000000000000000000
-    Size.Width = 837.000000000000000000
-    Size.Height = 50.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 2
-    ColumnCollection = <
-      item
-        Value = 30.000000000000000000
-      end
-      item
-        Value = 40.000000000000000000
-      end
-      item
-        Value = 30.000000000000000000
-      end>
-    ControlCollection = <
-      item
-        Column = 0
-        Control = lblScore
-        Row = 0
-      end
-      item
-        Column = 1
-        Control = lblUserPseudo
-        Row = 0
-      end
-      item
-        Column = 2
-        Control = lblLevel
-        Row = 0
-      end>
-    RowCollection = <
-      item
-        Value = 100.000000000000000000
-      end>
-    object lblScore: TLabel
-      Align = Client
-      Size.Width = 251.100006103515600000
-      Size.Height = 50.000000000000000000
-      Size.PlatformDefault = False
-      TextSettings.HorzAlign = Center
-      Text = 'lblScore'
-      TabOrder = 0
-      object GlowEffect1: TGlowEffect
-        Softness = 0.400000005960464400
-        GlowColor = claGold
-        Opacity = 0.899999976158142100
-      end
-    end
-    object lblUserPseudo: TLabel
-      Align = Client
-      Size.Width = 334.800018310546900000
-      Size.Height = 50.000000000000000000
-      Size.PlatformDefault = False
-      TextSettings.HorzAlign = Center
-      Text = 'lblUserPseudo'
-      TabOrder = 1
-      object GlowEffect2: TGlowEffect
-        Softness = 0.400000005960464400
-        GlowColor = claGold
-        Opacity = 0.899999976158142100
-      end
-    end
-    object lblLevel: TLabel
-      Align = Client
-      Size.Width = 251.099975585937500000
-      Size.Height = 50.000000000000000000
-      Size.PlatformDefault = False
-      TextSettings.HorzAlign = Center
-      Text = 'lblLevel'
-      TabOrder = 2
-      object GlowEffect3: TGlowEffect
-        Softness = 0.400000005960464400
-        GlowColor = claGold
-        Opacity = 0.899999976158142100
-      end
-    end
-  end
   object FlowLayout1: TFlowLayout
     Align = Top
     Size.Width = 837.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 4
+    TabOrder = 3
     Justify = Left
     JustifyLastLine = Left
     FlowDirection = LeftToRight
@@ -218,6 +138,109 @@ inherited SceneGame: TSceneGame
       Text = 'btnStopMusic'
       TextSettings.Trimming = None
       OnClick = btnStopMusicClick
+    end
+  end
+  object GridPanelLayout2: TGridPanelLayout
+    Align = Bottom
+    Position.Y = 428.000000000000000000
+    Size.Width = 837.000000000000000000
+    Size.Height = 100.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    ColumnCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = lblUserPseudo
+        Row = 0
+      end
+      item
+        Column = 1
+        Control = lblScore
+        Row = 0
+      end
+      item
+        Column = 0
+        Control = lblLevel
+        Row = 1
+      end
+      item
+        Column = 1
+        Control = lblLives
+        Row = 1
+      end>
+    RowCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end>
+    object lblUserPseudo: TLabel
+      Align = Client
+      Anchors = []
+      Size.Width = 418.500000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      Text = 'lblUserPseudo'
+      TabOrder = 1
+      object GlowEffect2: TGlowEffect
+        Softness = 0.400000005960464400
+        GlowColor = claGold
+        Opacity = 0.899999976158142100
+      end
+    end
+    object lblScore: TLabel
+      Align = Client
+      Anchors = []
+      Size.Width = 418.500000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      Text = 'lblScore'
+      TabOrder = 0
+      object GlowEffect1: TGlowEffect
+        Softness = 0.400000005960464400
+        GlowColor = claGold
+        Opacity = 0.899999976158142100
+      end
+    end
+    object lblLevel: TLabel
+      Align = Client
+      Anchors = []
+      Size.Width = 418.500000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      Text = 'lblLevel'
+      TabOrder = 3
+      object GlowEffect3: TGlowEffect
+        Softness = 0.400000005960464400
+        GlowColor = claGold
+        Opacity = 0.899999976158142100
+      end
+    end
+    object lblLives: TLabel
+      Align = Client
+      Anchors = []
+      Size.Width = 418.500000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      Text = 'lblLives'
+      TabOrder = 2
+      object GlowEffect4: TGlowEffect
+        Softness = 0.400000005960464400
+        GlowColor = claGold
+        Opacity = 0.899999976158142100
+      end
     end
   end
 end
