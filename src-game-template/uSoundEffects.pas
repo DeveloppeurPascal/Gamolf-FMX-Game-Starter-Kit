@@ -76,7 +76,8 @@ uses
   uConfig,
   Gamolf.FMX.MusicLoop,
   System.SysUtils,
-  System.IOUtils;
+  System.IOUtils,
+  uConsts;
 
 class procedure TSoundEffects.StopAll;
 begin
@@ -105,7 +106,7 @@ begin
 {$ELSEIF defined(MSWINDOWS)}
   // deploy in .\
 {$IFDEF DEBUG}
-  Folder := '..\..\..\_PRIVATE\sounds\';
+  Folder := CDefaultSoundEffectsPath;
 {$ELSE}
   Folder := extractfilepath(paramstr(0));
 {$ENDIF}

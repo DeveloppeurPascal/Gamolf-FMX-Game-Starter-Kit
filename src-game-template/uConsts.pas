@@ -116,6 +116,13 @@ const
   CBackgroundMusicFileName = '';
 
   /// <summary>
+  /// Relative (from Windows compiled EXE) or absolute path to find the
+  /// sound effects file when you execute the program in DEBUG on Windows
+  /// (without deployment)
+  /// </summary>
+  CDefaultSoundEffectsPath = '..\..\..\_PRIVATE\sounds\';
+
+  /// <summary>
   /// Used as a folder name to store your game folder
   /// </summary>
   /// <remarks>
