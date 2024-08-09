@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-08T21:43:26.000+02:00
-/// Signature : 5b7d6272b6b264ff9a4848340c655531aca667c5
+/// File last update : 2024-08-09T21:31:20.000+02:00
+/// Signature : dbbff5258d6b775dd6ddb0f008213da15aa69d11
 /// ***************************************************************************
 /// </summary>
 
