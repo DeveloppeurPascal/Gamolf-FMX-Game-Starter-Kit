@@ -30,7 +30,7 @@ Ce dépôt de code contient un projet développé en langage Pascal Objet sous D
 
 ### Twitch
 
-Suivez mes streams de développement de logiciels, jeux vidéo, applications mobiles et sites web sur [ma chaîne Twitch](https://www.twitch.tv/patrickpremartin) ou en rediffusion sur [Serial Streameur](https://serialstreameur.fr) la plupart du temps en français.
+Suivez mes streams de développement de logiciels, jeux vidéo, applications mobiles et sites web sur [ma chaîne Twitch](https://www.twitch.tv/patrickpremartin) ou en rediffusion sur [Serial Streameur](https://serialstreameur.fr/gamolf-fmx-game-template.html) la plupart du temps en français.
 
 ## Utiliser ce logiciel
 
