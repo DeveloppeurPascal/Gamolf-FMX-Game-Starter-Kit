@@ -44,6 +44,10 @@ unit uSceneBackground;
 
 interface
 
+{$MESSAGE WARN 'If this scene interest you save this file in your project folder and customize the copy. Don''t change the template version if you want to be able to update it.'}
+// TODO : If this scene interest you save this file in your project folder and customize the copy. Don''t change the template version if you want to be able to update it.
+// TODO : If you don't want it in your project remove the unit from your project
+
 uses
   System.SysUtils,
   System.Types,
@@ -65,33 +69,17 @@ type
   private
   protected
   public
-    procedure TranslateTexts(const Language: string); override;
-    procedure InitializeScene; override;
-    procedure FinalizeScene; override;
+    procedure ShowScene; override;
   end;
 
 implementation
 
 {$R *.fmx}
 
-procedure TSceneBackground.FinalizeScene;
-begin
-  inherited;
-  // TODO : stop your background features and free it's memory if it's not owned by Self
-end;
-
-procedure TSceneBackground.InitializeScene;
+procedure TSceneBackground.ShowScene;
 begin
   inherited;
   SendToBack;
-
-  // TODO : start what you want to do in your game background, remove the default TRectangle or do anything else
-end;
-
-procedure TSceneBackground.TranslateTexts(const Language: string);
-begin
-  inherited;
-  // TODO : use it if you have texts in the background scene
 end;
 
 end.

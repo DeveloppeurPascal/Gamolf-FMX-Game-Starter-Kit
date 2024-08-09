@@ -44,6 +44,10 @@ unit uSceneGame;
 
 interface
 
+{$MESSAGE WARN 'If this scene interest you save this file in your project folder and customize the copy. Don''t change the template version if you want to be able to update it.'}
+// TODO : If this scene interest you save this file in your project folder and customize the copy. Don''t change the template version if you want to be able to update it.
+// TODO : If you don't want it in your project remove the unit from your project
+
 uses
   System.SysUtils,
   System.Types,
@@ -100,9 +104,8 @@ type
     procedure DoBackgroundMusicStatusChanged(const Sender: TObject;
       const Msg: TMessage);
   public
-    procedure InitializeScene; override;
-    procedure FinalizeScene; override;
-    procedure TranslateTexts(const Language: string); override;
+    procedure ShowScene; override;
+    procedure HideScene; override;
   end;
 
 implementation
@@ -233,7 +236,7 @@ begin
     ShowUserPseudo;
 end;
 
-procedure TSceneGame.FinalizeScene;
+procedure TSceneGame.HideScene;
 begin
   inherited;
   TMessageManager.DefaultManager.Unsubscribe(TScoreChangedMessage,
@@ -248,11 +251,9 @@ begin
   // stop your game loop
   // stop your workers
   // etc...
-
-  // TODO : à compléter
 end;
 
-procedure TSceneGame.InitializeScene;
+procedure TSceneGame.ShowScene;
 begin
   inherited;
   ShowScore;
@@ -313,8 +314,6 @@ begin
   // start your game loop
   // start your workers
   // etc...
-
-  // TODO : à compléter
 end;
 
 procedure TSceneGame.ShowLevel;
@@ -330,12 +329,6 @@ end;
 procedure TSceneGame.ShowUserPseudo;
 begin
   lblUserPseudo.Text := 'Player "' + TGameData.DefaultGameData.UserPseudo + '"';
-end;
-
-procedure TSceneGame.TranslateTexts(const Language: string);
-begin
-  inherited;
-  // TODO : à compléter
 end;
 
 initialization

@@ -44,6 +44,10 @@ unit uSceneCredits;
 
 interface
 
+{$MESSAGE WARN 'If this scene interest you save this file in your project folder and customize the copy. Don''t change the template version if you want to be able to update it.'}
+// TODO : If this scene interest you save this file in your project folder and customize the copy. Don''t change the template version if you want to be able to update it.
+// TODO : If you don't want it in your project remove the unit from your project
+
 uses
   System.SysUtils,
   System.Types,
@@ -70,9 +74,7 @@ type
   private
   protected
   public
-    procedure InitializeScene; override;
-    procedure FinalizeScene; override;
-    procedure TranslateTexts(const Language: string); override;
+    procedure ShowScene; override;
   end;
 
 implementation
@@ -95,13 +97,7 @@ begin
   tscene.Current := TSceneType.Home;
 end;
 
-procedure TSceneCredits.FinalizeScene;
-begin
-  inherited;
-  // TODO : à compléter
-end;
-
-procedure TSceneCredits.InitializeScene;
+procedure TSceneCredits.ShowScene;
 begin
   inherited;
 
@@ -112,16 +108,10 @@ begin
     ord(TSVGInputPromptsIndex.SteamButtonColorXOutline), 'Back');
 
   Label2.Text := TAboutBox.Current.OlfAboutDialog1.Titre + slinebreak +
-    TAboutBox.Current.OlfAboutDialog1.GetVersionDate + slinebreak +
+    TAboutBox.Current.OlfAboutDialog1.GetVersionDate + slinebreak + '(c) ' +
     TAboutBox.Current.OlfAboutDialog1.Copyright + slinebreak + slinebreak +
     TAboutBox.Current.OlfAboutDialog1.Description.Text + slinebreak + slinebreak
     + TAboutBox.Current.OlfAboutDialog1.Licence.Text + slinebreak + slinebreak;
-end;
-
-procedure TSceneCredits.TranslateTexts(const Language: string);
-begin
-  inherited;
-  // TODO : à compléter
 end;
 
 initialization

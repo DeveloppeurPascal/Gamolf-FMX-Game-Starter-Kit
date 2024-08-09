@@ -44,6 +44,10 @@ unit uSceneHallOfFame;
 
 interface
 
+{$MESSAGE WARN 'If this scene interest you save this file in your project folder and customize the copy. Don''t change the template version if you want to be able to update it.'}
+// TODO : If this scene interest you save this file in your project folder and customize the copy. Don''t change the template version if you want to be able to update it.
+// TODO : If you don't want it in your project remove the unit from your project
+
 uses
   System.SysUtils,
   System.Types,
@@ -67,9 +71,7 @@ type
   private
   protected
   public
-    procedure InitializeScene; override;
-    procedure FinalizeScene; override;
-    procedure TranslateTexts(const Language: string); override;
+    procedure ShowScene; override;
   end;
 
 implementation
@@ -91,13 +93,7 @@ begin
   tscene.Current := TSceneType.Home;
 end;
 
-procedure TSceneHallOfFame.FinalizeScene;
-begin
-  inherited;
-  // TODO : à compléter
-end;
-
-procedure TSceneHallOfFame.InitializeScene;
+procedure TSceneHallOfFame.ShowScene;
 begin
   inherited;
   TUIItemsList.Current.AddControl(btnBack, nil, nil, nil, nil, true, true);
@@ -105,12 +101,6 @@ begin
   THelpBarManager.Current.OpenHelpBar;
   THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardEscape),
     ord(TSVGInputPromptsIndex.SteamButtonColorXOutline), 'Back');
-end;
-
-procedure TSceneHallOfFame.TranslateTexts(const Language: string);
-begin
-  inherited;
-  // TODO : à compléter
 end;
 
 initialization

@@ -44,6 +44,12 @@ unit fMain;
 
 interface
 
+// If you want to be able to update the template files in your game project,
+// we recommend that you don't modify this file. Its operation should support
+// all standard use cases. Save the file in your project and work on the copy.
+// In this case, we suggest you open a ticket on the code repository to explain
+// your needs and the changes to be made to the template.
+
 uses
   System.SysUtils,
   System.Messaging,
@@ -69,7 +75,17 @@ type
     mnuMacOSAppname: TMenuItem;
     mnuAbout: TMenuItem;
     DGEGamepadDetected1: TDGEGamepadDetected;
+    /// <remarks>
+    /// Never use DGEFMXHelpBar1 or frmMain.DGEFMXHelpBar1, it will be removed
+    /// in a future release of this template.
+    /// To access to the Help Bar, use THelpBarManager.Current from
+    /// uDMHelpBarManager unit.
+    /// </remarks>
     DGEFMXHelpBar1: TDGEFMXHelpBar;
+    /// <remarks>
+    /// This label is a warning, it's removed during form creation.
+    /// Don't use it in your code or you'll have access violations !
+    /// </remarks>
     Label1: TLabel;
     procedure FormKeyDown(Sender: TObject; var Key: Word; var KeyChar: WideChar;
       Shift: TShiftState);
@@ -113,7 +129,7 @@ begin
 {$ENDIF}
   BackgroundScene := TSceneBackground.Create(self);
   BackgroundScene.parent := self;
-  BackgroundScene.InitializeScene;
+  BackgroundScene.ShowScene;
 
   TMessageManager.DefaultManager.SubscribeToMessage(TTranslateTextsMessage,
     TranslateTexts);
@@ -140,7 +156,7 @@ procedure TfrmMain.FormDestroy(Sender: TObject);
 begin
   TMessageManager.DefaultManager.Unsubscribe(TTranslateTextsMessage,
     TranslateTexts, true);
-  BackgroundScene.FinalizeScene;
+  BackgroundScene.HideScene;
   BackgroundScene.Free;
 end;
 
@@ -175,8 +191,6 @@ begin
 end;
 
 procedure TfrmMain.TranslateTexts(const Sender: TObject; const Msg: TMessage);
-// var
-// ttm: TTranslateTextsMessage;
 begin
   if not assigned(self) then
     Exit;
@@ -185,39 +199,11 @@ begin
   begin
     if assigned(MainMenu) then
       mnuAbout.Text := TAboutBox.GetCaption;
-
-    // Uncomment and fill this code to translate texts on this form
-
-    // ttm := Msg as TTranslateTextsMessage;
-    // if ttm.Language = 'en' then
-    // begin
-    // end
-    // else if ttm.Language = 'fr' then
-    // begin
-    // end
-    // else if ttm.Language = 'it' then
-    // begin
-    // end
-    // else if ttm.Language = 'pt' then
-    // begin
-    // end
-    // else if ttm.Language = 'sp' then
-    // begin
-    // end
-    // else if ttm.Language = 'de' then
-    // begin
-    // end
-    // else
-    // raise Exception.Create('Sorry, I can''t translate in "' +
-    // ttm.Language + '".');
   end;
 end;
 
 initialization
 
-{$IFDEF DEBUG}
-  ReportMemoryLeaksOnShutdown := true;
-{$ENDIF}
 randomize;
 
 end.

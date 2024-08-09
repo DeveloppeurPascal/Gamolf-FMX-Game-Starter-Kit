@@ -44,6 +44,10 @@ unit uSceneHome;
 
 interface
 
+{$MESSAGE WARN 'If this scene interest you save this file in your project folder and customize the copy. Don''t change the template version if you want to be able to update it.'}
+// TODO : If this scene interest you save this file in your project folder and customize the copy. Don''t change the template version if you want to be able to update it.
+// TODO : If you don't want it in your project remove the unit from your project
+
 uses
   System.SysUtils,
   System.Types,
@@ -79,9 +83,8 @@ type
   private
   protected
   public
-    procedure InitializeScene; override;
-    procedure FinalizeScene; override;
-    procedure TranslateTexts(const Language: string); override;
+    procedure ShowScene; override;
+    procedure HideScene; override;
   end;
 
 implementation
@@ -132,14 +135,13 @@ begin
   TScene.Current := TSceneType.Exit;
 end;
 
-procedure TSceneHome.FinalizeScene;
+procedure TSceneHome.HideScene;
 begin
   inherited;
-  // TODO : à compléter
   TSoundEffects.Play(TSoundEffectType.demo);
 end;
 
-procedure TSceneHome.InitializeScene;
+procedure TSceneHome.ShowScene;
 begin
   inherited;
 
@@ -188,12 +190,6 @@ begin
     ord(TSVGInputPromptsIndex.SteamButtonColorAOutline), 'Click');
 
   TSoundEffects.Play(TSoundEffectType.demo);
-end;
-
-procedure TSceneHome.TranslateTexts(const Language: string);
-begin
-  inherited;
-  // TODO : à compléter
 end;
 
 initialization
