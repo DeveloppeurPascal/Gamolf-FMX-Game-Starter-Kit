@@ -12,6 +12,14 @@ Handle TODOs and compilation messages.
 
 As far as possible, avoid modifying the template files; instead, create your own. This will enable you to update the original ones and benefit from new features (or patches) in a totally transparent way.
 
+Don't know how to code games ? Look at these projects:
+
+* [Games based on this game template](https://github.com/DeveloppeurPascal?tab=repositories&q=gfgt-game)
+* [Games in Delphi](https://github.com/DeveloppeurPascal?tab=repositories&q=delphi-game)
+* [Delphi FMX Game Snippets](https://github.com/DeveloppeurPascal/Delphi-FMX-Game-Snippets)
+
+You are looking for an other game engine ? Check [these links](https://github.com/Fr0sT-Brutal/awesome-pascal?tab=readme-ov-file#game-dev).
+
 This code repository contains a project developed in Object Pascal language under Delphi. You don't know what Delphi is and where to download it ? You'll learn more [on this web site](https://delphi-resources.developpeur-pascal.fr/).
 
 ## Talks and conferences

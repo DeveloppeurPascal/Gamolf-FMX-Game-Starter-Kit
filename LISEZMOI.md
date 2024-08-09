@@ -12,6 +12,14 @@ Traitez les TODOs et les messages de compilation.
 
 Evitez autant que possible de modifier les fichiers du template, créez plutôt les vôtres. Ca vous permettra ensuite de mettre à jour ceux d'origine et bénéficier des nouvelles fonctionnalités (ou correctifs) de façon totalement transparente.
 
+Vous ignorez comment coder des jeux ? Regardez ces projets:
+
+* [Jeux vidéos basés sur ce template](https://github.com/DeveloppeurPascal?tab=repositories&q=gfgt-game)
+* [Jeux vidéo en Delphi](https://github.com/DeveloppeurPascal?tab=repositories&q=delphi-game)
+* [Delphi FMX Game Snippets](https://github.com/DeveloppeurPascal/Delphi-FMX-Game-Snippets)
+
+Vous cherchez un autre moteur de jeu vidéo ? Consultez [ces liens](https://github.com/Fr0sT-Brutal/awesome-pascal?tab=readme-ov-file#game-dev).
+
 Ce dépôt de code contient un projet développé en langage Pascal Objet sous Delphi. Vous ne savez pas ce qu'est Dephi ni où le télécharger ? Vous en saurez plus [sur ce site web](https://delphi-resources.developpeur-pascal.fr/).
 
 ## Présentations et conférences
