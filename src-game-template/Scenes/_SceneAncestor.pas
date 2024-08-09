@@ -154,6 +154,9 @@ begin
   TMessageManager.DefaultManager.Unsubscribe(TTranslateTextsMessage,
     DoTranslateTexts, true);
 
+  if TUIItemsList.Current.Focused <> nil then
+    TUIItemsList.Current.Focused.ResetFocus;
+  // TODO -opprem -cbug : à retirer une fois ce ticket clôturé https://github.com/DeveloppeurPascal/Delphi-Game-Engine/issues/212
   TUIItemsList.Current.RemoveLayout;
 
   THelpBarManager.Current.CloseHelpBar;
