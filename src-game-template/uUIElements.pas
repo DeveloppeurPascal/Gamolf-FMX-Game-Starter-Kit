@@ -62,7 +62,7 @@ type
     ['{0C1BD2A6-6312-4C78-89B3-550BF8425DD1}']
     procedure SetFocus;
     procedure ResetFocus;
-    procedure Click(Sender: TObject);
+    procedure Click;
   end;
 
   /// <summary>
@@ -121,7 +121,7 @@ begin
           ((Sender as TUIElement).TagObject is TControl) then
           if ((Sender as TUIElement).TagObject as TControl)
             .GetInterface(IUIControl, UIControl) then
-            UIControl.Click((Sender as TUIElement).TagObject as TControl)
+            UIControl.Click
           else if assigned(((Sender as TUIElement).TagObject as TControl)
             .OnClick) then
             ((Sender as TUIElement).TagObject as TControl)
