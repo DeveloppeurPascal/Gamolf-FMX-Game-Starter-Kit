@@ -100,13 +100,20 @@ const
 {$ENDIF}
   //
   /// <summary>
+  /// Relative (from Windows compiled EXE) or absolute path to find the
+  /// background music file when you execute the program in DEBUG on Windows
+  /// (without deployment)
+  /// </summary>
+  CDefaultBackgroundMusicPath = '..\..\..\_PRIVATE\musics\';
+
+  /// <summary>
   /// Add the name of your WAV or MP3 file to use as background music
   /// </summary>
   /// <remarks>
-  /// For example : 'MyMusic.mp3', stored locally in _PRIVATE/musics,
+  /// For example : 'MyMusic.mp3', stored locally in CDefaultBackgroundMusicPath,
   /// added to deployment project options for DEBUG or RELEASE other than Windows
   /// </remarks>
-  CBackgroundMusicFileName = 'SmoothRide.mp3';
+  CBackgroundMusicFileName = '';
 
   /// <summary>
   /// Used as a folder name to store your game folder

@@ -102,7 +102,7 @@ begin
 {$ELSEIF defined(MSWINDOWS)}
   // deploy in ;\
 {$IFDEF DEBUG}
-  Folder := '..\..\..\_PRIVATE\musics\';
+  Folder := CDefaultBackgroundMusicPath;
 {$ELSE}
   Folder := extractfilepath(paramstr(0));
 {$ENDIF}
