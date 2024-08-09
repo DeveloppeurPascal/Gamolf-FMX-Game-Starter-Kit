@@ -1,19 +1,24 @@
-# Delphi-Projects-Template
+# Gamolf FMX Game Template
 
 [Cette page en français.](LISEZMOI.md)
 
-**A git repository template for my Delphi (or other) projects.**
+The "Gamolf FMX Game Template" is both a "technical" example of a video game developed in Delphi with everything you need inside, and a reusable project template you can customize for your own games.
 
-**This template is distributed under the MIT license. The AGPL license is for the projects I create from this code repository template. Use whatever license you want if you use this template.**
+The files provided are fully functional. Numerous comments are included in the sources to explain how they work and what you need to copy, override or customize to make video games without starting from scratch.
+
+To use this template you can either repackage it as a ZIP file and add dependencies by hand, use it as a template to create your game's code repository, or use it as a submodule in a code repository. An instruction manual and detailed steps will be provided shortly, while we add a few examples of use and record explanatory videos.
+
+Handle TODOs and compilation messages.
+
+As far as possible, avoid modifying the template files; instead, create your own. This will enable you to update the original ones and benefit from new features (or patches) in a totally transparent way.
 
 This code repository contains a project developed in Object Pascal language under Delphi. You don't know what Delphi is and where to download it ? You'll learn more [on this web site](https://delphi-resources.developpeur-pascal.fr/).
 
 ## Talks and conferences
 
-### XXX 2024
+### Dev Days of Summer 2024
 
-* [talk title](talk URL) (in English)
-* [talk title](talk URL) (in French)
+* [Make games in Delphi (2024 edition)](https://serialstreameur.fr/make-games-in-delphi-2024-edition.html) (in English)
 
 ### Twitch
 
@@ -21,26 +26,17 @@ Follow my development streams of software, video games, mobile applications and 
 
 ## Using this software
 
-This software is available in a directly installable or executable production version. It is distributed as shareware.
-
-You can download and redistribute it free of charge, provided you do not modify its content (installer, program, additional files, etc.).
-
-[Download program or installer](DDD) (WIP)
-
-If you use this software regularly and are satisfied with it, you are invited to purchase an end-user license. Purchasing a license will give you access to software updates, as well as enabling optional features.
-
-[Buy a license](FFF) (WIP)
-
-You can also [visit the software website](EEE) to find out more about how it works, access videos and articles, find out about the different versions available and their features, contact user support...
+[Visit the software website](https://gametemplate.developpeur-pascal.fr/) to find out more about how it works, access videos and articles, find out about the different versions available and their features, contact user support...
 
 ## Source code installation
 
-To download this code repository, we recommend using "git", but you can also download a ZIP file directly from [its GitHub repository](https://github.com/DeveloppeurPascal/XXXXXXXXXX).
+To download this code repository, we recommend using "git", but you can also download a ZIP file directly from [its GitHub repository](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template).
 
 This project uses dependencies in the form of sub-modules. They will be absent from the ZIP file. You'll have to download them by hand.
 
-* [YYY](ZZZ) must be installed in the ./lib-externes/YYY subfolder.
-* [YYY](ZZZ) must be installed in the ./lib-externes/YYY subfolder.
+* [DeveloppeurPascal/AboutDialog-Delphi-Component](https://github.com/DeveloppeurPascal/AboutDialog-Delphi-Component) must be installed in the ./lib-externes/AboutDialog-Delphi-Component subfolder.
+* [DeveloppeurPascal/Delphi-Game-Engine](https://github.com/DeveloppeurPascal/Delphi-Game-Engine) must be installed in the ./lib-externes/Delphi-Game-Engine subfolder.
+* [DeveloppeurPascal/librairies](https://github.com/DeveloppeurPascal/librairies) must be installed in the ./lib-externes/librairies subfolder.
 
 ## Compatibility
 
@@ -50,7 +46,7 @@ Normally, my libraries and components should also run on at least the current ve
 
 There's no guarantee of compatibility with earlier versions, even though I try to keep my code clean and avoid using too many of the new ways of writing in it (type inference, inline var and multiline strings).
 
-If you detect any anomalies on earlier versions, please don't hesitate to [report them](https://github.com/DeveloppeurPascal/XXXXXXXXXX/issues) so that I can test and try to correct or provide a workaround.
+If you detect any anomalies on earlier versions, please don't hesitate to [report them](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template/issues) so that I can test and try to correct or provide a workaround.
 
 ## License to use this code repository and its contents
 
@@ -69,7 +65,7 @@ Certain elements included in this repository may be subject to third-party usage
 
 ## How to ask a new feature, report a bug or a security issue ?
 
-If you want an answer from the project owner the best way to ask for a new feature or report a bug is to go to [the GitHub repository](https://github.com/DeveloppeurPascal/XXXXXXXXXX) and [open a new issue](https://github.com/DeveloppeurPascal/XXXXXXXXXX/issues).
+If you want an answer from the project owner the best way to ask for a new feature or report a bug is to go to [the GitHub repository](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template) and [open a new issue](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template/issues).
 
 If you found a security issue please don't report it publicly before a patch is available. Explain the case by [sending a private message to the author](https://developpeur-pascal.fr/nous-contacter.php).
 

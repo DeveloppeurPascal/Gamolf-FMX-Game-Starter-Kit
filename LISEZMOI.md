@@ -1,19 +1,24 @@
-# Delphi-Projects-Template
+# Gamolf FMX Game Template
 
 [This page in English.](README.md)
 
-**Un modèle de dépôt git pour mes projets Delphi (ou autres).**
+"Gamolf FMX Game Template" est à la fois un exemple "technique" de jeu vidéo développé en Delphi avec tout ce qu'il faut dedans et un modèle de projet réutilisable à personnaliser pour vos propres jeux.
 
-**Ce template est distribué sous licence MIT. La licence AGPL est pour les projets que je crée à partir de ce template de dépôt de code. Utilisez la licence que vous voulez si vous utilisez ce template.**
+Les fichiers fournis sont fonctionnels. De nombreux commentaires sont inclus dans les sources pour expliquer leur fonctionnement et ce que vous devez copier, surcharger ou personnaliser pour faire des jeux vidéo sans partir de zéro.
+
+Pour utiliser ce modèle vous pouvez soit le rapatrier comme fichier ZIP et ajouter les dépendances à la main, soit l'utiliser comme template pour créer le dépôt de code de votre jeu, soit l'utiliser en sous-module dans un dépôt de code. Un mode d'emploi et les étapes détaillées seront fournis prochainement, le temps d'ajouter quelques exemples d'utilisation et d'enregistrer des vidéos explicatives.
+
+Traitez les TODOs et les messages de compilation.
+
+Evitez autant que possible de modifier les fichiers du template, créez plutôt les vôtres. Ca vous permettra ensuite de mettre à jour ceux d'origine et bénéficier des nouvelles fonctionnalités (ou correctifs) de façon totalement transparente.
 
 Ce dépôt de code contient un projet développé en langage Pascal Objet sous Delphi. Vous ne savez pas ce qu'est Dephi ni où le télécharger ? Vous en saurez plus [sur ce site web](https://delphi-resources.developpeur-pascal.fr/).
 
 ## Présentations et conférences
 
-### XXX 2024
+### Dev Days of Summer 2024
 
-* [talk title](talk url) (en anglais)
-* [talk title](talk url) (en français)
+* [Make games in Delphi (2024 edition)](https://serialstreameur.fr/make-games-in-delphi-2024-edition.html) (en anglais)
 
 ### Twitch
 
@@ -21,26 +26,17 @@ Suivez mes streams de développement de logiciels, jeux vidéo, applications mob
 
 ## Utiliser ce logiciel
 
-Ce logiciel est disponible dans une version de production directement installable ou exécutable. Il est distribué en shareware.
-
-Vous pouvez le télécharger et le rediffuser gratuitement à condition de ne pas en modifier le contenu (installeur, programme, fichiers annexes, ...).
-
-[Télécharger le programme ou son installeur](DDD) (WIP)
-
-Si vous utilisez régulièrement ce logiciel et en êtes satisfait vous êtes invité à en acheter une licence d'utilisateur final. L'achat d'une licence vous donnera accès aux mises à jour du logiciel en plus d'activer d'évenuelles fonctionnalités optionnelles.
-
-[Acheter une licence](FFF) (WIP)
-
-Vous pouvez aussi [consulter le site du logiciel](EEE) pour en savoir plus sur son fonctionnement, accéder à des vidéos et articles, connaître les différentes versions disponibles et leurs fonctionnalités, contacter le support utilisateurs...
+[Consultez le site du logiciel](https://gametemplate.developpeur-pascal.fr/) pour en savoir plus sur son fonctionnement, accéder à des vidéos et articles, connaître les différentes versions disponibles et leurs fonctionnalités, contacter le support utilisateurs...
 
 ## Installation des codes sources
 
-Pour télécharger ce dépôt de code il est recommandé de passer par "git" mais vous pouvez aussi télécharger un ZIP directement depuis [son dépôt GitHub](https://github.com/DeveloppeurPascal/XXXXXXXXXX).
+Pour télécharger ce dépôt de code il est recommandé de passer par "git" mais vous pouvez aussi télécharger un ZIP directement depuis [son dépôt GitHub](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template).
 
 Ce projet utilise des dépendances sous forme de sous modules. Ils seront absents du fichier ZIP. Vous devrez les télécharger à la main.
 
-* [YYY](ZZZ) doit être installé dans le sous dossier ./lib-externes/YYY
-* [YYY](ZZZ) doit être installé dans le sous dossier ./lib-externes/YYY
+* [DeveloppeurPascal/AboutDialog-Delphi-Component](https://github.com/DeveloppeurPascal/AboutDialog-Delphi-Component) doit être installé dans le sous dossier ./lib-externes/AboutDialog-Delphi-Component
+* [DeveloppeurPascal/Delphi-Game-Engine](https://github.com/DeveloppeurPascal/Delphi-Game-Engine) doit être installé dans le sous dossier ./lib-externes/Delphi-Game-Engine
+* [DeveloppeurPascal/librairies](https://github.com/DeveloppeurPascal/librairies) doit être installé dans le sous dossier ./lib-externes/librairies
 
 ## Compatibilité
 
@@ -50,7 +46,7 @@ Normalement mes librairies et composants doivent aussi fonctionner au moins sur 
 
 Aucune garantie de compatibilité avec des versions antérieures n'est fournie même si je m'efforce de faire du code propre et ne pas trop utiliser les nouvelles façons d'écrire dedans (type inference, inline var et multilines strings).
 
-Si vous détectez des anomalies sur des versions antérieures n'hésitez pas à [les rapporter](https://github.com/DeveloppeurPascal/XXXXXXXXXX/issues) pour que je teste et tente de corriger ou fournir un contournement.
+Si vous détectez des anomalies sur des versions antérieures n'hésitez pas à [les rapporter](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template/issues) pour que je teste et tente de corriger ou fournir un contournement.
 
 ## Licence d'utilisation de ce dépôt de code et de son contenu
 
@@ -69,7 +65,7 @@ Certains éléments inclus dans ce dépôt peuvent dépendre de droits d'utilisa
 
 ## Comment demander une nouvelle fonctionnalité, signaler un bogue ou une faille de sécurité ?
 
-Si vous voulez une réponse du propriétaire de ce dépôt la meilleure façon de procéder pour demander une nouvelle fonctionnalité ou signaler une anomalie est d'aller sur [le dépôt de code sur GitHub](https://github.com/DeveloppeurPascal/XXXXXXXXXX) et [d'ouvrir un ticket](https://github.com/DeveloppeurPascal/XXXXXXXXXX/issues).
+Si vous voulez une réponse du propriétaire de ce dépôt la meilleure façon de procéder pour demander une nouvelle fonctionnalité ou signaler une anomalie est d'aller sur [le dépôt de code sur GitHub](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template) et [d'ouvrir un ticket](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template/issues).
 
 Si vous avez trouvé une faille de sécurité n'en parlez pas en public avant qu'un correctif n'ait été déployé ou soit disponible. [Contactez l'auteur du dépôt en privé](https://developpeur-pascal.fr/nous-contacter.php) pour expliquer votre trouvaille.
 
