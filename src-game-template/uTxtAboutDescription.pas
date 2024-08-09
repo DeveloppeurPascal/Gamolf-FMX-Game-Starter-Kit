@@ -44,6 +44,9 @@ unit uTxtAboutDescription;
 
 interface
 
+{$MESSAGE WARN 'Save uTxtAboutDescription.pas in your game folder and customize its content. Don''t change the template version if you want to be able to update it.'}
+// TODO : Save uTxtAboutDescription.pas in your game folder and customize its content. Don't change the template version if you want to be able to update it.
+
 function GetTxtAboutDescription(const Language: string;
   const Recursif: boolean = false): string;
 
@@ -56,10 +59,9 @@ uses
   System.SysUtils,
   uConsts;
 
-{$MESSAGE WARN 'Personalize your game description for the default CREDIT scene and About box dialog'}
-// TODO : Personalize your game description for the default CREDIT scene and About box dialog
-
 const
+  // TODO : change About box and (default) credits description text
+  // TODO : translate the text if you want or need it (you MUST have your "CDefaultLanguage" in the list)
   CTxtEN = 'comment for about box and default CREDITS scene, add editor infos, game credits, legal informations';
   // CTxtFR = '';
   // CTxtIT = '';
@@ -74,8 +76,9 @@ var
   lng: string;
 begin
   lng := Language.tolower;
-  if (lng = 'en') then // Not everywhere in the world but should be present
+  if (lng = 'en') then
     result := CTxtEN
+    // TODO : add your translations here
     // else if (lng = 'fr') then // France
     // result := CTxtFR
     // else if (lng = 'it') then // Italy
@@ -88,6 +91,7 @@ begin
     // result := CTxtPT
     // else if (lng = 'es') then // Spain
     // result := CTxtES
+    // etc...
   else if not Recursif then
     result := GetTxtAboutDescription(CDefaultLanguage, true)
   else

@@ -44,6 +44,12 @@ unit uBackgroundMusic;
 
 interface
 
+// If you want to be able to update the template files in your game project,
+// we recommend that you don't modify this file. Its operation should support
+// all standard use cases. Save the file in your project and work on the copy.
+// In this case, we suggest you open a ticket on the code repository to explain
+// your needs and the changes to be made to the template.
+
 uses
   System.Messaging;
 

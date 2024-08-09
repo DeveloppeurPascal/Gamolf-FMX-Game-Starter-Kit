@@ -44,6 +44,10 @@ unit uDMAboutBoxLogoStorrage;
 
 interface
 
+{$MESSAGE WARN 'Save uDMAboutBoxLogoStorrage.pas in your game folder and to customize it in your game. Don''t change the template version if you want to be able to update it.'}
+// TODO : Save uDMAboutBoxLogoStorrage.pas in your game folder and to customize it in your game. Don't change the template version if you want to be able to update it.
+
+// TODO : when you'll have a logo or icon for your game, don't forget to replace default one by yours in the TImageList
 uses
   System.SysUtils,
   System.Classes,
@@ -56,9 +60,6 @@ type
   private
   public
   end;
-
-{$MESSAGE WARN 'change the About box logo in this TImageList'}
-  // TODO : change the About box logo in this TImageList
 
 implementation
 

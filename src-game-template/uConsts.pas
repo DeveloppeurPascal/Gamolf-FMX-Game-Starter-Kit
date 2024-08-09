@@ -44,8 +44,8 @@ unit uConsts;
 
 interface
 
-// TODO : personalize the game global settings by saving this file in an other folder and changing defauls values
-{$MESSAGE WARN 'Personalize these constants'}
+{$MESSAGE WARN 'Save uConsts.pas in your game folder and customize its constants. Don''t change the template version if you want to be able to update it.'}
+// TODO : Save uConsts.pas in your game folder and customize its constants. Don't change the template version if you want to be able to update it.
 
 const
   /// <summary>
@@ -179,6 +179,10 @@ if (CDefaultLanguage <> CDefaultLanguage.Trim.ToLower) then
 {$IFDEF RELEASE}
 if (CGameGUID = '{48AD6D06-1BED-4F33-ADCA-267E12D74417}') then
   raise Exception.Create('Wrong GUID. Change it in game settings !');
+{$ENDIF}
+{$IFDEF DEBUG}
+// TODO : it's a recommended value but you can remove it if you want
+ReportMemoryLeaksOnShutdown := true;
 {$ENDIF}
 
 end.

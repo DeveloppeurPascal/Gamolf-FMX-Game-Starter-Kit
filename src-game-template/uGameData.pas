@@ -44,6 +44,19 @@ unit uGameData;
 
 interface
 
+// If you want to be able to update the template files in your game project,
+// we recommend that you don't modify this file. Its operation should support
+// all standard use cases. Save the file in your project and work on the copy.
+// In this case, we suggest you open a ticket on the code repository to explain
+// your needs and the changes to be made to the template.
+//
+// If you want to add features to TGameData, don't change this file, simply use
+// the helpers.
+//
+// If you want to add fields or properties, create a new class in your project
+// and inherits from current TGameData. Override all needed methods and add what
+// you have to manage for yoour game.
+
 uses
   System.Messaging,
   System.Classes;

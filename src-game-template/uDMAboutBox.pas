@@ -44,6 +44,12 @@ unit uDMAboutBox;
 
 interface
 
+// If you want to be able to update the template files in your game project,
+// we recommend that you don't modify this file. Its operation should support
+// all standard use cases. Save the file in your project and work on the copy.
+// In this case, we suggest you open a ticket on the code repository to explain
+// your needs and the changes to be made to the template.
+
 uses
   System.Messaging,
   System.SysUtils,
@@ -129,7 +135,7 @@ end;
 function TAboutBox.OlfAboutDialog1GetText(const ALang: TOlfAboutDialogLang;
   const ATxtID: TOlfAboutDialogTxtID): string;
 begin
-  // If you want to mnage other languages than TOlfAboutDialogLang enumeration
+  // If you want to manage other languages than TOlfAboutDialogLang enumeration
   // for the about box, you'll have to manage your translations here:
   case ATxtID of
     TOlfAboutDialogTxtID.About:

@@ -44,12 +44,20 @@ unit uDMHelpBarManager;
 
 interface
 
+// If you want to be able to update the template files in your game project,
+// we recommend that you don't modify this file. Its operation should support
+// all standard use cases. Save the file in your project and work on the copy.
+// In this case, we suggest you open a ticket on the code repository to explain
+// your needs and the changes to be made to the template.
+
 uses
-  System.SysUtils, System.Classes, FMX.Types, Gamolf.FMX.HelpBar;
+  System.SysUtils,
+  System.Classes,
+  FMX.Types,
+  Gamolf.FMX.HelpBar;
 
 type
   THelpBarManager = class(TDataModule)
-    DGEFMXHelpBar1: TDGEFMXHelpBar;
   private
   public
     class function Current: TDGEFMXHelpBar;
@@ -75,6 +83,7 @@ begin
   // result := HelpBarManager.DGEFMXHelpBar1;
 
   // TODO -opprem : corriger problème de parent sur le composant lorsqu'il n'est pas sur une fiche
+  // See https://github.com/DeveloppeurPascal/Delphi-Game-Engine/issues/208
   result := frmMain.DGEFMXHelpBar1;
 end;
 

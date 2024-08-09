@@ -44,8 +44,8 @@ unit uSoundEffects;
 
 interface
 
-{$MESSAGE WARN 'Don''t forget to copy and personalize uSoundEffect.pas in your game folder.'}
-// TODO : save this file in your project folder, don't change template file, only the copy
+{$MESSAGE WARN 'Save uSoundEffects.pas in your game folder and customize its sounds list and loaded files. Don''t change the template version if you want to be able to update it.'}
+// TODO : Save uSoundEffects.pas in your game folder and customize its sounds list and loaded files. Don't change the template version if you want to be able to update it.
 
 type
 {$SCOPEDENUMS ON}
