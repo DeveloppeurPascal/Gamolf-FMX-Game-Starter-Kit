@@ -44,7 +44,7 @@ unit uSoundEffects;
 
 interface
 
-// TODO : save this file to your project file, don't change template file, only the copy
+// TODO : save this file to your project folder, don't change template file, only the copy
 
 type
 {$SCOPEDENUMS ON}

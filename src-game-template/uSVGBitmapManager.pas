@@ -44,6 +44,8 @@ unit uSVGBitmapManager;
 
 interface
 
+// TODO : save this file to your project folder, don't change template file, only the copy
+
 uses
   FMX.Graphics,
   USVGInputPrompts;
