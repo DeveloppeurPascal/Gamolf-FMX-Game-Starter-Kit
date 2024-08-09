@@ -44,14 +44,15 @@ unit uSoundEffects;
 
 interface
 
-// TODO : save this file to your project folder, don't change template file, only the copy
+{$MESSAGE WARN 'Don''t forget to copy and personalize uSoundEffect.pas in your game folder.'}
+// TODO : save this file in your project folder, don't change template file, only the copy
 
 type
 {$SCOPEDENUMS ON}
-  TSoundEffectType = (demo);
+  TSoundEffectType = (None (* Must exist ! *) , Demo);
   // TODO : reference your sounds types
   // TODO : add the files to folder _PRIVATE/sounds for Windows DEBUG (or change the folder in RegisterSounds())
-  // TODO : add the files to Project/Delpoyment for each supported platform
+  // TODO : add the files to Project/Deployment for each supported platform
 
   TSoundEffects = class;
   TSoundEffectsClass = class of TSoundEffects;
@@ -74,6 +75,7 @@ implementation
 uses
   uConfig,
   Gamolf.FMX.MusicLoop,
+  System.SysUtils,
   System.IOUtils;
 
 class procedure TSoundEffects.StopAll;
@@ -121,14 +123,18 @@ begin
 {$MESSAGE FATAL 'OS non supporté'}
 {$ENDIF}
   for Sound := low(TSoundEffectType) to high(TSoundEffectType) do
-  begin // TODO : Update the list of sound effects files
+  begin
     case Sound of
-      TSoundEffectType.demo:
+      TSoundEffectType.None:
+        FileName := '';
+      TSoundEffectType.Demo:
         FileName := 'DuckyOuch.wav';
+      // TODO : Update the list of sound effects files
     else
-      exit;
+      raise Exception.Create('Missing a sound effect !');
     end;
-    TSoundList.Current.add(ord(Sound), tpath.combine(Folder, FileName));
+    if not FileName.isempty then
+      TSoundList.Current.add(ord(Sound), tpath.combine(Folder, FileName));
   end;
   TSoundList.Current.Volume := tconfig.Current.SoundEffectsVolume;
 end;
