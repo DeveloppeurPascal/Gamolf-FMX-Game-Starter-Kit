@@ -44,6 +44,14 @@ unit _SceneAncestor;
 
 interface
 
+// If you want to be able to update the template files in your game project,
+// we recommend that you don't modify this file. Its operation should support
+// all standard use cases. Save the file in your project and work on the copy.
+// In this case, we suggest you open a ticket on the code repository to explain
+// your needs and the changes to be made to the template.
+//
+// All scenes in your game must inherits from this class.
+
 uses
   System.SysUtils,
   System.Types,
@@ -61,12 +69,38 @@ uses
 type
   T__SceneAncestor = class(TFrame)
   private
+    FHasCalledBeforeFirstShowScene: boolean;
   protected
     procedure DoTranslateTexts(const Sender: TObject; const Msg: TMessage);
   public
-    procedure InitializeScene; virtual;
-    procedure FinalizeScene; virtual;
+    /// <summary>
+    /// Contains scene initialization called only one time (before the first ShowScene, after instance construction)
+    /// </summary>
+    procedure BeforeFirstShowScene; virtual;
+    /// <summary>
+    /// Contains scene initialization. It's called each time the scene is shown.
+    /// </summary>
+    procedure ShowScene; virtual;
+    /// <summary>
+    /// Contains scene finalization. It's called each time the scene is hidden.
+    /// </summary>
+    procedure HideScene; virtual;
+    /// <summary>
+    /// Contains scene finalization called only one time (during instance destruction)
+    /// </summary>
+    procedure AfterLastHideScene; virtual;
+    /// <summary>
+    /// This method is called each time a global translation broadcast is sent with current languge as argument.
+    /// </summary>
     procedure TranslateTexts(const Language: string); virtual;
+    /// <summary>
+    /// Returns an instance of this class
+    /// </summary>
+    constructor Create(AOwner: TComponent); override;
+    /// <summary>
+    /// Called by the Delphi when the instance memory is released
+    /// </summary>
+    destructor Destroy; override;
   end;
 
 implementation
@@ -81,6 +115,28 @@ uses
 
 { TSceneAncestor }
 
+procedure T__SceneAncestor.AfterLastHideScene;
+begin
+  // nothing to do here at this level
+end;
+
+procedure T__SceneAncestor.BeforeFirstShowScene;
+begin
+  // nothing to do here at this level
+end;
+
+constructor T__SceneAncestor.Create(AOwner: TComponent);
+begin
+  inherited;
+  FHasCalledBeforeFirstShowScene := false;
+end;
+
+destructor T__SceneAncestor.Destroy;
+begin
+  AfterLastHideScene;
+  inherited;
+end;
+
 procedure T__SceneAncestor.DoTranslateTexts(const Sender: TObject;
   const Msg: TMessage);
 begin
@@ -91,8 +147,10 @@ begin
     TranslateTexts((Msg as TTranslateTextsMessage).Language);
 end;
 
-procedure T__SceneAncestor.FinalizeScene;
+procedure T__SceneAncestor.HideScene;
 begin
+  Visible := false;
+
   TMessageManager.DefaultManager.Unsubscribe(TTranslateTextsMessage,
     DoTranslateTexts, true);
 
@@ -101,8 +159,14 @@ begin
   THelpBarManager.Current.CloseHelpBar;
 end;
 
-procedure T__SceneAncestor.InitializeScene;
+procedure T__SceneAncestor.ShowScene;
 begin
+  if not FHasCalledBeforeFirstShowScene then
+  begin
+    BeforeFirstShowScene;
+    FHasCalledBeforeFirstShowScene := true;
+  end;
+
   Align := TAlignLayout.Contents;
 
   THelpBarManager.Current.Clear;
@@ -112,12 +176,14 @@ begin
   TranslateTexts(tconfig.Current.Language);
   TMessageManager.DefaultManager.SubscribeToMessage(TTranslateTextsMessage,
     DoTranslateTexts);
+
+  Visible := true;
+  BringToFront;
 end;
 
 procedure T__SceneAncestor.TranslateTexts(const Language: string);
 begin
-  // nothing to do at this level,
-  // override this method on each scene where you need to translate something
+  // nothing to do here at this level
 end;
 
 end.
