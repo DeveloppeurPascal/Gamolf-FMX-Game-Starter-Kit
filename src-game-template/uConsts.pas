@@ -164,6 +164,15 @@ type
     Exit (* "Exit" must stay *) , Game, GameOverLost, GameOverWin, Credits,
     Options, HallOfFame);
 
+Const
+  /// <summary>
+  /// Specify what scene is opened after the main form creation
+  /// </summary>
+  /// <remarks>
+  /// Change it to an other scene, like a game intro or a splashscreen
+  /// </remarks>
+  CDefaultSceneOnStartup = TSceneType.Home;
+
 implementation
 
 uses

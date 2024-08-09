@@ -148,7 +148,7 @@ begin
   tthread.ForceQueue(nil,
     procedure
     begin
-      tscene.Current := TSceneType.Home;
+      tscene.Current := CDefaultSceneOnStartup;
     end);
 end;
 
