@@ -592,7 +592,7 @@ begin
     procedure
     begin
       TMessageManager.DefaultManager.SendMessage(nil,
-        TLevelChangedMessage.Create(LNbLives));
+        TNbLivesChangedMessage.Create(LNbLives));
     end);
 end;
 
