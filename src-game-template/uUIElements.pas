@@ -56,6 +56,16 @@ uses
 
 type
   /// <summary>
+  /// Implement this interface on elements you want to add to TUIElements
+  /// </summary>
+  IUIControl = interface
+    ['{0C1BD2A6-6312-4C78-89B3-550BF8425DD1}']
+    procedure SetFocus;
+    procedure ResetFocus;
+    procedure Click(Sender: TObject);
+  end;
+
+  /// <summary>
   /// This class manage the user interface elements and movements between them.
   /// </summary>
   TUIItemsList = class(TUIElementsList)
@@ -68,7 +78,7 @@ type
     /// </summary>
     procedure AddQuit;
     /// <summary>
-    /// Add a control to the current list of User Interface elements and the
+    /// Add a TControl to the current list of User Interface elements and the
     /// path to move around from keyboard arrows and a game controller DPad.
     /// </summary>
     procedure AddControl(const Control, TopControl, RightControl, BottomControl,
@@ -103,22 +113,39 @@ begin
   begin
     item := AddUIItem(
       procedure(const Sender: TObject)
+      var
+        UIControl: IUIControl;
       begin
         if assigned(Sender) and (Sender is TUIElement) and
           assigned((Sender as TUIElement).TagObject) and
-          ((Sender as TUIElement).TagObject is TControl) and
-          assigned(((Sender as TUIElement).TagObject as TControl).OnClick) then
-          ((Sender as TUIElement).TagObject as TControl)
-            .OnClick((Sender as TUIElement).TagObject as TControl);
+          ((Sender as TUIElement).TagObject is TControl) then
+          if ((Sender as TUIElement).TagObject as TControl)
+            .GetInterface(IUIControl, UIControl) then
+            UIControl.Click((Sender as TUIElement).TagObject as TControl)
+          else if assigned(((Sender as TUIElement).TagObject as TControl)
+            .OnClick) then
+            ((Sender as TUIElement).TagObject as TControl)
+              .OnClick((Sender as TUIElement).TagObject as TControl);
       end);
     item.OnPaintProc := procedure(const Sender: TObject)
+      var
+        UIControl: IUIControl;
       begin
         if assigned(Sender) and (Sender is TUIElement) and
-          (Sender as TUIElement).IsFocused and
           assigned((Sender as TUIElement).TagObject) and
-          ((Sender as TUIElement).TagObject is TControl) and
-          assigned(((Sender as TUIElement).TagObject as TControl).OnClick) then
-          ((Sender as TUIElement).TagObject as TControl).SetFocus;
+          ((Sender as TUIElement).TagObject is TControl) then
+          if ((Sender as TUIElement).TagObject as TControl)
+            .GetInterface(IUIControl, UIControl) then
+          begin
+            if (Sender as TUIElement).IsFocused then
+              UIControl.SetFocus
+            else
+              UIControl.ResetFocus
+          end
+          else if (Sender as TUIElement).IsFocused then
+            ((Sender as TUIElement).TagObject as TControl).SetFocus
+          else
+            ((Sender as TUIElement).TagObject as TControl).ResetFocus;
       end;
     item.TagObject := Control;
     Control.TagObject := item;
