@@ -36,6 +36,20 @@ object frmMain: TfrmMain
     Left = 144
     Top = 104
   end
+  object Label1: TLabel
+    Align = Center
+    StyledSettings = [Family, Size]
+    Size.Width = 295.000000000000000000
+    Size.Height = 90.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TextSettings.FontColor = claBrown
+    Text = 
+      'WARNING !!! This is the template main form. Don'#39't edit it. If yo' +
+      'u want to change something save this unit to your project folder' +
+      ' or (preferred method) inherits from it.'
+    TabOrder = 3
+  end
   object DGEGamepadDetected1: TDGEGamepadDetected
     Duration = 5.000000000000000000
     Left = 304

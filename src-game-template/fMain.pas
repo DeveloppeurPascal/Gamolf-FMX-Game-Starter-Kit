@@ -58,7 +58,10 @@ uses
   FMX.Dialogs,
   FMX.Menus,
   uSceneBackground,
-  Gamolf.RTL.GamepadDetected, Gamolf.FMX.HelpBar;
+  Gamolf.RTL.GamepadDetected,
+  Gamolf.FMX.HelpBar,
+  FMX.Controls.Presentation,
+  FMX.StdCtrls;
 
 type
   TfrmMain = class(TForm)
@@ -67,6 +70,7 @@ type
     mnuAbout: TMenuItem;
     DGEGamepadDetected1: TDGEGamepadDetected;
     DGEFMXHelpBar1: TDGEFMXHelpBar;
+    Label1: TLabel;
     procedure FormKeyDown(Sender: TObject; var Key: Word; var KeyChar: WideChar;
       Shift: TShiftState);
     procedure mnuAboutClick(Sender: TObject);
@@ -75,8 +79,9 @@ type
   private
     BackgroundScene: TSceneBackground;
   protected
-    procedure TranslateTexts(const Sender: TObject; const Msg: TMessage);
   public
+    procedure TranslateTexts(const Sender: TObject;
+      const Msg: TMessage); Virtual;
   end;
 
 var
@@ -98,10 +103,13 @@ uses
 
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
+  // Remove the WARNING message for the developper in Delphi IDE.
+  FreeAndNil(Label1);
+
   fullscreen := COpenGameInFullScreenMode;
 {$IF Defined(MACOS) and not Defined(IOS)}
 {$ELSE}
-  freeandnil(MainMenu);
+  FreeAndNil(MainMenu);
 {$ENDIF}
   BackgroundScene := TSceneBackground.Create(self);
   BackgroundScene.parent := self;
