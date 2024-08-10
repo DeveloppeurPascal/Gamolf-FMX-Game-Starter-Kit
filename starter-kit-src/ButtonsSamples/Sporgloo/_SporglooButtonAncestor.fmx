@@ -35,6 +35,8 @@ inherited __SporglooButtonAncestor: T__SporglooButtonAncestor
     Visible = False
     object txtDown: TText
       Align = Client
+      Locked = True
+      HitTest = False
       Margins.Left = 5.000000000000000000
       Margins.Top = 5.000000000000000000
       Margins.Right = 5.000000000000000000
@@ -52,6 +54,8 @@ inherited __SporglooButtonAncestor: T__SporglooButtonAncestor
           0100000052B89C4148E1B240010000000000A8410000E040030000000000A841
           0000E040}
         Fill.Color = claChartreuse
+        Locked = True
+        HitTest = False
         Margins.Left = 5.000000000000000000
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
@@ -100,6 +104,8 @@ inherited __SporglooButtonAncestor: T__SporglooButtonAncestor
     Stroke.Kind = None
     object txtUp: TText
       Align = Client
+      Locked = True
+      HitTest = False
       Margins.Left = 5.000000000000000000
       Margins.Top = 5.000000000000000000
       Margins.Right = 5.000000000000000000
@@ -117,6 +123,8 @@ inherited __SporglooButtonAncestor: T__SporglooButtonAncestor
           0100000052B89C4148E1B240010000000000A8410000E040030000000000A841
           0000E040}
         Fill.Color = claChartreuse
+        Locked = True
+        HitTest = False
         Margins.Left = 5.000000000000000000
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
