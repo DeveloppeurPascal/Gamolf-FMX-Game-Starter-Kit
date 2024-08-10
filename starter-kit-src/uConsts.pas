@@ -185,9 +185,9 @@ type
   /// Change value of TScene.Current to autocreate and show the good scene.
   /// Create scenes screens by inheriting from /Scenes/_SceneAncestor.pas
   /// </remarks>
-  TSceneType = (None (* "None" must stay *) , Home (* "Home" must stay *) ,
-    Exit (* "Exit" must stay *) , Game, GameOverLost, GameOverWin, Credits,
-    Options, HallOfFame, TestUIButtons);
+  TSceneType = (None (* "None" must stay *) , Exit (* "Exit" must stay *) ,
+    Home, Game, GameOverLost, GameOverWin, Credits, Options, HallOfFame,
+    TestUIButtons);
 
 Const
   /// <summary>
@@ -196,8 +196,8 @@ Const
   /// <remarks>
   /// Change it to an other scene, like a game intro or a splashscreen
   /// </remarks>
-  // CDefaultSceneOnStartup = TSceneType.Home;
-  CDefaultSceneOnStartup = TSceneType.TestUIButtons;
+  CDefaultSceneOnStartup = TSceneType.Home;
+  // CDefaultSceneOnStartup = TSceneType.TestUIButtons;
 
 implementation
 
