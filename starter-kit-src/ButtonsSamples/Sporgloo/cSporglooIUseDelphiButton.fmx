@@ -1,0 +1,14 @@
+inherited SporglooIUseDelphiButton: TSporglooIUseDelphiButton
+  inherited rDown: TRectangle
+    inherited txtDown: TText
+      Text = 'I use Delphi !'
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+  inherited rUp: TRectangle
+    inherited txtUp: TText
+      Text = 'I use Delphi !'
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+end

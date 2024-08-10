@@ -99,7 +99,9 @@ uses
   uSceneTestButtons in 'ScenesSamples\uSceneTestButtons.pas' {SceneTestButtons: TFrame},
   _PloomtrisButtonAncestor in 'ButtonsSamples\Ploumtris\_PloomtrisButtonAncestor.pas' {__PloomtrisButtonAncestor: TFrame},
   USVGPuzzleAssets2 in '..\assets\kenney_nl\PuzzleAssets2\USVGPuzzleAssets2.pas',
-  cPloomtrisWorldButton in 'ButtonsSamples\Ploumtris\cPloomtrisWorldButton.pas' {PloomtrisWorldButton: TFrame};
+  cPloomtrisWorldButton in 'ButtonsSamples\Ploumtris\cPloomtrisWorldButton.pas' {PloomtrisWorldButton: TFrame},
+  _SporglooButtonAncestor in 'ButtonsSamples\Sporgloo\_SporglooButtonAncestor.pas' {__SporglooButtonAncestor: TFrame},
+  cSporglooIUseDelphiButton in 'ButtonsSamples\Sporgloo\cSporglooIUseDelphiButton.pas' {SporglooIUseDelphiButton: TFrame};
 
 {$R *.res}
 
