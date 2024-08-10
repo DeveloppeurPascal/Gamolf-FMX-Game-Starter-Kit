@@ -60,7 +60,7 @@ uses
   FMX.Forms,
   FMX.Dialogs,
   FMX.StdCtrls,
-  _SceneAncestor,
+  _ScenesAncestor,
   FMX.Objects;
 
 type
