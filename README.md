@@ -1,8 +1,8 @@
-# Gamolf FMX Game Template
+# Gamolf FMX Game Starter Kit
 
 [Cette page en français.](LISEZMOI.md)
 
-The "Gamolf FMX Game Template" is both a "technical" example of a video game developed in Delphi with everything you need inside, and a reusable project template you can customize for your own games.
+The "Gamolf FMX Game Starter Kit" is both a "technical" example of a video game developed in Delphi with everything you need inside, and a reusable project template you can customize for your own games.
 
 The files provided are fully functional. Numerous comments are included in the sources to explain how they work and what you need to copy, override or customize to make video games without starting from scratch.
 
@@ -10,13 +10,14 @@ To use this template you can either repackage it as a ZIP file and add dependenc
 
 Handle TODOs and compilation messages.
 
-As far as possible, avoid modifying the template files; instead, create your own. This will enable you to update the original ones and benefit from new features (or patches) in a totally transparent way.
+As far as possible, avoid modifying the starter kit files; instead, create your own. This will enable you to update the original ones and benefit from new features (or patches) in a totally transparent way.
 
 Don't know how to code games ? Look at these projects:
 
-* [Games based on this game template](https://github.com/DeveloppeurPascal?tab=repositories&q=gfgt-game)
+* [Games based on this game starter kit](https://github.com/DeveloppeurPascal?tab=repositories&q=gfgsk-game)
 * [Games in Delphi](https://github.com/DeveloppeurPascal?tab=repositories&q=delphi-game)
-* [Delphi FMX Game Snippets](https://github.com/DeveloppeurPascal/Delphi-FMX-Game-Snippets)
+* [Delphi FMX Game Snippets](https://fmxgamesnippets.developpeur-pascal.fr)
+* [Delphi Game Engine](https://delphigameengine.developpeur-pascal.fr)
 
 You are looking for an other game engine ? Check [these links](https://github.com/Fr0sT-Brutal/awesome-pascal?tab=readme-ov-file#game-dev).
 
@@ -30,15 +31,15 @@ This code repository contains a project developed in Object Pascal language unde
 
 ### Twitch
 
-Follow my development streams of software, video games, mobile applications and websites on [my Twitch channel](https://www.twitch.tv/patrickpremartin) or as replays on [Serial Streameur](https://serialstreameur.fr/gamolf-fmx-game-template.html) mostly in French.
+Follow my development streams of software, video games, mobile applications and websites on [my Twitch channel](https://www.twitch.tv/patrickpremartin) or as replays on [Serial Streameur](https://serialstreameur.fr/gamolf-fmx-game-starter-kit.html) mostly in French.
 
 ## Using this software
 
-[Visit the software website](https://gametemplate.developpeur-pascal.fr/) to find out more about how it works, access videos and articles, find out about the different versions available and their features, contact user support...
+[Visit the software website](https://fmxgamestarterkit.developpeur-pascal.fr/) to find out more about how it works, access videos and articles, find out about the different versions available and their features, contact user support...
 
 ## Source code installation
 
-To download this code repository, we recommend using "git", but you can also download a ZIP file directly from [its GitHub repository](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template).
+To download this code repository, we recommend using "git", but you can also download a ZIP file directly from [its GitHub repository](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit).
 
 This project uses dependencies in the form of sub-modules. They will be absent from the ZIP file. You'll have to download them by hand.
 
@@ -54,7 +55,7 @@ Normally, my libraries and components should also run on at least the current ve
 
 There's no guarantee of compatibility with earlier versions, even though I try to keep my code clean and avoid using too many of the new ways of writing in it (type inference, inline var and multiline strings).
 
-If you detect any anomalies on earlier versions, please don't hesitate to [report them](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template/issues) so that I can test and try to correct or provide a workaround.
+If you detect any anomalies on earlier versions, please don't hesitate to [report them](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit/issues) so that I can test and try to correct or provide a workaround.
 
 ## License to use this code repository and its contents
 
@@ -73,7 +74,7 @@ Certain elements included in this repository may be subject to third-party usage
 
 ## How to ask a new feature, report a bug or a security issue ?
 
-If you want an answer from the project owner the best way to ask for a new feature or report a bug is to go to [the GitHub repository](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template) and [open a new issue](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template/issues).
+If you want an answer from the project owner the best way to ask for a new feature or report a bug is to go to [the GitHub repository](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit) and [open a new issue](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit/issues).
 
 If you found a security issue please don't report it publicly before a patch is available. Explain the case by [sending a private message to the author](https://developpeur-pascal.fr/nous-contacter.php).
 
