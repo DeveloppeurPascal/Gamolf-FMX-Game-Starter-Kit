@@ -69,9 +69,6 @@ type
   public
   end;
 
-var
-  TheQuizHelloButton: TTheQuizHelloButton;
-
 implementation
 
 {$R *.fmx}
