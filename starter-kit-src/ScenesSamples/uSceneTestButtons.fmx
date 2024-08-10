@@ -103,6 +103,31 @@ inherited SceneTestButtons: TSceneTestButtons
         end
       end
     end
+    inline EggHunterAndYouButton1: TEggHunterAndYouButton
+      Align = Top
+      Locked = True
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 234.000000000000000000
+      Size.Width = 263.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      inherited Background_Off: TRectangle
+        Size.Width = 263.000000000000000000
+        inherited Text_Off: TText
+          Size.Width = 263.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited Background_On: TRectangle
+        inherited Text_On: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
   end
   object Label1: TLabel
     Align = Top

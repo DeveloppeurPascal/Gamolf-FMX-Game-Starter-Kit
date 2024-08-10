@@ -67,7 +67,11 @@ uses
   _TheQuizAncestorButton,
   cTheQuizHelloButton,
   _PloomtrisButtonAncestor,
-  cPloomtrisWorldButton, _SporglooButtonAncestor, cSporglooIUseDelphiButton;
+  cPloomtrisWorldButton,
+  _SporglooButtonAncestor,
+  cSporglooIUseDelphiButton,
+  _EggHunterButtonAncestor,
+  cEggHunterAndYouButton;
 
 type
   TSceneTestButtons = class(T__SceneAncestor)
@@ -77,6 +81,7 @@ type
     Label1: TLabel;
     PloomtrisWorldButton1: TPloomtrisWorldButton;
     SporglooIUseDelphiButton1: TSporglooIUseDelphiButton;
+    EggHunterAndYouButton1: TEggHunterAndYouButton;
     procedure btnBackClick(Sender: TObject);
   private
   protected
@@ -122,9 +127,13 @@ begin
 
   SporglooIUseDelphiButton1.OnClick := ButtonsClick;
   TUIItemsList.Current.AddControl(SporglooIUseDelphiButton1,
-    PloomtrisWorldButton1, nil, btnBack, nil);
+    PloomtrisWorldButton1, nil, EggHunterAndYouButton1, nil);
 
-  TUIItemsList.Current.AddControl(btnBack, SporglooIUseDelphiButton1, nil, nil,
+  EggHunterAndYouButton1.OnClick := ButtonsClick;
+  TUIItemsList.Current.AddControl(EggHunterAndYouButton1,
+    SporglooIUseDelphiButton1, nil, btnBack, nil);
+
+  TUIItemsList.Current.AddControl(btnBack, EggHunterAndYouButton1, nil, nil,
     nil, false, true);
 
   THelpBarManager.Current.OpenHelpBar;

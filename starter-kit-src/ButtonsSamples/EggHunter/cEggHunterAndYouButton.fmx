@@ -1,0 +1,14 @@
+inherited EggHunterAndYouButton: TEggHunterAndYouButton
+  inherited Background_Off: TRectangle
+    inherited Text_Off: TText
+      Text = 'And you ?'
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+  inherited Background_On: TRectangle
+    inherited Text_On: TText
+      Text = 'And you ?'
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+end
