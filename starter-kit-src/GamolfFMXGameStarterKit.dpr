@@ -73,7 +73,7 @@ uses
   Macapi.GameController in '..\lib-externes\Delphi-Game-Engine\src\Macapi.GameController.pas',
   uTranslate in 'uTranslate.pas',
   uConfig in 'uConfig.pas',
-  _ScenesAncestor in '_AncestorsForSceneAndUIElements\_ScenesAncestor.pas' {__SceneAncestor: TFrame},
+  _ScenesAncestor in '_AncestorsForScenesAndUIElements\_ScenesAncestor.pas' {__SceneAncestor: TFrame},
   uSceneBackground in 'ScenesSamples\uSceneBackground.pas' {SceneBackground: TFrame},
   uScene in 'uScene.pas',
   uSceneHome in 'ScenesSamples\uSceneHome.pas' {SceneHome: TFrame},
@@ -93,7 +93,7 @@ uses
   uDMGameControllerCenter in 'uDMGameControllerCenter.pas' {DMGameControllerCenter: TDataModule},
   uSVGBitmapManager in 'uSVGBitmapManager.pas',
   uDMHelpBarManager in 'uDMHelpBarManager.pas' {HelpBarManager: TDataModule},
-  _ButtonsAncestor in '_AncestorsForSceneAndUIElements\_ButtonsAncestor.pas' {__ButtonAncestor: TFrame};
+  _ButtonsAncestor in '_AncestorsForScenesAndUIElements\_ButtonsAncestor.pas' {__ButtonAncestor: TFrame};
 
 {$R *.res}
 

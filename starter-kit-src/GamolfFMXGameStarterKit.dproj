@@ -679,7 +679,7 @@
         <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Macapi.GameController.pas"/>
         <DCCReference Include="uTranslate.pas"/>
         <DCCReference Include="uConfig.pas"/>
-        <DCCReference Include="_AncestorsForSceneAndUIElements\_ScenesAncestor.pas">
+        <DCCReference Include="_AncestorsForScenesAndUIElements\_ScenesAncestor.pas">
             <Form>__SceneAncestor</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
@@ -743,7 +743,7 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="_AncestorsForSceneAndUIElements\_ButtonsAncestor.pas">
+        <DCCReference Include="_AncestorsForScenesAndUIElements\_ButtonsAncestor.pas">
             <Form>__ButtonAncestor</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
