@@ -95,6 +95,11 @@ begin
   lUp.Visible := not IsDown;
   lDown.Visible := IsDown;
   rFocused.Visible := IsFocused;
+  if not text.IsEmpty then
+  begin
+    txtUp.text := text;
+    txtDown.text := text;
+  end;
 end;
 
 end.
