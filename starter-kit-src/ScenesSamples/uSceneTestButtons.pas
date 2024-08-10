@@ -67,7 +67,7 @@ uses
   _TheQuizAncestorButton,
   cTheQuizHelloButton,
   _PloomtrisButtonAncestor,
-  cPloomtrisWorldButton;
+  cPloomtrisWorldButton, _SporglooButtonAncestor, cSporglooIUseDelphiButton;
 
 type
   TSceneTestButtons = class(T__SceneAncestor)
@@ -76,6 +76,7 @@ type
     Layout1: TLayout;
     Label1: TLabel;
     PloomtrisWorldButton1: TPloomtrisWorldButton;
+    SporglooIUseDelphiButton1: TSporglooIUseDelphiButton;
     procedure btnBackClick(Sender: TObject);
   private
   protected
@@ -112,15 +113,19 @@ begin
   Label1.text := '';
 
   TheQuizHelloButton1.OnClick := ButtonsClick;
-  TUIItemsList.Current.AddControl(TheQuizHelloButton1, nil, nil, PloomtrisWorldButton1,
-    nil, true);
+  TUIItemsList.Current.AddControl(TheQuizHelloButton1, nil, nil,
+    PloomtrisWorldButton1, nil, true);
 
   PloomtrisWorldButton1.OnClick := ButtonsClick;
-  TUIItemsList.Current.AddControl(PloomtrisWorldButton1, TheQuizHelloButton1, nil, btnBack,
-    nil);
+  TUIItemsList.Current.AddControl(PloomtrisWorldButton1, TheQuizHelloButton1,
+    nil, SporglooIUseDelphiButton1, nil);
 
-  TUIItemsList.Current.AddControl(btnBack, PloomtrisWorldButton1, nil, nil, nil,
-    false, true);
+  SporglooIUseDelphiButton1.OnClick := ButtonsClick;
+  TUIItemsList.Current.AddControl(SporglooIUseDelphiButton1,
+    PloomtrisWorldButton1, nil, btnBack, nil);
+
+  TUIItemsList.Current.AddControl(btnBack, SporglooIUseDelphiButton1, nil, nil,
+    nil, false, true);
 
   THelpBarManager.Current.OpenHelpBar;
   THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardEscape),

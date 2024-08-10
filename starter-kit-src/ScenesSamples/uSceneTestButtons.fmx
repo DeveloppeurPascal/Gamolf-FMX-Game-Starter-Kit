@@ -26,15 +26,21 @@ inherited SceneTestButtons: TSceneTestButtons
     inline TheQuizHelloButton1: TTheQuizHelloButton
       Align = Top
       Locked = True
-      Size.Width = 273.000000000000000000
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 263.000000000000000000
       Size.Height = 75.000000000000000000
       Size.PlatformDefault = False
       inherited lDown: TLayout
-        Size.Width = 273.000000000000000000
+        Size.Width = 263.000000000000000000
         inherited Rectangle1: TRectangle
-          Size.Width = 253.000000000000000000
+          Size.Width = 243.000000000000000000
           inherited txtDown: TText
-            Size.Width = 253.000000000000000000
+            Size.Width = 243.000000000000000000
             TextSettings.Font.StyleExt = {00070000000000000004000000}
           end
         end
@@ -47,20 +53,52 @@ inherited SceneTestButtons: TSceneTestButtons
         end
       end
       inherited rFocused: TRectangle
-        Size.Width = 273.000000000000000000
+        Size.Width = 263.000000000000000000
       end
     end
     inline PloomtrisWorldButton1: TPloomtrisWorldButton
       Align = Top
       Locked = True
-      Position.Y = 75.000000000000000000
-      Size.Width = 273.000000000000000000
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 90.000000000000000000
+      Size.Width = 263.000000000000000000
       Size.Height = 75.000000000000000000
       Size.PlatformDefault = False
       inherited rBackground: TRectangle
-        Size.Width = 273.000000000000000000
+        Size.Width = 263.000000000000000000
         inherited Text1: TText
-          Size.Width = 273.000000000000000000
+          Size.Width = 263.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+    inline SporglooIUseDelphiButton1: TSporglooIUseDelphiButton
+      Align = Top
+      Locked = True
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 175.000000000000000000
+      Size.Width = 263.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      inherited rDown: TRectangle
+        Size.Width = 273.000000000000000000
+        inherited txtDown: TText
+          Size.Width = 263.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited rUp: TRectangle
+        Size.Width = 263.000000000000000000
+        inherited txtUp: TText
+          Size.Width = 253.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
         end
       end
