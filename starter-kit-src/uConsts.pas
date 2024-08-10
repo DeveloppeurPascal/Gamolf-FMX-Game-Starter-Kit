@@ -57,12 +57,12 @@ const
   /// <summary>
   /// Version date of your game, change it when you publish a new public release
   /// </summary>
-  CAboutVersionDate = '20240808';
+  CAboutVersionDate = '20240810';
 
   /// <summary>
   /// Title of your game used in the About box and as the main form caption
   /// </summary>
-  CAboutGameTitle = 'My Game Template';
+  CAboutGameTitle = 'Gamolf FMX Game Starter Kit';
 
   /// <summary>
   /// The copyright to show in the About box
@@ -72,7 +72,7 @@ const
   /// <summary>
   /// The website URL of your game (used in the About box)
   /// </summary>
-  CAboutGameURL = 'https://gametemplate.developpeur-pascal.fr/';
+  CAboutGameURL = 'https://fmxgamestarterkit.developpeur-pascal.fr/';
 
   /// <summary>
   /// Default language used if the system language is not supported

@@ -179,6 +179,8 @@ begin
   item.KeyShortcuts.Add(vkEscape, #0, []);
   item.KeyShortcuts.Add(vkHardwareBack, #0, []);
   item.GamePadButtons := [TJoystickButtons.x];
+  // Prevent moving from other UI element to this one by linking it to a non TControl element
+  item.TagObject := self;
 end;
 
 class function TUIItemsList.Current: TUIItemsList;

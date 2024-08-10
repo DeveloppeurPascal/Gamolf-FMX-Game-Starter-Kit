@@ -40,7 +40,7 @@
 /// ***************************************************************************
 /// </summary>
 
-program MyGameTemplate;
+program GamolfFMXGameStarterKit;
 
 uses
   System.StartUpCopy,
