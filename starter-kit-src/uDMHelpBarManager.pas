@@ -82,7 +82,7 @@ begin
   // HelpBarManager := THelpBarManager.create(nil);
   // result := HelpBarManager.DGEFMXHelpBar1;
 
-  // TODO -opprem : corriger problème de parent sur le composant lorsqu'il n'est pas sur une fiche
+  // TODO -oDeveloppeurPascal -cCheckIssue : corriger problème de parent sur le composant lorsqu'il n'est pas sur une fiche
   // See https://github.com/DeveloppeurPascal/Delphi-Game-Engine/issues/208
   result := frmMain.DGEFMXHelpBar1;
 end;

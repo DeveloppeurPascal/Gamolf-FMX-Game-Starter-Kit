@@ -389,7 +389,7 @@ begin
     FS := tfilestream.Create(AFilePath, fmOpenRead);
     try
 {$IFDEF RELEASE}
-      // TODO -opprem : traiter le chiffrement des données de backup
+      // TODO -oDeveloppeurPascal -cTODO : traiter le chiffrement des données de backup
 {$MESSAGE FATAL 'code missing'}
 {$ELSE}
       LoadFromStream(FS);
@@ -469,7 +469,7 @@ begin
     FS := tfilestream.Create(LFilePath, fmcreate + fmOpenWrite);
     try
 {$IFDEF RELEASE}
-      // TODO -opprem : traiter le chiffrement des données de backup
+      // TODO -oDeveloppeurPascal -cTODO : traiter le chiffrement des données de backup
 {$MESSAGE FATAL 'code missing'}
 {$ELSE}
       SaveToStream(FS);
