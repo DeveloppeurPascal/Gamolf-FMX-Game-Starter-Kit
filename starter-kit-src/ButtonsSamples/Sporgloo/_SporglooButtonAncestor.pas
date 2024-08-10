@@ -7,6 +7,9 @@ interface
 //
 // The button's background are bitmaps from the "UI Pack".
 // The images are licensed by Kenney (https://kenney.nl).
+//
+// The check image come from Pictogrammers.com website
+// It's licensed by Google : https://pictogrammers.com/library/mdi/icon/check/
 
 // Use it by code and fill its Text property or inherits from it to create your
 // buttons with a text, an icon or the both.
@@ -34,6 +37,8 @@ type
     rUp: TRectangle;
     txtUp: TText;
     txtDown: TText;
+    pFocusedDown: TPath;
+    pFocusedUp: TPath;
   private
   public
     procedure Repaint; override;
@@ -52,6 +57,8 @@ begin
     txtUp.text := text;
     txtDown.text := text;
   end;
+  pFocusedUp.Visible := IsFocused;
+  pFocusedDown.Visible := IsFocused;
 end;
 
 end.
