@@ -61,8 +61,13 @@ uses
   FMX.Dialogs,
   FMX.StdCtrls,
   _ScenesAncestor,
-  FMX.Controls.Presentation, FMX.Layouts, _ButtonsAncestor,
-  _TheQuizAncestorButton, cTheQuizHelloButton;
+  FMX.Controls.Presentation,
+  FMX.Layouts,
+  _ButtonsAncestor,
+  _TheQuizAncestorButton,
+  cTheQuizHelloButton,
+  _PloomtrisButtonAncestor,
+  cPloomtrisWorldButton;
 
 type
   TSceneTestButtons = class(T__SceneAncestor)
@@ -70,6 +75,7 @@ type
     TheQuizHelloButton1: TTheQuizHelloButton;
     Layout1: TLayout;
     Label1: TLabel;
+    PloomtrisWorldButton1: TPloomtrisWorldButton;
     procedure btnBackClick(Sender: TObject);
   private
   protected
@@ -106,10 +112,14 @@ begin
   Label1.text := '';
 
   TheQuizHelloButton1.OnClick := ButtonsClick;
-  TUIItemsList.Current.AddControl(TheQuizHelloButton1, nil, nil, btnBack,
+  TUIItemsList.Current.AddControl(TheQuizHelloButton1, nil, nil, PloomtrisWorldButton1,
     nil, true);
 
-  TUIItemsList.Current.AddControl(btnBack, TheQuizHelloButton1, nil, nil, nil,
+  PloomtrisWorldButton1.OnClick := ButtonsClick;
+  TUIItemsList.Current.AddControl(PloomtrisWorldButton1, TheQuizHelloButton1, nil, btnBack,
+    nil);
+
+  TUIItemsList.Current.AddControl(btnBack, PloomtrisWorldButton1, nil, nil, nil,
     false, true);
 
   THelpBarManager.Current.OpenHelpBar;

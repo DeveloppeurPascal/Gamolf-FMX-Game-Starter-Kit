@@ -50,6 +50,21 @@ inherited SceneTestButtons: TSceneTestButtons
         Size.Width = 273.000000000000000000
       end
     end
+    inline PloomtrisWorldButton1: TPloomtrisWorldButton
+      Align = Top
+      Locked = True
+      Position.Y = 75.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 75.000000000000000000
+      Size.PlatformDefault = False
+      inherited rBackground: TRectangle
+        Size.Width = 273.000000000000000000
+        inherited Text1: TText
+          Size.Width = 273.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
   end
   object Label1: TLabel
     Align = Top

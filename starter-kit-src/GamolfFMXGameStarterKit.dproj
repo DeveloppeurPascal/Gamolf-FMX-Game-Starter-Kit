@@ -763,6 +763,17 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
+        <DCCReference Include="ButtonsSamples\Ploumtris\_PloomtrisButtonAncestor.pas">
+            <Form>__PloomtrisButtonAncestor</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\assets\kenney_nl\PuzzleAssets2\USVGPuzzleAssets2.pas"/>
+        <DCCReference Include="ButtonsSamples\Ploumtris\cPloomtrisWorldButton.pas">
+            <Form>PloomtrisWorldButton</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
