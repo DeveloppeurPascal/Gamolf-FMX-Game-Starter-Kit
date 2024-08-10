@@ -4,6 +4,9 @@ interface
 
 // Button created by Patrick Prémartin for "Ploomtris" game
 // This game is available at https://ploomtris.gamolf.fr
+//
+// The button's background is a SVG from the "Puzzle Assets 2".
+// The images are licensed by Kenney (https://kenney.nl).
 
 // Use it by code and fill its Text property or inherits from it to create your
 // buttons with a text, an icon or the both.
