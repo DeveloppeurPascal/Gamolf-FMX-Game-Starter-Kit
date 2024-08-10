@@ -1,7 +1,7 @@
 /// <summary>
 /// ***************************************************************************
 ///
-/// Gamolf FMX Game Template
+/// Gamolf FMX Game Starter Kit
 ///
 /// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
 ///
@@ -15,8 +15,8 @@
 ///
 /// ***************************************************************************
 ///
-/// The "Gamolf FMX Game Template" is both a "technical" example of a video
-/// game developed in Delphi with everything you need inside, and a reusable
+/// The "Gamolf FMX Game Starter Kit" is both a "technical" example of a video
+/// game developed in Delphi with everything you need inside and a reusable
 /// project template you can customize for your own games.
 ///
 /// The files provided are fully functional. Numerous comments are included in
@@ -29,14 +29,14 @@
 /// Patrick PREMARTIN
 ///
 /// Site :
-/// https://gametemplate.developpeur-pascal.fr/
+/// https://fmxgamestarterkit.developpeur-pascal.fr/
 ///
 /// Project site :
-/// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template
+/// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-09T21:02:00.000+02:00
-/// Signature : f01e96a02648ef1026b9eb351decbe2f14744db2
+/// File last update : 2024-08-10T10:58:56.000+02:00
+/// Signature : b3fabeda72b38216bda6ae8721ddda29e0209f0a
 /// ***************************************************************************
 /// </summary>
 
@@ -85,6 +85,7 @@ type
   public
     procedure ShowScene; override;
     procedure HideScene; override;
+    procedure BeforeFirstShowScene; override;
   end;
 
 implementation
@@ -102,6 +103,15 @@ uses
   uDMHelpBarManager;
 
 { TSceneHome }
+
+procedure TSceneHome.BeforeFirstShowScene;
+begin
+  THelpBarManager.Current.height := 100;
+  THelpBarManager.Current.TextSettings.FontColor := talphacolors.Yellow;
+  THelpBarManager.Current.TextSettings.font.Size :=
+    THelpBarManager.Current.TextSettings.font.Size * 2;
+  THelpBarManager.Current.TextSettings.font.Style := [TFontStyle.fsBold];
+end;
 
 procedure TSceneHome.btnContinueClick(Sender: TObject);
 begin
@@ -182,12 +192,16 @@ begin
   if btnQuit.Visible then
     THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardEscape),
       ord(TSVGInputPromptsIndex.SteamButtonColorXOutline), 'Quit');
+  THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardArrowLeft),
+    ord(TSVGInputPromptsIndex.SteamDpadLeftOutline));
   THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardArrowUp),
-    ord(TSVGInputPromptsIndex.SteamDpadHorizontalOutline));
+    ord(TSVGInputPromptsIndex.SteamDpadUpOutline));
+  THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardArrowRight),
+    ord(TSVGInputPromptsIndex.SteamDpadRightOutline));
   THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardArrowDown),
-    ord(TSVGInputPromptsIndex.SteamDpadHorizontalOutline), 'Move');
+    ord(TSVGInputPromptsIndex.SteamDpadDownOutline), 'Move');
   THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardSpace),
-    ord(TSVGInputPromptsIndex.SteamButtonColorAOutline), 'Click');
+    ord(TSVGInputPromptsIndex.SteamButtonColorAOutline), 'Select');
 
   TSoundEffects.Play(TSoundEffectType.demo);
 end;

@@ -1,7 +1,7 @@
 /// <summary>
 /// ***************************************************************************
 ///
-/// Gamolf FMX Game Template
+/// Gamolf FMX Game Starter Kit
 ///
 /// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
 ///
@@ -15,8 +15,8 @@
 ///
 /// ***************************************************************************
 ///
-/// The "Gamolf FMX Game Template" is both a "technical" example of a video
-/// game developed in Delphi with everything you need inside, and a reusable
+/// The "Gamolf FMX Game Starter Kit" is both a "technical" example of a video
+/// game developed in Delphi with everything you need inside and a reusable
 /// project template you can customize for your own games.
 ///
 /// The files provided are fully functional. Numerous comments are included in
@@ -29,14 +29,14 @@
 /// Patrick PREMARTIN
 ///
 /// Site :
-/// https://gametemplate.developpeur-pascal.fr/
+/// https://fmxgamestarterkit.developpeur-pascal.fr/
 ///
 /// Project site :
-/// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template
+/// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-09T21:31:20.000+02:00
-/// Signature : dbbff5258d6b775dd6ddb0f008213da15aa69d11
+/// File last update : 2024-08-10T10:55:02.000+02:00
+/// Signature : fbefd6ecd9b8050561cda610e3a949fe491aba18
 /// ***************************************************************************
 /// </summary>
 
@@ -323,12 +323,16 @@ begin
   THelpBarManager.Current.OpenHelpBar;
   THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardEscape),
     ord(TSVGInputPromptsIndex.SteamButtonColorXOutline), 'Pause');
+  THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardArrowLeft),
+    ord(TSVGInputPromptsIndex.SteamDpadLeftOutline));
   THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardArrowUp),
-    ord(TSVGInputPromptsIndex.SteamDpadHorizontalOutline));
+    ord(TSVGInputPromptsIndex.SteamDpadUpOutline));
+  THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardArrowRight),
+    ord(TSVGInputPromptsIndex.SteamDpadRightOutline));
   THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardArrowDown),
-    ord(TSVGInputPromptsIndex.SteamDpadHorizontalOutline), 'Move');
+    ord(TSVGInputPromptsIndex.SteamDpadDownOutline), 'Move');
   THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardSpace),
-    ord(TSVGInputPromptsIndex.SteamButtonColorAOutline), 'Click');
+    ord(TSVGInputPromptsIndex.SteamButtonColorAOutline), 'Select');
 
   // start your game loop
   // start your workers
