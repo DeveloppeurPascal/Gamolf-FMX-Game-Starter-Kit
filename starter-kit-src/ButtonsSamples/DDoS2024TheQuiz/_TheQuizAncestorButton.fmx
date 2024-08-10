@@ -1,0 +1,103 @@
+inherited __TheQuizAncestorButton: T__TheQuizAncestorButton
+  object lDown: TLayout
+    Align = Contents
+    Locked = True
+    Size.Width = 200.000000000000000000
+    Size.Height = 75.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Rectangle1: TRectangle
+      Align = Client
+      Fill.Color = claDarkcyan
+      Locked = True
+      HitTest = False
+      Margins.Left = 15.000000000000000000
+      Margins.Top = 15.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 180.000000000000000000
+      Size.Height = 55.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Color = claDarkblue
+      Stroke.Thickness = 2.000000000000000000
+      XRadius = 10.000000000000000000
+      YRadius = 10.000000000000000000
+      object ShadowEffect2: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 180.000000000000000000
+        Softness = 0.300000011920929000
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+      object txtDown: TText
+        Align = Contents
+        Locked = True
+        HitTest = False
+        Size.Width = 180.000000000000000000
+        Size.Height = 55.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'xxx'
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claWhite
+      end
+    end
+  end
+  object lUp: TLayout
+    Align = Contents
+    Locked = True
+    Size.Width = 320.000000000000000000
+    Size.Height = 240.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 0
+    object Rectangle2: TRectangle
+      Align = Client
+      Fill.Color = claDarkcyan
+      Locked = True
+      HitTest = False
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 15.000000000000000000
+      Margins.Bottom = 15.000000000000000000
+      Size.Width = 300.000000000000000000
+      Size.Height = 220.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Color = claDarkblue
+      Stroke.Thickness = 2.000000000000000000
+      XRadius = 10.000000000000000000
+      YRadius = 10.000000000000000000
+      object ShadowEffect1: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.300000011920929000
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+      object txtUp: TText
+        Align = Contents
+        Locked = True
+        HitTest = False
+        Size.Width = 300.000000000000000000
+        Size.Height = 220.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'xxx'
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claWhite
+      end
+    end
+  end
+  object rFocused: TRectangle
+    Align = Contents
+    Fill.Kind = None
+    Locked = True
+    HitTest = False
+    Size.Width = 200.000000000000000000
+    Size.Height = 75.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claAqua
+    Stroke.Thickness = 3.000000000000000000
+    Stroke.Dash = Dash
+    XRadius = 10.000000000000000000
+    YRadius = 10.000000000000000000
+  end
+end

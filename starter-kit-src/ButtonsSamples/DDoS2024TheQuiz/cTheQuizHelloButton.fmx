@@ -1,0 +1,18 @@
+inherited TheQuizHelloButton: TTheQuizHelloButton
+  inherited lDown: TLayout
+    inherited Rectangle1: TRectangle
+      inherited txtDown: TText
+        Text = 'Hello'
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+    end
+  end
+  inherited lUp: TLayout
+    inherited Rectangle2: TRectangle
+      inherited txtUp: TText
+        Text = 'Hello'
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+    end
+  end
+end
