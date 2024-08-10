@@ -3,6 +3,7 @@ inherited __PloomtrisButtonAncestor: T__PloomtrisButtonAncestor
     Align = Client
     Fill.Bitmap.WrapMode = TileStretch
     Fill.Kind = Bitmap
+    Locked = True
     HitTest = False
     Size.Width = 200.000000000000000000
     Size.Height = 75.000000000000000000
@@ -10,6 +11,7 @@ inherited __PloomtrisButtonAncestor: T__PloomtrisButtonAncestor
     Stroke.Kind = None
     object Text1: TText
       Align = Client
+      Locked = True
       HitTest = False
       Size.Width = 200.000000000000000000
       Size.Height = 75.000000000000000000
