@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// ***************************************************************************
 ///
-/// Gamolf FMX Game Template
+/// Gamolf FMX Game Starter Kit
 ///
 /// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
 ///
@@ -15,8 +15,8 @@
 ///
 /// ***************************************************************************
 ///
-/// The "Gamolf FMX Game Template" is both a "technical" example of a video
-/// game developed in Delphi with everything you need inside, and a reusable
+/// The "Gamolf FMX Game Starter Kit" is both a "technical" example of a video
+/// game developed in Delphi with everything you need inside and a reusable
 /// project template you can customize for your own games.
 ///
 /// The files provided are fully functional. Numerous comments are included in
@@ -29,14 +29,14 @@
 /// Patrick PREMARTIN
 ///
 /// Site :
-/// https://gametemplate.developpeur-pascal.fr/
+/// https://fmxgamestarterkit.developpeur-pascal.fr/
 ///
 /// Project site :
-/// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template
+/// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-09T23:42:50.000+02:00
-/// Signature : 106a4ad6fb9780527e8600dffdd145e84fe86b79
+/// File last update : 2024-08-10T10:42:02.000+02:00
+/// Signature : ef4bc510805f881c55d1c3e031ae73cba951e7ff
 /// ***************************************************************************
 /// </summary>
 
@@ -50,7 +50,7 @@ interface
 // In this case, we suggest you open a ticket on the code repository to explain
 // your needs and the changes to be made to the template.
 //
-// All scenes in your game must inherits from this class.
+// All scenes in your game must inherits from this class or its descendants.
 
 uses
   System.SysUtils,
@@ -67,6 +67,9 @@ uses
   FMX.StdCtrls;
 
 type
+  /// <summary>
+  /// Should be used as your scenes ancestor.
+  /// </summary>
   T__SceneAncestor = class(TFrame)
   private
     FHasCalledBeforeFirstShowScene: boolean;
@@ -74,7 +77,8 @@ type
     procedure DoTranslateTexts(const Sender: TObject; const Msg: TMessage);
   public
     /// <summary>
-    /// Contains scene initialization called only one time (before the first ShowScene, after instance construction)
+    /// Contains scene initialization called only one time (before the first
+    /// ShowScene, after instance construction)
     /// </summary>
     procedure BeforeFirstShowScene; virtual;
     /// <summary>
@@ -86,11 +90,13 @@ type
     /// </summary>
     procedure HideScene; virtual;
     /// <summary>
-    /// Contains scene finalization called only one time (during instance destruction)
+    /// Contains scene finalization called only one time (during instance
+    /// destruction)
     /// </summary>
     procedure AfterLastHideScene; virtual;
     /// <summary>
-    /// This method is called each time a global translation broadcast is sent with current languge as argument.
+    /// This method is called each time a global translation broadcast is sent
+    /// with current languge as argument.
     /// </summary>
     procedure TranslateTexts(const Language: string); virtual;
     /// <summary>
@@ -98,9 +104,13 @@ type
     /// </summary>
     constructor Create(AOwner: TComponent); override;
     /// <summary>
-    /// Called by the Delphi when the instance memory is released
+    /// internal use, call it only if you override it in a descendant
     /// </summary>
     destructor Destroy; override;
+    /// <summary>
+    /// internal use, call it only if you override it in a descendant
+    /// </summary>
+    procedure AfterConstruction; override;
   end;
 
 implementation
@@ -114,6 +124,12 @@ uses
   uDMHelpBarManager;
 
 { TSceneAncestor }
+
+procedure T__SceneAncestor.AfterConstruction;
+begin
+  inherited;
+  name := '';
+end;
 
 procedure T__SceneAncestor.AfterLastHideScene;
 begin
