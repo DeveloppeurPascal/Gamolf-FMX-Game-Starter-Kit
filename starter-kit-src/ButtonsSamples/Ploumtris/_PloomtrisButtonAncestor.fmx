@@ -1,0 +1,21 @@
+inherited __PloomtrisButtonAncestor: T__PloomtrisButtonAncestor
+  object rBackground: TRectangle
+    Align = Client
+    Fill.Bitmap.WrapMode = TileStretch
+    Fill.Kind = Bitmap
+    HitTest = False
+    Size.Width = 200.000000000000000000
+    Size.Height = 75.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object Text1: TText
+      Align = Client
+      HitTest = False
+      Size.Width = 200.000000000000000000
+      Size.Height = 75.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'button'
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+end

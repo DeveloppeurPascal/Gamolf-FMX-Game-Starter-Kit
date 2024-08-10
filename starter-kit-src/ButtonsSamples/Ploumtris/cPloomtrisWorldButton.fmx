@@ -1,0 +1,9 @@
+inherited PloomtrisWorldButton: TPloomtrisWorldButton
+  inherited rBackground: TRectangle
+    OnResized = nil
+    inherited Text1: TText
+      Text = 'World'
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+end
