@@ -1,0 +1,8 @@
+object __ButtonAncestor: T__ButtonAncestor
+  Locked = True
+  Size.Width = 200.000000000000000000
+  Size.Height = 75.000000000000000000
+  Size.PlatformDefault = False
+  OnMouseDown = FrameMouseDown
+  OnMouseLeave = FrameMouseLeave
+end
