@@ -98,6 +98,7 @@ type
   public
     procedure TranslateTexts(const Sender: TObject;
       const Msg: TMessage); Virtual;
+          procedure AfterConstruction; override;
   end;
 
 var
@@ -117,16 +118,22 @@ uses
   uUIElements,
   Gamolf.RTL.UIElements;
 
-procedure TfrmMain.FormCreate(Sender: TObject);
+procedure TfrmMain.AfterConstruction;
 begin
-  // Remove the WARNING message for the developper in Delphi IDE.
-  FreeAndNil(Label1);
-
-  fullscreen := COpenGameInFullScreenMode;
+  inherited;
 {$IF Defined(MACOS) and not Defined(IOS)}
 {$ELSE}
   FreeAndNil(MainMenu);
 {$ENDIF}
+
+  // Remove the WARNING message for the developper in Delphi IDE.
+  FreeAndNil(Label1);
+
+  fullscreen := COpenGameInFullScreenMode;
+end;
+
+procedure TfrmMain.FormCreate(Sender: TObject);
+begin
   BackgroundScene := TSceneBackground.Create(self);
   BackgroundScene.parent := self;
   BackgroundScene.ShowScene;
