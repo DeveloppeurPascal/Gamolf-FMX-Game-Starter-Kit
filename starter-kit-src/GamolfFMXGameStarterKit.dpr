@@ -73,7 +73,7 @@ uses
   Macapi.GameController in '..\lib-externes\Delphi-Game-Engine\src\Macapi.GameController.pas',
   uTranslate in 'uTranslate.pas',
   uConfig in 'uConfig.pas',
-  _SceneAncestor in 'Scenes\_SceneAncestor.pas' {__SceneAncestor: TFrame},
+  _ScenesAncestor in '_AncestorsForSceneAndUIElements\_ScenesAncestor.pas' {__SceneAncestor: TFrame},
   uSceneBackground in 'Scenes\uSceneBackground.pas' {SceneBackground: TFrame},
   uScene in 'uScene.pas',
   uSceneHome in 'Scenes\uSceneHome.pas' {SceneHome: TFrame},
@@ -92,7 +92,8 @@ uses
   USVGInputPrompts in '..\assets\kenney_nl\InputPrompts\USVGInputPrompts.pas',
   uDMGameControllerCenter in 'uDMGameControllerCenter.pas' {DMGameControllerCenter: TDataModule},
   uSVGBitmapManager in 'uSVGBitmapManager.pas',
-  uDMHelpBarManager in 'uDMHelpBarManager.pas' {HelpBarManager: TDataModule};
+  uDMHelpBarManager in 'uDMHelpBarManager.pas' {HelpBarManager: TDataModule},
+  _ButtonsAncestor in '_AncestorsForSceneAndUIElements\_ButtonsAncestor.pas' {__ButtonAncestor: TFrame};
 
 {$R *.res}
 
