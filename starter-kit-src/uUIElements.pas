@@ -150,10 +150,14 @@ begin
     item.TagObject := Control;
     Control.TagObject := item;
     Control.OnEnter := OnControlEnter;
-    item.TopItem := GetElementByTagObject(TopControl);
-    item.RightItem := GetElementByTagObject(RightControl);
-    item.BottomItem := GetElementByTagObject(BottomControl);
-    item.LeftItem := GetElementByTagObject(LeftControl);
+    if assigned(TopControl) then
+      item.TopItem := GetElementByTagObject(TopControl);
+    if assigned(RightControl) then
+      item.RightItem := GetElementByTagObject(RightControl);
+    if assigned(BottomControl) then
+      item.BottomItem := GetElementByTagObject(BottomControl);
+    if assigned(LeftControl) then
+      item.LeftItem := GetElementByTagObject(LeftControl);
 
     if HasFocus then
       item.SetFocus;
@@ -179,7 +183,7 @@ begin
   item.KeyShortcuts.Add(vkEscape, #0, []);
   item.KeyShortcuts.Add(vkHardwareBack, #0, []);
   item.GamePadButtons := [TJoystickButtons.x];
-  // Prevent moving from other UI element to this one by linking it to a non TControl element
+  // Prevents finding this element by GetElementByTagObject(nil)
   item.TagObject := self;
 end;
 
