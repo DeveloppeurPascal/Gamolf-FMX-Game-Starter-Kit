@@ -496,8 +496,8 @@
         <Icns_MainIcns>..\assets\icons\debuggameicon.icns</Icns_MainIcns>
         <UWP_DelphiLogo44>..\assets\icons\debuggameicon-44x44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>..\assets\icons\debuggameicon-150x150.png</UWP_DelphiLogo150>
-        <VerInfo_Build>4</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.4;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=gamolf.fmxgametemplate.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>6</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.6;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=gamolf.fmxgametemplate.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
@@ -684,43 +684,43 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Scenes\uSceneBackground.pas">
+        <DCCReference Include="ScenesSamples\uSceneBackground.pas">
             <Form>SceneBackground</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="uScene.pas"/>
-        <DCCReference Include="Scenes\uSceneHome.pas">
+        <DCCReference Include="ScenesSamples\uSceneHome.pas">
             <Form>SceneHome</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Scenes\uSceneGame.pas">
+        <DCCReference Include="ScenesSamples\uSceneGame.pas">
             <Form>SceneGame</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Scenes\uSceneGameOverLost.pas">
+        <DCCReference Include="ScenesSamples\uSceneGameOverLost.pas">
             <Form>SceneGameOverLost</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Scenes\uSceneGameOverWin.pas">
+        <DCCReference Include="ScenesSamples\uSceneGameOverWin.pas">
             <Form>SceneGameOverWin</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Scenes\uSceneOptions.pas">
+        <DCCReference Include="ScenesSamples\uSceneOptions.pas">
             <Form>SceneOptions</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Scenes\uSceneCredits.pas">
+        <DCCReference Include="ScenesSamples\uSceneCredits.pas">
             <Form>SceneCredits</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Scenes\uSceneHallOfFame.pas">
+        <DCCReference Include="ScenesSamples\uSceneHallOfFame.pas">
             <Form>SceneHallOfFame</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>

@@ -15,7 +15,7 @@ inherited SceneGame: TSceneGame
     Size.Width = 837.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 3
+    TabOrder = 2
     Justify = Left
     JustifyLastLine = Left
     FlowDirection = LeftToRight
