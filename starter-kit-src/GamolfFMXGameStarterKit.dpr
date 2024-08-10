@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// ***************************************************************************
 ///
-/// Gamolf FMX Game Template
+/// Gamolf FMX Game Starter Kit
 ///
 /// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
 ///
@@ -15,8 +15,8 @@
 ///
 /// ***************************************************************************
 ///
-/// The "Gamolf FMX Game Template" is both a "technical" example of a video
-/// game developed in Delphi with everything you need inside, and a reusable
+/// The "Gamolf FMX Game Starter Kit" is both a "technical" example of a video
+/// game developed in Delphi with everything you need inside and a reusable
 /// project template you can customize for your own games.
 ///
 /// The files provided are fully functional. Numerous comments are included in
@@ -29,14 +29,14 @@
 /// Patrick PREMARTIN
 ///
 /// Site :
-/// https://gametemplate.developpeur-pascal.fr/
+/// https://fmxgamestarterkit.developpeur-pascal.fr/
 ///
 /// Project site :
-/// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template
+/// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-08T21:45:46.000+02:00
-/// Signature : fa701efe2107acc4ac1aa26624039880fd8cb722
+/// File last update : 2024-08-10T10:45:12.000+02:00
+/// Signature : d93d154ab7cc17ff93add64eca0fc23be6a4b600
 /// ***************************************************************************
 /// </summary>
 
@@ -93,7 +93,10 @@ uses
   uDMGameControllerCenter in 'uDMGameControllerCenter.pas' {DMGameControllerCenter: TDataModule},
   uSVGBitmapManager in 'uSVGBitmapManager.pas',
   uDMHelpBarManager in 'uDMHelpBarManager.pas' {HelpBarManager: TDataModule},
-  _ButtonsAncestor in '_AncestorsForScenesAndUIElements\_ButtonsAncestor.pas' {__ButtonAncestor: TFrame};
+  _ButtonsAncestor in '_AncestorsForScenesAndUIElements\_ButtonsAncestor.pas' {__ButtonAncestor: TFrame},
+  _TheQuizAncestorButton in 'ButtonsSamples\DDoS2024TheQuiz\_TheQuizAncestorButton.pas' {__TheQuizAncestorButton: TFrame},
+  cTheQuizHelloButton in 'ButtonsSamples\DDoS2024TheQuiz\cTheQuizHelloButton.pas' {TheQuizHelloButton: TFrame},
+  uSceneTestButtons in 'ScenesSamples\uSceneTestButtons.pas' {SceneTestButtons: TFrame};
 
 {$R *.res}
 

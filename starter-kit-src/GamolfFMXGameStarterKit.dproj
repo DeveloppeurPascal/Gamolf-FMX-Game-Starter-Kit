@@ -496,8 +496,8 @@
         <Icns_MainIcns>..\assets\icons\debuggameicon.icns</Icns_MainIcns>
         <UWP_DelphiLogo44>..\assets\icons\debuggameicon-44x44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>..\assets\icons\debuggameicon-150x150.png</UWP_DelphiLogo150>
-        <VerInfo_Build>6</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.6;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=gamolf.fmxgametemplate.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>7</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.7;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=gamolf.fmxgametemplate.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
@@ -745,6 +745,21 @@
         </DCCReference>
         <DCCReference Include="_AncestorsForScenesAndUIElements\_ButtonsAncestor.pas">
             <Form>__ButtonAncestor</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="ButtonsSamples\DDoS2024TheQuiz\_TheQuizAncestorButton.pas">
+            <Form>__TheQuizAncestorButton</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="ButtonsSamples\DDoS2024TheQuiz\cTheQuizHelloButton.pas">
+            <Form>TheQuizHelloButton</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="ScenesSamples\uSceneTestButtons.pas">
+            <Form>SceneTestButtons</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
