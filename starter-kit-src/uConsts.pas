@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// ***************************************************************************
 ///
-/// Gamolf FMX Game Template
+/// Gamolf FMX Game Starter Kit
 ///
 /// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
 ///
@@ -15,8 +15,8 @@
 ///
 /// ***************************************************************************
 ///
-/// The "Gamolf FMX Game Template" is both a "technical" example of a video
-/// game developed in Delphi with everything you need inside, and a reusable
+/// The "Gamolf FMX Game Starter Kit" is both a "technical" example of a video
+/// game developed in Delphi with everything you need inside and a reusable
 /// project template you can customize for your own games.
 ///
 /// The files provided are fully functional. Numerous comments are included in
@@ -29,14 +29,14 @@
 /// Patrick PREMARTIN
 ///
 /// Site :
-/// https://gametemplate.developpeur-pascal.fr/
+/// https://fmxgamestarterkit.developpeur-pascal.fr/
 ///
 /// Project site :
-/// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template
+/// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-09T23:36:54.000+02:00
-/// Signature : c01ed96c6b0990127b841e3a2a3fb72ae5bd7f3f
+/// File last update : 2024-08-10T10:47:04.000+02:00
+/// Signature : 835bac49877713a2d29cbcf02d7c77f970057d76
 /// ***************************************************************************
 /// </summary>
 
@@ -164,6 +164,17 @@ const
   /// </summary>
   CDefaultLevel = 1;
 
+  /// <summary>
+  /// When a IUIControl button is clicked (with the keyboard or a game
+  /// controller), the default ancestor do a Down/Up and wait
+  /// CTimeInMSBetweenButtonDownAndUp milliseconds between the two states.
+  /// </summary>
+  /// <remarks>
+  /// Put 0 if you don't want to wait on button click.
+  /// You can customize the value on each button.
+  /// </remarks>
+  CTimeInMSBetweenButtonDownAndUp = 50;
+
 type
 {$SCOPEDENUMS ON}
   /// <summary>
@@ -176,7 +187,7 @@ type
   /// </remarks>
   TSceneType = (None (* "None" must stay *) , Home (* "Home" must stay *) ,
     Exit (* "Exit" must stay *) , Game, GameOverLost, GameOverWin, Credits,
-    Options, HallOfFame);
+    Options, HallOfFame, TestUIButtons);
 
 Const
   /// <summary>
@@ -185,7 +196,8 @@ Const
   /// <remarks>
   /// Change it to an other scene, like a game intro or a splashscreen
   /// </remarks>
-  CDefaultSceneOnStartup = TSceneType.Home;
+  // CDefaultSceneOnStartup = TSceneType.Home;
+  CDefaultSceneOnStartup = TSceneType.TestUIButtons;
 
 implementation
 
