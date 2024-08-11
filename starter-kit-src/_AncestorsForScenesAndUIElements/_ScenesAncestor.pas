@@ -186,17 +186,22 @@ begin
     FHasCalledBeforeFirstShowScene := true;
   end;
 
-  Align := TAlignLayout.Contents;
+  TranslateTexts(tconfig.Current.Language);
+  TMessageManager.DefaultManager.SubscribeToMessage(TTranslateTextsMessage,
+    DoTranslateTexts);
+
+  Position.x := 0;
+  Position.y := Application.MainForm.height;
+  Width := Application.MainForm.Width;
+  height := Application.MainForm.height;
+  Visible := true;
 
   THelpBarManager.Current.Clear;
 
   TUIItemsList.Current.NewLayout;
 
-  TranslateTexts(tconfig.Current.Language);
-  TMessageManager.DefaultManager.SubscribeToMessage(TTranslateTextsMessage,
-    DoTranslateTexts);
+  Align := TAlignLayout.Contents;
 
-  Visible := true;
   BringToFront;
 end;
 

@@ -90,7 +90,6 @@ type
     procedure FormKeyDown(Sender: TObject; var Key: Word; var KeyChar: WideChar;
       Shift: TShiftState);
     procedure mnuAboutClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   private
     BackgroundScene: TSceneBackground;
@@ -98,7 +97,8 @@ type
   public
     procedure TranslateTexts(const Sender: TObject;
       const Msg: TMessage); Virtual;
-          procedure AfterConstruction; override;
+    procedure AfterConstruction; override;
+    constructor Create(AOwner: TComponent); override;
   end;
 
 var
@@ -125,18 +125,10 @@ begin
 {$ELSE}
   FreeAndNil(MainMenu);
 {$ENDIF}
-
   // Remove the WARNING message for the developper in Delphi IDE.
   FreeAndNil(Label1);
 
   fullscreen := COpenGameInFullScreenMode;
-end;
-
-procedure TfrmMain.FormCreate(Sender: TObject);
-begin
-  BackgroundScene := TSceneBackground.Create(self);
-  BackgroundScene.parent := self;
-  BackgroundScene.ShowScene;
 
   TMessageManager.DefaultManager.SubscribeToMessage(TTranslateTextsMessage,
     TranslateTexts);
@@ -149,22 +141,35 @@ begin
         close;
     end);
 
-  if TBackgroundMusic.Current.HasAValidBackgroundMusicFile then
-    TBackgroundMusic.Current.OnOff(tconfig.Current.BackgroundMusicOnOff);
-
   tthread.ForceQueue(nil,
     procedure
     begin
+      BackgroundScene := TSceneBackground.Create(self);
+      BackgroundScene.parent := self;
+      BackgroundScene.ShowScene;
+
       tscene.Current := CDefaultSceneOnStartup;
+
+      if TBackgroundMusic.Current.HasAValidBackgroundMusicFile then
+        TBackgroundMusic.Current.OnOff(tconfig.Current.BackgroundMusicOnOff);
     end);
+end;
+
+constructor TfrmMain.Create(AOwner: TComponent);
+begin
+  inherited;
+  BackgroundScene := nil;
 end;
 
 procedure TfrmMain.FormDestroy(Sender: TObject);
 begin
   TMessageManager.DefaultManager.Unsubscribe(TTranslateTextsMessage,
     TranslateTexts, true);
-  BackgroundScene.HideScene;
-  BackgroundScene.Free;
+  if assigned(BackgroundScene) then
+  begin
+    BackgroundScene.HideScene;
+    BackgroundScene.Free;
+  end;
 end;
 
 procedure TfrmMain.FormKeyDown(Sender: TObject; var Key: Word;
