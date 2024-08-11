@@ -1,2 +1,2 @@
-{$MESSAGE FATAL 'use https://xorkeysgenerator.olfsoftware.fr to generate a list of numbers to replace "0" in this "keys" and remove this comment when it''s done'}
- Keys := [0];
+{$MESSAGE FATAL 'Use https://xorkeysgenerator.olfsoftware.fr to generate a list of random numbers. Replace the zero in this array by the generated list. Remove this comment when it''s done.'}
+GConfigXORKey := [0];

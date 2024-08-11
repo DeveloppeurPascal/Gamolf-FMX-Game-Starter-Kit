@@ -47,6 +47,9 @@ interface
 {$MESSAGE WARN 'Save uConsts.pas in your game folder and customize its constants. Don''t change the template version if you want to be able to update it.'}
 // TODO : Save uConsts.pas in your game folder and customize its constants. Don't change the template version if you want to be able to update it.
 
+uses
+  System.Types;
+
 const
   /// <summary>
   /// Version number of your game, don't forget to update the
@@ -199,6 +202,13 @@ Const
   CDefaultSceneOnStartup = TSceneType.Home;
   // CDefaultSceneOnStartup = TSceneType.TestUIButtons;
 
+{$IF Defined(RELEASE)}
+
+var
+  GConfigXORKey: TByteDynArray;
+  GGameDataXORKey: TByteDynArray;
+{$ENDIF}
+
 implementation
 
 uses
@@ -232,6 +242,34 @@ if (CGameGUID = '{48AD6D06-1BED-4F33-ADCA-267E12D74417}') then
 {$IFDEF DEBUG}
 // TODO : it's a recommended value but you can remove it if you want
 ReportMemoryLeaksOnShutdown := true;
+{$ENDIF}
+{$IF Defined(RELEASE)}
+// Path to the Pascal file where you fill GConfigXORKey variable.
+// This variable is used to crypt/decrypt the settings data in RELEASE mode.
+//
+// Template file is in ____PRIVATE\src\ConfigFileXORKey.inc
+// Copy it to a private folder (not in the code repository for security reasons)
+// Customize it
+// Update it's path to the Include directive
+//
+// Don't share the key file. If you need to modify it, you won't be able to
+// open the previous configuration file!
+{$I '..\____PRIVATE\src\ConfigFileXORKey.inc'}
+// TODO : don't forget to change ConfigFileXORKey.inc path before releasing your game
+
+// Path to the Pascal file where you fill GGameDataXORKey variable.
+// This variable is used to crypt/decrypt the settings data in RELEASE mode.
+//
+// Template file is in ____PRIVATE\src\GameDataFileXORKey.inc
+// Copy it to a private folder (not in the code repository for security reasons)
+// Customize it
+// Update it's path to the Include directive
+//
+// Don't share the key file. If you need to modify it, you won't be able to
+// open the previous configuration file!
+{$I '..\____PRIVATE\src\GameDataFileXORKey.inc'}
+// TODO : don't forget to change GameDataFileXORKey.inc path before releasing your game
+
 {$ENDIF}
 
 end.

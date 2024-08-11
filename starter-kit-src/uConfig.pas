@@ -148,26 +148,22 @@ begin
 {$IF Defined(RELEASE)}
   FParams.onCryptProc := function(Const AParams: string): TStream
     var
-      Keys: TByteDynArray;
       ParStream: TStringStream;
     begin
       ParStream := TStringStream.Create(AParams);
       try
-{$I '..\_PRIVATE\src\paramsxorkey.inc'}
-        result := TOlfCryptDecrypt.XORCrypt(ParStream, Keys);
+        result := TOlfCryptDecrypt.XORCrypt(ParStream, GConfigXORKey);
       finally
         ParStream.free;
       end;
     end;
   FParams.onDecryptProc := function(Const AStream: TStream): string
     var
-      Keys: TByteDynArray;
       Stream: TStream;
       StringStream: TStringStream;
     begin
-{$I '..\_PRIVATE\src\paramsxorkey.inc'}
       result := '';
-      Stream := TOlfCryptDecrypt.XORdeCrypt(AStream, Keys);
+      Stream := TOlfCryptDecrypt.XORdeCrypt(AStream, GConfigXORKey);
       try
         if assigned(Stream) and (Stream.Size > 0) then
         begin
