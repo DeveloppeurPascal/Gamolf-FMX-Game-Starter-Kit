@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-11T11:39:38.000+02:00
-/// Signature : 6dbf7a0585e443920306cf2b295edfafb6b171b3
+/// File last update : 2024-08-11T12:03:22.000+02:00
+/// Signature : 07efffc88b68de4cb04eff2b74bef5531b5ee253
 /// ***************************************************************************
 /// </summary>
 
@@ -129,6 +129,7 @@ procedure T__SceneAncestor.AfterConstruction;
 begin
   inherited;
   name := '';
+  Visible := false;
 end;
 
 procedure T__SceneAncestor.AfterLastHideScene;
@@ -190,18 +191,12 @@ begin
   TMessageManager.DefaultManager.SubscribeToMessage(TTranslateTextsMessage,
     DoTranslateTexts);
 
-  Position.x := 0;
-  Position.y := Application.MainForm.height;
-  Width := Application.MainForm.Width;
-  height := Application.MainForm.height;
-  Visible := true;
-
   THelpBarManager.Current.Clear;
 
   TUIItemsList.Current.NewLayout;
 
   Align := TAlignLayout.Contents;
-
+  Visible := true;
   BringToFront;
 end;
 
