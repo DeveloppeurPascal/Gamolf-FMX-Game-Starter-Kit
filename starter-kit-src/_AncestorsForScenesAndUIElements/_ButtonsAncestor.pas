@@ -174,7 +174,8 @@ implementation
 uses
   uConfig,
   uTranslate,
-  uConsts;
+  uConsts,
+  Gamolf.RTL.UIElements;
 
 procedure T__ButtonAncestor.AfterConstruction;
 begin
@@ -204,7 +205,10 @@ begin
   else
   begin
     IsDown := true;
-    IsFocused := true;
+
+    if (not IsFocused) and (TagObject is TUIElement) then
+      (TagObject as TUIElement).IsFocused := true;
+
     tthread.CreateAnonymousThread(
       procedure
       begin
