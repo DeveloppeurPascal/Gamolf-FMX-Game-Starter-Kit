@@ -27,7 +27,7 @@ This code repository contains a project developed in Object Pascal language unde
 
 ### Dev Days of Summer 2024
 
-* [Make games in Delphi (2024 edition)](https://serialstreameur.fr/make-games-in-delphi-2024-edition.html) (in English)
+* the replay will be released shortly
 
 ### Twitch
 
