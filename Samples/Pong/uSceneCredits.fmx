@@ -1,0 +1,73 @@
+inherited SceneCredits: TSceneCredits
+  Size.Width = 912.000000000000000000
+  Size.Height = 616.000000000000000000
+  object rBackground: TRectangle
+    Align = Center
+    Fill.Color = claDarkolivegreen
+    Padding.Left = 5.000000000000000000
+    Padding.Top = 5.000000000000000000
+    Padding.Right = 5.000000000000000000
+    Padding.Bottom = 5.000000000000000000
+    Size.Width = 700.000000000000000000
+    Size.Height = 500.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claYellow
+    Stroke.Thickness = 5.000000000000000000
+    XRadius = 20.000000000000000000
+    YRadius = 10.000000000000000000
+    object VertScrollBox1: TVertScrollBox
+      Align = Client
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 680.000000000000000000
+      Size.Height = 420.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Viewport.Width = 680.000000000000000000
+      Viewport.Height = 420.000000000000000000
+      object Text1: TText
+        Align = Top
+        AutoSize = True
+        Size.Width = 680.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claAzure
+        TextSettings.HorzAlign = Leading
+      end
+    end
+    object Layout1: TLayout
+      Align = Bottom
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 440.000000000000000000
+      Size.Width = 680.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      inline btnQuit: T__EggHunterButtonAncestor
+        Align = Center
+        Locked = True
+        Size.Width = 320.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        OnClick = btnQuitClick
+        inherited Background_Off: TRectangle
+          inherited Text_Off: TText
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+        inherited Background_On: TRectangle
+          inherited Text_On: TText
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+      end
+    end
+  end
+end

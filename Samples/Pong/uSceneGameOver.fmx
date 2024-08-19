@@ -1,0 +1,58 @@
+inherited SceneGameOver: TSceneGameOver
+  Size.Width = 1055.000000000000000000
+  Size.Height = 704.000000000000000000
+  object rBackground: TRectangle
+    Align = Center
+    Fill.Color = claDarkolivegreen
+    Padding.Left = 5.000000000000000000
+    Padding.Top = 5.000000000000000000
+    Padding.Right = 5.000000000000000000
+    Padding.Bottom = 5.000000000000000000
+    Size.Width = 458.000000000000000000
+    Size.Height = 265.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claYellow
+    Stroke.Thickness = 5.000000000000000000
+    XRadius = 20.000000000000000000
+    YRadius = 10.000000000000000000
+    object Layout1: TLayout
+      Align = Bottom
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 205.000000000000000000
+      Size.Width = 438.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      inline btnQuit: T__EggHunterButtonAncestor
+        Align = Center
+        Locked = True
+        Size.Width = 320.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        OnClick = btnQuitClick
+        inherited Background_Off: TRectangle
+          inherited Text_Off: TText
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+        inherited Background_On: TRectangle
+          inherited Text_On: TText
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+      end
+    end
+    object Text1: TText
+      Align = Center
+      AutoSize = True
+      Size.Width = 200.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claAzure
+    end
+  end
+end

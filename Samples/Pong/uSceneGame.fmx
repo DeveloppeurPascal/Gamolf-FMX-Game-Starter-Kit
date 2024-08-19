@@ -1,0 +1,116 @@
+inherited SceneGame: TSceneGame
+  Size.Width = 1063.000000000000000000
+  Size.Height = 561.000000000000000000
+  object Layout1: TLayout
+    Align = Center
+    Size.Width = 620.000000000000000000
+    Size.Height = 410.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Rectangle1: TRectangle
+      Align = Top
+      Fill.Color = claYellow
+      Size.Width = 620.000000000000000000
+      Size.Height = 10.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+    end
+    object Rectangle2: TRectangle
+      Align = Left
+      Fill.Color = claYellow
+      Position.Y = 10.000000000000000000
+      Size.Width = 10.000000000000000000
+      Size.Height = 400.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+    end
+    object Rectangle3: TRectangle
+      Align = Right
+      Fill.Color = claYellow
+      Position.X = 610.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 10.000000000000000000
+      Size.Height = 400.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+    end
+    object lZone: TLayout
+      Align = Client
+      Size.Width = 600.000000000000000000
+      Size.Height = 400.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object Player: TRectangle
+        Position.X = 248.000000000000000000
+        Position.Y = 384.000000000000000000
+        Size.Width = 100.000000000000000000
+        Size.Height = 10.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+      end
+      object Ball: TCircle
+        Position.X = 320.000000000000000000
+        Position.Y = 272.000000000000000000
+        Size.Width = 15.000000000000000000
+        Size.Height = 15.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object GridPanelLayout1: TGridPanelLayout
+        Align = Top
+        Size.Width = 600.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        ColumnCollection = <
+          item
+            Value = 50.000000000000000000
+          end
+          item
+            Value = 50.000000000000000000
+          end>
+        ControlCollection = <
+          item
+            Column = 0
+            Control = txtScore
+            Row = 0
+          end
+          item
+            Column = 1
+            Control = txtLifes
+            Row = 0
+          end>
+        RowCollection = <
+          item
+            Value = 100.000000000000000000
+          end>
+        object txtScore: TText
+          Align = Client
+          Size.Width = 300.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = claYellow
+        end
+        object txtLifes: TText
+          Align = Client
+          Size.Width = 300.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = claYellow
+        end
+      end
+    end
+  end
+  object GameLoop: TTimer
+    Interval = 16
+    OnTimer = GameLoopTimer
+    Left = 520
+    Top = 264
+  end
+  object DGEGamepadManager1: TDGEGamepadManager
+    OnDirectionPadChange = DGEGamepadManager1DirectionPadChange
+    Left = 528
+    Top = 272
+  end
+end

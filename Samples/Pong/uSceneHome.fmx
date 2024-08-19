@@ -1,0 +1,80 @@
+inherited SceneHome: TSceneHome
+  Size.Width = 917.000000000000000000
+  Size.Height = 608.000000000000000000
+  object Layout1: TLayout
+    Align = Center
+    Size.Width = 256.000000000000000000
+    Size.Height = 250.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    inline btnGame: T__EggHunterButtonAncestor
+      Align = Top
+      Locked = True
+      Margins.Top = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 256.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnGameClick
+      inherited Background_Off: TRectangle
+        inherited Text_Off: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited Background_On: TRectangle
+        Size.Width = 256.000000000000000000
+        inherited Text_On: TText
+          Size.Width = 236.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+    inline btnQuit: T__EggHunterButtonAncestor
+      Align = Top
+      Locked = True
+      Margins.Top = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.Y = 125.000000000000000000
+      Size.Width = 256.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnQuitClick
+      inherited Background_Off: TRectangle
+        inherited Text_Off: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited Background_On: TRectangle
+        Size.Width = 256.000000000000000000
+        inherited Text_On: TText
+          Size.Width = 236.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+    inline btnCredits: T__EggHunterButtonAncestor
+      Align = Top
+      Locked = True
+      Margins.Top = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.Y = 65.000000000000000000
+      Size.Width = 256.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnCreditsClick
+      inherited Background_Off: TRectangle
+        inherited Text_Off: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited Background_On: TRectangle
+        Size.Width = 256.000000000000000000
+        inherited Text_On: TText
+          Size.Width = 236.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+  end
+end
