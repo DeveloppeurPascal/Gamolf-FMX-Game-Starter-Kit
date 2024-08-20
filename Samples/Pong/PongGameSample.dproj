@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{2FA3CB0F-F704-49E5-8CBC-FBB0DD1A9410}</ProjectGuid>
+        <ProjectGuid>{F42B9866-5D2D-4E3C-A6E3-9653340D5727}</ProjectGuid>
         <ProjectVersion>20.1</ProjectVersion>
         <FrameworkType>FMX</FrameworkType>
         <Base>True</Base>
@@ -499,8 +499,8 @@
         <Icns_MainIcns>..\..\assets\icons\debuggameicon.icns</Icns_MainIcns>
         <UWP_DelphiLogo44>..\assets\icons\debuggameicon-44x44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>..\assets\icons\debuggameicon-150x150.png</UWP_DelphiLogo150>
-        <VerInfo_Build>7</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.7;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=gamolf.fmxgametemplate.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>8</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.8;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=gamolf.fmxgametemplate.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
@@ -685,11 +685,6 @@
         <DCCReference Include="..\..\lib-externes\Delphi-Game-Engine\src\Macapi.GameController.pas"/>
         <DCCReference Include="..\..\starter-kit-src\uTranslate.pas"/>
         <DCCReference Include="..\..\starter-kit-src\uConfig.pas"/>
-        <DCCReference Include="..\..\starter-kit-src\_AncestorsForScenesAndUIElements\_ScenesAncestor.pas">
-            <Form>__SceneAncestor</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
         <DCCReference Include="..\..\starter-kit-src\uScene.pas"/>
         <DCCReference Include="..\..\starter-kit-src\uUIElements.pas"/>
         <DCCReference Include="..\..\starter-kit-src\uGameData.pas"/>
@@ -707,16 +702,6 @@
             <Form>HelpBarManager</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\starter-kit-src\_AncestorsForScenesAndUIElements\_ButtonsAncestor.pas">
-            <Form>__ButtonAncestor</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\starter-kit-src\ButtonsSamples\EggHunter\_EggHunterButtonAncestor.pas">
-            <Form>__EggHunterButtonAncestor</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="uSceneBackground.pas">
             <Form>SceneBackground</Form>
@@ -740,6 +725,21 @@
         </DCCReference>
         <DCCReference Include="uSceneCredits.pas">
             <Form>SceneCredits</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\starter-kit-src\_ButtonsAncestor.pas">
+            <Form>__ButtonAncestor</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\starter-kit-src\_ScenesAncestor.pas">
+            <Form>__SceneAncestor</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\_SampleGame\ButtonsSamples\EggHunter\_EggHunterButtonAncestor.pas">
+            <Form>__EggHunterButtonAncestor</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>

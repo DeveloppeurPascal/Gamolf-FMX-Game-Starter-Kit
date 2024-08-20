@@ -73,7 +73,6 @@ uses
   Macapi.GameController in '..\..\lib-externes\Delphi-Game-Engine\src\Macapi.GameController.pas',
   uTranslate in '..\..\starter-kit-src\uTranslate.pas',
   uConfig in '..\..\starter-kit-src\uConfig.pas',
-  _ScenesAncestor in '..\..\starter-kit-src\_AncestorsForScenesAndUIElements\_ScenesAncestor.pas' {__SceneAncestor: TFrame},
   uScene in '..\..\starter-kit-src\uScene.pas',
   uUIElements in '..\..\starter-kit-src\uUIElements.pas',
   uGameData in '..\..\starter-kit-src\uGameData.pas',
@@ -84,13 +83,14 @@ uses
   uDMGameControllerCenter in '..\..\starter-kit-src\uDMGameControllerCenter.pas' {DMGameControllerCenter: TDataModule},
   uSVGBitmapManager in 'uSVGBitmapManager.pas',
   uDMHelpBarManager in '..\..\starter-kit-src\uDMHelpBarManager.pas' {HelpBarManager: TDataModule},
-  _ButtonsAncestor in '..\..\starter-kit-src\_AncestorsForScenesAndUIElements\_ButtonsAncestor.pas' {__ButtonAncestor: TFrame},
-  _EggHunterButtonAncestor in '..\..\starter-kit-src\ButtonsSamples\EggHunter\_EggHunterButtonAncestor.pas' {__EggHunterButtonAncestor: TFrame},
   uSceneBackground in 'uSceneBackground.pas' {SceneBackground: TFrame},
   uSceneHome in 'uSceneHome.pas' {SceneHome: TFrame},
   uSceneGame in 'uSceneGame.pas' {SceneGame: TFrame},
   uSceneGameOver in 'uSceneGameOver.pas' {SceneGameOver: TFrame},
-  uSceneCredits in 'uSceneCredits.pas' {SceneCredits: TFrame};
+  uSceneCredits in 'uSceneCredits.pas' {SceneCredits: TFrame},
+  _ButtonsAncestor in '..\..\starter-kit-src\_ButtonsAncestor.pas' {__ButtonAncestor: TFrame},
+  _ScenesAncestor in '..\..\starter-kit-src\_ScenesAncestor.pas' {__SceneAncestor: TFrame},
+  _EggHunterButtonAncestor in '..\_SampleGame\ButtonsSamples\EggHunter\_EggHunterButtonAncestor.pas' {__EggHunterButtonAncestor: TFrame};
 
 {$R *.res}
 
