@@ -6,3 +6,5 @@
 * splitted uSVGTobitmap.pas unit in two units (one per SVG list)
 * moved the starter kit project with buttons and scenes samples to the "samples" folder
 * added a minimal version of the starter kit project in the "starter-kit-src" folder which should be used to create new games
+
+* added a Snake game sample
