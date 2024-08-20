@@ -86,7 +86,7 @@ implementation
 
 uses
   USVGPuzzleAssets2,
-  uSVGBitmapManager;
+  uSVGBitmapManager_PuzzleAssets2;
 
 procedure T__PloomtrisButtonAncestor.Repaint;
 var
