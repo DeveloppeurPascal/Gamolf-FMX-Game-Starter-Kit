@@ -76,6 +76,10 @@ type
     /// Return current scene on screen. Change it's value to show an other scene.
     /// </summary>
     class property Current: TSceneType read FCurrent write SetCurrent;
+    /// <summary>
+    /// Return the instance of current displayed scene.
+    /// </summary>
+    class function GetInstance: T__SceneAncestor;
   end;
 
   TSceneFactory = class(tmessage)
@@ -105,6 +109,12 @@ var
   ScenesList: TScenesList;
 
   { TScene }
+
+class function TScene.GetInstance: T__SceneAncestor;
+begin
+  if not ScenesList.TryGetValue(FCurrent, result) then
+    result := nil;
+end;
 
 class procedure TScene.RegisterScene(const AType: TSceneType;
   const AScene: T__SceneAncestor);

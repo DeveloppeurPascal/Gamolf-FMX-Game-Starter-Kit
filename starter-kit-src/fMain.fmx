@@ -1,7 +1,7 @@
 object frmMain: TfrmMain
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'Gamolf FMX Game Starter Kit'
   ClientHeight = 480
   ClientWidth = 640
   Position = ScreenCenter
@@ -10,6 +10,7 @@ object frmMain: TfrmMain
   FormFactor.Devices = [Desktop]
   OnDestroy = FormDestroy
   OnKeyDown = FormKeyDown
+  OnKeyUp = FormKeyUp
   DesignerMasterStyle = 0
   object MainMenu: TMainMenu
     Left = 456

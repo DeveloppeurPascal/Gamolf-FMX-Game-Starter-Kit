@@ -190,7 +190,7 @@ type
   /// </remarks>
   TSceneType = (None (* "None" must stay *) , Exit (* "Exit" must stay *) ,
     Home, Game, GameOverLost, GameOverWin, Credits, Options, HallOfFame,
-    TestUIButtons);
+    TestUIButtons, TestKeyDown);
 
 Const
   /// <summary>
@@ -201,6 +201,7 @@ Const
   /// </remarks>
   CDefaultSceneOnStartup = TSceneType.Home;
   // CDefaultSceneOnStartup = TSceneType.TestUIButtons;
+  // CDefaultSceneOnStartup = TSceneType.TestKeyDown;
 
 {$IF Defined(RELEASE)}
 

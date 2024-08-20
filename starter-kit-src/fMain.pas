@@ -91,6 +91,8 @@ type
       Shift: TShiftState);
     procedure mnuAboutClick(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: WideChar;
+      Shift: TShiftState);
   private
     BackgroundScene: TSceneBackground;
   protected
@@ -116,7 +118,8 @@ uses
   uBackgroundMusic,
   uConfig,
   uUIElements,
-  Gamolf.RTL.UIElements;
+  Gamolf.RTL.UIElements,
+  _ScenesAncestor;
 
 procedure TfrmMain.AfterConstruction;
 begin
@@ -176,6 +179,7 @@ procedure TfrmMain.FormKeyDown(Sender: TObject; var Key: Word;
 var KeyChar: WideChar; Shift: TShiftState);
 var
   item: TUIElement;
+  CurrentScene: T__SceneAncestor;
 begin
   if (Key = vkF1) and (KeyChar = #0) and (Shift = []) then
   begin
@@ -194,6 +198,25 @@ begin
       KeyChar := #0;
       item.DoClick;
     end;
+  end;
+  if (Key <> 0) or (KeyChar <> #0) then
+  begin
+    CurrentScene := tscene.GetInstance;
+    if assigned(CurrentScene) and assigned(CurrentScene.OnKeyDown) then
+      CurrentScene.OnKeyDown(Sender, Key, KeyChar, Shift);
+  end;
+end;
+
+procedure TfrmMain.FormKeyUp(Sender: TObject; var Key: Word;
+var KeyChar: WideChar; Shift: TShiftState);
+var
+  CurrentScene: T__SceneAncestor;
+begin
+  if (Key <> 0) or (KeyChar <> #0) then
+  begin
+    CurrentScene := tscene.GetInstance;
+    if assigned(CurrentScene) and assigned(CurrentScene.OnKeyUp) then
+      CurrentScene.OnKeyUp(Sender, Key, KeyChar, Shift);
   end;
 end;
 
