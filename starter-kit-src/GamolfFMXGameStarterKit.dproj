@@ -496,8 +496,8 @@
         <Icns_MainIcns>..\assets\icons\debuggameicon.icns</Icns_MainIcns>
         <UWP_DelphiLogo44>..\assets\icons\debuggameicon-44x44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>..\assets\icons\debuggameicon-150x150.png</UWP_DelphiLogo150>
-        <VerInfo_Build>7</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.7;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=gamolf.fmxgametemplate.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>10</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.10;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=gamolf.fmxgametemplate.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
@@ -679,52 +679,12 @@
         <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Macapi.GameController.pas"/>
         <DCCReference Include="uTranslate.pas"/>
         <DCCReference Include="uConfig.pas"/>
-        <DCCReference Include="_AncestorsForScenesAndUIElements\_ScenesAncestor.pas">
+        <DCCReference Include="_ScenesAncestor.pas">
             <Form>__SceneAncestor</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="ScenesSamples\uSceneBackground.pas">
-            <Form>SceneBackground</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
         <DCCReference Include="uScene.pas"/>
-        <DCCReference Include="ScenesSamples\uSceneHome.pas">
-            <Form>SceneHome</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="ScenesSamples\uSceneGame.pas">
-            <Form>SceneGame</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="ScenesSamples\uSceneGameOverLost.pas">
-            <Form>SceneGameOverLost</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="ScenesSamples\uSceneGameOverWin.pas">
-            <Form>SceneGameOverWin</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="ScenesSamples\uSceneOptions.pas">
-            <Form>SceneOptions</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="ScenesSamples\uSceneCredits.pas">
-            <Form>SceneCredits</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="ScenesSamples\uSceneHallOfFame.pas">
-            <Form>SceneHallOfFame</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
         <DCCReference Include="uUIElements.pas"/>
         <DCCReference Include="uGameData.pas"/>
         <DCCReference Include="..\lib-externes\librairies\src\Olf.RTL.Streams.pas"/>
@@ -737,65 +697,19 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="uSVGBitmapManager.pas"/>
+        <DCCReference Include="uSVGBitmapManager_InputPrompts.pas"/>
         <DCCReference Include="uDMHelpBarManager.pas">
             <Form>HelpBarManager</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="_AncestorsForScenesAndUIElements\_ButtonsAncestor.pas">
+        <DCCReference Include="_ButtonsAncestor.pas">
             <Form>__ButtonAncestor</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="ButtonsSamples\DDoS2024TheQuiz\_TheQuizAncestorButton.pas">
-            <Form>__TheQuizAncestorButton</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="ButtonsSamples\DDoS2024TheQuiz\cTheQuizHelloButton.pas">
-            <Form>TheQuizHelloButton</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="ScenesSamples\uSceneTestButtons.pas">
-            <Form>SceneTestButtons</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="ButtonsSamples\Ploumtris\_PloomtrisButtonAncestor.pas">
-            <Form>__PloomtrisButtonAncestor</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\assets\kenney_nl\PuzzleAssets2\USVGPuzzleAssets2.pas"/>
-        <DCCReference Include="ButtonsSamples\Ploumtris\cPloomtrisWorldButton.pas">
-            <Form>PloomtrisWorldButton</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="ButtonsSamples\Sporgloo\_SporglooButtonAncestor.pas">
-            <Form>__SporglooButtonAncestor</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="ButtonsSamples\Sporgloo\cSporglooIUseDelphiButton.pas">
-            <Form>SporglooIUseDelphiButton</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="ButtonsSamples\EggHunter\_EggHunterButtonAncestor.pas">
-            <Form>__EggHunterButtonAncestor</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="ButtonsSamples\EggHunter\cEggHunterAndYouButton.pas">
-            <Form>EggHunterAndYouButton</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="ScenesSamples\uSceneTestKeyDownUp.pas">
-            <Form>SceneTestKeyDownUp</Form>
+        <DCCReference Include="uSceneBackground.pas">
+            <Form>SceneBackground</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
