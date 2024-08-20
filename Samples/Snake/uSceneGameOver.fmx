@@ -1,0 +1,42 @@
+inherited GameOverScene: TGameOverScene
+  Size.Width = 908.000000000000000000
+  Size.Height = 532.000000000000000000
+  object Rectangle1: TRectangle
+    Align = Center
+    Size.Width = 401.000000000000000000
+    Size.Height = 273.000000000000000000
+    Size.PlatformDefault = False
+    object Text1: TText
+      Align = Client
+      Size.Width = 401.000000000000000000
+      Size.Height = 198.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object Layout1: TLayout
+      Align = Bottom
+      Position.Y = 198.000000000000000000
+      Size.Width = 401.000000000000000000
+      Size.Height = 75.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      inline btnHome: TTextButton
+        Align = Center
+        Locked = True
+        Size.Width = 200.000000000000000000
+        Size.Height = 75.000000000000000000
+        Size.PlatformDefault = False
+        OnClick = btnHomeClick
+        inherited rUp: TRectangle
+          inherited TextUp: TText
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+        inherited rDown: TRectangle
+          inherited TextDown: TText
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+      end
+    end
+  end
+end

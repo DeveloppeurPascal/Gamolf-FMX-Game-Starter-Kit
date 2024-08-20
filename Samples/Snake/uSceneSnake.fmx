@@ -1,0 +1,76 @@
+inherited SnakeScene: TSnakeScene
+  Size.Width = 1004.000000000000000000
+  Size.Height = 535.000000000000000000
+  OnResized = FrameResized
+  object rBackground: TRectangle
+    Align = Center
+    Fill.Color = claDarkblue
+    Padding.Left = 11.000000000000000000
+    Padding.Top = 11.000000000000000000
+    Padding.Right = 11.000000000000000000
+    Padding.Bottom = 11.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claOrangered
+    Stroke.Thickness = 10.000000000000000000
+    object slScreen: TScaledLayout
+      Align = Client
+      OriginalWidth = 28.000000000000000000
+      OriginalHeight = 28.000000000000000000
+      Size.Width = 28.000000000000000000
+      Size.Height = 28.000000000000000000
+      Size.PlatformDefault = False
+      object imgScreen: TImage
+        MultiResBitmap = <
+          item
+          end>
+        Align = Client
+        Size.Width = 28.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        WrapMode = Original
+      end
+    end
+  end
+  object GameLoop: TTimer
+    Interval = 16
+    OnTimer = GameLoopTimer
+    Left = 276
+    Top = 156
+  end
+  object Layout1: TLayout
+    Align = Contents
+    Size.Width = 1004.000000000000000000
+    Size.Height = 535.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object txtScore: TText
+      Align = Top
+      HitTest = False
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 984.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'xxx'
+      TextSettings.Font.Size = 30.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claDarkcyan
+      object GlowEffect1: TGlowEffect
+        Softness = 0.400000005960464400
+        GlowColor = claDarkseagreen
+        Opacity = 0.899999976158142100
+      end
+    end
+  end
+  object DGEGamepadManager1: TDGEGamepadManager
+    OnAxesChange = DGEGamepadManager1AxesChange
+    OnDirectionPadChange = DGEGamepadManager1DirectionPadChange
+    Left = 292
+    Top = 72
+  end
+end

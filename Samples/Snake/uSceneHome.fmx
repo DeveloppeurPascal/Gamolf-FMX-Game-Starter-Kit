@@ -1,0 +1,103 @@
+inherited HomeScene: THomeScene
+  Size.Width = 870.000000000000000000
+  Size.Height = 494.000000000000000000
+  object txtTitle: TText
+    Align = Top
+    HitTest = False
+    Margins.Left = 10.000000000000000000
+    Margins.Top = 50.000000000000000000
+    Margins.Right = 10.000000000000000000
+    Position.X = 10.000000000000000000
+    Position.Y = 50.000000000000000000
+    Size.Width = 850.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'xxx'
+    TextSettings.Font.Size = 40.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TextSettings.FontColor = claDarkcyan
+    object GlowEffect1: TGlowEffect
+      Softness = 0.400000005960464400
+      GlowColor = claDarkseagreen
+      Opacity = 0.899999976158142100
+    end
+  end
+  object Layout1: TLayout
+    Align = Center
+    Size.Width = 194.000000000000000000
+    Size.Height = 253.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    inline btnPlay: TTextButton
+      Align = Top
+      Locked = True
+      Size.Width = 194.000000000000000000
+      Size.Height = 75.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnPlayClick
+      inherited rFocus: TRectangle
+        Size.Width = 194.000000000000000000
+      end
+      inherited rUp: TRectangle
+        inherited TextUp: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited rDown: TRectangle
+        Size.Width = 174.000000000000000000
+        inherited TextDown: TText
+          Size.Width = 154.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+    inline btnQuit: TTextButton
+      Align = Top
+      Locked = True
+      Position.Y = 150.000000000000000000
+      Size.Width = 194.000000000000000000
+      Size.Height = 75.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnQuitClick
+      inherited rFocus: TRectangle
+        Size.Width = 194.000000000000000000
+      end
+      inherited rUp: TRectangle
+        inherited TextUp: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited rDown: TRectangle
+        Size.Width = 174.000000000000000000
+        inherited TextDown: TText
+          Size.Width = 154.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+    inline btnCredits: TTextButton
+      Align = Top
+      Locked = True
+      Position.Y = 75.000000000000000000
+      Size.Width = 194.000000000000000000
+      Size.Height = 75.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnCreditsClick
+      inherited rFocus: TRectangle
+        Size.Width = 194.000000000000000000
+      end
+      inherited rUp: TRectangle
+        inherited TextUp: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited rDown: TRectangle
+        Size.Width = 174.000000000000000000
+        inherited TextDown: TText
+          Size.Width = 154.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+  end
+end
