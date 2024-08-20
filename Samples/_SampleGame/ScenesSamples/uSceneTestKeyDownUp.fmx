@@ -1,0 +1,4 @@
+inherited SceneTestKeyDownUp: TSceneTestKeyDownUp
+  OnKeyDown = FrameKeyDown
+  OnKeyUp = FrameKeyUp
+end
