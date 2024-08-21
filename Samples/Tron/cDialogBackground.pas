@@ -77,9 +77,8 @@ type
     rBackgroundHeaderRight: TRectangle;
     procedure imgContentResized(Sender: TObject);
   private
-    FInCreate: boolean;
   public
-    constructor Create(AOwner: TComponent); override;
+    procedure AfterConstruction; override;
   end;
 
 implementation
@@ -90,14 +89,12 @@ uses
   USVGUIPack,
   uSVGBitmapManager_UIPack;
 
-constructor TDialogBackground.Create(AOwner: TComponent);
+procedure TDialogBackground.AfterConstruction;
 begin
-  FInCreate := true;
   inherited;
   tthread.ForceQueue(nil,
     procedure
     begin
-      FInCreate := false;
       imgContentResized(self);
     end);
 end;
@@ -107,9 +104,6 @@ var
   bmp: TBitmap;
   BmpScale: single;
 begin
-  if FInCreate then
-    exit;
-
   BmpScale := Image1.Bitmap.BitmapScale;
 
   bmp := getBitmapFromSVG(TSVGUIPackIndex.ButtonRectangleFlat, 192, 64,
