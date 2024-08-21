@@ -1,0 +1,2 @@
+inherited ControlsChoiceScene: TControlsChoiceScene
+end

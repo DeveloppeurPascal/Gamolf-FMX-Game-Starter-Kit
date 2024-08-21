@@ -1,0 +1,62 @@
+inherited ShowMessage: TShowMessage
+  object VertScrollBox1: TVertScrollBox
+    Align = Client
+    Locked = True
+    Margins.Left = 10.000000000000000000
+    Margins.Top = 10.000000000000000000
+    Margins.Right = 10.000000000000000000
+    Margins.Bottom = 5.000000000000000000
+    Size.Width = 300.000000000000000000
+    Size.Height = 146.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Viewport.Width = 300.000000000000000000
+    Viewport.Height = 146.000000000000000000
+    object Text1: TText
+      Align = Top
+      AutoSize = True
+      Locked = True
+      HitTest = False
+      Size.Width = 300.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Leading
+    end
+  end
+  object lButtons: TLayout
+    Align = Bottom
+    Locked = True
+    Margins.Left = 10.000000000000000000
+    Margins.Top = 5.000000000000000000
+    Margins.Right = 10.000000000000000000
+    Margins.Bottom = 10.000000000000000000
+    Position.X = 10.000000000000000000
+    Position.Y = 166.000000000000000000
+    Size.Width = 300.000000000000000000
+    Size.Height = 64.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    inline TextButton1: TTextButton
+      Align = Center
+      Locked = True
+      Size.Width = 192.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      inherited imgUp: TImage
+        inherited txtUp: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited imgDown: TImage
+        inherited txtDown: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited imgUpFocused: TImage
+        inherited txtUpFocused: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+  end
+end

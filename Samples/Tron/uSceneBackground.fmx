@@ -1,0 +1,23 @@
+inherited SceneBackground: TSceneBackground
+  HitTest = False
+  Size.Width = 960.000000000000000000
+  Size.Height = 605.000000000000000000
+  object Rectangle1: TRectangle
+    Align = Client
+    Fill.Kind = Gradient
+    Fill.Gradient.Points = <
+      item
+        Color = xFF08025C
+        Offset = 0.000000000000000000
+      end
+      item
+        Color = xFF1128F1
+        Offset = 1.000000000000000000
+      end>
+    Fill.Gradient.Style = Radial
+    HitTest = False
+    Size.Width = 960.000000000000000000
+    Size.Height = 605.000000000000000000
+    Size.PlatformDefault = False
+  end
+end

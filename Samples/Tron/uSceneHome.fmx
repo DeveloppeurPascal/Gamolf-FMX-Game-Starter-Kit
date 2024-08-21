@@ -1,0 +1,184 @@
+inherited HomeScene: THomeScene
+  Size.Width = 873.000000000000000000
+  Size.Height = 663.000000000000000000
+  object Layout1: TLayout
+    Align = Contents
+    Size.Width = 873.000000000000000000
+    Size.Height = 663.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Text1: TText
+      Align = Top
+      Margins.Left = 20.000000000000000000
+      Margins.Top = 50.000000000000000000
+      Margins.Right = 20.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 50.000000000000000000
+      Size.Width = 833.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Tron Game Sample'
+      TextSettings.Font.Size = 30.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claBrown
+      object GlowEffect1: TGlowEffect
+        Softness = 0.400000005960464400
+        GlowColor = claGold
+        Opacity = 0.899999976158142100
+      end
+    end
+  end
+  inline DialogBackground1: TDialogBackground
+    Align = Center
+    Padding.Left = 10.000000000000000000
+    Padding.Top = 10.000000000000000000
+    Padding.Right = 10.000000000000000000
+    Padding.Bottom = 10.000000000000000000
+    Size.Width = 232.000000000000000000
+    Size.Height = 242.000000000000000000
+    Size.PlatformDefault = False
+    inherited lBackground: TLayout
+      Size.Width = 232.000000000000000000
+      Size.Height = 242.000000000000000000
+      inherited lHeader: TLayout
+        Size.Width = 232.000000000000000000
+        inherited rBackgroundHeader: TRectangle
+          Size.Width = 212.000000000000000000
+        end
+        inherited rBackgroundHeaderRight: TRectangle
+          Position.X = 222.000000000000000000
+        end
+      end
+      inherited lFooter: TLayout
+        Position.Y = 232.000000000000000000
+        Size.Width = 232.000000000000000000
+        inherited rBackgroundFooter: TRectangle
+          Size.Width = 212.000000000000000000
+        end
+        inherited rBackgroundFooterRight: TRectangle
+          Position.X = 222.000000000000000000
+        end
+      end
+      inherited lContent: TLayout
+        Size.Width = 232.000000000000000000
+        Size.Height = 222.000000000000000000
+        inherited rBackgroundContent: TRectangle
+          Size.Width = 212.000000000000000000
+          Size.Height = 222.000000000000000000
+        end
+        inherited rBackgroundContentLeft: TRectangle
+          Size.Height = 222.000000000000000000
+        end
+        inherited rBackgroundContentRight: TRectangle
+          Position.X = 222.000000000000000000
+          Size.Height = 222.000000000000000000
+        end
+      end
+    end
+    inline btnPlay: TTextButton
+      Align = Top
+      Locked = True
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 15.000000000000000000
+      Position.Y = 15.000000000000000000
+      Size.Width = 202.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnPlayClick
+      inherited imgUp: TImage
+        Size.Width = 202.000000000000000000
+        inherited txtUp: TText
+          Size.Width = 192.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited imgDown: TImage
+        Size.Width = 202.000000000000000000
+        inherited txtDown: TText
+          Size.Width = 192.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited imgUpFocused: TImage
+        Size.Width = 202.000000000000000000
+        inherited txtUpFocused: TText
+          Size.Width = 192.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+    inline btnQuit: TTextButton
+      Align = Top
+      Locked = True
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 15.000000000000000000
+      Position.Y = 163.000000000000000000
+      Size.Width = 202.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnQuitClick
+      inherited imgUp: TImage
+        Size.Width = 202.000000000000000000
+        inherited txtUp: TText
+          Size.Width = 192.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited imgDown: TImage
+        Size.Width = 202.000000000000000000
+        inherited txtDown: TText
+          Size.Width = 192.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited imgUpFocused: TImage
+        Size.Width = 202.000000000000000000
+        inherited txtUpFocused: TText
+          Size.Width = 192.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+    inline btnCredits: TTextButton
+      Align = Top
+      Locked = True
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 15.000000000000000000
+      Position.Y = 89.000000000000000000
+      Size.Width = 202.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnCreditsClick
+      inherited imgUp: TImage
+        Size.Width = 202.000000000000000000
+        inherited txtUp: TText
+          Size.Width = 192.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited imgDown: TImage
+        Size.Width = 202.000000000000000000
+        inherited txtDown: TText
+          Size.Width = 192.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited imgUpFocused: TImage
+        Size.Width = 202.000000000000000000
+        inherited txtUpFocused: TText
+          Size.Width = 192.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+  end
+end

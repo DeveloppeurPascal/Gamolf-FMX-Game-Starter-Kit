@@ -1,0 +1,82 @@
+inherited TextButton: TTextButton
+  Size.Width = 192.000000000000000000
+  Size.Height = 64.000000000000000000
+  object imgUp: TImage
+    MultiResBitmap = <
+      item
+      end>
+    Align = Client
+    Locked = True
+    HitTest = False
+    Size.Width = 192.000000000000000000
+    Size.Height = 64.000000000000000000
+    Size.PlatformDefault = False
+    OnResized = imgUpResized
+    object txtUp: TText
+      Align = Client
+      Locked = True
+      HitTest = False
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Size.Width = 182.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'XXX'
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+  object imgDown: TImage
+    MultiResBitmap = <
+      item
+      end>
+    Align = Client
+    Locked = True
+    HitTest = False
+    Size.Width = 192.000000000000000000
+    Size.Height = 64.000000000000000000
+    Size.PlatformDefault = False
+    OnResized = imgDownResized
+    object txtDown: TText
+      Align = Client
+      Locked = True
+      HitTest = False
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 182.000000000000000000
+      Size.Height = 54.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'XXX'
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+  object imgUpFocused: TImage
+    MultiResBitmap = <
+      item
+      end>
+    Align = Client
+    Locked = True
+    HitTest = False
+    Size.Width = 192.000000000000000000
+    Size.Height = 64.000000000000000000
+    Size.PlatformDefault = False
+    OnResized = imgUpFocusedResized
+    object txtUpFocused: TText
+      Align = Client
+      Locked = True
+      HitTest = False
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Size.Width = 182.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'XXX'
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+end

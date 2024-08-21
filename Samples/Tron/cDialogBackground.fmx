@@ -1,0 +1,146 @@
+object DialogBackground: TDialogBackground
+  Size.Width = 320.000000000000000000
+  Size.Height = 240.000000000000000000
+  Size.PlatformDefault = False
+  object lBackground: TLayout
+    Align = Contents
+    Locked = True
+    Size.Width = 320.000000000000000000
+    Size.Height = 240.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Image1: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Locked = True
+      HitTest = False
+      Position.X = 136.000000000000000000
+      Position.Y = 88.000000000000000000
+    end
+    object lHeader: TLayout
+      Align = Top
+      Size.Width = 320.000000000000000000
+      Size.Height = 10.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object rBackgroundHeader: TRectangle
+        Align = Client
+        Fill.Bitmap.WrapMode = TileStretch
+        Fill.Kind = Bitmap
+        Locked = True
+        HitTest = False
+        Size.Width = 300.000000000000000000
+        Size.Height = 10.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+      end
+      object rBackgroundHeaderLeft: TRectangle
+        Align = Left
+        Fill.Bitmap.WrapMode = TileStretch
+        Fill.Kind = Bitmap
+        Locked = True
+        HitTest = False
+        Size.Width = 10.000000000000000000
+        Size.Height = 10.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+      end
+      object rBackgroundHeaderRight: TRectangle
+        Align = Right
+        Fill.Bitmap.WrapMode = TileStretch
+        Fill.Kind = Bitmap
+        Locked = True
+        HitTest = False
+        Position.X = 310.000000000000000000
+        Size.Width = 10.000000000000000000
+        Size.Height = 10.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+      end
+    end
+    object lFooter: TLayout
+      Align = Bottom
+      Position.Y = 230.000000000000000000
+      Size.Width = 320.000000000000000000
+      Size.Height = 10.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object rBackgroundFooter: TRectangle
+        Align = Client
+        Fill.Bitmap.WrapMode = TileStretch
+        Fill.Kind = Bitmap
+        Locked = True
+        HitTest = False
+        Size.Width = 300.000000000000000000
+        Size.Height = 10.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+      end
+      object rBackgroundFooterLeft: TRectangle
+        Align = Left
+        Fill.Bitmap.WrapMode = TileStretch
+        Fill.Kind = Bitmap
+        Locked = True
+        HitTest = False
+        Size.Width = 10.000000000000000000
+        Size.Height = 10.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+      end
+      object rBackgroundFooterRight: TRectangle
+        Align = Right
+        Fill.Bitmap.WrapMode = TileStretch
+        Fill.Kind = Bitmap
+        Locked = True
+        HitTest = False
+        Position.X = 310.000000000000000000
+        Size.Width = 10.000000000000000000
+        Size.Height = 10.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+      end
+    end
+    object lContent: TLayout
+      Align = Client
+      Size.Width = 320.000000000000000000
+      Size.Height = 220.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object rBackgroundContent: TRectangle
+        Align = Client
+        Fill.Bitmap.WrapMode = TileStretch
+        Fill.Kind = Bitmap
+        Locked = True
+        HitTest = False
+        Size.Width = 300.000000000000000000
+        Size.Height = 220.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+      end
+      object rBackgroundContentLeft: TRectangle
+        Align = Left
+        Fill.Bitmap.WrapMode = TileStretch
+        Fill.Kind = Bitmap
+        Locked = True
+        HitTest = False
+        Size.Width = 10.000000000000000000
+        Size.Height = 220.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+      end
+      object rBackgroundContentRight: TRectangle
+        Align = Right
+        Fill.Bitmap.WrapMode = TileStretch
+        Fill.Kind = Bitmap
+        Locked = True
+        HitTest = False
+        Position.X = 310.000000000000000000
+        Size.Width = 10.000000000000000000
+        Size.Height = 220.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+      end
+    end
+  end
+end

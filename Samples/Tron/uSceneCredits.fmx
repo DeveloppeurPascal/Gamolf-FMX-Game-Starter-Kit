@@ -1,0 +1,56 @@
+inherited CreditsScene: TCreditsScene
+  Size.Width = 1010.000000000000000000
+  Size.Height = 687.000000000000000000
+  inline ShowMessage1: TShowMessage
+    Align = Center
+    Size.Width = 500.000000000000000000
+    Size.Height = 300.000000000000000000
+    Size.PlatformDefault = False
+    inherited lBackground: TLayout
+      Size.Width = 500.000000000000000000
+      Size.Height = 300.000000000000000000
+      inherited rBackgroundHeader: TRectangle
+        Size.Width = 500.000000000000000000
+      end
+      inherited rBackgroundFooter: TRectangle
+        Position.Y = 290.000000000000000000
+        Size.Width = 500.000000000000000000
+      end
+      inherited rBackgroundContent: TRectangle
+        Size.Width = 500.000000000000000000
+        Size.Height = 280.000000000000000000
+      end
+    end
+    inherited VertScrollBox1: TVertScrollBox
+      Size.Width = 480.000000000000000000
+      Size.Height = 206.000000000000000000
+      Viewport.Width = 480.000000000000000000
+      Viewport.Height = 206.000000000000000000
+      inherited Text1: TText
+        Size.Width = 480.000000000000000000
+      end
+    end
+    inherited lButtons: TLayout
+      Position.Y = 226.000000000000000000
+      Size.Width = 480.000000000000000000
+      inherited TextButton1: TTextButton
+        OnClick = ShowMessage1TextButton1Click
+        inherited imgUp: TImage
+          inherited txtUp: TText
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+        inherited imgDown: TImage
+          inherited txtDown: TText
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+        inherited imgUpFocused: TImage
+          inherited txtUpFocused: TText
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+      end
+    end
+  end
+end
