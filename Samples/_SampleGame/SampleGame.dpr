@@ -105,7 +105,8 @@ uses
   _EggHunterButtonAncestor in 'ButtonsSamples\EggHunter\_EggHunterButtonAncestor.pas' {__EggHunterButtonAncestor: TFrame},
   cEggHunterAndYouButton in 'ButtonsSamples\EggHunter\cEggHunterAndYouButton.pas' {EggHunterAndYouButton: TFrame},
   uSceneTestKeyDownUp in 'ScenesSamples\uSceneTestKeyDownUp.pas' {SceneTestKeyDownUp: TFrame},
-  uSVGBitmapManager_PuzzleAssets2 in 'uSVGBitmapManager_PuzzleAssets2.pas';
+  uSVGBitmapManager_PuzzleAssets2 in 'uSVGBitmapManager_PuzzleAssets2.pas',
+  uButton in '..\Snake\uButton.pas' {TextButton: TFrame};
 
 {$R *.res}
 
