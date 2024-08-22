@@ -197,7 +197,7 @@ type
     /// It's better to use TGameData.DefaultGameData if you don't need to
     /// manage complex things on your game data.
     /// </summary>
-    constructor Create;
+    constructor Create; virtual;
     /// <summary>
     /// Never call it, use only "Free" or "FreeAndNil" if you called the
     /// Create() method to get a new instance of this game.
