@@ -1,5 +1,4 @@
 inherited __TheQuizAncestorButton: T__TheQuizAncestorButton
-  Locked = False
   object lDown: TLayout
     Align = Contents
     Locked = True
