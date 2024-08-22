@@ -1,2 +1,34 @@
 inherited GameOverScene: TGameOverScene
+  Size.Width = 1045.000000000000000000
+  Size.Height = 585.000000000000000000
+  inline ShowMessage1: TShowMessage
+    Align = Center
+    Size.Width = 320.000000000000000000
+    Size.Height = 240.000000000000000000
+    Size.PlatformDefault = False
+    inherited VertScrollBox1: TVertScrollBox
+      Viewport.Width = 300.000000000000000000
+      Viewport.Height = 146.000000000000000000
+    end
+    inherited lButtons: TLayout
+      inherited TextButton1: TTextButton
+        OnClick = ShowMessage1TextButton1Click
+        inherited imgUp: TImage
+          inherited txtUp: TText
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+        inherited imgDown: TImage
+          inherited txtDown: TText
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+        inherited imgUpFocused: TImage
+          inherited txtUpFocused: TText
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+      end
+    end
+  end
 end

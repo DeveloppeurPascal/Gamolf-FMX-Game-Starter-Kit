@@ -9,16 +9,39 @@ inherited CreditsScene: TCreditsScene
     inherited lBackground: TLayout
       Size.Width = 500.000000000000000000
       Size.Height = 300.000000000000000000
-      inherited rBackgroundHeader: TRectangle
+      inherited lHeader: TLayout
         Size.Width = 500.000000000000000000
+        inherited rBackgroundHeader: TRectangle
+          Size.Width = 480.000000000000000000
+        end
+        inherited rBackgroundHeaderRight: TRectangle
+          Position.X = 490.000000000000000000
+        end
       end
-      inherited rBackgroundFooter: TRectangle
+      inherited lFooter: TLayout
         Position.Y = 290.000000000000000000
         Size.Width = 500.000000000000000000
+        inherited rBackgroundFooter: TRectangle
+          Size.Width = 480.000000000000000000
+        end
+        inherited rBackgroundFooterRight: TRectangle
+          Position.X = 490.000000000000000000
+        end
       end
-      inherited rBackgroundContent: TRectangle
+      inherited lContent: TLayout
         Size.Width = 500.000000000000000000
         Size.Height = 280.000000000000000000
+        inherited rBackgroundContent: TRectangle
+          Size.Width = 480.000000000000000000
+          Size.Height = 280.000000000000000000
+        end
+        inherited rBackgroundContentLeft: TRectangle
+          Size.Height = 280.000000000000000000
+        end
+        inherited rBackgroundContentRight: TRectangle
+          Position.X = 490.000000000000000000
+          Size.Height = 280.000000000000000000
+        end
       end
     end
     inherited VertScrollBox1: TVertScrollBox

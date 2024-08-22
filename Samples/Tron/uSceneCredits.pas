@@ -45,10 +45,20 @@ unit uSceneCredits;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes,
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
   System.Variants,
-  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  _ScenesAncestor, cDialogBackground, cShowMessage;
+  FMX.Types,
+  FMX.Graphics,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Dialogs,
+  FMX.StdCtrls,
+  _ScenesAncestor,
+  cDialogBackground,
+  cShowMessage;
 
 type
   TCreditsScene = class(T__SceneAncestor)

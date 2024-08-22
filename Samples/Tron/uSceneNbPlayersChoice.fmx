@@ -1,2 +1,194 @@
 inherited NbPlayersChoiceScene: TNbPlayersChoiceScene
+  Size.Width = 889.000000000000000000
+  Size.Height = 495.000000000000000000
+  object GridPanelLayout1: TGridPanelLayout
+    Align = Center
+    Size.Width = 404.000000000000000000
+    Size.Height = 222.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    ColumnCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = btnOne
+        Row = 0
+      end
+      item
+        Column = 1
+        Control = btnTwo
+        Row = 0
+      end
+      item
+        Column = 0
+        Control = btnThree
+        Row = 1
+      end
+      item
+        Column = 1
+        Control = btnFour
+        Row = 1
+      end
+      item
+        Column = 0
+        ColumnSpan = 2
+        Control = btnBack
+        Row = 2
+      end>
+    RowCollection = <
+      item
+        SizeStyle = Absolute
+        Value = 74.000000000000000000
+      end
+      item
+        SizeStyle = Absolute
+        Value = 74.000000000000000000
+      end
+      item
+        SizeStyle = Absolute
+        Value = 74.000000000000000000
+      end>
+    inline btnOne: TTextButton
+      Align = Client
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 192.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnOneClick
+      inherited imgUp: TImage
+        inherited txtUp: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited imgDown: TImage
+        inherited txtDown: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited imgUpFocused: TImage
+        inherited txtUpFocused: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+    inline btnTwo: TTextButton
+      Align = Client
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 192.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnTwoClick
+      inherited imgUp: TImage
+        inherited txtUp: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited imgDown: TImage
+        inherited txtDown: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited imgUpFocused: TImage
+        inherited txtUpFocused: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+    inline btnThree: TTextButton
+      Align = Client
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 192.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnThreeClick
+      inherited imgUp: TImage
+        inherited txtUp: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited imgDown: TImage
+        inherited txtDown: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited imgUpFocused: TImage
+        inherited txtUpFocused: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+    inline btnFour: TTextButton
+      Align = Client
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 192.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnFourClick
+      inherited imgUp: TImage
+        inherited txtUp: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited imgDown: TImage
+        inherited txtDown: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited imgUpFocused: TImage
+        inherited txtUpFocused: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+    inline btnBack: TTextButton
+      Align = Client
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 394.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnBackClick
+      inherited imgUp: TImage
+        Size.Width = 394.000000000000000000
+        inherited txtUp: TText
+          Size.Width = 384.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited imgDown: TImage
+        Size.Width = 394.000000000000000000
+        inherited txtDown: TText
+          Size.Width = 384.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited imgUpFocused: TImage
+        Size.Width = 394.000000000000000000
+        inherited txtUpFocused: TText
+          Size.Width = 384.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+  end
 end

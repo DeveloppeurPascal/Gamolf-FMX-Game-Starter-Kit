@@ -20,6 +20,7 @@ object DialogBackground: TDialogBackground
     end
     object lHeader: TLayout
       Align = Top
+      Locked = True
       Size.Width = 320.000000000000000000
       Size.Height = 10.000000000000000000
       Size.PlatformDefault = False
@@ -61,6 +62,7 @@ object DialogBackground: TDialogBackground
     end
     object lFooter: TLayout
       Align = Bottom
+      Locked = True
       Position.Y = 230.000000000000000000
       Size.Width = 320.000000000000000000
       Size.Height = 10.000000000000000000
@@ -103,6 +105,7 @@ object DialogBackground: TDialogBackground
     end
     object lContent: TLayout
       Align = Client
+      Locked = True
       Size.Width = 320.000000000000000000
       Size.Height = 220.000000000000000000
       Size.PlatformDefault = False

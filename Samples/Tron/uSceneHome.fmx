@@ -77,7 +77,6 @@ inherited HomeScene: THomeScene
     end
     inline btnPlay: TTextButton
       Align = Top
-      Locked = True
       Margins.Left = 5.000000000000000000
       Margins.Top = 5.000000000000000000
       Margins.Right = 5.000000000000000000
@@ -112,7 +111,6 @@ inherited HomeScene: THomeScene
     end
     inline btnQuit: TTextButton
       Align = Top
-      Locked = True
       Margins.Left = 5.000000000000000000
       Margins.Top = 5.000000000000000000
       Margins.Right = 5.000000000000000000
@@ -147,7 +145,6 @@ inherited HomeScene: THomeScene
     end
     inline btnCredits: TTextButton
       Align = Top
-      Locked = True
       Margins.Left = 5.000000000000000000
       Margins.Top = 5.000000000000000000
       Margins.Right = 5.000000000000000000

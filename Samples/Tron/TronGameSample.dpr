@@ -97,7 +97,8 @@ uses
   USVGUIPack in '..\..\assets\kenney_nl\UIPack\USVGUIPack.pas',
   uSVGBitmapManager_UIPack in 'uSVGBitmapManager_UIPack.pas',
   cTextButton in 'cTextButton.pas' {TextButton: TFrame},
-  cShowMessage in 'cShowMessage.pas' {ShowMessage: TFrame};
+  cShowMessage in 'cShowMessage.pas' {ShowMessage: TFrame},
+  uTronGameData in 'uTronGameData.pas';
 
 {$R *.res}
 

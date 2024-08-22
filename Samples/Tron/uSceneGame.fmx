@@ -1,2 +1,45 @@
 inherited GameScene: TGameScene
+  Size.Width = 1072.000000000000000000
+  Size.Height = 562.000000000000000000
+  OnKeyDown = FrameKeyDown
+  OnResized = FrameResized
+  object GameLoop: TTimer
+    OnTimer = GameLoopTimer
+    Left = 704
+    Top = 168
+  end
+  object rBackground: TRectangle
+    Align = Center
+    Fill.Color = claWhitesmoke
+    Padding.Left = 12.000000000000000000
+    Padding.Top = 12.000000000000000000
+    Padding.Right = 12.000000000000000000
+    Padding.Bottom = 12.000000000000000000
+    Margins.Left = 20.000000000000000000
+    Margins.Top = 20.000000000000000000
+    Margins.Right = 20.000000000000000000
+    Margins.Bottom = 20.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claIndigo
+    Stroke.Thickness = 10.000000000000000000
+    object imgScreen: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Client
+      Size.Width = 26.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      WrapMode = Original
+      OnResized = imgScreenResized
+    end
+  end
+  object DGEGamepadManager1: TDGEGamepadManager
+    OnAxesChange = DGEGamepadManager1AxesChange
+    OnDirectionPadChange = DGEGamepadManager1DirectionPadChange
+    Left = 520
+    Top = 264
+  end
 end

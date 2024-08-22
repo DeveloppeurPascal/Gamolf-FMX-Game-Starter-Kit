@@ -45,15 +45,30 @@ unit uSceneGameOver;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes,
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
   System.Variants,
-  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  _ScenesAncestor;
+  FMX.Types,
+  FMX.Graphics,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Dialogs,
+  FMX.StdCtrls,
+  _ScenesAncestor,
+  cDialogBackground,
+  cShowMessage;
 
 type
   TGameOverScene = class(T__SceneAncestor)
+    ShowMessage1: TShowMessage;
+    procedure ShowMessage1TextButton1Click(Sender: TObject);
   private
   public
+    procedure ShowScene; override;
+    procedure HideScene; override;
+    procedure TranslateTexts(const Language: string); override;
   end;
 
 implementation
@@ -66,7 +81,54 @@ uses
   uScene,
   uUIElements,
   uDMHelpBarManager,
-  USVGInputPrompts;
+  USVGInputPrompts,
+  uTronGameData;
+
+{ TGameOverScene }
+
+procedure TGameOverScene.HideScene;
+begin
+  inherited;
+  TUIItemsList.Current.RemoveLayout;
+end;
+
+procedure TGameOverScene.ShowMessage1TextButton1Click(Sender: TObject);
+begin
+  tscene.Current := TSceneType.Home;
+end;
+
+procedure TGameOverScene.ShowScene;
+begin
+  inherited;
+  TUIItemsList.Current.NewLayout;
+  TUIItemsList.Current.AddControl(ShowMessage1.TextButton1, nil, nil, nil, nil,
+    true, true);
+
+  THelpBarManager.Current.OpenHelpBar;
+  THelpBarManager.Current.AddItem(TSVGInputPrompts.KeyboardSpace +
+    TSVGInputPrompts.Tag, TSVGInputPrompts.SteamButtonColorAOutline +
+    TSVGInputPrompts.Tag, 'Select');
+end;
+
+procedure TGameOverScene.TranslateTexts(const Language: string);
+var
+  PlayerID: TCellType;
+  Winner: integer;
+begin
+  inherited;
+
+  Winner := 0;
+  for PlayerID := TCellType.Player1 to TCellType.Player4 do
+    if TTronGameData.Current.Players[PlayerID].IsAlive then
+      Winner := ord(PlayerID) - ord(TCellType.Player1) + 1;
+
+  if Winner < 1 then
+    ShowMessage1.Text := 'Game over'
+  else
+    ShowMessage1.Text := 'The winner is player ' + Winner.ToString;
+
+  ShowMessage1.ButtonText := 'Home';
+end;
 
 initialization
 

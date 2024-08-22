@@ -95,8 +95,8 @@ uses
   uUIElements,
   uDMHelpBarManager,
   USVGInputPrompts,
-  uGameData,
-  Gamolf.FMX.HelpBar;
+  Gamolf.FMX.HelpBar,
+  uTronGameData;
 
 procedure THomeScene.BeforeFirstShowScene;
 begin
@@ -115,7 +115,7 @@ end;
 
 procedure THomeScene.btnPlayClick(Sender: TObject);
 begin
-  TGameData.DefaultGameData.StartANewGame;
+  TTronGameData.Current.StartANewGame;
   tscene.Current := TSceneType.NbPlayersChoice;
 end;
 
