@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-21T12:02:18.000+02:00
-/// Signature : 0c1829d1d84c88e02ec3dd3a186773fe909c7bf9
+/// File last update : 2024-08-22T11:47:20.000+02:00
+/// Signature : 3984590ba451fa613ea4fd98f3b17646e8b2d28c
 /// ***************************************************************************
 /// </summary>
 
