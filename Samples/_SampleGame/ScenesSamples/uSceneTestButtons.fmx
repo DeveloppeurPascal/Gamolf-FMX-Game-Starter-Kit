@@ -118,12 +118,36 @@ inherited SceneTestButtons: TSceneTestButtons
       inherited Background_Off: TRectangle
         Size.Width = 263.000000000000000000
         inherited Text_Off: TText
-          Size.Width = 263.000000000000000000
+          Size.Width = 243.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
         end
       end
       inherited Background_On: TRectangle
+        Size.Width = 263.000000000000000000
         inherited Text_On: TText
+          Size.Width = 243.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+    inline TextButton1: TTextButton
+      Align = Top
+      Position.Y = 289.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 75.000000000000000000
+      Size.PlatformDefault = False
+      inherited rFocus: TRectangle
+        Size.Width = 273.000000000000000000
+      end
+      inherited rUp: TRectangle
+        inherited TextUp: TText
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited rDown: TRectangle
+        Size.Width = 253.000000000000000000
+        inherited TextDown: TText
+          Size.Width = 233.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
         end
       end
