@@ -37,9 +37,10 @@ inherited GameScene: TGameScene
     end
   end
   object DGEGamepadManager1: TDGEGamepadManager
+    OnButtonDown = DGEGamepadManager1ButtonDown
     OnAxesChange = DGEGamepadManager1AxesChange
     OnDirectionPadChange = DGEGamepadManager1DirectionPadChange
-    Left = 520
-    Top = 264
+    Left = 456
+    Top = 144
   end
 end

@@ -69,15 +69,13 @@ type
 
   TGameGrid = array [0 .. (CColCount - 1), 0 .. (CRowCount - 1)] of TCellType;
 
-  TControllerType = (Keyboard, DPad, Axes);
+  TControllerType = (Keyboard, DPad, Axe, Button);
 
   TPlayer = class
   private
     FKeyCharUp: WideChar;
     FKeyRight: Word;
     FKeyCharLeft: WideChar;
-    FGamePadID: integer;
-    FControllerType: TControllerType;
     FColor: TAlphaColor;
     FVX: integer;
     FKeyCharRight: WideChar;
@@ -85,18 +83,36 @@ type
     FKeyDown: Word;
     FX: integer;
     FY: integer;
-    FAxeXID: TJoystickAxes;
     FKeyUp: Word;
     FKeyCharDown: WideChar;
     FKeyLeft: Word;
-    FAxeYID: TJoystickAxes;
     FEnabled: boolean;
     FIsAlive: boolean;
-    procedure SetAxeXID(const Value: TJoystickAxes);
-    procedure SetAxeYID(const Value: TJoystickAxes);
+    FDPadRight: TJoystickDPad;
+    FGamePadIDUp: integer;
+    FButtonLeft: TJoystickButtons;
+    FAxeValueRight: single;
+    FControllerTypeUp: TControllerType;
+    FGamePadIDLeft: integer;
+    FControllerTypeLeft: TControllerType;
+    FAxeIDDown: TJoystickAxes;
+    FButtonRight: TJoystickButtons;
+    FGamePadIDRight: integer;
+    FDPadDown: TJoystickDPad;
+    FAxeValueDown: single;
+    FControllerTypeRight: TControllerType;
+    FAxeIDUp: TJoystickAxes;
+    FAxeIDLeft: TJoystickAxes;
+    FDPadUp: TJoystickDPad;
+    FButtonDown: TJoystickButtons;
+    FAxeValueUp: single;
+    FDPadLeft: TJoystickDPad;
+    FGamePadIDDown: integer;
+    FAxeValueLeft: single;
+    FAxeIDRight: TJoystickAxes;
+    FControllerTypeDown: TControllerType;
+    FButtonUp: TJoystickButtons;
     procedure SetColor(const Value: TAlphaColor);
-    procedure SetControllerType(const Value: TControllerType);
-    procedure SetGamePadID(const Value: integer);
     procedure SetKeyCharDown(const Value: WideChar);
     procedure SetKeyCharLeft(const Value: WideChar);
     procedure SetKeyCharRight(const Value: WideChar);
@@ -111,6 +127,30 @@ type
     procedure SetY(const Value: integer);
     procedure SetEnabled(const Value: boolean);
     procedure SetIsAlive(const Value: boolean);
+    procedure SetAxeIDDown(const Value: TJoystickAxes);
+    procedure SetAxeIDLeft(const Value: TJoystickAxes);
+    procedure SetAxeIDRight(const Value: TJoystickAxes);
+    procedure SetAxeIDUp(const Value: TJoystickAxes);
+    procedure SetAxeValueDown(const Value: single);
+    procedure SetAxeValueLeft(const Value: single);
+    procedure SetAxeValueRight(const Value: single);
+    procedure SetAxeValueUp(const Value: single);
+    procedure SetButtonDown(const Value: TJoystickButtons);
+    procedure SetButtonLeft(const Value: TJoystickButtons);
+    procedure SetButtonRight(const Value: TJoystickButtons);
+    procedure SetButtonUp(const Value: TJoystickButtons);
+    procedure SetControllerTypeDown(const Value: TControllerType);
+    procedure SetControllerTypeLeft(const Value: TControllerType);
+    procedure SetControllerTypeRight(const Value: TControllerType);
+    procedure SetControllerTypeUp(const Value: TControllerType);
+    procedure SetDPadDown(const Value: TJoystickDPad);
+    procedure SetDPadLeft(const Value: TJoystickDPad);
+    procedure SetDPadRight(const Value: TJoystickDPad);
+    procedure SetDPadUp(const Value: TJoystickDPad);
+    procedure SetGamePadIDDown(const Value: integer);
+    procedure SetGamePadIDLeft(const Value: integer);
+    procedure SetGamePadIDRight(const Value: integer);
+    procedure SetGamePadIDUp(const Value: integer);
   protected
   public
     property X: integer read FX write SetX;
@@ -118,19 +158,44 @@ type
     property VX: integer read FVX write SetVX;
     property VY: integer read FVY write SetVY;
     property Color: TAlphaColor read FColor write SetColor;
-    property ControllerType: TControllerType read FControllerType
-      write SetControllerType;
+    property ControllerTypeUp: TControllerType read FControllerTypeUp
+      write SetControllerTypeUp;
     property KeyUp: Word read FKeyUp write SetKeyUp;
     property KeyCharUp: WideChar read FKeyCharUp write SetKeyCharUp;
+    property GamePadIDUp: integer read FGamePadIDUp write SetGamePadIDUp;
+    property AxeIDUp: TJoystickAxes read FAxeIDUp write SetAxeIDUp;
+    property AxeValueUp: single read FAxeValueUp write SetAxeValueUp;
+    property DPadUp: TJoystickDPad read FDPadUp write SetDPadUp;
+    property ButtonUp: TJoystickButtons read FButtonUp write SetButtonUp;
+    property ControllerTypeRight: TControllerType read FControllerTypeRight
+      write SetControllerTypeRight;
     property KeyRight: Word read FKeyRight write SetKeyRight;
     property KeyCharRight: WideChar read FKeyCharRight write SetKeyCharRight;
+    property GamePadIDRight: integer read FGamePadIDRight
+      write SetGamePadIDRight;
+    property AxeIDRight: TJoystickAxes read FAxeIDRight write SetAxeIDRight;
+    property AxeValueRight: single read FAxeValueRight write SetAxeValueRight;
+    property DPadRight: TJoystickDPad read FDPadRight write SetDPadRight;
+    property ButtonRight: TJoystickButtons read FButtonRight
+      write SetButtonRight;
+    property ControllerTypeDown: TControllerType read FControllerTypeDown
+      write SetControllerTypeDown;
     property KeyDown: Word read FKeyDown write SetKeyDown;
     property KeyCharDown: WideChar read FKeyCharDown write SetKeyCharDown;
+    property GamePadIDDown: integer read FGamePadIDDown write SetGamePadIDDown;
+    property AxeIDDown: TJoystickAxes read FAxeIDDown write SetAxeIDDown;
+    property AxeValueDown: single read FAxeValueDown write SetAxeValueDown;
+    property DPadDown: TJoystickDPad read FDPadDown write SetDPadDown;
+    property ButtonDown: TJoystickButtons read FButtonDown write SetButtonDown;
+    property ControllerTypeLeft: TControllerType read FControllerTypeLeft
+      write SetControllerTypeLeft;
     property KeyLeft: Word read FKeyLeft write SetKeyLeft;
     property KeyCharLeft: WideChar read FKeyCharLeft write SetKeyCharLeft;
-    property GamePadID: integer read FGamePadID write SetGamePadID;
-    property AxeYID: TJoystickAxes read FAxeYID write SetAxeYID;
-    property AxeXID: TJoystickAxes read FAxeXID write SetAxeXID;
+    property GamePadIDLeft: integer read FGamePadIDLeft write SetGamePadIDLeft;
+    property AxeIDLeft: TJoystickAxes read FAxeIDLeft write SetAxeIDLeft;
+    property AxeValueLeft: single read FAxeValueLeft write SetAxeValueLeft;
+    property DPadLeft: TJoystickDPad read FDPadLeft write SetDPadLeft;
+    property ButtonLeft: TJoystickButtons read FButtonLeft write SetButtonLeft;
     property Enabled: boolean read FEnabled write SetEnabled;
     property IsAlive: boolean read FIsAlive write SetIsAlive;
     constructor Create; virtual;
@@ -169,19 +234,43 @@ var
 constructor TPlayer.Create;
 begin
   inherited Create;
+  FControllerTypeUp := TControllerType.Keyboard;
   FKeyUp := vkup;
   FKeyCharUp := #0;
+  FGamePadIDUp := -1;
+  FDPadUp := TJoystickDPad.Top;
+  FAxeIDUp := TJoystickAxes.LeftSticky;
+  FAxeValueUp := -1;
+  FButtonUp := TJoystickButtons.Y;
+
+  FControllerTypeRight := TControllerType.Keyboard;
   FKeyRight := vkRight;
   FKeyCharRight := #0;
+  FGamePadIDRight := -1;
+  FDPadRight := TJoystickDPad.Right;
+  FAxeIDRight := TJoystickAxes.LeftStickX;
+  FAxeValueRight := 1;
+  FButtonRight := TJoystickButtons.B;
+
+  FControllerTypeDown := TControllerType.Keyboard;
   FKeyDown := vkDown;
   FKeyCharDown := #0;
+  FGamePadIDDown := -1;
+  FDPadDown := TJoystickDPad.Bottom;
+  FAxeIDDown := TJoystickAxes.LeftSticky;
+  FAxeValueDown := 1;
+  FButtonDown := TJoystickButtons.A;
+
+  FControllerTypeLeft := TControllerType.Keyboard;
   FKeyLeft := vkLeft;
   FKeyCharLeft := #0;
-  FGamePadID := -1;
-  FControllerType := TControllerType.Keyboard;
+  FGamePadIDLeft := -1;
+  FDPadLeft := TJoystickDPad.Left;
+  FAxeIDLeft := TJoystickAxes.LeftStickX;
+  FAxeValueLeft := -1;
+  FButtonLeft := TJoystickButtons.X;
+
   FColor := TAlphaColors.Red;
-  FAxeXID := TJoystickAxes.LeftStickX;
-  FAxeYID := TJoystickAxes.LeftSticky;
   FX := 0;
   FY := 0;
   FVX := 1;
@@ -206,14 +295,64 @@ begin
   FIsAlive := false;
 end;
 
-procedure TPlayer.SetAxeXID(const Value: TJoystickAxes);
+procedure TPlayer.SetAxeIDDown(const Value: TJoystickAxes);
 begin
-  FAxeXID := Value;
+  FAxeIDDown := Value;
 end;
 
-procedure TPlayer.SetAxeYID(const Value: TJoystickAxes);
+procedure TPlayer.SetAxeIDLeft(const Value: TJoystickAxes);
 begin
-  FAxeYID := Value;
+  FAxeIDLeft := Value;
+end;
+
+procedure TPlayer.SetAxeIDRight(const Value: TJoystickAxes);
+begin
+  FAxeIDRight := Value;
+end;
+
+procedure TPlayer.SetAxeIDUp(const Value: TJoystickAxes);
+begin
+  FAxeIDUp := Value;
+end;
+
+procedure TPlayer.SetAxeValueDown(const Value: single);
+begin
+  FAxeValueDown := Value;
+end;
+
+procedure TPlayer.SetAxeValueLeft(const Value: single);
+begin
+  FAxeValueLeft := Value;
+end;
+
+procedure TPlayer.SetAxeValueRight(const Value: single);
+begin
+  FAxeValueRight := Value;
+end;
+
+procedure TPlayer.SetAxeValueUp(const Value: single);
+begin
+  FAxeValueUp := Value;
+end;
+
+procedure TPlayer.SetButtonDown(const Value: TJoystickButtons);
+begin
+  FButtonDown := Value;
+end;
+
+procedure TPlayer.SetButtonLeft(const Value: TJoystickButtons);
+begin
+  FButtonLeft := Value;
+end;
+
+procedure TPlayer.SetButtonRight(const Value: TJoystickButtons);
+begin
+  FButtonRight := Value;
+end;
+
+procedure TPlayer.SetButtonUp(const Value: TJoystickButtons);
+begin
+  FButtonUp := Value;
 end;
 
 procedure TPlayer.SetColor(const Value: TAlphaColor);
@@ -221,9 +360,44 @@ begin
   FColor := Value;
 end;
 
-procedure TPlayer.SetControllerType(const Value: TControllerType);
+procedure TPlayer.SetControllerTypeDown(const Value: TControllerType);
 begin
-  FControllerType := Value;
+  FControllerTypeDown := Value;
+end;
+
+procedure TPlayer.SetControllerTypeLeft(const Value: TControllerType);
+begin
+  FControllerTypeLeft := Value;
+end;
+
+procedure TPlayer.SetControllerTypeRight(const Value: TControllerType);
+begin
+  FControllerTypeRight := Value;
+end;
+
+procedure TPlayer.SetControllerTypeUp(const Value: TControllerType);
+begin
+  FControllerTypeUp := Value;
+end;
+
+procedure TPlayer.SetDPadDown(const Value: TJoystickDPad);
+begin
+  FDPadDown := Value;
+end;
+
+procedure TPlayer.SetDPadLeft(const Value: TJoystickDPad);
+begin
+  FDPadLeft := Value;
+end;
+
+procedure TPlayer.SetDPadRight(const Value: TJoystickDPad);
+begin
+  FDPadRight := Value;
+end;
+
+procedure TPlayer.SetDPadUp(const Value: TJoystickDPad);
+begin
+  FDPadUp := Value;
 end;
 
 procedure TPlayer.SetEnabled(const Value: boolean);
@@ -231,15 +405,29 @@ begin
   FEnabled := Value;
 end;
 
-procedure TPlayer.SetGamePadID(const Value: integer);
+procedure TPlayer.SetGamePadIDDown(const Value: integer);
 begin
-  FGamePadID := Value;
+  FGamePadIDDown := Value;
+end;
+
+procedure TPlayer.SetGamePadIDLeft(const Value: integer);
+begin
+  FGamePadIDLeft := Value;
+end;
+
+procedure TPlayer.SetGamePadIDRight(const Value: integer);
+begin
+  FGamePadIDRight := Value;
+end;
+
+procedure TPlayer.SetGamePadIDUp(const Value: integer);
+begin
+  FGamePadIDUp := Value;
 end;
 
 procedure TPlayer.SetIsAlive(const Value: boolean);
 begin
   FIsAlive := Value;
-  // TODO: traiter mort du joueur
 end;
 
 procedure TPlayer.SetKeyCharDown(const Value: WideChar);
@@ -370,7 +558,6 @@ var
   X, Y: integer;
 begin
   inherited;
-
   // Init game grid
   for X := 0 to CColCount - 1 do
     for Y := 0 to CRowCount - 1 do
@@ -378,8 +565,7 @@ begin
 
   // Init players
   for PlayerID := TCellType.Player1 to TCellType.Player4 do
-    if PlayerID = TCellType.Player1 then
-      FPlayers[PlayerID].Restart;
+    FPlayers[PlayerID].Restart;
 end;
 
 initialization

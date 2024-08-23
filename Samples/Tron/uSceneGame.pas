@@ -79,6 +79,8 @@ type
       const Axe: TJoystickAxes; const Value: Single);
     procedure DGEGamepadManager1DirectionPadChange(const GamepadID: Integer;
       const Value: TJoystickDPad);
+    procedure DGEGamepadManager1ButtonDown(const GamepadID: Integer;
+      const Button: TJoystickButtons);
   private
   protected
     FFirstResize: boolean;
@@ -86,7 +88,6 @@ type
   public
     procedure ShowScene; override;
     procedure HideScene; override;
-    procedure BeforeFirstShowScene; override;
     constructor Create(AOwner: TComponent); override;
     procedure DrawCell(const X, Y: Integer);
     procedure AfterConstruction; override;
@@ -94,13 +95,12 @@ type
     procedure GoToRight(const PlayerID: TCellType);
     procedure GoToBottom(const PlayerID: TCellType);
     procedure GoToLeft(const PlayerID: TCellType);
+    procedure GameOver;
   end;
 
 implementation
 
 {$R *.fmx}
-
-// TODO : choix du type de périphérique pour chaque joueur
 // TODO : accélérer le jeu en cours de partie (à partir d'un certain niveau de score)
 
 uses
@@ -109,18 +109,14 @@ uses
   uScene,
   uUIElements,
   uDMHelpBarManager,
-  USVGInputPrompts;
+  USVGInputPrompts,
+  Gamolf.RTL.UIElements;
 
 procedure TGameScene.AfterConstruction;
 begin
   inherited;
+  DGEGamepadManager1.Enabled := false;
   GameLoop.Enabled := false;
-end;
-
-procedure TGameScene.BeforeFirstShowScene;
-begin
-  inherited;
-
 end;
 
 constructor TGameScene.Create(AOwner: TComponent);
@@ -138,23 +134,63 @@ begin
   tgd := TTronGameData.current;
 
   for PlayerID := TCellType.Player1 to TCellType.Player4 do
-    if tgd.Players[PlayerID].IsAlive and
-      (tgd.Players[PlayerID].ControllerType = TControllerType.Axes) and
-      (tgd.Players[PlayerID].GamepadID = GamepadID) then
-      if (tgd.Players[PlayerID].AxeXID = Axe) then
-      begin
-        if (Value < -0.9) then
-          GoToLeft(PlayerID)
-        else if (Value > 0.9) then
-          GoToRight(PlayerID);
-      end
-      else if (tgd.Players[PlayerID].AxeyID = Axe) then
-      begin
-        if (Value < -0.9) then
-          GoToTop(PlayerID)
-        else if (Value > 0.9) then
-          GoToBottom(PlayerID);
-      end
+    if tgd.Players[PlayerID].IsAlive then
+      if (tgd.Players[PlayerID].ControllerTypeUp = TControllerType.Axe) and
+        (tgd.Players[PlayerID].GamePadIDUp = GamepadID) and
+        (tgd.Players[PlayerID].AxeIDUp = Axe) and
+        (((tgd.Players[PlayerID].AxeValueUp > 0) and (Value > 0)) or
+        ((tgd.Players[PlayerID].AxeValueUp < 0) and (Value < 0))) and
+        (abs(Value) > 0.9 * abs(tgd.Players[PlayerID].AxeValueUp)) then
+        GoToTop(PlayerID)
+      else if (tgd.Players[PlayerID].ControllerTypeRight = TControllerType.Axe)
+        and (tgd.Players[PlayerID].GamePadIDRight = GamepadID) and
+        (tgd.Players[PlayerID].AxeIDRight = Axe) and
+        (((tgd.Players[PlayerID].AxeValueRight > 0) and (Value > 0)) or
+        ((tgd.Players[PlayerID].AxeValueRight < 0) and (Value < 0))) and
+        (abs(Value) > 0.9 * abs(tgd.Players[PlayerID].AxeValueRight)) then
+        GoToRight(PlayerID)
+      else if (tgd.Players[PlayerID].ControllerTypeDown = TControllerType.Axe)
+        and (tgd.Players[PlayerID].GamePadIDDown = GamepadID) and
+        (tgd.Players[PlayerID].AxeIDDown = Axe) and
+        (((tgd.Players[PlayerID].AxeValueDown > 0) and (Value > 0)) or
+        ((tgd.Players[PlayerID].AxeValueDown < 0) and (Value < 0))) and
+        (abs(Value) > 0.9 * abs(tgd.Players[PlayerID].AxeValueDown)) then
+        GoToBottom(PlayerID)
+      else if (tgd.Players[PlayerID].ControllerTypeLeft = TControllerType.Axe)
+        and (tgd.Players[PlayerID].GamePadIDLeft = GamepadID) and
+        (tgd.Players[PlayerID].AxeIDLeft = Axe) and
+        (((tgd.Players[PlayerID].AxeValueLeft > 0) and (Value > 0)) or
+        ((tgd.Players[PlayerID].AxeValueLeft < 0) and (Value < 0))) and
+        (abs(Value) > 0.9 * abs(tgd.Players[PlayerID].AxeValueLeft)) then
+        GoToLeft(PlayerID);
+end;
+
+procedure TGameScene.DGEGamepadManager1ButtonDown(const GamepadID: Integer;
+  const Button: TJoystickButtons);
+var
+  PlayerID: TCellType;
+  tgd: TTronGameData;
+begin
+  tgd := TTronGameData.current;
+
+  for PlayerID := TCellType.Player1 to TCellType.Player4 do
+    if tgd.Players[PlayerID].IsAlive then
+      if (tgd.Players[PlayerID].ControllerTypeUp = TControllerType.Button) and
+        (tgd.Players[PlayerID].GamePadIDUp = GamepadID) and
+        (tgd.Players[PlayerID].ButtonUp = Button) then
+        GoToTop(PlayerID)
+      else if (tgd.Players[PlayerID].ControllerTypeRight = TControllerType.
+        Button) and (tgd.Players[PlayerID].GamePadIDRight = GamepadID) and
+        (tgd.Players[PlayerID].ButtonRight = Button) then
+        GoToRight(PlayerID)
+      else if (tgd.Players[PlayerID].ControllerTypeDown = TControllerType.
+        Button) and (tgd.Players[PlayerID].GamePadIDDown = GamepadID) and
+        (tgd.Players[PlayerID].ButtonDown = Button) then
+        GoToBottom(PlayerID)
+      else if (tgd.Players[PlayerID].ControllerTypeLeft = TControllerType.
+        Button) and (tgd.Players[PlayerID].GamePadIDLeft = GamepadID) and
+        (tgd.Players[PlayerID].ButtonLeft = Button) then
+        GoToLeft(PlayerID);
 end;
 
 procedure TGameScene.DGEGamepadManager1DirectionPadChange(const GamepadID
@@ -166,19 +202,23 @@ begin
   tgd := TTronGameData.current;
 
   for PlayerID := TCellType.Player1 to TCellType.Player4 do
-    if tgd.Players[PlayerID].IsAlive and
-      (tgd.Players[PlayerID].ControllerType = TControllerType.DPad) and
-      (tgd.Players[PlayerID].GamepadID = GamepadID) then
-      case Value of
-        TJoystickDPad.Top:
-          GoToTop(PlayerID);
-        TJoystickDPad.Right:
-          GoToRight(PlayerID);
-        TJoystickDPad.Bottom:
-          GoToBottom(PlayerID);
-        TJoystickDPad.Left:
-          GoToLeft(PlayerID);
-      end;
+    if tgd.Players[PlayerID].IsAlive then
+      if (Value = TJoystickDPad.Top) and
+        (tgd.Players[PlayerID].ControllerTypeUp = TControllerType.DPad) and
+        (tgd.Players[PlayerID].GamePadIDUp = GamepadID) then
+        GoToTop(PlayerID)
+      else if (Value = TJoystickDPad.Right) and
+        (tgd.Players[PlayerID].ControllerTypeRight = TControllerType.DPad) and
+        (tgd.Players[PlayerID].GamePadIDRight = GamepadID) then
+        GoToRight(PlayerID)
+      else if (Value = TJoystickDPad.Bottom) and
+        (tgd.Players[PlayerID].ControllerTypeDown = TControllerType.DPad) and
+        (tgd.Players[PlayerID].GamePadIDDown = GamepadID) then
+        GoToBottom(PlayerID)
+      else if (Value = TJoystickDPad.Left) and
+        (tgd.Players[PlayerID].ControllerTypeLeft = TControllerType.DPad) and
+        (tgd.Players[PlayerID].GamePadIDLeft = GamepadID) then
+        GoToLeft(PlayerID);
 end;
 
 procedure TGameScene.DrawCell(const X, Y: Integer);
@@ -236,30 +276,33 @@ begin
 
   if (Key <> 0) or (KeyChar <> #0) then
     for PlayerID := TCellType.Player1 to TCellType.Player4 do
-      if tgd.Players[PlayerID].IsAlive and
-        (tgd.Players[PlayerID].ControllerType = TControllerType.Keyboard) then
-        if (tgd.Players[PlayerID].KeyUp = Key) and
+      if tgd.Players[PlayerID].IsAlive then
+        if (tgd.Players[PlayerID].ControllerTypeUp = TControllerType.Keyboard)
+          and (tgd.Players[PlayerID].KeyUp = Key) and
           (tgd.Players[PlayerID].KeyCharUp = KeyChar) then
         begin
           GoToTop(PlayerID);
           Key := 0;
           KeyChar := #0;
         end
-        else if (tgd.Players[PlayerID].KeyRight = Key) and
+        else if (tgd.Players[PlayerID].ControllerTypeRight = TControllerType.
+          Keyboard) and (tgd.Players[PlayerID].KeyRight = Key) and
           (tgd.Players[PlayerID].KeyCharRight = KeyChar) then
         begin
           GoToRight(PlayerID);
           Key := 0;
           KeyChar := #0;
         end
-        else if (tgd.Players[PlayerID].KeyDown = Key) and
+        else if (tgd.Players[PlayerID].ControllerTypeDown = TControllerType.
+          Keyboard) and (tgd.Players[PlayerID].KeyDown = Key) and
           (tgd.Players[PlayerID].KeyCharDown = KeyChar) then
         begin
           GoToBottom(PlayerID);
           Key := 0;
           KeyChar := #0;
         end
-        else if (tgd.Players[PlayerID].KeyLeft = Key) and
+        else if (tgd.Players[PlayerID].ControllerTypeLeft = TControllerType.
+          Keyboard) and (tgd.Players[PlayerID].KeyLeft = Key) and
           (tgd.Players[PlayerID].KeyCharLeft = KeyChar) then
         begin
           GoToLeft(PlayerID);
@@ -348,11 +391,14 @@ begin
       if tgd.Players[PlayerID].IsAlive then
         inc(Nb);
     if (Nb < 2) then
-    begin
-      tgd.StopGame;
-      tscene.current := TSceneType.GameOver;
-    end;
+      GameOver;
   end;
+end;
+
+procedure TGameScene.GameOver;
+begin
+  TTronGameData.current.StopGame;
+  tscene.current := TSceneType.GameOver;
 end;
 
 procedure TGameScene.GoToBottom(const PlayerID: TCellType);
@@ -391,6 +437,8 @@ procedure TGameScene.HideScene;
 begin
   inherited;
   GameLoop.Enabled := false;
+  DGEGamepadManager1.Enabled := false;
+  TUIItemsList.current.RemoveLayout;
 end;
 
 procedure TGameScene.imgScreenResized(Sender: TObject);
@@ -403,13 +451,29 @@ end;
 
 procedure TGameScene.ShowScene;
 var
-  PlayerID: TCellType;
   X, Y: Integer;
-  tgd: TTronGameData;
 begin
   inherited;
+  TUIItemsList.current.NewLayout;
+  TUIItemsList.current.AddUIItem(
+    procedure(const Sender: TObject)
+    begin
+      GameOver;
+    end).KeyShortcuts.Add(vkescape, #0, []);
 
-  tgd := TTronGameData.current;
+  // To force the player controls for tests
+  // TTronGameData.current.Players[TCellType.Player1].ControllerTypeUp :=
+  // TControllerType.Button;
+  // TTronGameData.current.Players[TCellType.Player1].GamePadIDUp := 2;
+  // TTronGameData.current.Players[TCellType.Player1].ControllerTypeRight :=
+  // TControllerType.Button;
+  // TTronGameData.current.Players[TCellType.Player1].GamePadIDRight := 2;
+  // TTronGameData.current.Players[TCellType.Player1].ControllerTypeDown :=
+  // TControllerType.Button;
+  // TTronGameData.current.Players[TCellType.Player1].GamePadIDDown := 2;
+  // TTronGameData.current.Players[TCellType.Player1].ControllerTypeLeft :=
+  // TControllerType.Button;
+  // TTronGameData.current.Players[TCellType.Player1].GamePadIDLeft := 2;
 
   // Init game grid
   for X := 0 to CColCount - 1 do
@@ -420,15 +484,8 @@ begin
   GameLoop.Interval := round(1000 / CNbCellPerSecondes);
   GameLoop.Enabled := true;
 
-  tgd.Players[TCellType.Player1].ControllerType := TControllerType.Axes;
-  tgd.Players[TCellType.Player1].GamepadID := 2;
-  tgd.Players[TCellType.Player1].AxeXID := TJoystickAxes.leftStickX;
-  tgd.Players[TCellType.Player1].AxeyID := TJoystickAxes.LeftStickY;
-
-  tgd.Players[TCellType.Player2].ControllerType := TControllerType.Axes;
-  tgd.Players[TCellType.Player2].GamepadID := 2;
-  tgd.Players[TCellType.Player2].AxeXID := TJoystickAxes.RightStickX;
-  tgd.Players[TCellType.Player2].AxeyID := TJoystickAxes.RightStickY;
+  // Start the local game controller manager
+  DGEGamepadManager1.Enabled := true;
 end;
 
 initialization

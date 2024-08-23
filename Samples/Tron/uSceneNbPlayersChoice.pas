@@ -156,13 +156,13 @@ begin
   ActivatePlayer2;
   ActivatePlayer3;
   ActivatePlayer4;
-  TScene.Current := TSceneType.Game;
+  TScene.Current := TSceneType.ControlsChoice;
 end;
 
 procedure TNbPlayersChoiceScene.btnOneClick(Sender: TObject);
 begin
   ActivatePlayer1;
-  TScene.Current := TSceneType.Game;
+  TScene.Current := TSceneType.ControlsChoice;
 end;
 
 procedure TNbPlayersChoiceScene.btnThreeClick(Sender: TObject);
@@ -170,14 +170,14 @@ begin
   ActivatePlayer1;
   ActivatePlayer2;
   ActivatePlayer3;
-  TScene.Current := TSceneType.Game;
+  TScene.Current := TSceneType.ControlsChoice;
 end;
 
 procedure TNbPlayersChoiceScene.btnTwoClick(Sender: TObject);
 begin
   ActivatePlayer1;
   ActivatePlayer2;
-  TScene.Current := TSceneType.Game;
+  TScene.Current := TSceneType.ControlsChoice;
 end;
 
 procedure TNbPlayersChoiceScene.HideScene;
