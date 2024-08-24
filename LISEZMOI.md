@@ -32,6 +32,10 @@ Ce dépôt de code contient un projet développé en langage Pascal Objet sous D
 * [Make games in Delphi (2024 edition)](https://www.youtube.com/live/M7DcEDbuESQ?feature=shared&t=3911) (diffusion en direct durant la conférence, en anglais)
 * [Faites des jeux en Delphi (v2024)](https://serialstreameur.fr/faites-des-jeux-en-delphi-edition-2024.html) (en français)
 
+### YouTube
+
+* [Gamolf FMX Game Starter Kit playlist](https://www.youtube.com/playlist?list=PLpkkg2iiC8yjkhmHDs42arEqvJm-m7006)
+
 ### Twitch
 
 Suivez mes streams de développement de logiciels, jeux vidéo, applications mobiles et sites web sur [ma chaîne Twitch](https://www.twitch.tv/patrickpremartin) ou en rediffusion sur [Serial Streameur](https://serialstreameur.fr/gamolf-fmx-game-starter-kit.html) la plupart du temps en français.

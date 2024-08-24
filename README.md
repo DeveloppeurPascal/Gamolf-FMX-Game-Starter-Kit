@@ -32,6 +32,9 @@ This code repository contains a project developed in Object Pascal language unde
 * [Make games in Delphi (2024 edition)](https://www.youtube.com/live/M7DcEDbuESQ?feature=shared&t=3911) (live session during the conference, in English)
 * [Faites des jeux en Delphi (v2024)](https://serialstreameur.fr/faites-des-jeux-en-delphi-edition-2024.html) (in French)
 
+### YouTube
+
+* [Gamolf FMX Game Starter Kit playlist](https://www.youtube.com/playlist?list=PLpkkg2iiC8yjkhmHDs42arEqvJm-m7006)
 
 ### Twitch
 
