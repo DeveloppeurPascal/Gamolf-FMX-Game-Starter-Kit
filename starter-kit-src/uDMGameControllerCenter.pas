@@ -58,10 +58,10 @@ uses
 type
   TDMGameControllerCenter = class(TDataModule)
     DGEGamepadManager1: TDGEGamepadManager;
-    procedure DGEGamepadManager1DirectionPadChange(const GamepadID: Integer;
-      const Value: TJoystickDPad);
-    procedure DGEGamepadManager1ButtonDown(const GamepadID: Integer;
-      const Button: TJoystickButtons);
+    procedure DGEGamepadManager1DirectionPadChange(const AGamepadID: Integer;
+      const AValue: TJoystickDPad);
+    procedure DGEGamepadManager1ButtonDown(const AGamepadID: Integer;
+      const AButton: TJoystickButtons);
   private
   public
   end;
@@ -79,25 +79,41 @@ uses
 
 {$R *.dfm}
 
-procedure TDMGameControllerCenter.DGEGamepadManager1ButtonDown(const GamepadID
-  : Integer; const Button: TJoystickButtons);
+procedure TDMGameControllerCenter.DGEGamepadManager1ButtonDown(const AGamepadID
+  : Integer; const AButton: TJoystickButtons);
 var
-  Handled: boolean;
-  Item: TUIElement;
+  LGamepadID: Integer;
+  LButton: TJoystickButtons;
 begin
-  TUIItemsList.Current.GamepadButtonDown(Button, Handled);
-  if not Handled then
-  begin
-    Item := TUIItemsList.Current.Focused;
-    if assigned(Item) and (Button = TJoystickButtons.a) then
-      Item.DoClick;
-  end;
+  LGamepadID := AGamepadID;
+  LButton := AButton;
+  tthread.queue(nil,
+    procedure
+    var
+      Handled: boolean;
+      Item: TUIElement;
+    begin
+      TUIItemsList.Current.GamepadButtonDown(LButton, Handled);
+      if not Handled then
+      begin
+        Item := TUIItemsList.Current.Focused;
+        if assigned(Item) and (LButton = TJoystickButtons.a) then
+          Item.DoClick;
+      end;
+    end);
 end;
 
 procedure TDMGameControllerCenter.DGEGamepadManager1DirectionPadChange
-  (const GamepadID: Integer; const Value: TJoystickDPad);
+  (const AGamepadID: Integer; const AValue: TJoystickDPad);
+var
+  LValue: TJoystickDPad;
 begin
-  TUIItemsList.Current.GamepadMove(Value);
+  LValue := AValue;
+  tthread.queue(nil,
+    procedure
+    begin
+      TUIItemsList.Current.GamepadMove(LValue);
+    end);
 end;
 
 end.
