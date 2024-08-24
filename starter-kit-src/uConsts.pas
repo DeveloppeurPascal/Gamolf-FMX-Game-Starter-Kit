@@ -151,7 +151,7 @@ const
   CGameGUID = '{48AD6D06-1BED-4F33-ADCA-267E12D74417}';
   // Use Shift+Ctrl+G to generate a new GUID and replace current value by the new one
   // TODO : Set your game GUID. Each game must have it's GUID, don't use the same !
-{$MESSAGE WARN 'Set your game GUID, don't use the default value !!!'}
+{$MESSAGE WARN 'Set your game GUID, don''t use the default value !!!'}
   /// <summary>
   /// Default lives number used when starting a new game or clearing the game data
   /// </summary>
