@@ -42,7 +42,9 @@ Suivez mes streams de développement de logiciels, jeux vidéo, applications mob
 
 ## Utiliser ce logiciel
 
-[Consultez le site du logiciel](https://fmxgamestarterkit.developpeur-pascal.fr/) pour en savoir plus sur son fonctionnement, accéder à des vidéos et articles, connaître les différentes versions disponibles et leurs fonctionnalités, contacter le support utilisateurs...
+[Consultez le site du logiciel](https://fmxgamestarterkit.developpeur-pascal.fr/) pour en savoir plus sur le fonctionnement du ki de démarrage et de ses exemples, accéder à des vidéos et articles, connaître les différentes versions disponibles et leurs fonctionnalités, contacter le support utilisateurs...
+
+Téléchargez les installeurs de chaque jeu vidéo de démo depuis [la page itch.io du projet](https://gamolf.itch.io/gamolf-fmx-game-starter-kit-demo-video-games).
 
 ## Installation des codes sources
 

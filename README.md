@@ -42,7 +42,9 @@ Follow my development streams of software, video games, mobile applications and 
 
 ## Using this software
 
-[Visit the software website](https://fmxgamestarterkit.developpeur-pascal.fr/) to find out more about how it works, access videos and articles, find out about the different versions available and their features, contact user support...
+[Visit the software website](https://fmxgamestarterkit.developpeur-pascal.fr/) to find out more about how the starter kit and its samples work, access videos and articles, find out about the different versions available and their features, contact user support...
+
+Download the installers for each demo video game from [the itch.io project page](https://gamolf.itch.io/gamolf-fmx-game-starter-kit-demo-video-games).
 
 ## Source code installation
 
