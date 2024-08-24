@@ -57,7 +57,7 @@ const
   /// <summary>
   /// Version date of your game, change it when you publish a new public release
   /// </summary>
-  CAboutVersionDate = '20240821';
+  CAboutVersionDate = '20240824';
 
   /// <summary>
   /// Title of your game used in the About box and as the main form caption
@@ -208,59 +208,74 @@ var
 implementation
 
 uses
+  System.Classes,
   System.SysUtils;
 
 initialization
 
-if CAboutGameTitle.Trim.IsEmpty then
-  raise Exception.Create
-    ('Please give a title to your game in CAboutGameTitle !');
+try
+  if CAboutGameTitle.Trim.IsEmpty then
+    raise Exception.Create
+      ('Please give a title to your game in CAboutGameTitle !');
 
-if CEditorFolderName.Trim.IsEmpty then
-  raise Exception.Create
-    ('Please give an editor folder name in CEditorFolderName !');
+  if CEditorFolderName.Trim.IsEmpty then
+    raise Exception.Create
+      ('Please give an editor folder name in CEditorFolderName !');
 
-if CGameFolderName.Trim.IsEmpty then
-  raise Exception.Create('Please give a game folder name in CGameFolderName !');
+  if CGameFolderName.Trim.IsEmpty then
+    raise Exception.Create
+      ('Please give a game folder name in CGameFolderName !');
 
-if CDefaultLanguage.Trim.IsEmpty then
-  raise Exception.Create
-    ('Please specify a default language ISO code in CDefaultLanguage !');
+  if CDefaultLanguage.Trim.IsEmpty then
+    raise Exception.Create
+      ('Please specify a default language ISO code in CDefaultLanguage !');
 
-if (CDefaultLanguage <> CDefaultLanguage.Trim.ToLower) then
-  raise Exception.Create('Please use "' + CDefaultLanguage.Trim.ToLower +
-    '" as CDefaultLanguage value.');
+  if (CDefaultLanguage <> CDefaultLanguage.Trim.ToLower) then
+    raise Exception.Create('Please use "' + CDefaultLanguage.Trim.ToLower +
+      '" as CDefaultLanguage value.');
 
 {$IFDEF RELEASE}
-if (CGameGUID = '{48AD6D06-1BED-4F33-ADCA-267E12D74417}') then
-  raise Exception.Create('Wrong GUID. Change it in game settings !');
+  if (CGameGUID = '{48AD6D06-1BED-4F33-ADCA-267E12D74417}') then
+    raise Exception.Create('Wrong GUID. Change it in game settings !');
 {$ENDIF}
 {$IFDEF DEBUG}
-ReportMemoryLeaksOnShutdown := true;
+  ReportMemoryLeaksOnShutdown := true;
 {$ENDIF}
 {$IF Defined(RELEASE)}
-// Path to the Pascal file where you fill GConfigXORKey variable.
-// This variable is used to crypt/decrypt the settings data in RELEASE mode.
-//
-// Template file is in ____PRIVATE\src\ConfigFileXORKey.inc
-// Copy it to a private folder (not in the code repository for security reasons)
-// Customize it
-// Update it's path to the Include directive
-//
-// Don't share the key file. If you need to modify it, you won't be able to
-// open the previous configuration file!
+  // Path to the Pascal file where you fill GConfigXORKey variable.
+  // This variable is used to crypt/decrypt the settings data in RELEASE mode.
+  //
+  // Template file is in ____PRIVATE\src\ConfigFileXORKey.inc
+  // Copy it to a private folder (not in the code repository for security reasons)
+  // Customize it
+  // Update it's path to the Include directive
+  //
+  // Don't share the key file. If you need to modify it, you won't be able to
+  // open the previous configuration file!
 {$I '..\..\_PRIVATE\src\ConfigFileXORKey.inc'}
-// Path to the Pascal file where you fill GGameDataXORKey variable.
-// This variable is used to crypt/decrypt the settings data in RELEASE mode.
-//
-// Template file is in ____PRIVATE\src\GameDataFileXORKey.inc
-// Copy it to a private folder (not in the code repository for security reasons)
-// Customize it
-// Update it's path to the Include directive
-//
-// Don't share the key file. If you need to modify it, you won't be able to
-// open the previous configuration file!
+  // Path to the Pascal file where you fill GGameDataXORKey variable.
+  // This variable is used to crypt/decrypt the settings data in RELEASE mode.
+  //
+  // Template file is in ____PRIVATE\src\GameDataFileXORKey.inc
+  // Copy it to a private folder (not in the code repository for security reasons)
+  // Customize it
+  // Update it's path to the Include directive
+  //
+  // Don't share the key file. If you need to modify it, you won't be able to
+  // open the previous configuration file!
 {$I '..\..\_PRIVATE\src\GameDataFileXORKey.inc'}
 {$ENDIF}
+except
+  on e: Exception do
+  begin
+    var
+    s := e.message;
+    tthread.forcequeue(nil,
+      procedure
+      begin
+        raise Exception.Create(s);
+      end);
+  end;
+end;
 
 end.
