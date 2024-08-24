@@ -103,10 +103,8 @@ end;
 procedure TDMGameControllerCenter.DGEGamepadManager1ButtonDown(const AGamepadID
   : Integer; const AButton: TJoystickButtons);
 var
-  LGamepadID: Integer;
   LButton: TJoystickButtons;
 begin
-  LGamepadID := AGamepadID;
   LButton := AButton;
   tthread.queue(nil,
     procedure
