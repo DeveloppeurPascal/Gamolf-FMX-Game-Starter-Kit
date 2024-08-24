@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// ***************************************************************************
 ///
-/// Gamolf FMX Game Template
+/// Gamolf FMX Game Starter Kit
 ///
 /// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
 ///
@@ -15,8 +15,8 @@
 ///
 /// ***************************************************************************
 ///
-/// The "Gamolf FMX Game Template" is both a "technical" example of a video
-/// game developed in Delphi with everything you need inside, and a reusable
+/// The "Gamolf FMX Game Starter Kit" is both a "technical" example of a video
+/// game developed in Delphi with everything you need inside and a reusable
 /// project template you can customize for your own games.
 ///
 /// The files provided are fully functional. Numerous comments are included in
@@ -29,14 +29,14 @@
 /// Patrick PREMARTIN
 ///
 /// Site :
-/// https://gametemplate.developpeur-pascal.fr/
+/// https://fmxgamestarterkit.developpeur-pascal.fr/
 ///
 /// Project site :
-/// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template
+/// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-09T20:12:50.000+02:00
-/// Signature : d7b0fe58840b7222eb766f12fac131fa8bc06e52
+/// File last update : 2024-08-24T09:38:52.000+02:00
+/// Signature : c8c26f216c571999336cbb341f547d35242fd17c
 /// ***************************************************************************
 /// </summary>
 
