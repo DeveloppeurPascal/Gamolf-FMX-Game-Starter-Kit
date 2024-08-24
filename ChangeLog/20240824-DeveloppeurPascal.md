@@ -12,3 +12,5 @@
 * deployed Snake game sample for macOS and Windows
 * updated Tron constants
 * deployed Tron game sample for macOS and Windows
+* mise à jour des docs fr/en (ajout de liens vers les présentations et vidéos, ajout du lien vers la page itch.io où trouver les démos exécutables, ...)
+* added the DProj2WinSetup settings files for the game sample projects
