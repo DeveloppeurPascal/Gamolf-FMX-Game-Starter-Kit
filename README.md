@@ -2,7 +2,7 @@
 
 [Cette page en français.](LISEZMOI.md)
 
-The "Gamolf FMX Game Starter Kit" is both a "technical" example of a video game developed in Delphi with everything you need inside, and a reusable project template you can customize for your own games.
+The "[Gamolf FMX Game Starter Kit](https://fmxgamestarterkit.developpeur-pascal.fr/)" is both a "technical" example of a video game developed in Delphi with everything you need inside, and a reusable project template you can customize for your own games.
 
 The files provided are fully functional. Numerous comments are included in the sources to explain how they work and what you need to copy, override or customize to make video games without starting from scratch.
 
