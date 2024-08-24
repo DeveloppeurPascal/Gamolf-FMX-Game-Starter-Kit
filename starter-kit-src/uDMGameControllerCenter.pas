@@ -62,6 +62,8 @@ type
       const AValue: TJoystickDPad);
     procedure DGEGamepadManager1ButtonDown(const AGamepadID: Integer;
       const AButton: TJoystickButtons);
+    procedure DGEGamepadManager1AxesChange(const GamepadID: Integer;
+      const Axe: TJoystickAxes; const Value: Single);
   private
   public
   end;
@@ -78,6 +80,25 @@ uses
   Gamolf.RTL.UIElements;
 
 {$R *.dfm}
+
+procedure TDMGameControllerCenter.DGEGamepadManager1AxesChange(const GamepadID
+  : Integer; const Axe: TJoystickAxes; const Value: Single);
+begin
+  if (Axe in [TJoystickAxes.LeftStickX, TJoystickAxes.RightStickX]) then
+  begin
+    if (Value > 0.9) then
+      DGEGamepadManager1DirectionPadChange(GamepadID, TJoystickDPad.Right)
+    else if (Value < -0.9) then
+      DGEGamepadManager1DirectionPadChange(GamepadID, TJoystickDPad.Left);
+  end
+  else if (Axe in [TJoystickAxes.LeftSticky, TJoystickAxes.RightSticky]) then
+  begin
+    if (Value > 0.9) then
+      DGEGamepadManager1DirectionPadChange(GamepadID, TJoystickDPad.Bottom)
+    else if (Value < -0.9) then
+      DGEGamepadManager1DirectionPadChange(GamepadID, TJoystickDPad.Top);
+  end;
+end;
 
 procedure TDMGameControllerCenter.DGEGamepadManager1ButtonDown(const AGamepadID
   : Integer; const AButton: TJoystickButtons);
