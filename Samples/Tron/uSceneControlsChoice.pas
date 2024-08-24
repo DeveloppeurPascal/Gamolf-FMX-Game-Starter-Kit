@@ -156,7 +156,11 @@ begin
         TGD.Players[PlayerID].GamePadIDUp := GamepadID;
         TGD.Players[PlayerID].AxeIDUp := Axe;
         TGD.Players[PlayerID].AxeValueUp := Value;
-        pUp.Opacity := 1;
+        tthread.Synchronize(nil,
+          procedure
+          begin
+            pUp.Opacity := 1;
+          end);
         GotoNextStep;
       end;
     CStepChooseRight:
@@ -166,7 +170,11 @@ begin
         TGD.Players[PlayerID].GamePadIDRight := GamepadID;
         TGD.Players[PlayerID].AxeIDRight := Axe;
         TGD.Players[PlayerID].AxeValueRight := Value;
-        pRight.Opacity := 1;
+        tthread.Synchronize(nil,
+          procedure
+          begin
+            pRight.Opacity := 1;
+          end);
         GotoNextStep;
       end;
     CStepChooseBottom:
@@ -176,7 +184,11 @@ begin
         TGD.Players[PlayerID].GamePadIDDown := GamepadID;
         TGD.Players[PlayerID].AxeIDDown := Axe;
         TGD.Players[PlayerID].AxeValueDown := Value;
-        pDown.Opacity := 1;
+        tthread.Synchronize(nil,
+          procedure
+          begin
+            pDown.Opacity := 1;
+          end);
         GotoNextStep;
       end;
     CStepChooseLeft:
@@ -186,7 +198,11 @@ begin
         TGD.Players[PlayerID].GamePadIDLeft := GamepadID;
         TGD.Players[PlayerID].AxeIDLeft := Axe;
         TGD.Players[PlayerID].AxeValueLeft := Value;
-        pLeft.Opacity := 1;
+        tthread.Synchronize(nil,
+          procedure
+          begin
+            pLeft.Opacity := 1;
+          end);
         GotoNextStep;
       end;
     CStepTest:
@@ -198,9 +214,13 @@ begin
           ((TGD.Players[PlayerID].AxeValueUp < 0) and (Value < 0))) and
           (abs(Value) > 0.9 * abs(TGD.Players[PlayerID].AxeValueUp)) then
         begin
-          InitArrowsOpacity;
-          pUp.Opacity := 1;
-          pUp.tag := pUp.tag + 1;
+          tthread.Synchronize(nil,
+            procedure
+            begin
+              InitArrowsOpacity;
+              pUp.Opacity := 1;
+              pUp.tag := pUp.tag + 1;
+            end);
           WaitAndCheckIfTestIsOk;
         end
         else if (TGD.Players[PlayerID].ControllerTypeRight = TControllerType.
@@ -210,9 +230,13 @@ begin
           ((TGD.Players[PlayerID].AxeValueRight < 0) and (Value < 0))) and
           (abs(Value) > 0.9 * abs(TGD.Players[PlayerID].AxeValueRight)) then
         begin
-          InitArrowsOpacity;
-          pRight.Opacity := 1;
-          pRight.tag := pRight.tag + 1;
+          tthread.Synchronize(nil,
+            procedure
+            begin
+              InitArrowsOpacity;
+              pRight.Opacity := 1;
+              pRight.tag := pRight.tag + 1;
+            end);
           WaitAndCheckIfTestIsOk;
         end
         else if (TGD.Players[PlayerID].ControllerTypeDown = TControllerType.Axe)
@@ -222,9 +246,13 @@ begin
           ((TGD.Players[PlayerID].AxeValueDown < 0) and (Value < 0))) and
           (abs(Value) > 0.9 * abs(TGD.Players[PlayerID].AxeValueDown)) then
         begin
-          InitArrowsOpacity;
-          pDown.Opacity := 1;
-          pDown.tag := pDown.tag + 1;
+          tthread.Synchronize(nil,
+            procedure
+            begin
+              InitArrowsOpacity;
+              pDown.Opacity := 1;
+              pDown.tag := pDown.tag + 1;
+            end);
           WaitAndCheckIfTestIsOk;
         end
         else if (TGD.Players[PlayerID].ControllerTypeLeft = TControllerType.Axe)
@@ -234,9 +262,13 @@ begin
           ((TGD.Players[PlayerID].AxeValueLeft < 0) and (Value < 0))) and
           (abs(Value) > 0.9 * abs(TGD.Players[PlayerID].AxeValueLeft)) then
         begin
-          InitArrowsOpacity;
-          pLeft.Opacity := 1;
-          pLeft.tag := pLeft.tag + 1;
+          tthread.Synchronize(nil,
+            procedure
+            begin
+              InitArrowsOpacity;
+              pLeft.Opacity := 1;
+              pLeft.tag := pLeft.tag + 1;
+            end);
           WaitAndCheckIfTestIsOk;
         end;
       end;
@@ -262,7 +294,11 @@ begin
         TGD.Players[PlayerID].ControllerTypeUp := TControllerType.Button;
         TGD.Players[PlayerID].GamePadIDUp := GamepadID;
         TGD.Players[PlayerID].ButtonUp := Button;
-        pUp.Opacity := 1;
+        tthread.Synchronize(nil,
+          procedure
+          begin
+            pUp.Opacity := 1;
+          end);
         GotoNextStep;
       end;
     CStepChooseRight:
@@ -271,7 +307,11 @@ begin
         TGD.Players[PlayerID].ControllerTypeRight := TControllerType.Button;
         TGD.Players[PlayerID].GamePadIDRight := GamepadID;
         TGD.Players[PlayerID].ButtonRight := Button;
-        pRight.Opacity := 1;
+        tthread.Synchronize(nil,
+          procedure
+          begin
+            pRight.Opacity := 1;
+          end);
         GotoNextStep;
       end;
     CStepChooseBottom:
@@ -280,7 +320,11 @@ begin
         TGD.Players[PlayerID].ControllerTypeDown := TControllerType.Button;
         TGD.Players[PlayerID].GamePadIDDown := GamepadID;
         TGD.Players[PlayerID].ButtonDown := Button;
-        pDown.Opacity := 1;
+        tthread.Synchronize(nil,
+          procedure
+          begin
+            pDown.Opacity := 1;
+          end);
         GotoNextStep;
       end;
     CStepChooseLeft:
@@ -289,7 +333,11 @@ begin
         TGD.Players[PlayerID].ControllerTypeLeft := TControllerType.Button;
         TGD.Players[PlayerID].GamePadIDLeft := GamepadID;
         TGD.Players[PlayerID].ButtonLeft := Button;
-        pLeft.Opacity := 1;
+        tthread.Synchronize(nil,
+          procedure
+          begin
+            pLeft.Opacity := 1;
+          end);
         GotoNextStep;
       end;
     CStepTest:
@@ -298,36 +346,52 @@ begin
           (TGD.Players[PlayerID].GamePadIDUp = GamepadID) and
           (TGD.Players[PlayerID].ButtonUp = Button) then
         begin
-          InitArrowsOpacity;
-          pUp.Opacity := 1;
-          pUp.tag := pUp.tag + 1;
+          tthread.Synchronize(nil,
+            procedure
+            begin
+              InitArrowsOpacity;
+              pUp.Opacity := 1;
+              pUp.tag := pUp.tag + 1;
+            end);
           WaitAndCheckIfTestIsOk;
         end
         else if (TGD.Players[PlayerID].ControllerTypeRight = TControllerType.
           Button) and (TGD.Players[PlayerID].GamePadIDRight = GamepadID) and
           (TGD.Players[PlayerID].ButtonRight = Button) then
         begin
-          InitArrowsOpacity;
-          pRight.Opacity := 1;
-          pRight.tag := pRight.tag + 1;
+          tthread.Synchronize(nil,
+            procedure
+            begin
+              InitArrowsOpacity;
+              pRight.Opacity := 1;
+              pRight.tag := pRight.tag + 1;
+            end);
           WaitAndCheckIfTestIsOk;
         end
         else if (TGD.Players[PlayerID].ControllerTypeDown = TControllerType.
           Button) and (TGD.Players[PlayerID].GamePadIDDown = GamepadID) and
           (TGD.Players[PlayerID].ButtonDown = Button) then
         begin
-          InitArrowsOpacity;
-          pDown.Opacity := 1;
-          pDown.tag := pDown.tag + 1;
+          tthread.Synchronize(nil,
+            procedure
+            begin
+              InitArrowsOpacity;
+              pDown.Opacity := 1;
+              pDown.tag := pDown.tag + 1;
+            end);
           WaitAndCheckIfTestIsOk;
         end
         else if (TGD.Players[PlayerID].ControllerTypeLeft = TControllerType.
           Button) and (TGD.Players[PlayerID].GamePadIDLeft = GamepadID) and
           (TGD.Players[PlayerID].ButtonLeft = Button) then
         begin
-          InitArrowsOpacity;
-          pLeft.Opacity := 1;
-          pLeft.tag := pLeft.tag + 1;
+          tthread.Synchronize(nil,
+            procedure
+            begin
+              InitArrowsOpacity;
+              pLeft.Opacity := 1;
+              pLeft.tag := pLeft.tag + 1;
+            end);
           WaitAndCheckIfTestIsOk;
         end;
       end;
@@ -353,7 +417,11 @@ begin
         TGD.Players[PlayerID].ControllerTypeUp := TControllerType.DPad;
         TGD.Players[PlayerID].GamePadIDUp := GamepadID;
         TGD.Players[PlayerID].DPadUp := Value;
-        pUp.Opacity := 1;
+        tthread.Synchronize(nil,
+          procedure
+          begin
+            pUp.Opacity := 1;
+          end);
         GotoNextStep;
       end;
     CStepChooseRight:
@@ -362,7 +430,11 @@ begin
         TGD.Players[PlayerID].ControllerTypeRight := TControllerType.DPad;
         TGD.Players[PlayerID].GamePadIDRight := GamepadID;
         TGD.Players[PlayerID].DPadRight := Value;
-        pRight.Opacity := 1;
+        tthread.Synchronize(nil,
+          procedure
+          begin
+            pRight.Opacity := 1;
+          end);
         GotoNextStep;
       end;
     CStepChooseBottom:
@@ -371,7 +443,11 @@ begin
         TGD.Players[PlayerID].ControllerTypeDown := TControllerType.DPad;
         TGD.Players[PlayerID].GamePadIDDown := GamepadID;
         TGD.Players[PlayerID].DPadDown := Value;
-        pDown.Opacity := 1;
+        tthread.Synchronize(nil,
+          procedure
+          begin
+            pDown.Opacity := 1;
+          end);
         GotoNextStep;
       end;
     CStepChooseLeft:
@@ -380,7 +456,11 @@ begin
         TGD.Players[PlayerID].ControllerTypeLeft := TControllerType.DPad;
         TGD.Players[PlayerID].GamePadIDLeft := GamepadID;
         TGD.Players[PlayerID].DPadLeft := Value;
-        pLeft.Opacity := 1;
+        tthread.Synchronize(nil,
+          procedure
+          begin
+            pLeft.Opacity := 1;
+          end);
         GotoNextStep;
       end;
     CStepTest:
@@ -389,36 +469,52 @@ begin
           (TGD.Players[PlayerID].GamePadIDUp = GamepadID) and
           (TGD.Players[PlayerID].DPadUp = Value) then
         begin
-          InitArrowsOpacity;
-          pUp.Opacity := 1;
-          pUp.tag := pUp.tag + 1;
+          tthread.Synchronize(nil,
+            procedure
+            begin
+              InitArrowsOpacity;
+              pUp.Opacity := 1;
+              pUp.tag := pUp.tag + 1;
+            end);
           WaitAndCheckIfTestIsOk;
         end
         else if (TGD.Players[PlayerID].ControllerTypeRight = TControllerType.
           DPad) and (TGD.Players[PlayerID].GamePadIDRight = GamepadID) and
           (TGD.Players[PlayerID].DPadRight = Value) then
         begin
-          InitArrowsOpacity;
-          pRight.Opacity := 1;
-          pRight.tag := pRight.tag + 1;
+          tthread.Synchronize(nil,
+            procedure
+            begin
+              InitArrowsOpacity;
+              pRight.Opacity := 1;
+              pRight.tag := pRight.tag + 1;
+            end);
           WaitAndCheckIfTestIsOk;
         end
         else if (TGD.Players[PlayerID].ControllerTypeDown = TControllerType.
           DPad) and (TGD.Players[PlayerID].GamePadIDDown = GamepadID) and
           (TGD.Players[PlayerID].DPadDown = Value) then
         begin
-          InitArrowsOpacity;
-          pDown.Opacity := 1;
-          pDown.tag := pDown.tag + 1;
+          tthread.Synchronize(nil,
+            procedure
+            begin
+              InitArrowsOpacity;
+              pDown.Opacity := 1;
+              pDown.tag := pDown.tag + 1;
+            end);
           WaitAndCheckIfTestIsOk;
         end
         else if (TGD.Players[PlayerID].ControllerTypeLeft = TControllerType.
           DPad) and (TGD.Players[PlayerID].GamePadIDLeft = GamepadID) and
           (TGD.Players[PlayerID].DPadLeft = Value) then
         begin
-          InitArrowsOpacity;
-          pLeft.Opacity := 1;
-          pLeft.tag := pLeft.tag + 1;
+          tthread.Synchronize(nil,
+            procedure
+            begin
+              InitArrowsOpacity;
+              pLeft.Opacity := 1;
+              pLeft.tag := pLeft.tag + 1;
+            end);
           WaitAndCheckIfTestIsOk;
         end;
       end;
@@ -428,7 +524,7 @@ begin
 end;
 
 procedure TControlsChoiceScene.FrameKeyDown(Sender: TObject; var Key: Word;
-  var KeyChar: WideChar; Shift: TShiftState);
+var KeyChar: WideChar; Shift: TShiftState);
 var
   TGD: TTronGameData;
 begin
