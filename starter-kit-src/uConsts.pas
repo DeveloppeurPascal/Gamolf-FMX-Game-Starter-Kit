@@ -126,14 +126,14 @@ const
   CDefaultSoundEffectsPath = '..\..\..\_PRIVATE\sounds\';
 
   /// <summary>
-  /// Used as a folder name to store your game folder
+  /// Used as a folder name to store your game settings
   /// </summary>
   /// <remarks>
-  /// Don't use a path, only a name to use a a folder name.
+  /// Don't use a path, only a name to use as a folder name.
   /// The real paths are calculated automatically depending on the platform.
   /// </remarks>
+  // for example your name, label or company name (avoid spaces, accents and special characters)
   CEditorFolderName = 'Test';
-  // for example your name, label or company name (avoid spaces, accents and special characters
 
   /// <summary>
   /// Used as a folder name to store the settings and scores
@@ -141,8 +141,8 @@ const
   /// Don't use a path, only a name to use a a folder name.
   /// The real paths are calculated automatically depending on the platform.
   /// </remarks>
-  CGameFolderName = 'Test';
   // for exemple your game title (avoid spaces, accents and special characters)
+  CGameFolderName = 'Test';
 
   /// <summary>
   /// The GUID to use for this game when saving/loading files like game data
@@ -246,6 +246,8 @@ try
 {$IFDEF DEBUG}
   // TODO : it's a recommended value but you can remove it if you want
   ReportMemoryLeaksOnShutdown := true;
+{$ELSE}
+  ReportMemoryLeaksOnShutdown := false;
 {$ENDIF}
 {$IF Defined(RELEASE)}
   // Path to the Pascal file where you fill GConfigXORKey variable.
