@@ -55,7 +55,7 @@ interface
 //
 // If you want to add fields or properties, create a new class in your project
 // and inherits from current TGameData. Override all needed methods and add what
-// you have to manage for yoour game.
+// you have to manage for your game.
 
 uses
   System.Messaging,
