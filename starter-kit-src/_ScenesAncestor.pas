@@ -96,7 +96,7 @@ type
     procedure AfterLastHideScene; virtual;
     /// <summary>
     /// This method is called each time a global translation broadcast is sent
-    /// with current languge as argument.
+    /// with current language as argument.
     /// </summary>
     procedure TranslateTexts(const Language: string); virtual;
     /// <summary>

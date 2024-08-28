@@ -98,7 +98,7 @@ type
     property VirtualControlsOnOff: boolean read GetInterfaceTactileOnOff
       write SetInterfaceTactileOnOff;
     /// <summary>
-    /// The language you should use on screen and messages to the gamer
+    /// The language you should use on screen and messages
     /// </summary>
     /// <remarks>
     /// By default it's the operating system language
