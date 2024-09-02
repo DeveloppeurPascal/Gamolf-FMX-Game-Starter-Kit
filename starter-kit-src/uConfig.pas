@@ -52,7 +52,7 @@ interface
 
 uses
   Olf.RTL.Params;
-
+// TODO : -oDeveloppeurPascal : add a BeginUpdate/EndUpdate on TConfig to call the SAVE only once
 type
   TConfig = class
   private
