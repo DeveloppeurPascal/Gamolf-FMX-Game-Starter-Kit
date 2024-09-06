@@ -59,6 +59,9 @@ uses
   Olf.FMX.AboutDialogForm;
 
 type
+  TOnAboutBoxTranslateTexts = function(const Language: string;
+    const TxtID: TOlfAboutDialogTxtID): string of object;
+
   TAboutBox = class(TDataModule)
     OlfAboutDialog1: TOlfAboutDialog;
     procedure DataModuleCreate(Sender: TObject);
@@ -67,9 +70,14 @@ type
     function OlfAboutDialog1GetText(const ALang: TOlfAboutDialogLang;
       const ATxtID: TOlfAboutDialogTxtID): string;
   private
+    FOnAboutBoxTranslateTexts: TOnAboutBoxTranslateTexts;
+    procedure SetOnAboutBoxTranslateTexts(const Value
+      : TOnAboutBoxTranslateTexts);
   protected
     procedure TranslateTexts(const Sender: TObject; const Msg: TMessage);
   public
+    property OnAboutBoxTranslateTexts: TOnAboutBoxTranslateTexts
+      read FOnAboutBoxTranslateTexts write SetOnAboutBoxTranslateTexts;
     class function Current: TAboutBox;
     class procedure ShowModal;
     class function GetCaption: string;
@@ -85,7 +93,8 @@ uses
   u_urlOpen,
   uTxtAboutDescription,
   uTxtAboutLicense,
-  uTranslate;
+  uTranslate,
+  uConfig;
 
 {$R *.dfm}
 
@@ -135,29 +144,21 @@ end;
 function TAboutBox.OlfAboutDialog1GetText(const ALang: TOlfAboutDialogLang;
   const ATxtID: TOlfAboutDialogTxtID): string;
 begin
-  // If you want to manage other languages than TOlfAboutDialogLang enumeration
-  // for the about box, you'll have to manage your translations here:
-  case ATxtID of
-    TOlfAboutDialogTxtID.About:
-      // used as "About "+GameTitle for the about box caption
-      // TODO -oDeveloppeurPascal -cNF : compléter un exemple avec la langue actuelle du projet
-      result := '';
-    TOlfAboutDialogTxtID.Version:
-      // used as "Version "+VersionNumber in the about box
-      result := '';
-    TOlfAboutDialogTxtID.Date: // used as "Date "+VersionNumber in the about box
-      result := '';
-    TOlfAboutDialogTxtID.CloseButton: // used as the about box close button text
-      result := '';
-    TOlfAboutDialogTxtID.TitleText:
-      result := CAboutGameTitle;
-    // change it if you want to translate your game title
-  end;
+  if assigned(OnAboutBoxTranslateTexts) then
+    result := OnAboutBoxTranslateTexts(tconfig.Current.Language, ATxtID)
+  else
+    result := '';
 end;
 
 procedure TAboutBox.OlfAboutDialog1URLClick(const AURL: string);
 begin
   url_Open_In_Browser(AURL);
+end;
+
+procedure TAboutBox.SetOnAboutBoxTranslateTexts(const Value
+  : TOnAboutBoxTranslateTexts);
+begin
+  FOnAboutBoxTranslateTexts := Value;
 end;
 
 class procedure TAboutBox.ShowModal;
