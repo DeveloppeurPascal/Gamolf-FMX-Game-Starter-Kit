@@ -69,6 +69,7 @@ implementation
 {$R *.dfm}
 
 uses
+  FMX.forms,
   fMain;
 
 var
@@ -84,7 +85,7 @@ begin
 
   // TODO -oDeveloppeurPascal -cCheckIssue : corriger problème de parent sur le composant lorsqu'il n'est pas sur une fiche
   // See https://github.com/DeveloppeurPascal/Delphi-Game-Engine/issues/208
-  result := frmMain.DGEFMXHelpBar1;
+  result := (application.mainform as tfrmmain).DGEFMXHelpBar1;
 end;
 
 initialization
