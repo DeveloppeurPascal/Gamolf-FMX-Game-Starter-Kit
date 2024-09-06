@@ -67,7 +67,9 @@ uses
   Gamolf.RTL.GamepadDetected,
   Gamolf.FMX.HelpBar,
   FMX.Controls.Presentation,
-  FMX.StdCtrls;
+  FMX.StdCtrls,
+  uDMAboutBox,
+  Olf.FMX.AboutDialogForm;
 
 type
   TfrmMain = class(TForm)
@@ -95,8 +97,27 @@ type
       Shift: TShiftState);
   private
     BackgroundScene: TSceneBackground;
+    FOnAboutBoxTranslateTexts: TOnAboutBoxTranslateTexts;
+    procedure SetOnAboutBoxTranslateTexts(const Value
+      : TOnAboutBoxTranslateTexts);
   protected
+    /// <summary>
+    /// Used as OnAboutBoxTranslateTexts event in the about box dialog
+    /// if OnAboutBoxTranslateTexts property is not assigned.
+    /// </summary>
+    /// <remarks>
+    /// Override it in your main form or assign an other method to
+    /// OnAboutBoxTranslateTexts
+    /// languages.
+    /// </remarks>
+    function DoAboutBoxTranslateTexts(const Language: string;
+      const TxtID: TOlfAboutDialogTxtID): string; virtual;
   public
+    /// <summary>
+    /// Use it if you want to override about box texts translation or add your languages.
+    /// </summary>
+    property OnAboutBoxTranslateTexts: TOnAboutBoxTranslateTexts
+      read FOnAboutBoxTranslateTexts write SetOnAboutBoxTranslateTexts;
     procedure TranslateTexts(const Sender: TObject;
       const Msg: TMessage); Virtual;
     procedure AfterConstruction; override;
@@ -111,7 +132,6 @@ implementation
 {$R *.fmx}
 
 uses
-  uDMAboutBox,
   uConsts,
   uTranslate,
   uScene,
@@ -164,6 +184,13 @@ begin
   BackgroundScene := nil;
 end;
 
+function TfrmMain.DoAboutBoxTranslateTexts(const Language: string;
+const TxtID: TOlfAboutDialogTxtID): string;
+begin
+  // Do nothing at this level
+  result := '';
+end;
+
 procedure TfrmMain.FormDestroy(Sender: TObject);
 begin
   TMessageManager.DefaultManager.Unsubscribe(TTranslateTextsMessage,
@@ -185,7 +212,7 @@ begin
   begin
     Key := 0;
     KeyChar := #0;
-    TAboutBox.ShowModal;
+    mnuAboutClick(Sender);
   end
   else
     TUIItemsList.Current.KeyDown(Key, KeyChar, Shift);
@@ -222,7 +249,17 @@ end;
 
 procedure TfrmMain.mnuAboutClick(Sender: TObject);
 begin
-  TAboutBox.ShowModal;
+  if assigned(OnAboutBoxTranslateTexts) then
+    TAboutBox.Current.OnAboutBoxTranslateTexts := OnAboutBoxTranslateTexts
+  else
+    TAboutBox.Current.OnAboutBoxTranslateTexts := DoAboutBoxTranslateTexts;
+  TAboutBox.Current.ShowModal;
+end;
+
+procedure TfrmMain.SetOnAboutBoxTranslateTexts(const Value
+  : TOnAboutBoxTranslateTexts);
+begin
+  FOnAboutBoxTranslateTexts := Value;
 end;
 
 procedure TfrmMain.TranslateTexts(const Sender: TObject; const Msg: TMessage);
@@ -233,7 +270,7 @@ begin
   if assigned(Msg) and (Msg is TTranslateTextsMessage) then
   begin
     if assigned(MainMenu) then
-      mnuAbout.Text := TAboutBox.GetCaption;
+      mnuAbout.Text := TAboutBox.Current.GetCaption;
   end;
 end;
 
