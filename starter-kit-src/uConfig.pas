@@ -110,7 +110,7 @@ type
     /// </summary>
     class function Current: TConfig; Virtual;
     /// <summary>
-    /// Returns current path of the config file
+    /// Returns current path of the config file (directory+filename)
     /// </summary>
     function GetPath: string;
     /// <summary>
