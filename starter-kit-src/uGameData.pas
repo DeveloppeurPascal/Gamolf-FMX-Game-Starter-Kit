@@ -374,7 +374,7 @@ begin
   if not FFilePath.IsEmpty then
     result := tpath.GetDirectoryName(FFilePath)
   else if FPath.IsEmpty or (not tdirectory.exists(FPath)) then
-    result := tconfig.current.GetPath
+    result := tpath.GetDirectoryName(tconfig.current.GetPath)
   else
     result := FPath;
 end;
