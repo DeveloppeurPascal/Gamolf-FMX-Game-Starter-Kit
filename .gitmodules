@@ -7,3 +7,6 @@
 [submodule "lib-externes/librairies"]
 	path = lib-externes/librairies
 	url = https://github.com/DeveloppeurPascal/librairies.git
+[submodule "lib-externes/CilTseg4Delphi"]
+	path = lib-externes/CilTseg4Delphi
+	url = https://github.com/DeveloppeurPascal/CilTseg4Delphi.git
