@@ -78,6 +78,12 @@ const
   CAboutGameURL = 'https://fmxgamestarterkit.developpeur-pascal.fr/';
 
   /// <summary>
+  /// The URL where you can buy the software.
+  /// (if not empty, a "Buy" button is added in the About Box)
+  /// </summary>
+  CSoftwareBuyURL = 'https://fmxgamestarterkit.developpeur-pascal.fr/';
+
+  /// <summary>
   /// Default language used if the system language is not supported
   /// (of course you have to translate all textes of the program in this
   /// language, so use yours or English by default)
