@@ -3,7 +3,7 @@
 ///
 /// Gamolf FMX Game Starter Kit
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-28T12:35:53.417+02:00
-/// Signature : db9aba5b49ea48e3265c1d98ab204713010be7e5
+/// File last update : 2024-11-03T18:43:22.000+01:00
+/// Signature : 4aa8b917b2b43c9473500e9a7bf32b850fa34d21
 /// ***************************************************************************
 /// </summary>
 
