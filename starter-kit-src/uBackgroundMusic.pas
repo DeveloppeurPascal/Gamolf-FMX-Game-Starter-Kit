@@ -1,9 +1,9 @@
 /// <summary>
 /// ***************************************************************************
 ///
-/// Gamolf FMX Game Template
+/// Gamolf FMX Game Starter Kit
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -15,8 +15,8 @@
 ///
 /// ***************************************************************************
 ///
-/// The "Gamolf FMX Game Template" is both a "technical" example of a video
-/// game developed in Delphi with everything you need inside, and a reusable
+/// The "Gamolf FMX Game Starter Kit" is both a "technical" example of a video
+/// game developed in Delphi with everything you need inside and a reusable
 /// project template you can customize for your own games.
 ///
 /// The files provided are fully functional. Numerous comments are included in
@@ -29,14 +29,14 @@
 /// Patrick PREMARTIN
 ///
 /// Site :
-/// https://gametemplate.developpeur-pascal.fr/
+/// https://fmxgamestarterkit.developpeur-pascal.fr/
 ///
 /// Project site :
-/// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template
+/// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-09T23:32:38.000+02:00
-/// Signature : 391e54baa7c7eb395d09b795d99ecf8b2d08bb5f
+/// File last update : 2025-01-13T20:37:32.000+01:00
+/// Signature : 2101c40a4ca5ce23da06521c618b4a57ea57b2dc
 /// ***************************************************************************
 /// </summary>
 
@@ -72,6 +72,7 @@ type
   public
     class property Current: TBackgroundMusic read GetCurrent;
     constructor Create;
+    function isOn: Boolean;
     procedure OnOff(aOn: Boolean);
     procedure Volume(AVolume: integer);
     function HasAValidBackgroundMusicFile: Boolean;
@@ -163,6 +164,11 @@ begin
 
   result := (not CBackgroundMusicFileName.IsEmpty) and
     tfile.Exists(MusicFilePath);
+end;
+
+function TBackgroundMusic.isOn: Boolean;
+begin
+  result := TMusicLoop.Current.IsPlaying;
 end;
 
 procedure TBackgroundMusic.OnOff(aOn: Boolean);
