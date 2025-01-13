@@ -399,20 +399,20 @@
         <Android_LauncherIcon96>..\..\assets\icons\debuggameicon-96x96.png</Android_LauncherIcon96>
         <Android_LauncherIcon144>..\..\assets\icons\debuggameicon-144x144.png</Android_LauncherIcon144>
         <Android_LauncherIcon192>..\..\assets\icons\debuggameicon-192x192.png</Android_LauncherIcon192>
-        <Android_SplashImage426>..\assets\icons\debuggameicon-426x320.png</Android_SplashImage426>
-        <Android_SplashImage470>..\assets\icons\debuggameicon-470x320.png</Android_SplashImage470>
-        <Android_SplashImage640>..\assets\icons\debuggameicon-640x480.png</Android_SplashImage640>
-        <Android_SplashImage960>..\assets\icons\debuggameicon-960x720.png</Android_SplashImage960>
+        <Android_SplashImage426>..\..\assets\icons\debuggameicon-426x320.png</Android_SplashImage426>
+        <Android_SplashImage470>..\..\assets\icons\debuggameicon-470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>..\..\assets\icons\debuggameicon-640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>..\..\assets\icons\debuggameicon-960x720.png</Android_SplashImage960>
         <Android_SplashTileMode>disabled</Android_SplashTileMode>
         <Android_SplashGravity>center</Android_SplashGravity>
         <IncludeAndroid_Splash>false</IncludeAndroid_Splash>
         <Android_BackgroundColor>#FFFFFF</Android_BackgroundColor>
         <Android_DarkBackgroundColor>#000000</Android_DarkBackgroundColor>
-        <Android_NotificationIcon24>..\assets\icons\debuggameicon-24x24.png</Android_NotificationIcon24>
-        <Android_NotificationIcon36>..\assets\icons\debuggameicon-36x36.png</Android_NotificationIcon36>
-        <Android_NotificationIcon48>..\assets\icons\debuggameicon-48x48.png</Android_NotificationIcon48>
-        <Android_NotificationIcon72>..\assets\icons\debuggameicon-72x72.png</Android_NotificationIcon72>
-        <Android_NotificationIcon96>..\assets\icons\debuggameicon-96x96.png</Android_NotificationIcon96>
+        <Android_NotificationIcon24>..\..\assets\icons\debuggameicon-24x24.png</Android_NotificationIcon24>
+        <Android_NotificationIcon36>..\..\assets\icons\debuggameicon-36x36.png</Android_NotificationIcon36>
+        <Android_NotificationIcon48>..\..\assets\icons\debuggameicon-48x48.png</Android_NotificationIcon48>
+        <Android_NotificationIcon72>..\..\assets\icons\debuggameicon-72x72.png</Android_NotificationIcon72>
+        <Android_NotificationIcon96>..\..\assets\icons\debuggameicon-96x96.png</Android_NotificationIcon96>
         <IncludeAndroid_NotificationAccentColor>false</IncludeAndroid_NotificationAccentColor>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Android64)'!=''">
@@ -424,20 +424,20 @@
         <Android_LauncherIcon96>..\..\assets\icons\debuggameicon-96x96.png</Android_LauncherIcon96>
         <Android_LauncherIcon144>..\..\assets\icons\debuggameicon-144x144.png</Android_LauncherIcon144>
         <Android_LauncherIcon192>..\..\assets\icons\debuggameicon-192x192.png</Android_LauncherIcon192>
-        <Android_SplashImage426>..\assets\icons\debuggameicon-426x320.png</Android_SplashImage426>
-        <Android_SplashImage470>..\assets\icons\debuggameicon-470x320.png</Android_SplashImage470>
-        <Android_SplashImage640>..\assets\icons\debuggameicon-640x480.png</Android_SplashImage640>
-        <Android_SplashImage960>..\assets\icons\debuggameicon-960x720.png</Android_SplashImage960>
+        <Android_SplashImage426>..\..\assets\icons\debuggameicon-426x320.png</Android_SplashImage426>
+        <Android_SplashImage470>..\..\assets\icons\debuggameicon-470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>..\..\assets\icons\debuggameicon-640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>..\..\assets\icons\debuggameicon-960x720.png</Android_SplashImage960>
         <Android_SplashTileMode>disabled</Android_SplashTileMode>
         <Android_SplashGravity>center</Android_SplashGravity>
         <IncludeAndroid_Splash>false</IncludeAndroid_Splash>
         <Android_BackgroundColor>#FFFFFF</Android_BackgroundColor>
         <Android_DarkBackgroundColor>#000000</Android_DarkBackgroundColor>
-        <Android_NotificationIcon24>..\assets\icons\debuggameicon-24x24.png</Android_NotificationIcon24>
-        <Android_NotificationIcon36>..\assets\icons\debuggameicon-36x36.png</Android_NotificationIcon36>
-        <Android_NotificationIcon48>..\assets\icons\debuggameicon-48x48.png</Android_NotificationIcon48>
-        <Android_NotificationIcon72>..\assets\icons\debuggameicon-72x72.png</Android_NotificationIcon72>
-        <Android_NotificationIcon96>..\assets\icons\debuggameicon-96x96.png</Android_NotificationIcon96>
+        <Android_NotificationIcon24>..\..\assets\icons\debuggameicon-24x24.png</Android_NotificationIcon24>
+        <Android_NotificationIcon36>..\..\assets\icons\debuggameicon-36x36.png</Android_NotificationIcon36>
+        <Android_NotificationIcon48>..\..\assets\icons\debuggameicon-48x48.png</Android_NotificationIcon48>
+        <Android_NotificationIcon72>..\..\assets\icons\debuggameicon-72x72.png</Android_NotificationIcon72>
+        <Android_NotificationIcon96>..\..\assets\icons\debuggameicon-96x96.png</Android_NotificationIcon96>
         <IncludeAndroid_NotificationAccentColor>false</IncludeAndroid_NotificationAccentColor>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_iOSDevice64)'!=''">
@@ -497,8 +497,8 @@
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <Icon_MainIcon>..\..\assets\icons\debuggameicon.ico</Icon_MainIcon>
         <Icns_MainIcns>..\..\assets\icons\debuggameicon.icns</Icns_MainIcns>
-        <UWP_DelphiLogo44>..\assets\icons\debuggameicon-44x44.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>..\assets\icons\debuggameicon-150x150.png</UWP_DelphiLogo150>
+        <UWP_DelphiLogo44>..\..\assets\icons\debuggameicon-44x44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\..\assets\icons\debuggameicon-150x150.png</UWP_DelphiLogo150>
         <VerInfo_Build>10</VerInfo_Build>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.10;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=gamolf.fmxgametemplate.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
@@ -509,8 +509,8 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>..\..\assets\icons\debuggameicon.ico</Icon_MainIcon>
         <Icns_MainIcns>..\..\assets\icons\debuggameicon.icns</Icns_MainIcns>
-        <UWP_DelphiLogo44>..\assets\icons\debuggameicon-44x44.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>..\assets\icons\debuggameicon-150x150.png</UWP_DelphiLogo150>
+        <UWP_DelphiLogo44>..\..\assets\icons\debuggameicon-44x44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\..\assets\icons\debuggameicon-150x150.png</UWP_DelphiLogo150>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -530,18 +530,18 @@
         <Android_LauncherIcon96>..\..\assets\icons\gameicon-96x96.png</Android_LauncherIcon96>
         <Android_LauncherIcon144>..\..\assets\icons\gameicon-144x144.png</Android_LauncherIcon144>
         <Android_LauncherIcon192>..\..\assets\icons\gameicon-192x192.png</Android_LauncherIcon192>
-        <Android_SplashImage426>..\assets\icons\gameicon-426x320.png</Android_SplashImage426>
-        <Android_SplashImage470>..\assets\icons\gameicon-470x320.png</Android_SplashImage470>
-        <Android_SplashImage640>..\assets\icons\gameicon-640x480.png</Android_SplashImage640>
-        <Android_SplashImage960>..\assets\icons\gameicon-960x720.png</Android_SplashImage960>
+        <Android_SplashImage426>..\..\assets\icons\gameicon-426x320.png</Android_SplashImage426>
+        <Android_SplashImage470>..\..\assets\icons\gameicon-470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>..\..\assets\icons\gameicon-640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>..\..\assets\icons\gameicon-960x720.png</Android_SplashImage960>
         <Android_SplashTileMode>disabled</Android_SplashTileMode>
         <Android_SplashGravity>center</Android_SplashGravity>
-        <Android_NotificationIcon24>..\assets\icons\gameicon-24x24.png</Android_NotificationIcon24>
+        <Android_NotificationIcon24>..\..\assets\icons\gameicon-24x24.png</Android_NotificationIcon24>
         <IncludeAndroid_Splash>false</IncludeAndroid_Splash>
-        <Android_NotificationIcon36>..\assets\icons\gameicon-36x36.png</Android_NotificationIcon36>
-        <Android_NotificationIcon48>..\assets\icons\gameicon-48x48.png</Android_NotificationIcon48>
-        <Android_NotificationIcon72>..\assets\icons\gameicon-72x72.png</Android_NotificationIcon72>
-        <Android_NotificationIcon96>..\assets\icons\gameicon-96x96.png</Android_NotificationIcon96>
+        <Android_NotificationIcon36>..\..\assets\icons\gameicon-36x36.png</Android_NotificationIcon36>
+        <Android_NotificationIcon48>..\..\assets\icons\gameicon-48x48.png</Android_NotificationIcon48>
+        <Android_NotificationIcon72>..\..\assets\icons\gameicon-72x72.png</Android_NotificationIcon72>
+        <Android_NotificationIcon96>..\..\assets\icons\gameicon-96x96.png</Android_NotificationIcon96>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Android64)'!=''">
         <DCC_GenerateAndroidAppBundleFile>true</DCC_GenerateAndroidAppBundleFile>
@@ -555,19 +555,19 @@
         <Android_LauncherIcon72>..\..\assets\icons\gameicon-72x72.png</Android_LauncherIcon72>
         <Android_LauncherIcon96>..\..\assets\icons\gameicon-96x96.png</Android_LauncherIcon96>
         <Android_LauncherIcon144>..\..\assets\icons\gameicon-144x144.png</Android_LauncherIcon144>
-        <Android_SplashImage426>..\assets\icons\gameicon-426x320.png</Android_SplashImage426>
+        <Android_SplashImage426>..\..\assets\icons\gameicon-426x320.png</Android_SplashImage426>
         <Android_LauncherIcon192>..\..\assets\icons\gameicon-192x192.png</Android_LauncherIcon192>
-        <Android_SplashImage470>..\assets\icons\gameicon-470x320.png</Android_SplashImage470>
-        <Android_SplashImage640>..\assets\icons\gameicon-640x480.png</Android_SplashImage640>
-        <Android_SplashImage960>..\assets\icons\gameicon-960x720.png</Android_SplashImage960>
+        <Android_SplashImage470>..\..\assets\icons\gameicon-470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>..\..\assets\icons\gameicon-640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>..\..\assets\icons\gameicon-960x720.png</Android_SplashImage960>
         <Android_SplashTileMode>disabled</Android_SplashTileMode>
         <Android_SplashGravity>center</Android_SplashGravity>
-        <Android_NotificationIcon24>..\assets\icons\gameicon-24x24.png</Android_NotificationIcon24>
+        <Android_NotificationIcon24>..\..\assets\icons\gameicon-24x24.png</Android_NotificationIcon24>
         <IncludeAndroid_Splash>false</IncludeAndroid_Splash>
-        <Android_NotificationIcon36>..\assets\icons\gameicon-36x36.png</Android_NotificationIcon36>
-        <Android_NotificationIcon48>..\assets\icons\gameicon-48x48.png</Android_NotificationIcon48>
-        <Android_NotificationIcon72>..\assets\icons\gameicon-72x72.png</Android_NotificationIcon72>
-        <Android_NotificationIcon96>..\assets\icons\gameicon-96x96.png</Android_NotificationIcon96>
+        <Android_NotificationIcon36>..\..\assets\icons\gameicon-36x36.png</Android_NotificationIcon36>
+        <Android_NotificationIcon48>..\..\assets\icons\gameicon-48x48.png</Android_NotificationIcon48>
+        <Android_NotificationIcon72>..\..\assets\icons\gameicon-72x72.png</Android_NotificationIcon72>
+        <Android_NotificationIcon96>..\..\assets\icons\gameicon-96x96.png</Android_NotificationIcon96>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_iOSDevice64)'!=''">
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -633,8 +633,8 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>..\..\assets\icons\gameicon.ico</Icon_MainIcon>
         <Icns_MainIcns>..\..\assets\icons\gameicon.icns</Icns_MainIcns>
-        <UWP_DelphiLogo44>..\assets\icons\gameicon-44x44.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>..\assets\icons\gameicon-150x150.png</UWP_DelphiLogo150>
+        <UWP_DelphiLogo44>..\..\assets\icons\gameicon-44x44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\..\assets\icons\gameicon-150x150.png</UWP_DelphiLogo150>
         <VerInfo_Build>1</VerInfo_Build>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.1;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=gamolf.fmxgametemplate.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
@@ -645,8 +645,8 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>..\..\assets\icons\gameicon.ico</Icon_MainIcon>
         <Icns_MainIcns>..\..\assets\icons\gameicon.icns</Icns_MainIcns>
-        <UWP_DelphiLogo44>..\assets\icons\gameicon-44x44.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>..\assets\icons\gameicon-150x150.png</UWP_DelphiLogo150>
+        <UWP_DelphiLogo44>..\..\assets\icons\gameicon-44x44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\..\assets\icons\gameicon-150x150.png</UWP_DelphiLogo150>
         <VerInfo_Build>1</VerInfo_Build>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.1;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=gamolf.fmxgametemplate.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
@@ -1224,56 +1224,56 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\icons\debuggameicon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150">
+                <DeployFile LocalName="..\..\assets\icons\debuggameicon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150">
                     <Platform Name="Win32">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo150x150.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\icons\debuggameicon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150">
+                <DeployFile LocalName="..\..\assets\icons\debuggameicon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150">
                     <Platform Name="Win64">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo150x150.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\icons\debuggameicon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
+                <DeployFile LocalName="..\..\assets\icons\debuggameicon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
                     <Platform Name="Win32">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo44x44.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\icons\debuggameicon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
+                <DeployFile LocalName="..\..\assets\icons\debuggameicon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
                     <Platform Name="Win64">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo44x44.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\icons\gameicon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150">
+                <DeployFile LocalName="..\..\assets\icons\gameicon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150">
                     <Platform Name="Win32">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo150x150.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\icons\gameicon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150">
+                <DeployFile LocalName="..\..\assets\icons\gameicon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150">
                     <Platform Name="Win64">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo150x150.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\icons\gameicon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
+                <DeployFile LocalName="..\..\assets\icons\gameicon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
                     <Platform Name="Win32">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo44x44.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\icons\gameicon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
+                <DeployFile LocalName="..\..\assets\icons\gameicon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
                     <Platform Name="Win64">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo44x44.png</RemoteName>
