@@ -1,9 +1,9 @@
 ﻿/// <summary>
 /// ***************************************************************************
 ///
-/// Gamolf FMX Game Template
+/// Gamolf FMX Game Starter Kit
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -15,8 +15,8 @@
 ///
 /// ***************************************************************************
 ///
-/// The "Gamolf FMX Game Template" is both a "technical" example of a video
-/// game developed in Delphi with everything you need inside, and a reusable
+/// The "Gamolf FMX Game Starter Kit" is both a "technical" example of a video
+/// game developed in Delphi with everything you need inside and a reusable
 /// project template you can customize for your own games.
 ///
 /// The files provided are fully functional. Numerous comments are included in
@@ -29,14 +29,14 @@
 /// Patrick PREMARTIN
 ///
 /// Site :
-/// https://gametemplate.developpeur-pascal.fr/
+/// https://fmxgamestarterkit.developpeur-pascal.fr/
 ///
 /// Project site :
-/// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Template
+/// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-09T20:35:48.000+02:00
-/// Signature : 4aa97c14420520c49ba16f5fc0e22f7d0d0f6e7a
+/// File last update : 2025-01-14T18:08:26.000+01:00
+/// Signature : 442807f46eb23ff3fb8ac8e28f54a295e307056f
 /// ***************************************************************************
 /// </summary>
 
@@ -44,8 +44,8 @@ unit uTxtAboutLicense;
 
 interface
 
-{$MESSAGE WARN 'Save uTxtAboutDescription.pas in your game folder and customize its content. Don''t change the template version if you want to be able to update it.'}
-// TODO : Save uTxtAboutDescription.pas in your game folder and customize its content. Don't change the template version if you want to be able to update it.
+{$MESSAGE WARN 'Save uTxtAboutLicense.pas in your game folder and customize its content. Don''t change the template version if you want to be able to update it.'}
+// TODO : Save uTxtAboutLicense.pas in your game folder and customize its content. Don't change the template version if you want to be able to update it.
 
 function GetTxtAboutLicense(const Language: string;
   const Recursif: boolean = false): string;
