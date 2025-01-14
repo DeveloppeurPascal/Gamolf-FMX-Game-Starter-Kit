@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-11-03T18:42:58.000+01:00
-/// Signature : 3da401bb6b5a26ee8370d799266452ae0b862f44
+/// File last update : 2025-01-14T20:10:28.000+01:00
+/// Signature : 71ff3815f411fae03b28def15ed0760240ff95e2
 /// ***************************************************************************
 /// </summary>
 
@@ -52,7 +52,7 @@ interface
 
 uses
   Olf.RTL.Params;
-// TODO : -oDeveloppeurPascal : add a BeginUpdate/EndUpdate on TConfig to call the SAVE only once
+
 type
   TConfig = class
   private
@@ -121,6 +121,15 @@ type
     /// Don't use the destructor, it's for internal use only
     /// </summary>
     destructor Destroy; override;
+    /// <summary>
+    /// Use it to delay the saving of parameters if you have more than one
+    /// to update at the same time.
+    /// </summary>
+    procedure BeginUpdate; virtual;
+    /// <summary>
+    /// Use the EndUpdate to Save pending changes since a BeginUpdate.
+    /// </summary>
+    procedure EndUpdate; virtual;
   end;
 
 implementation
@@ -140,6 +149,11 @@ var
   ConfigInstance: TConfig;
 
   { TConfig }
+
+procedure TConfig.BeginUpdate;
+begin
+  FParams.BeginUpdate;
+end;
 
 constructor TConfig.Create;
 begin
@@ -197,6 +211,11 @@ destructor TConfig.Destroy;
 begin
   FParams.free;
   inherited;
+end;
+
+procedure TConfig.EndUpdate;
+begin
+  FParams.EndUpdate;
 end;
 
 function TConfig.GetBackgroundMusic: boolean;
