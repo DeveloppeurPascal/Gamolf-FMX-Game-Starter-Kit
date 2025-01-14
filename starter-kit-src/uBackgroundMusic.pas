@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-13T20:37:32.000+01:00
-/// Signature : 2101c40a4ca5ce23da06521c618b4a57ea57b2dc
+/// File last update : 2025-01-14T19:27:32.000+01:00
+/// Signature : 907a124dcb14479cad20c426d9fccefaba1b286a
 /// ***************************************************************************
 /// </summary>
 
@@ -144,7 +144,7 @@ begin
 {$ELSEIF defined(MSWINDOWS)}
   // deploy in .\
 {$IFDEF DEBUG}
-  Folder := '..\..\..\_PRIVATE\musics\';
+  Folder := CDefaultBackgroundMusicPath;
 {$ELSE}
   Folder := extractfilepath(paramstr(0));
 {$ENDIF}
