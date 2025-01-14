@@ -3,7 +3,7 @@
 ///
 /// Gamolf FMX Game Starter Kit
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-11T11:35:50.000+02:00
-/// Signature : 749a7c9dc68c5a1a6771f2d28095679f4947baf5
+/// File last update : 2025-01-14T18:45:58.000+01:00
+/// Signature : 5d692bb00fc534092be70e3403bee2953b0d6a86
 /// ***************************************************************************
 /// </summary>
 
@@ -140,6 +140,10 @@ type
     /// (you can override it but it's better to fill the onClick event)
     /// </summary>
     procedure Click; override;
+    /// <summary>
+    /// By default this function returns True if the onClick events is not nil
+    /// </summary>
+    function IsClickable: boolean; virtual;
     /// <summary>
     /// mostly internal use, change then IsFocused property is better
     /// </summary>
@@ -268,6 +272,11 @@ begin
     result := CTimeInMSBetweenButtonDownAndUp
   else
     result := FTimeBetweenDownAndUpStatesWhenClicked;
+end;
+
+function T__ButtonAncestor.IsClickable: boolean;
+begin
+  result := assigned(onclick);
 end;
 
 procedure T__ButtonAncestor.ResetFocus;
