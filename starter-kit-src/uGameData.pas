@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-11-03T18:43:22.000+01:00
-/// Signature : 4aa8b917b2b43c9473500e9a7bf32b850fa34d21
+/// File last update : 2025-01-14T19:10:22.000+01:00
+/// Signature : c470fef042fa801be5ceabe42917dfc3902105b2
 /// ***************************************************************************
 /// </summary>
 
@@ -381,16 +381,24 @@ end;
 
 procedure TGameData.LoadFromFile(const AFilePath: string);
 var
-  FS: tfilestream;
+  FS: TFileStream;
+{$IFDEF RELEASE}
+  MS: TMemoryStream;
+{$ENDIF}
 begin
   if (not AFilePath.IsEmpty) and tfile.exists(AFilePath) then
   begin
     Clear;
-    FS := tfilestream.Create(AFilePath, fmOpenRead);
+    FS := TFileStream.Create(AFilePath, fmOpenRead);
     try
 {$IFDEF RELEASE}
-      // TODO -oDeveloppeurPascal -cTODO : traiter le chiffrement des données de backup
-{$MESSAGE FATAL 'code missing'}
+      MS := TOlfCryptDecrypt.XORDecrypt(FS, GGameDataXORKey);
+      try
+        MS.Position := 0;
+        LoadFromStream(MS);
+      finally
+        MS.Free;
+      end;
 {$ELSE}
       LoadFromStream(FS);
 {$ENDIF}
@@ -451,7 +459,10 @@ procedure TGameData.SaveToFile(const AFilePath: string);
 var
   LFilePath: string;
   Folder: string;
-  FS: tfilestream;
+  FS: TFileStream;
+{$IFDEF RELEASE}
+  MS, MS2: TMemoryStream;
+{$ENDIF}
 begin
   if AFilePath.IsEmpty then
     LFilePath := FFilePath
@@ -466,11 +477,23 @@ begin
   begin
     if not tdirectory.exists(Folder) then
       tdirectory.CreateDirectory(Folder);
-    FS := tfilestream.Create(LFilePath, fmcreate + fmOpenWrite);
+    FS := TFileStream.Create(LFilePath, fmcreate + fmOpenWrite);
     try
 {$IFDEF RELEASE}
-      // TODO -oDeveloppeurPascal -cTODO : traiter le chiffrement des données de backup
-{$MESSAGE FATAL 'code missing'}
+      MS := TMemoryStream.Create;
+      try
+        SaveToStream(MS);
+        MS.Position := 0;
+        MS2 := TOlfCryptDecrypt.XORcrypt(MS, GGameDataXORKey);
+        try
+          MS2.Position := 0;
+          FS.CopyFrom(MS2);
+        finally
+          MS2.Free;
+        end;
+      finally
+        MS.Free;
+      end;
 {$ELSE}
       SaveToStream(FS);
 {$ENDIF}
