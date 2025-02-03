@@ -135,6 +135,7 @@ const
   /// <summary>
   /// Used as a folder name to store the settings and scores
   /// </summary>
+  /// <remarks>
   /// Don't use a path, only a name to use a a folder name.
   /// The real paths are calculated automatically depending on the platform.
   /// </remarks>
