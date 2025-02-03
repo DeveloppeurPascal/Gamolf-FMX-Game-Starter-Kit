@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{2FA3CB0F-F704-49E5-8CBC-FBB0DD1A9410}</ProjectGuid>
+        <ProjectGuid>{7EBA96E2-FF99-4E5F-89E7-4E2AC089AA93}</ProjectGuid>
         <ProjectVersion>20.2</ProjectVersion>
         <FrameworkType>FMX</FrameworkType>
         <Base>True</Base>
@@ -797,9 +797,7 @@
                 <DeployFile LocalName="$(BDS)\bin\Artwork\iOS\iPhone\FM_SpotlightSearchIcon_80x80.png" Configuration="Release" Class="iPhone_Spotlight80"/>
                 <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\bin\sk4d.dll" Configuration="Debug" Class="Skia"/>
                 <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\bin\sk4d.dll" Configuration="Release" Class="Skia"/>
-                <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\binandroid32\libsk4d.so" Configuration="Debug" Class="Skia"/>
                 <DeployFile Condition="'$(SKIADIR)'=='' and '$(AndroidAppBundle)'=='true'" Required="true" LocalName="$(BDS)\binandroid32\libsk4d.so" Configuration="Debug" Class="Skia"/>
-                <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\binandroid32\libsk4d.so" Configuration="Release" Class="Skia"/>
                 <DeployFile Condition="'$(SKIADIR)'=='' and '$(AndroidAppBundle)'=='true'" Required="true" LocalName="$(BDS)\binandroid32\libsk4d.so" Configuration="Release" Class="Skia"/>
                 <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\binandroid64\libsk4d.so" Configuration="Debug" Class="Skia"/>
                 <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\binandroid64\libsk4d.so" Configuration="Release" Class="Skia"/>
@@ -811,14 +809,10 @@
                 <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\binosxarm64\libsk4d.dylib" Configuration="Release" Class="Skia"/>
                 <DeployFile LocalName="$(BDS)\lib\android\debug\armeabi-v7a\libnative-activity.so" Configuration="Release" Class="AndroidLibnativeArmeabiv7aFile"/>
                 <DeployFile LocalName="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Configuration="Release" Class="AndroidLibnativeArmeabiFile"/>
-                <DeployFile LocalName="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Configuration="Release" Class="AndroidLibnativeArmeabiFile"/>
-                <DeployFile LocalName="$(BDS)\lib\android\debug\mips\libnative-activity.so" Configuration="Release" Class="AndroidLibnativeMipsFile"/>
                 <DeployFile LocalName="$(BDS)\lib\android\debug\mips\libnative-activity.so" Configuration="Release" Class="AndroidLibnativeMipsFile"/>
                 <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Android64\libsk4d.so" Configuration="Debug" Class="Skia"/>
                 <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Android64\libsk4d.so" Configuration="Release" Class="Skia"/>
-                <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Android\libsk4d.so" Configuration="Debug" Class="Skia"/>
                 <DeployFile Condition="'$(SKIADIR)'!='' and '$(AndroidAppBundle)'=='true'" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Android\libsk4d.so" Configuration="Debug" Class="Skia"/>
-                <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Android\libsk4d.so" Configuration="Release" Class="Skia"/>
                 <DeployFile Condition="'$(SKIADIR)'!='' and '$(AndroidAppBundle)'=='true'" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Android\libsk4d.so" Configuration="Release" Class="Skia"/>
                 <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Linux64\libsk4d.so" Configuration="Debug" Class="Skia"/>
                 <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Linux64\libsk4d.so" Configuration="Release" Class="Skia"/>
@@ -831,49 +825,33 @@
                 <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Win64\sk4d.dll" Configuration="Debug" Class="Skia"/>
                 <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Win64\sk4d.dll" Configuration="Release" Class="Skia"/>
                 <DeployFile LocalName="..\..\assets\icons\debuggameicon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150"/>
-                <DeployFile LocalName="..\..\assets\icons\debuggameicon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150"/>
-                <DeployFile LocalName="..\..\assets\icons\debuggameicon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44"/>
                 <DeployFile LocalName="..\..\assets\icons\debuggameicon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44"/>
                 <DeployFile LocalName="..\..\assets\icons\debuggameicon.icns" Configuration="Debug" Class="ProjectOSXResource"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-1024x1024.png" Configuration="Release" Class="iOS_AppStore1024"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-120x120.png" Configuration="Release" Class="iPhone_Spotlight120"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-144x144.png" Configuration="Release" Class="Android_LauncherIcon144"/>
-                <DeployFile LocalName="..\..\assets\icons\gameicon-144x144.png" Configuration="Release" Class="Android_LauncherIcon144"/>
-                <DeployFile LocalName="..\..\assets\icons\gameicon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-152x152.png" Configuration="Release" Class="iPad_AppIcon152"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-167x167.png" Configuration="Release" Class="iPad_AppIcon167"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-180x180.png" Configuration="Release" Class="iPhone_AppIcon180"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-192x192.png" Configuration="Release" Class="Android_LauncherIcon192"/>
-                <DeployFile LocalName="..\..\assets\icons\gameicon-192x192.png" Configuration="Release" Class="Android_LauncherIcon192"/>
-                <DeployFile LocalName="..\..\assets\icons\gameicon-24x24.png" Configuration="Release" Class="Android_NotificationIcon24"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-24x24.png" Configuration="Release" Class="Android_NotificationIcon24"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-256x256.png" Configuration="Release" Class="iPhone_LaunchDark2x"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-36x36.png" Configuration="Release" Class="Android_NotificationIcon36"/>
-                <DeployFile LocalName="..\..\assets\icons\gameicon-36x36.png" Configuration="Release" Class="Android_NotificationIcon36"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-40x40.png" Configuration="Release" Class="iPad_Notification40"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-426x320.png" Configuration="Release" Class="Android_SplashImage426"/>
-                <DeployFile LocalName="..\..\assets\icons\gameicon-426x320.png" Configuration="Release" Class="Android_SplashImage426"/>
-                <DeployFile LocalName="..\..\assets\icons\gameicon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-470x320.png" Configuration="Release" Class="Android_SplashImage470"/>
-                <DeployFile LocalName="..\..\assets\icons\gameicon-470x320.png" Configuration="Release" Class="Android_SplashImage470"/>
-                <DeployFile LocalName="..\..\assets\icons\gameicon-48x48.png" Configuration="Release" Class="Android_NotificationIcon48"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-48x48.png" Configuration="Release" Class="Android_NotificationIcon48"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-512x512.png" Configuration="Release" Class="iPad_LaunchDark2x"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-58x58.png" Configuration="Release" Class="iPad_Setting58"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-60x60.png" Configuration="Release" Class="iPhone_Notification60"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-640x480.png" Configuration="Release" Class="Android_SplashImage640"/>
-                <DeployFile LocalName="..\..\assets\icons\gameicon-640x480.png" Configuration="Release" Class="Android_SplashImage640"/>
-                <DeployFile LocalName="..\..\assets\icons\gameicon-72x72.png" Configuration="Release" Class="Android_NotificationIcon72"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-72x72.png" Configuration="Release" Class="Android_NotificationIcon72"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-80x80.png" Configuration="Release" Class="iPad_SpotLight80"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-87x87.png" Configuration="Release" Class="iPhone_Setting87"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-960x720.png" Configuration="Release" Class="Android_SplashImage960"/>
-                <DeployFile LocalName="..\..\assets\icons\gameicon-960x720.png" Configuration="Release" Class="Android_SplashImage960"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon-96x96.png" Configuration="Release" Class="Android_NotificationIcon96"/>
-                <DeployFile LocalName="..\..\assets\icons\gameicon-96x96.png" Configuration="Release" Class="Android_NotificationIcon96"/>
-                <DeployFile LocalName="..\..\assets\icons\gameicon.icns" Configuration="Release" Class="ProjectOSXResource"/>
                 <DeployFile LocalName="..\..\assets\icons\gameicon.icns" Configuration="Release" Class="ProjectOSXResource"/>
                 <DeployFile LocalName="Android64\Release\AndroidManifest.xml" Configuration="Release" Class="ProjectAndroidManifest"/>
                 <DeployFile LocalName="Android64\Release\colors-night-v21.xml" Configuration="Release" Class="Android_ColorsDark"/>
