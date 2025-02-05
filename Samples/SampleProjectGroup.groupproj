@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{A165AFA8-2AEF-4584-A7AD-8A18EBDC41E4}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="_SampleGame\SampleGame.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Pong\PongGameSample.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Snake\SnakeGameSample.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Tron\TronGameSample.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="SampleGame">
+        <MSBuild Projects="_SampleGame\SampleGame.dproj"/>
+    </Target>
+    <Target Name="SampleGame:Clean">
+        <MSBuild Projects="_SampleGame\SampleGame.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SampleGame:Make">
+        <MSBuild Projects="_SampleGame\SampleGame.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PongGameSample">
+        <MSBuild Projects="Pong\PongGameSample.dproj"/>
+    </Target>
+    <Target Name="PongGameSample:Clean">
+        <MSBuild Projects="Pong\PongGameSample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PongGameSample:Make">
+        <MSBuild Projects="Pong\PongGameSample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SnakeGameSample">
+        <MSBuild Projects="Snake\SnakeGameSample.dproj"/>
+    </Target>
+    <Target Name="SnakeGameSample:Clean">
+        <MSBuild Projects="Snake\SnakeGameSample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SnakeGameSample:Make">
+        <MSBuild Projects="Snake\SnakeGameSample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TronGameSample">
+        <MSBuild Projects="Tron\TronGameSample.dproj"/>
+    </Target>
+    <Target Name="TronGameSample:Clean">
+        <MSBuild Projects="Tron\TronGameSample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TronGameSample:Make">
+        <MSBuild Projects="Tron\TronGameSample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="SampleGame;PongGameSample;SnakeGameSample;TronGameSample"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="SampleGame:Clean;PongGameSample:Clean;SnakeGameSample:Clean;TronGameSample:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="SampleGame:Make;PongGameSample:Make;SnakeGameSample:Make;TronGameSample:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
