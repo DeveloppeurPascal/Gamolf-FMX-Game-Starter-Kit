@@ -3,7 +3,7 @@
 ///
 /// Gamolf FMX Game Starter Kit
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-20T12:14:34.000+02:00
-/// Signature : 0a24263d7df91c71b26074b088dab94dc29c7a6f
+/// File last update : 2025-05-08T20:26:42.000+02:00
+/// Signature : 3ba7ed208cbf52c0e44869e6c239e70104d6d753
 /// ***************************************************************************
 /// </summary>
 
@@ -156,7 +156,10 @@ uses
   uScene,
   System.SyncObjs,
   uUIElements,
-  uGameData, Gamolf.RTL.UIElements, uDMHelpBarManager, USVGInputPrompts;
+  uGameData,
+  Gamolf.RTL.UIElements,
+  uDMHelpBarManager,
+  USVGInputPrompts;
 
 procedure TSnakeScene.AddBonus;
 var
@@ -605,20 +608,7 @@ end;
 
 initialization
 
-TMessageManager.DefaultManager.SubscribeToMessage(TSceneFactory,
-  procedure(const Sender: TObject; const Msg: TMessage)
-  var
-    NewScene: TSnakeScene;
-  begin
-    if (Msg is TSceneFactory) and
-      ((Msg as TSceneFactory).SceneType = TSceneType.Game) then
-    begin
-      NewScene := TSnakeScene.Create(application.mainform);
-      NewScene.Parent := application.mainform;
-      tscene.RegisterScene(TSceneType.Game, NewScene);
-    end;
-  end);
-
+tscene.RegisterScene<TSnakeScene>(TSceneType.Game);
 randomize;
 
 end.
