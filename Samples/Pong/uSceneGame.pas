@@ -3,7 +3,7 @@
 ///
 /// Gamolf FMX Game Starter Kit
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-19T13:30:44.000+02:00
-/// Signature : be4a7c80f7ac19176e5d7b1487451ca853dbe1ce
+/// File last update : 2025-05-08T20:22:56.000+02:00
+/// Signature : 2594bc7e2a53a48b83d50e02e5eeb480eea70776
 /// ***************************************************************************
 /// </summary>
 
@@ -284,19 +284,7 @@ end;
 
 initialization
 
-TMessageManager.DefaultManager.SubscribeToMessage(TSceneFactory,
-  procedure(const Sender: TObject; const Msg: TMessage)
-  var
-    NewScene: TSceneGame;
-  begin
-    if (Msg is TSceneFactory) and
-      ((Msg as TSceneFactory).SceneType = TSceneType.Game) then
-    begin
-      NewScene := TSceneGame.Create(application.mainform);
-      NewScene.Parent := application.mainform;
-      tscene.RegisterScene(TSceneType.Game, NewScene);
-    end;
-  end);
+tscene.RegisterScene<TSceneGame>(TSceneType.Game);
 randomize;
 
 end.
