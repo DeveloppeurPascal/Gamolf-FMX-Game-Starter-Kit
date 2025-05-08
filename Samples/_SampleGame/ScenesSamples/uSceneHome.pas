@@ -3,7 +3,7 @@
 ///
 /// Gamolf FMX Game Starter Kit
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-10T10:58:56.000+02:00
-/// Signature : b3fabeda72b38216bda6ae8721ddda29e0209f0a
+/// File last update : 2025-05-08T20:18:32.000+02:00
+/// Signature : 563ae209ae976e63abe8bdde543a33d941eb5147
 /// ***************************************************************************
 /// </summary>
 
@@ -93,7 +93,6 @@ implementation
 {$R *.fmx}
 
 uses
-  System.Messaging,
   uScene,
   uGameData,
   uConsts,
@@ -208,18 +207,6 @@ end;
 
 initialization
 
-TMessageManager.DefaultManager.SubscribeToMessage(TSceneFactory,
-  procedure(const Sender: TObject; const Msg: TMessage)
-  var
-    NewScene: TSceneHome;
-  begin
-    if (Msg is TSceneFactory) and
-      ((Msg as TSceneFactory).SceneType = TSceneType.Home) then
-    begin
-      NewScene := TSceneHome.Create(application.mainform);
-      NewScene.Parent := application.mainform;
-      TScene.RegisterScene(TSceneType.Home, NewScene);
-    end;
-  end);
+TScene.RegisterScene<TSceneHome>(TSceneType.Home);
 
 end.

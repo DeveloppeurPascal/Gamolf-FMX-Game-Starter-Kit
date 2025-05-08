@@ -3,7 +3,7 @@
 ///
 /// Gamolf FMX Game Starter Kit
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-10T09:05:18.000+02:00
-/// Signature : bc7a3da3194e57fd02ffddcd84314ff56b5810e6
+/// File last update : 2025-05-08T20:18:26.000+02:00
+/// Signature : 49ec23d7496c8e54c997c540be6a33ac31c893eb
 /// ***************************************************************************
 /// </summary>
 
@@ -79,7 +79,6 @@ implementation
 {$R *.fmx}
 
 uses
-  System.Messaging,
   uScene,
   uConsts,
   uUIElements,
@@ -105,18 +104,6 @@ end;
 
 initialization
 
-TMessageManager.DefaultManager.SubscribeToMessage(TSceneFactory,
-  procedure(const Sender: TObject; const Msg: TMessage)
-  var
-    NewScene: TSceneGameOverLost;
-  begin
-    if (Msg is TSceneFactory) and
-      ((Msg as TSceneFactory).SceneType = TSceneType.GameOverLost) then
-    begin
-      NewScene := TSceneGameOverLost.Create(application.mainform);
-      NewScene.Parent := application.mainform;
-      tscene.RegisterScene(TSceneType.GameOverLost, NewScene);
-    end;
-  end);
+tscene.RegisterScene<TSceneGameOverLost>(TSceneType.GameOverLost);
 
 end.

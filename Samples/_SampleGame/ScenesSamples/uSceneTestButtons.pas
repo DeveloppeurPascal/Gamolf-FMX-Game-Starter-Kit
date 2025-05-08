@@ -3,7 +3,7 @@
 ///
 /// Gamolf FMX Game Starter Kit
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-22T08:47:19.032+02:00
-/// Signature : 2bda23be7e4da9a6caa20977557ce2c067768379
+/// File last update : 2025-05-08T20:18:18.000+02:00
+/// Signature : 939ad9c6712799ee7e102ae7c8fbf110cd90263c
 /// ***************************************************************************
 /// </summary>
 
@@ -97,7 +97,6 @@ implementation
 {$R *.fmx}
 
 uses
-  System.Messaging,
   uScene,
   uConsts,
   uUIElements,
@@ -136,11 +135,11 @@ begin
     SporglooIUseDelphiButton1, nil, TextButton1, nil);
 
   TextButton1.OnClick := ButtonsClick;
-  TUIItemsList.Current.AddControl(TextButton1,
-    EggHunterAndYouButton1, nil, btnBack, nil);
+  TUIItemsList.Current.AddControl(TextButton1, EggHunterAndYouButton1, nil,
+    btnBack, nil);
 
-  TUIItemsList.Current.AddControl(btnBack, TextButton1, nil, nil,
-    nil, false, true);
+  TUIItemsList.Current.AddControl(btnBack, TextButton1, nil, nil, nil,
+    false, true);
 
   THelpBarManager.Current.OpenHelpBar;
   THelpBarManager.Current.AddItem(ord(TSVGInputPromptsIndex.KeyboardEscape),
@@ -155,18 +154,6 @@ end;
 
 initialization
 
-TMessageManager.DefaultManager.SubscribeToMessage(TSceneFactory,
-  procedure(const Sender: TObject; const Msg: TMessage)
-  var
-    NewScene: TSceneTestButtons;
-  begin
-    if (Msg is TSceneFactory) and
-      ((Msg as TSceneFactory).SceneType = TSceneType.TestUIButtons) then
-    begin
-      NewScene := TSceneTestButtons.Create(application.mainform);
-      NewScene.Parent := application.mainform;
-      tscene.RegisterScene(TSceneType.TestUIButtons, NewScene);
-    end;
-  end);
+tscene.RegisterScene<TSceneTestButtons>(TSceneType.TestUIButtons);
 
 end.

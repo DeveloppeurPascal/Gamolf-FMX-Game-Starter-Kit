@@ -3,7 +3,7 @@
 ///
 /// Gamolf FMX Game Starter Kit
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-10T09:05:36.000+02:00
-/// Signature : 9df56cfd49cf1b21fbcdce8c132e8ac773889f22
+/// File last update : 2025-05-08T20:18:30.000+02:00
+/// Signature : 8e07a655adc6c00c69a1b98971de352e8c37247f
 /// ***************************************************************************
 /// </summary>
 
@@ -79,7 +79,6 @@ implementation
 {$R *.fmx}
 
 uses
-  System.Messaging,
   uScene,
   uConsts,
   uUIElements,
@@ -105,18 +104,6 @@ end;
 
 initialization
 
-TMessageManager.DefaultManager.SubscribeToMessage(TSceneFactory,
-  procedure(const Sender: TObject; const Msg: TMessage)
-  var
-    NewScene: TSceneHallOfFame;
-  begin
-    if (Msg is TSceneFactory) and
-      ((Msg as TSceneFactory).SceneType = TSceneType.HallOfFame) then
-    begin
-      NewScene := TSceneHallOfFame.Create(application.mainform);
-      NewScene.Parent := application.mainform;
-      tscene.RegisterScene(TSceneType.HallOfFame, NewScene);
-    end;
-  end);
+tscene.RegisterScene<TSceneHallOfFame>(TSceneType.HallOfFame);
 
 end.

@@ -3,7 +3,7 @@
 ///
 /// Gamolf FMX Game Starter Kit
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-20T10:12:04.000+02:00
-/// Signature : b5c5f6209be75c72ecd1240587189e23c6faa72a
+/// File last update : 2025-05-08T20:18:20.000+02:00
+/// Signature : 58f6d59e3b5149ac5dfa16ddcc75ecc2da1d88de
 /// ***************************************************************************
 /// </summary>
 
@@ -45,9 +45,17 @@ unit uSceneTestKeyDownUp;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes,
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
   System.Variants,
-  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Types,
+  FMX.Graphics,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Dialogs,
+  FMX.StdCtrls,
   _ScenesAncestor;
 
 type
@@ -67,7 +75,6 @@ implementation
 {$R *.fmx}
 
 uses
-  System.Messaging,
   uScene,
   uConsts,
   uUIElements;
@@ -99,18 +106,6 @@ end;
 
 initialization
 
-TMessageManager.DefaultManager.SubscribeToMessage(TSceneFactory,
-  procedure(const Sender: TObject; const Msg: TMessage)
-  var
-    NewScene: TSceneTestKeyDownUp;
-  begin
-    if (Msg is TSceneFactory) and
-      ((Msg as TSceneFactory).SceneType = TSceneType.TestKeyDown) then
-    begin
-      NewScene := TSceneTestKeyDownUp.Create(application.mainform);
-      NewScene.Parent := application.mainform;
-      TScene.RegisterScene(TSceneType.TestKeyDown, NewScene);
-    end;
-  end);
+TScene.RegisterScene<TSceneTestKeyDownUp>(TSceneType.TestKeyDown);
 
 end.
