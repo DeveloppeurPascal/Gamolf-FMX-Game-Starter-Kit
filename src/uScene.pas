@@ -3,7 +3,7 @@
 ///
 /// Gamolf FMX Game Starter Kit
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-20T10:02:10.000+02:00
-/// Signature : 78f1c0aa691f2a8059d3cee3039230e953b19456
+/// File last update : 2025-05-08T20:10:42.000+02:00
+/// Signature : 0c520faca6fc01940056e87924f39627a12d33b9
 /// ***************************************************************************
 /// </summary>
 
@@ -53,20 +53,41 @@ interface
 uses
   System.Messaging,
   _ScenesAncestor,
+  System.Generics.Collections,
   uConsts;
 
 type
+  /// <summary>
+  /// To store the list of scenes and their instance
+  /// </summary>
+  TScenesList = class(TDictionary<TSceneType, T__SceneAncestor>)
+  private
+  protected
+  public
+  end;
+
+  /// <summary>
+  /// The scene manager.
+  /// Use it to access to current scene and go to an other one.
+  /// </summary>
   TScene = class
   private
     class var FCurrent: TSceneType;
     class procedure SetCurrent(const Value: TSceneType); static;
+    class function GetScenesList: TScenesList;
   protected
   public
     /// <summary>
     /// Register a new scene in the list of available scenes and show it
     /// </summary>
     class procedure RegisterScene(const AType: TSceneType;
-      const AScene: T__SceneAncestor);
+      const AScene: T__SceneAncestor); overload;
+      deprecated 'Replace it by RegisterScene<T__SceneAncestor>(TSceneType)';
+    /// <summary>
+    /// Register a new scene in the list of available scenes and show it
+    /// </summary>
+    class procedure RegisterScene<T: T__SceneAncestor>
+      (const AType: TSceneType); overload;
     /// <summary>
     /// Unregister a scene from the list
     /// (to use only if you remove scenes and free their instance manually)
@@ -82,6 +103,10 @@ type
     class function GetInstance: T__SceneAncestor;
   end;
 
+  /// <summary>
+  /// Used by the scene registration.
+  /// Subcribe to this message if you want to auto create a scene in your game.
+  /// </summary>
   TSceneFactory = class(tmessage)
   private
     FSceneType: TSceneType;
@@ -95,20 +120,18 @@ type
 implementation
 
 uses
-  System.Generics.Collections,
+  FMX.Forms,
   System.Classes;
-
-type
-  TScenesList = class(TDictionary<TSceneType, T__SceneAncestor>)
-  private
-  protected
-  public
-  end;
 
 var
   ScenesList: TScenesList;
 
   { TScene }
+
+class function TScene.GetScenesList: TScenesList;
+begin
+  result := ScenesList;
+end;
 
 class function TScene.GetInstance: T__SceneAncestor;
 begin
@@ -129,6 +152,29 @@ begin
         Current := AType;
       end);
   end;
+end;
+
+class procedure TScene.RegisterScene<T>(const AType: TSceneType);
+begin
+  TMessageManager.DefaultManager.SubscribeToMessage(TSceneFactory,
+    procedure(const Sender: TObject; const Msg: tmessage)
+    var
+      NewScene: T;
+    begin
+      if (Msg is TSceneFactory) and ((Msg as TSceneFactory).SceneType = AType)
+      then
+      begin
+        NewScene := T.Create(application.mainform);
+        NewScene.Parent := application.mainform;
+        UnRegisterScene(AType);
+        GetScenesList.Add(AType, NewScene);
+        tthread.ForceQueue(nil,
+          procedure
+          begin
+            Current := AType;
+          end);
+      end;
+    end);
 end;
 
 class procedure TScene.SetCurrent(const Value: TSceneType);
