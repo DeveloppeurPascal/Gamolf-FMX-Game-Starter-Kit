@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2025-05-08T19:44:36.000+02:00
-/// Signature : 659280b5e5dc688833e46f7a6a2041db19bb968e
+/// File last update : 2025-05-08T21:08:58.000+02:00
+/// Signature : 19f3404146ae7300b040f767de56c6a4ec75c734
 /// ***************************************************************************
 /// </summary>
 
@@ -143,6 +143,8 @@ type
     procedure SetPath(const Value: string);
     procedure SetScore(const Value: int64);
     procedure SetUserPseudo(const Value: string);
+    class procedure SetDefaultGameDataInstance(const Value: TGameData);
+    class function GetDefaultGameDataInstance: TGameData;
   protected
     FPath: string;
     FHasChanged: boolean;
@@ -224,12 +226,18 @@ type
     /// </summary>
     procedure SaveToStream(const AStream: TStream); virtual;
     /// <summary>
-    /// Get the instance of default game data.
-    /// In most cases it's better to use it than creating a new instance
-    /// If you work on a descendnt of TGameData, don't call this method,
-    /// create your own or use the constructor.
+    /// Get the instance of default game data as a TGameData instance.
     /// </summary>
-    class function DefaultGameData: TGameData; virtual;
+    /// <remarks>
+    /// If you work on a descendant class, use "DefaultGameData<T>:T" to create
+    /// your instance and add a Current function at the descendant level to
+    /// simplify your life.
+    /// </remarks>
+    class function DefaultGameData: TGameData; overload; virtual;
+    /// <summary>
+    /// Get the instance of current game data as a T instance.
+    /// </summary>
+    class function DefaultGameData<T: TGameData>: T; overload;
     /// <summary>
     /// Start the game after clearing the game data
     /// </summary>
@@ -265,6 +273,7 @@ type
 implementation
 
 uses
+  FMX.Types,
   System.SysUtils,
   System.IOUtils,
   uConfig,
@@ -359,9 +368,47 @@ begin
   result := LDefaultGameData;
 end;
 
+class function TGameData.DefaultGameData<T>: T;
+var
+  gd: TGameData;
+{$IFNDEF RELEASE}
+  s: string;
+{$ENDIF}
+begin
+  gd := TGameData.GetDefaultGameDataInstance;
+  if not assigned(gd) then
+    TGameData.SetDefaultGameDataInstance(T.Create)
+  else if not(gd is T) then
+  begin
+{$IFDEF RELEASE}
+    gd.free;
+    TGameData.SetDefaultGameDataInstance(T.Create)
+{$ELSE}
+    // It could be an error on a normal behaviour,
+    // hard to choose between the two cases and raise an exception or just
+    // a warning on the debugger console.
+    //
+    // To avoid this case, access to YOUR game data instance in the
+    // "initialization" section of its unit declaration.
+      s := '***** WARNING ***** Removed ' + gd.ClassName +
+      ' instance to create a ';
+    gd.free;
+    TGameData.SetDefaultGameDataInstance(T.Create);
+    s := s + TGameData.GetDefaultGameDataInstance.ClassName + ' instance.';
+    log.d(s);
+{$ENDIF}
+  end;
+  result := TGameData.GetDefaultGameDataInstance as T;
+end;
+
 destructor TGameData.Destroy;
 begin
   inherited;
+end;
+
+class function TGameData.GetDefaultGameDataInstance: TGameData;
+begin
+  result := LDefaultGameData;
 end;
 
 function TGameData.GetFileName: string;
@@ -397,13 +444,13 @@ begin
         MS.Position := 0;
         LoadFromStream(MS);
       finally
-        MS.Free;
+        MS.free;
       end;
 {$ELSE}
       LoadFromStream(FS);
 {$ENDIF}
     finally
-      FS.Free;
+      FS.free;
       FFilePath := AFilePath;
       FHasChanged := false;
     end;
@@ -493,16 +540,16 @@ begin
           MS2.Position := 0;
           FS.CopyFrom(MS2);
         finally
-          MS2.Free;
+          MS2.free;
         end;
       finally
-        MS.Free;
+        MS.free;
       end;
 {$ELSE}
       SaveToStream(FS);
 {$ENDIF}
     finally
-      FS.Free;
+      FS.free;
       FFilePath := LFilePath;
       FHasChanged := false;
     end;
@@ -523,6 +570,11 @@ begin
   AStream.Write(FNbLives, sizeof(FNbLives));
   SaveStringToStream(FUserPseudo, AStream);
   FHasChanged := false;
+end;
+
+class procedure TGameData.SetDefaultGameDataInstance(const Value: TGameData);
+begin
+  LDefaultGameData := Value;
 end;
 
 procedure TGameData.SetLevel(const Value: int64);
@@ -635,6 +687,6 @@ LDefaultGameData := nil;
 
 finalization
 
-LDefaultGameData.Free;
+LDefaultGameData.free;
 
 end.
