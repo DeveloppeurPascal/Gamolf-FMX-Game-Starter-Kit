@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-14T19:10:22.000+01:00
-/// Signature : c470fef042fa801be5ceabe42917dfc3902105b2
+/// File last update : 2025-05-08T19:44:36.000+02:00
+/// Signature : 659280b5e5dc688833e46f7a6a2041db19bb968e
 /// ***************************************************************************
 /// </summary>
 
@@ -321,11 +321,11 @@ end;
 
 procedure TGameData.Clear;
 begin
+  FFilePath := '';
   FLevel := CDefaultLevel;
   FScore := CDefaultScore;
   FNbLives := CDefaultNbLives;
   UserPseudo := '';
-  FFilePath := '';
   FHasChanged := false;
   FIsPlaying := false;
   FIsPaused := false;
@@ -341,12 +341,12 @@ end;
 constructor TGameData.Create;
 begin
   inherited;
+  FPath := '';
+  FFilePath := '';
   FLevel := CDefaultLevel;
   FScore := CDefaultScore;
   FNbLives := CDefaultNbLives;
   FUserPseudo := '';
-  FPath := '';
-  FFilePath := '';
   FHasChanged := false;
   FIsPlaying := false;
   FIsPaused := false;
@@ -449,10 +449,14 @@ end;
 
 procedure TGameData.PauseGame;
 begin
-  // do what you need to do when you pause the game (stop threads, timers, ...)
-  // perhaps autosave the game
   FIsPlaying := false;
   FIsPaused := true;
+
+  // do what you need to do when you pause the game (stop threads, timers, ...)
+  // perhaps autosave the game
+
+  if not FFilePath.IsEmpty then
+    SaveToFile;
 end;
 
 procedure TGameData.SaveToFile(const AFilePath: string);
