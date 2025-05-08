@@ -3,7 +3,7 @@
 ///
 /// Gamolf FMX Game Starter Kit
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-21T10:11:16.000+02:00
-/// Signature : 16c9f88767a8b334f907ed375fd56eb339e5783a
+/// File last update : 2025-05-08T20:34:24.000+02:00
+/// Signature : 7ddf0a0a79f9ab3d325a40570cc200b73f1d3c11
 /// ***************************************************************************
 /// </summary>
 
@@ -74,7 +74,6 @@ implementation
 {$R *.fmx}
 
 uses
-  System.Messaging,
   uConsts,
   uScene,
   uUIElements,
@@ -100,18 +99,6 @@ end;
 
 initialization
 
-TMessageManager.DefaultManager.SubscribeToMessage(TSceneFactory,
-  procedure(const Sender: TObject; const Msg: TMessage)
-  var
-    NewScene: TSplashScreenScene;
-  begin
-    if (Msg is TSceneFactory) and
-      ((Msg as TSceneFactory).SceneType = TSceneType.SplashScreen) then
-    begin
-      NewScene := TSplashScreenScene.Create(application.mainform);
-      NewScene.Parent := application.mainform;
-      tscene.RegisterScene(TSceneType.SplashScreen, NewScene);
-    end;
-  end);
+tscene.RegisterScene<TSplashScreenScene>(TSceneType.SplashScreen);
 
 end.

@@ -3,7 +3,7 @@
 ///
 /// Gamolf FMX Game Starter Kit
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-23T11:58:52.000+02:00
-/// Signature : 42fa5fafac790ecdbc272d483becf94ed176e5fc
+/// File last update : 2025-05-08T20:34:54.000+02:00
+/// Signature : fe0cc28eed4159edcc38618840920ef11f9a9600
 /// ***************************************************************************
 /// </summary>
 
@@ -104,7 +104,6 @@ implementation
 // TODO : accélérer le jeu en cours de partie (à partir d'un certain niveau de score)
 
 uses
-  System.Messaging,
   uConsts,
   uScene,
   uUIElements,
@@ -490,18 +489,6 @@ end;
 
 initialization
 
-TMessageManager.DefaultManager.SubscribeToMessage(TSceneFactory,
-  procedure(const Sender: TObject; const Msg: TMessage)
-  var
-    NewScene: TGameScene;
-  begin
-    if (Msg is TSceneFactory) and
-      ((Msg as TSceneFactory).SceneType = TSceneType.Game) then
-    begin
-      NewScene := TGameScene.Create(application.mainform);
-      NewScene.Parent := application.mainform;
-      tscene.RegisterScene(TSceneType.Game, NewScene);
-    end;
-  end);
+tscene.RegisterScene<TGameScene>(TSceneType.Game);
 
 end.

@@ -3,7 +3,7 @@
 ///
 /// Gamolf FMX Game Starter Kit
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2024-08-23T12:28:58.000+02:00
-/// Signature : 6fd2f03751b27dbb279f0c1b9e7f020dfa8d0171
+/// File last update : 2025-05-08T20:34:32.000+02:00
+/// Signature : a4268d003b2f1e40026f50e232a984fac866e753
 /// ***************************************************************************
 /// </summary>
 
@@ -90,7 +90,6 @@ implementation
 {$R *.fmx}
 
 uses
-  System.Messaging,
   uConsts,
   uScene,
   uUIElements,
@@ -242,18 +241,6 @@ end;
 
 initialization
 
-TMessageManager.DefaultManager.SubscribeToMessage(TSceneFactory,
-  procedure(const Sender: TObject; const Msg: TMessage)
-  var
-    NewScene: TNbPlayersChoiceScene;
-  begin
-    if (Msg is TSceneFactory) and
-      ((Msg as TSceneFactory).SceneType = TSceneType.NbPlayersChoice) then
-    begin
-      NewScene := TNbPlayersChoiceScene.Create(application.mainform);
-      NewScene.Parent := application.mainform;
-      TScene.RegisterScene(TSceneType.NbPlayersChoice, NewScene);
-    end;
-  end);
+TScene.RegisterScene<TNbPlayersChoiceScene>(TSceneType.NbPlayersChoice);
 
 end.
