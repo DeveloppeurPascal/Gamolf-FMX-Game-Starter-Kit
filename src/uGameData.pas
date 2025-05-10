@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2025-05-08T21:08:58.000+02:00
-/// Signature : 19f3404146ae7300b040f767de56c6a4ec75c734
+/// File last update : 2025-05-10T16:02:34.229+02:00
+/// Signature : e198c0e45b4644d0f7fb6ff7f5e443053a286118
 /// ***************************************************************************
 /// </summary>
 
@@ -229,7 +229,7 @@ type
     /// Get the instance of default game data as a TGameData instance.
     /// </summary>
     /// <remarks>
-    /// If you work on a descendant class, use "DefaultGameData<T>:T" to create
+    /// If you work on a descendant class, use "DefaultGameData(T):T" to create
     /// your instance and add a Current function at the descendant level to
     /// simplify your life.
     /// </remarks>
