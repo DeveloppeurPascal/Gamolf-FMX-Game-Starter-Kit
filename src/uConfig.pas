@@ -35,8 +35,8 @@
 /// https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-14T20:10:28.000+01:00
-/// Signature : 71ff3815f411fae03b28def15ed0760240ff95e2
+/// File last update : 2025-05-10T15:56:44.000+02:00
+/// Signature : fe8fa39bf8c8c48594fd00ed672eca359dc339a6
 /// ***************************************************************************
 /// </summary>
 
@@ -44,11 +44,11 @@ unit uConfig;
 
 interface
 
-// If you want to be able to update the template files in your game project,
-// we recommend that you don't modify this file. Its operation should support
-// all standard use cases. Save the file in your project and work on the copy.
-// In this case, we suggest you open a ticket on the code repository to explain
-// your needs and the changes to be made to the template.
+// To add your settings in the standard settings file,
+// inherits from TConfig and use GetParams() method to Get/Set your values.
+//
+// It's recommanded to add your game name as a prefix of keys names
+// in the settings file.
 
 uses
   Olf.RTL.Params;
@@ -70,6 +70,11 @@ type
     function GetLanguage: string;
     procedure SetLanguage(const Value: string);
   protected
+    /// <summary>
+    /// Use this method to access to the settings storrage file/class in
+    /// TConfig descendants.
+    /// </summary>
+    function GetParams: TParamsFile;
   public
     /// <summary>
     /// Start or stop the background music
@@ -254,6 +259,11 @@ begin
     lng := CDefaultLanguage;
 
   result := FParams.getValue('Language', lng);
+end;
+
+function TConfig.GetParams: TParamsFile;
+begin
+  result := FParams;
 end;
 
 function TConfig.GetPath: string;
