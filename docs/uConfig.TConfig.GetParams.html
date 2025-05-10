@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>TGameData.DefaultGameData Method</title>
+<title>TConfig.GetParams Method</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta name="generator" content="DocInsight" />
@@ -49,7 +49,7 @@
       window.top.navigationFrame.postMessage(
         {
           action: "selectTocItem",
-          itemKey: "uGameData.TGameData.DefaultGameData",
+          itemKey: "uConfig.TConfig.GetParams",
         },
         "*"
       );
@@ -61,11 +61,11 @@
 <input type="hidden" id="contentEditableControl" class="userDataStyle" value="false" />
 <input type="hidden" id="userDataCache" class="userDataStyle" />
 <input type="hidden" id="hiddenScrollOffset" />
-<input type="hidden" id="moduleName" value="uGameData" />
-<input type="hidden" id="elementId" value="M:uGameData.TGameData.DefaultGameData" />
+<input type="hidden" id="moduleName" value="uConfig" />
+<input type="hidden" id="elementId" value="M:uConfig.TConfig.GetParams" />
 <div class="topic">
 <div id="content">
-<h1 class="title">TGame<wbr />Data<wbr />.Default<wbr />Game<wbr />Data Method</h1>
+<h1 class="title">TConfig<wbr />.Get<wbr />Params Method</h1>
 <div id="mainSection">
 <div id="mainBody">
 <div id="summarySection" class="section">
@@ -82,11 +82,12 @@
 </div>
 <div id="summaryContent" class="sectionContent" contenteditable="false">
 <p>
-Get the instance of default game data as a TGameData instance.
+Use this method to access to the settings storrage file/class in
+TConfig descendants.
 </p>
 </div>
 </div>
-<strong>Unit</strong>:  <a href="uGameData.html" title="">uGameData</a><br />
+<strong>Unit</strong>:  <a href="uConfig.html" title="">uConfig</a><br />
 <div id="syntaxSection" class="section">
 <div id="syntaxHeader" class="sectionHeader">
 <div>
@@ -99,27 +100,7 @@ Get the instance of default game data as a TGameData instance.
 </div>
 </div>
 <div id="syntaxContent" class="sectionContent" contenteditable="false">
-<div class="codeSnippet" contenteditable="false"><input class="code" type="hidden" value="" /><div class="codeSnippetTabs"><div class="codeSnippetTabActive"><a>Delphi</a></div></div><div class="codeSnippetCodeContainer"><div class="codeSnippetCode"><pre class="delphi" contenteditable="false">class function DefaultGameData: TGameData</pre></div></div></div><div class="subSection"><h4 class="subHeading">Return Value</h4><div id="returnsType">Type: <span class="returnType"><a href="uGameData.TGameData.html" title="">uGameData.TGameData</a></span></div><div id="returns" contenteditable="false"><p> </p></div></div>
-</div>
-</div>
-<div id="remarksSection" class="section">
-<input class="tagName" type="hidden" value="remarks" />
-<div id="remarksHeader" class="sectionHeader">
-<div>
-<a href="javascript:void(0)" class="collapsibleAreaHref" title="Collapse">
-<span class="collapsibleAreaIcon collapsibleAreaExpanding">
-<!---->
-</span>
-<span class="collapsibleAreaTitle">Remarks</span>
-</a>
-</div>
-</div>
-<div id="remarksContent" class="sectionContent" contenteditable="false">
-<p>
-If you work on a descendant class, use "DefaultGameData(T):T" to create
-your instance and add a Current function at the descendant level to
-simplify your life.
-</p>
+<div class="codeSnippet" contenteditable="false"><input class="code" type="hidden" value="" /><div class="codeSnippetTabs"><div class="codeSnippetTabActive"><a>Delphi</a></div></div><div class="codeSnippetCodeContainer"><div class="codeSnippetCode"><pre class="delphi" contenteditable="false">function GetParams: TParamsFile</pre></div></div></div><div class="subSection"><h4 class="subHeading">Return Value</h4><div id="returnsType">Type: <span class="returnType"><a href="Olf.RTL.Params.TParamsFile.html" title="">Olf.RTL.Params.TParamsFile</a></span></div><div id="returns" contenteditable="false"><p> </p></div></div>
 </div>
 </div>
 </div>

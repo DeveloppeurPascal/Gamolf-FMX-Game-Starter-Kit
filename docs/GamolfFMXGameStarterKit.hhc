@@ -4790,6 +4790,10 @@
                                                   <param name="Local" value="uConfig.TConfig.EndUpdate.html">
                                                   </OBJECT>
                                               <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="GetParams">
+                                                  <param name="Local" value="uConfig.TConfig.GetParams.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
                                                   <param name="Name" value="GetPath">
                                                   <param name="Local" value="uConfig.TConfig.GetPath.html">
                                                   </OBJECT>
@@ -11027,6 +11031,10 @@
                                               <LI> <OBJECT type="text/sitemap">
                                                   <param name="Name" value="EndUpdate">
                                                   <param name="Local" value="uConfig.TConfig.EndUpdate.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="GetParams">
+                                                  <param name="Local" value="uConfig.TConfig.GetParams.html">
                                                   </OBJECT>
                                               <LI> <OBJECT type="text/sitemap">
                                                   <param name="Name" value="GetPath">
@@ -17479,6 +17487,10 @@
                                                   <param name="Local" value="uConfig.TConfig.EndUpdate.html">
                                                   </OBJECT>
                                               <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="GetParams">
+                                                  <param name="Local" value="uConfig.TConfig.GetParams.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
                                                   <param name="Name" value="GetPath">
                                                   <param name="Local" value="uConfig.TConfig.GetPath.html">
                                                   </OBJECT>
@@ -23535,6 +23547,10 @@
                                               <LI> <OBJECT type="text/sitemap">
                                                   <param name="Name" value="EndUpdate">
                                                   <param name="Local" value="uConfig.TConfig.EndUpdate.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="GetParams">
+                                                  <param name="Local" value="uConfig.TConfig.GetParams.html">
                                                   </OBJECT>
                                               <LI> <OBJECT type="text/sitemap">
                                                   <param name="Name" value="GetPath">
@@ -30067,6 +30083,10 @@
                                               <LI> <OBJECT type="text/sitemap">
                                                   <param name="Name" value="EndUpdate">
                                                   <param name="Local" value="uConfig.TConfig.EndUpdate.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="GetParams">
+                                                  <param name="Local" value="uConfig.TConfig.GetParams.html">
                                                   </OBJECT>
                                               <LI> <OBJECT type="text/sitemap">
                                                   <param name="Name" value="GetPath">
