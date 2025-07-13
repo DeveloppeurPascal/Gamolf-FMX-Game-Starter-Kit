@@ -35,8 +35,8 @@
   https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 
   ***************************************************************************
-  File last update : 2025-02-09T11:12:48.120+01:00
-  Signature : 84c7d32e3edb2a9b45ee449f01051af43d3d3c0f
+  File last update : 2025-07-13T16:09:38.000+02:00
+  Signature : 5facf5fa414fd0ee7ee6c374a7e2063bae9b88da
   ***************************************************************************
 *)
 
@@ -85,8 +85,7 @@ implementation
 {$R *.fmx}
 
 uses
-  USVGPuzzleAssets2,
-  uSVGBitmapManager_PuzzleAssets2;
+  USVGPuzzleAssets2;
 
 procedure T__PloomtrisButtonAncestor.Repaint;
 var

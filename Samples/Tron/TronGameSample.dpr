@@ -35,8 +35,8 @@
   https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 
   ***************************************************************************
-  File last update : 2025-05-10T15:57:33.976+02:00
-  Signature : b48520816ecc877a6912d1a7a63aa094929db619
+  File last update : 2025-07-13T16:12:36.000+02:00
+  Signature : d5de435a775915a6bda2fb43e384b98162a0dcbc
   ***************************************************************************
 *)
 
@@ -81,7 +81,6 @@ uses
   uBackgroundMusic in '..\..\src\uBackgroundMusic.pas',
   USVGInputPrompts in '..\..\assets\kenney_nl\InputPrompts\USVGInputPrompts.pas',
   uDMGameControllerCenter in '..\..\src\uDMGameControllerCenter.pas' {DMGameControllerCenter: TDataModule},
-  uSVGBitmapManager_InputPrompts in '..\..\src\uSVGBitmapManager_InputPrompts.pas',
   uDMHelpBarManager in '..\..\src\uDMHelpBarManager.pas' {HelpBarManager: TDataModule},
   _ButtonsAncestor in '..\..\src\_ButtonsAncestor.pas' {__ButtonAncestor: TFrame},
   uSceneBackground in 'uSceneBackground.pas' {SceneBackground: TFrame},
@@ -95,7 +94,6 @@ uses
   uSceneSplashScreen in 'uSceneSplashScreen.pas' {SplashScreenScene: TFrame},
   cDialogBackground in 'cDialogBackground.pas' {DialogBackground: TFrame},
   USVGUIPack in '..\..\assets\kenney_nl\UIPack\USVGUIPack.pas',
-  uSVGBitmapManager_UIPack in 'uSVGBitmapManager_UIPack.pas',
   cTextButton in 'cTextButton.pas' {TextButton: TFrame},
   cShowMessage in 'cShowMessage.pas' {ShowMessage: TFrame},
   uTronGameData in 'uTronGameData.pas';

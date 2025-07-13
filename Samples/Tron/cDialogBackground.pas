@@ -35,8 +35,8 @@
   https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 
   ***************************************************************************
-  File last update : 2025-02-09T11:12:48.104+01:00
-  Signature : f76305a5ba4ba9001530d5b00963cb14b268c4c6
+  File last update : 2025-07-13T16:13:12.000+02:00
+  Signature : 39d318e13859ede219cbc25423f270e845c2ebfd
   ***************************************************************************
 *)
 
@@ -86,8 +86,7 @@ implementation
 {$R *.fmx}
 
 uses
-  USVGUIPack,
-  uSVGBitmapManager_UIPack;
+  USVGUIPack;
 
 procedure TDialogBackground.AfterConstruction;
 begin

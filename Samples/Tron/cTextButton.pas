@@ -35,8 +35,8 @@
   https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 
   ***************************************************************************
-  File last update : 2025-02-09T11:12:48.104+01:00
-  Signature : a98de34cade43581d5a2c92a751f0e6c03db90c1
+  File last update : 2025-07-13T16:13:00.000+02:00
+  Signature : 7323ed9074b50f0f32f09000f89ed3a6f57b8d96
   ***************************************************************************
 *)
 
@@ -80,9 +80,7 @@ implementation
 {$R *.fmx}
 
 uses
-  uSVGBitmapManager_UIPack,
   USVGUIPack;
-{ TTextButton }
 
 procedure TTextButton.imgDownResized(Sender: TObject);
 begin

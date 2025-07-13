@@ -35,8 +35,8 @@
   https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 
   ***************************************************************************
-  File last update : 2025-05-10T15:57:34.022+02:00
-  Signature : 531a882be59d508e982e2755997d3695b209c995
+  File last update : 2025-07-13T16:09:20.000+02:00
+  Signature : b65b94b19caf43b2bfb86b6e85dedc489ba48f8c
   ***************************************************************************
 *)
 
@@ -91,7 +91,6 @@ uses
   uSoundEffects in '..\..\src\uSoundEffects.pas',
   USVGInputPrompts in '..\..\assets\kenney_nl\InputPrompts\USVGInputPrompts.pas',
   uDMGameControllerCenter in '..\..\src\uDMGameControllerCenter.pas' {DMGameControllerCenter: TDataModule},
-  uSVGBitmapManager_InputPrompts in '..\..\src\uSVGBitmapManager_InputPrompts.pas',
   uDMHelpBarManager in '..\..\src\uDMHelpBarManager.pas' {HelpBarManager: TDataModule},
   _ButtonsAncestor in '..\..\src\_ButtonsAncestor.pas' {__ButtonAncestor: TFrame},
   _TheQuizAncestorButton in 'ButtonsSamples\DDoS2024TheQuiz\_TheQuizAncestorButton.pas' {__TheQuizAncestorButton: TFrame},
@@ -105,7 +104,6 @@ uses
   _EggHunterButtonAncestor in 'ButtonsSamples\EggHunter\_EggHunterButtonAncestor.pas' {__EggHunterButtonAncestor: TFrame},
   cEggHunterAndYouButton in 'ButtonsSamples\EggHunter\cEggHunterAndYouButton.pas' {EggHunterAndYouButton: TFrame},
   uSceneTestKeyDownUp in 'ScenesSamples\uSceneTestKeyDownUp.pas' {SceneTestKeyDownUp: TFrame},
-  uSVGBitmapManager_PuzzleAssets2 in 'uSVGBitmapManager_PuzzleAssets2.pas',
   uButton in '..\Snake\uButton.pas' {TextButton: TFrame};
 
 {$R *.res}

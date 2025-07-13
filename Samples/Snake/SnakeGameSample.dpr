@@ -35,8 +35,8 @@
   https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 
   ***************************************************************************
-  File last update : 2025-05-10T15:57:33.941+02:00
-  Signature : 85982da201ec95fe399eca90d7d8067abad5fd3a
+  File last update : 2025-07-13T16:11:20.000+02:00
+  Signature : 74b27939d64a9e78122456bf6cd9646535289873
   ***************************************************************************
 *)
 
@@ -81,7 +81,6 @@ uses
   uBackgroundMusic in '..\..\src\uBackgroundMusic.pas',
   USVGInputPrompts in '..\..\assets\kenney_nl\InputPrompts\USVGInputPrompts.pas',
   uDMGameControllerCenter in '..\..\src\uDMGameControllerCenter.pas' {DMGameControllerCenter: TDataModule},
-  uSVGBitmapManager_InputPrompts in '..\..\src\uSVGBitmapManager_InputPrompts.pas',
   uDMHelpBarManager in '..\..\src\uDMHelpBarManager.pas' {HelpBarManager: TDataModule},
   _ButtonsAncestor in '..\..\src\_ButtonsAncestor.pas' {__ButtonAncestor: TFrame},
   uSceneBackground in 'uSceneBackground.pas' {SceneBackground: TFrame},
