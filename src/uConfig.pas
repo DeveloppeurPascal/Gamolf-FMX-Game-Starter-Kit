@@ -50,12 +50,27 @@ interface
 // It's recommanded to add your game name as a prefix of keys names
 // in the settings file.
 
+// This file contains the TConfig.Current global instance to access to settings
+// of the starter kit from the starter kit and your projects.
+//
+// If you want to extend it with your own parameters, you just have to create a
+// TConfigHelpers (or with an other name) helper class where you'll add your
+// properties and their Get/Set methods.
+// Copy the content of the Get/Set methods here to have the same behaviour.
+// Use GetParams() method instead of FParams field in your Get/Set methods.
+//
+// To limit risks of duplicate variables names, prefix your own parameters
+// by your project name, a GUID or anything else than what we use (= 'GFGSK.').
+
 uses
   Olf.RTL.Params;
 
 type
   TConfig = class
-  private
+  private const
+    CVariableNamePrefix = 'FGFSK.';
+
+  var
     FParams: TParamsFile;
     function GetBackgroundMusic: boolean;
     function GetBackgroundMusicVolume: integer;
@@ -225,12 +240,12 @@ end;
 
 function TConfig.GetBackgroundMusic: boolean;
 begin
-  result := FParams.getValue('MusicOnOff', true);
+  result := FParams.getValue(CVariableNamePrefix + 'MusicOnOff', true);
 end;
 
 function TConfig.GetBackgroundMusicVolume: integer;
 begin
-  result := FParams.getValue('MusicVol', 100);
+  result := FParams.getValue(CVariableNamePrefix + 'MusicVol', 100);
 end;
 
 function TConfig.GetInterfaceTactileOnOff: boolean;
@@ -247,7 +262,7 @@ begin
 {$ELSE}
     DefaultValue := false;
 {$ENDIF}
-  result := tParams.getValue('TouchOnOff', DefaultValue);
+  result := tParams.getValue(CVariableNamePrefix + 'TouchOnOff', DefaultValue);
 end;
 
 function TConfig.GetLanguage: string;
@@ -258,7 +273,7 @@ begin
   if lng.IsEmpty then
     lng := CDefaultLanguage;
 
-  result := FParams.getValue('Language', lng);
+  result := FParams.getValue(CVariableNamePrefix + 'Language', lng);
 end;
 
 function TConfig.GetParams: TParamsFile;
@@ -273,29 +288,29 @@ end;
 
 function TConfig.GetSoundEffects: boolean;
 begin
-  result := FParams.getValue('SoundsOnOff', true);
+  result := FParams.getValue(CVariableNamePrefix + 'SoundsOnOff', true);
 end;
 
 function TConfig.GetSoundEffectsVolume: integer;
 begin
-  result := FParams.getValue('SoundsVol', 100);
+  result := FParams.getValue(CVariableNamePrefix + 'SoundsVol', 100);
 end;
 
 procedure TConfig.SetBackgroundMusic(const Value: boolean);
 begin
-  FParams.setValue('MusicOnOff', Value);
+  FParams.setValue(CVariableNamePrefix + 'MusicOnOff', Value);
   FParams.Save;
 end;
 
 procedure TConfig.SetBackgroundMusicVolume(const Value: integer);
 begin
-  FParams.setValue('MusicVol', Value);
+  FParams.setValue(CVariableNamePrefix + 'MusicVol', Value);
   FParams.Save;
 end;
 
 procedure TConfig.SetInterfaceTactileOnOff(const Value: boolean);
 begin
-  FParams.setValue('TouchOnOff', Value);
+  FParams.setValue(CVariableNamePrefix + 'TouchOnOff', Value);
   FParams.Save;
 end;
 
@@ -307,20 +322,20 @@ begin
   if lng.IsEmpty then
     lng := CDefaultLanguage;
 
-  FParams.setValue('Language', Value);
+  FParams.setValue(CVariableNamePrefix + 'Language', Value);
   FParams.Save;
   TTranslateTextsMessage.Broadcast(Value);
 end;
 
 procedure TConfig.SetSoundEffects(const Value: boolean);
 begin
-  FParams.setValue('SoundsOnOff', Value);
+  FParams.setValue(CVariableNamePrefix + 'SoundsOnOff', Value);
   FParams.Save;
 end;
 
 procedure TConfig.SetSoundEffectsVolume(const Value: integer);
 begin
-  FParams.setValue('SoundsVol', Value);
+  FParams.setValue(CVariableNamePrefix + 'SoundsVol', Value);
   FParams.Save;
 end;
 
