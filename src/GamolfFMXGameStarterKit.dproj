@@ -579,10 +579,12 @@
         <iPad_Notification40>..\assets\icons\gameicon-40x40.png</iPad_Notification40>
         <iPad_Launch2x>..\assets\icons\gameicon-512x512.png</iPad_Launch2x>
         <iPad_LaunchDark2x>..\assets\icons\gameicon-512x512.png</iPad_LaunchDark2x>
+        <IOSTransportSecFeat>false</IOSTransportSecFeat>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_iOSSimARM64)'!=''">
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
+        <IOSTransportSecFeat>false</IOSTransportSecFeat>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_OSX64)'!=''">
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
