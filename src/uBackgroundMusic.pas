@@ -35,8 +35,8 @@
   https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 
   ***************************************************************************
-  File last update : 2025-02-09T11:12:49.095+01:00
-  Signature : e0625b095c9994562abf15a191c6fef8e93ab24e
+  File last update : 2025-11-24T15:19:24.000+01:00
+  Signature : d620a1cd241383c9892dea498adc24105a446d12
   ***************************************************************************
 *)
 
@@ -64,19 +64,39 @@ type
     class procedure Broadcast(const APlaying: Boolean);
   end;
 
+  TOnGetBackgroundMusicFileNameProc = reference to function: string;
+  TOnGetBackgroundMusicFileNameEvent = function: string of object;
+
   TBackgroundMusic = class
   private
     class var FCurrent: TBackgroundMusic;
-    class function GetCurrent: TBackgroundMusic; static;
-  protected
-  public
-    class property Current: TBackgroundMusic read GetCurrent;
-    constructor Create;
-    function isOn: Boolean;
-    procedure OnOff(aOn: Boolean);
-    procedure Volume(AVolume: integer);
-    function HasAValidBackgroundMusicFile: Boolean;
-  end;
+    var
+      FMusicFileName,
+      FMusicFileFolder: string;
+      FOnGetBackgroundMusicFileNameEvent: TOnGetBackgroundMusicFileNameEvent;
+      FOnGetBackgroundMusicFileNameProc: TOnGetBackgroundMusicFileNameProc;
+    procedure SetOnGetBackgroundMusicFileNameEvent(
+      const Value: TOnGetBackgroundMusicFileNameEvent);
+    procedure SetOnGetBackgroundMusicFileNameProc(
+      const Value: TOnGetBackgroundMusicFileNameProc);
+    procedure SetMusicFileName(const Value: string);
+    class
+      function GetCurrent: TBackgroundMusic; static;
+    protected
+      function GetBackgroundMusicFileName: string;
+    public
+      property OnGetBackgroundMusicFileNameProc: TOnGetBackgroundMusicFileNameProc read FOnGetBackgroundMusicFileNameProc write
+      SetOnGetBackgroundMusicFileNameProc;
+      property OnGetBackgroundMusicFileNameEvent: TOnGetBackgroundMusicFileNameEvent read FOnGetBackgroundMusicFileNameEvent
+      write SetOnGetBackgroundMusicFileNameEvent;
+      property MusicFileName: string read FMusicFileName write SetMusicFileName;
+      class property Current: TBackgroundMusic read GetCurrent;
+      constructor Create;
+      function isOn: Boolean;
+      procedure OnOff(aOn: Boolean);
+      procedure Volume(AVolume: integer);
+      function HasAValidBackgroundMusicFile: Boolean;
+    end;
 
 implementation
 
@@ -91,39 +111,49 @@ uses
 { TBackgroundMusic }
 
 constructor TBackgroundMusic.Create;
-var
-  Folder: string;
-  MusicFilePath: string;
 begin
   inherited;
 
 {$IF defined(ANDROID)}
   // deploy in .\assets\internal\
-  Folder := System.IOUtils.tpath.GetDocumentsPath;
+  FMusicFileFolder := System.IOUtils.tpath.GetDocumentsPath;
 {$ELSEIF defined(MSWINDOWS)}
   // deploy in ;\
 {$IFDEF DEBUG}
-  Folder := CDefaultBackgroundMusicPath;
+  FMusicFileFolder := CDefaultBackgroundMusicPath;
 {$ELSE}
-  Folder := extractfilepath(paramstr(0));
+  FMusicFileFolder := extractfilepath(paramstr(0));
 {$ENDIF}
 {$ELSEIF defined(IOS)}
   // deploy in .\
-  Folder := extractfilepath(paramstr(0));
+  FMusicFileFolder := extractfilepath(paramstr(0));
 {$ELSEIF defined(MACOS)}
   // deploy in Contents\MacOS
-  Folder := extractfilepath(paramstr(0));
+  FMusicFileFolder := extractfilepath(paramstr(0));
 {$ELSEIF Defined(LINUX)}
-  Folder := extractfilepath(paramstr(0));
+  FMusicFileFolder := extractfilepath(paramstr(0));
 {$ELSE}
 {$MESSAGE FATAL 'OS non supporté'}
 {$ENDIF}
-  MusicFilePath := tpath.combine(Folder, CBackgroundMusicFileName);
 
-  if (not CBackgroundMusicFileName.IsEmpty) and tfile.Exists(MusicFilePath) then
-    TMusicLoop.Current.Load(MusicFilePath);
+  FMusicFileName := '';
+  MusicFileName := GetBackgroundMusicFileName;
 
   Volume(TConfig.Current.BackgroundMusicVolume);
+end;
+
+function TBackgroundMusic.GetBackgroundMusicFileName: string;
+begin
+  if assigned(OnGetBackgroundMusicFileNameProc) then
+    result := OnGetBackgroundMusicFileNameProc
+  else
+    result := '';
+
+  if result.IsEmpty and assigned(OnGetBackgroundMusicFileNameEvent) then
+    result := OnGetBackgroundMusicFileNameEvent;
+
+  if result.IsEmpty then
+    result := CBackgroundMusicFileName;
 end;
 
 class function TBackgroundMusic.GetCurrent: TBackgroundMusic;
@@ -135,35 +165,8 @@ begin
 end;
 
 function TBackgroundMusic.HasAValidBackgroundMusicFile: Boolean;
-var
-  Folder, MusicFilePath: string;
 begin
-{$IF defined(ANDROID)}
-  // deploy in .\assets\internal\
-  Folder := System.IOUtils.tpath.GetDocumentsPath;
-{$ELSEIF defined(MSWINDOWS)}
-  // deploy in .\
-{$IFDEF DEBUG}
-  Folder := CDefaultBackgroundMusicPath;
-{$ELSE}
-  Folder := extractfilepath(paramstr(0));
-{$ENDIF}
-{$ELSEIF defined(IOS)}
-  // deploy in .\
-  Folder := extractfilepath(paramstr(0));
-{$ELSEIF defined(MACOS)}
-  // deploy in Contents\MacOS
-  Folder := extractfilepath(paramstr(0));
-{$ELSEIF Defined(LINUX)}
-  // deploy in .\
-  Folder := extractfilepath(paramstr(0));
-{$ELSE}
-{$MESSAGE FATAL 'OS non supporté'}
-{$ENDIF}
-  MusicFilePath := tpath.combine(Folder, CBackgroundMusicFileName);
-
-  result := (not CBackgroundMusicFileName.IsEmpty) and
-    tfile.Exists(MusicFilePath);
+  result := (not FMusicFileName.IsEmpty) and tfile.Exists(tpath.combine(FMusicFileFolder, FMusicFileName));
 end;
 
 function TBackgroundMusic.isOn: Boolean;
@@ -184,9 +187,40 @@ begin
   TBackgroundMusicStatusMessage.Broadcast(aOn)
 end;
 
+procedure TBackgroundMusic.SetMusicFileName(const Value: string);
+var
+  MP3: string;
+begin
+  if (FMusicFileName <> Value) then
+  begin
+    FMusicFileName := Value;
+
+    if FMusicFileName.IsEmpty then
+      tmusicloop.Current.Stop
+    else
+    begin
+      mp3 := TPath.combine(FMusicFileFolder, FMusicFileName);
+      if tfile.Exists(mp3) then
+        TMusicLoop.Current.Load(mp3);
+    end;
+  end;
+end;
+
+procedure TBackgroundMusic.SetOnGetBackgroundMusicFileNameEvent(
+  const Value: TOnGetBackgroundMusicFileNameEvent);
+begin
+  FOnGetBackgroundMusicFileNameEvent := Value;
+end;
+
+procedure TBackgroundMusic.SetOnGetBackgroundMusicFileNameProc(
+  const Value: TOnGetBackgroundMusicFileNameProc);
+begin
+  FOnGetBackgroundMusicFileNameProc := Value;
+end;
+
 procedure TBackgroundMusic.Volume(AVolume: integer);
 begin
-  if AVolume in [0 .. 100] then
+  if AVolume in [0..100] then
   begin
     TMusicLoop.Current.Volume := AVolume;
     if TConfig.Current.BackgroundMusicVolume <> AVolume then
@@ -218,10 +252,11 @@ end;
 
 initialization
 
-TBackgroundMusic.FCurrent := nil;
+  TBackgroundMusic.FCurrent := nil;
 
 finalization
 
-TBackgroundMusic.FCurrent.free;
+  TBackgroundMusic.FCurrent.free;
 
 end.
+
