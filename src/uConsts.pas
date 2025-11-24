@@ -35,8 +35,8 @@
   https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 
   ***************************************************************************
-  File last update : 2025-05-08T21:12:48.348+02:00
-  Signature : 33b364d06152cdc778e9af482f4873a7214e2083
+  File last update : 2025-11-24T15:24:06.000+01:00
+  Signature : f01f90276f2d72ee271cf738e177e9c46a9bcad2
   ***************************************************************************
 *)
 
@@ -60,7 +60,7 @@ const
   /// <summary>
   /// Version date of your game, change it when you publish a new public release
   /// </summary>
-  CAboutVersionDate = '20250508';
+  CAboutVersionDate = '20251124';
 
   /// <summary>
   /// Title of your game used in the About box and as the main form caption
