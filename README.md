@@ -19,15 +19,23 @@ Don't know how to code games ? Look at these projects:
 * [Delphi FMX Game Snippets](https://fmxgamesnippets.developpeur-pascal.fr)
 * [Delphi Game Engine](https://delphigameengine.developpeur-pascal.fr)
 
+Since December 2025, you can also start from a pre-configured folder to create your video games based on this starter kit. [Download the latest version of the "Game Template"](https://codeberg.org/DeveloppeurPascal/Game-Template-For-Delphi-FireMonkey/releases) and simply follow the instructions in the TODO.md files.
+
+* [Game Starter Kit Template](https://codeberg.org/DeveloppeurPascal/Game-Template-For-Delphi-FireMonkey)
+
 You are looking for an other game engine ? Check [these links](https://github.com/Fr0sT-Brutal/awesome-pascal?tab=readme-ov-file#game-dev).
 
 This code repository contains a project developed in Object Pascal language under Delphi. You don't know what Delphi is and where to download it ? You'll learn more [on this web site](https://delphi-resources.developpeur-pascal.fr/).
 
-## Using this video game
+## Using this video game development kit
 
 Visit [the starter kit website](https://fmxgamestarterkit.developpeur-pascal.fr)  to download the compiled version of the demo games, learn more about how it works, access videos and articles, find out about the different versions available and their features, contact user support...
 
 ## Talks and conferences
+
+### CodeRage 2025
+
+* [The Christmas Game Evolution](https://coderage.embarcadero.com/) (in English)
 
 ### Dev Days of Summer 2024
 
