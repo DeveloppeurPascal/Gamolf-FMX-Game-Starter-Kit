@@ -29,24 +29,24 @@ This code repository contains a project developed in Object Pascal language unde
 
 ## Using this video game development kit
 
-Visit [the starter kit website](https://fmxgamestarterkit.developpeur-pascal.fr)  to download the compiled version of the demo games, learn more about how it works, access videos and articles, find out about the different versions available and their features, contact user support...
+Visit [the starter kit website](https://fmxgamestarterkit.developpeur-pascal.fr) to download the compiled version of the demo games, learn more about how it works, access videos and articles, find out about the different versions available and their features, contact user support...
 
 ## Talks and conferences
 
-### CodeRage 2025
+### Embarcadero CodeRage 2025
 
-* [The Christmas Game Evolution](https://coderage.embarcadero.com/) (in English)
+* [The Christmas Game Evolution](https://coderage.embarcadero.com) (in English)
 
 ### Dev Days of Summer 2024
 
-* [Make games in Delphi (2024 edition)](https://github.com/DeveloppeurPascal/DevDaysOfSummer2024-MakeGamesInDelphi) (the code repository)
+* video : [Make games in Delphi (2024 edition)](https://www.youtube.com/live/M7DcEDbuESQ?feature=shared&t=3911) (live session during the conference, in English)
+* video : [Faites des jeux en Delphi (v2024)](https://apprendre-delphi.fr/faites-des-jeux-en-delphi-presentation-demo-revue-de-code-et-tour-du-starter-kit.html) (in French)
+* PDF, sources, links, ... : [Make games in Delphi (2024 edition)](https://github.com/DeveloppeurPascal/DevDaysOfSummer2024-MakeGamesInDelphi) (the code repository)
 
-* [Make games in Delphi (2024 edition)](https://www.youtube.com/live/M7DcEDbuESQ?feature=shared&t=3911) (live session during the conference, in English)
-* [Faites des jeux en Delphi (v2024)](https://serialstreameur.fr/faites-des-jeux-en-delphi-edition-2024.html) (in French)
+### Lists of videos about this project and creating video games in Delphi
 
-### YouTube
-
-* [Gamolf FMX Game Starter Kit playlist](https://www.youtube.com/playlist?list=PLpkkg2iiC8yjkhmHDs42arEqvJm-m7006)
+* on [PeerTube](https://videos.apprendre-delphi.fr/w/p/jU3L7GkvEySdDmNwdyMVgt)
+* on [YouTube](https://www.youtube.com/playlist?list=PLpkkg2iiC8yjkhmHDs42arEqvJm-m7006)
 
 ### Twitch
 

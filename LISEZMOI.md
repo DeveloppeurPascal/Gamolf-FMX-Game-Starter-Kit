@@ -33,20 +33,20 @@ Consultez [le site du starter kit](https://fmxgamestarterkit.developpeur-pascal.
 
 ## Présentations et conférences
 
-### CodeRage 2025
+### Embarcadero CodeRage 2025
 
-* [The Christmas Game Evolution](https://coderage.embarcadero.com/) (in English)
+* [The Christmas Game Evolution](https://coderage.embarcadero.com) (in English)
 
 ### Dev Days of Summer 2024
 
-* [Make games in Delphi (2024 edition)](https://github.com/DeveloppeurPascal/DevDaysOfSummer2024-MakeGamesInDelphi) (le dépôt de code)
+* video : [Make games in Delphi (2024 edition)](https://www.youtube.com/live/M7DcEDbuESQ?feature=shared&t=3911) (diffusion en direct durant la conférence, en anglais)
+* video : [Faites des jeux en Delphi (v2024)](https://apprendre-delphi.fr/faites-des-jeux-en-delphi-presentation-demo-revue-de-code-et-tour-du-starter-kit.html) (en français)
+* PDF, sources, liens, ... : [Make games in Delphi (2024 edition)](https://github.com/DeveloppeurPascal/DevDaysOfSummer2024-MakeGamesInDelphi) (le dépôt de code)
 
-* [Make games in Delphi (2024 edition)](https://www.youtube.com/live/M7DcEDbuESQ?feature=shared&t=3911) (diffusion en direct durant la conférence, en anglais)
-* [Faites des jeux en Delphi (v2024)](https://serialstreameur.fr/faites-des-jeux-en-delphi-edition-2024.html) (en français)
+### Listes de vidéos sur ce projet et la création de jeux vidéo en Delphi
 
-### YouTube
-
-* [Gamolf FMX Game Starter Kit playlist](https://www.youtube.com/playlist?list=PLpkkg2iiC8yjkhmHDs42arEqvJm-m7006)
+* sur [PeerTube](https://videos.apprendre-delphi.fr/w/p/jU3L7GkvEySdDmNwdyMVgt)
+* sur [YouTube](https://www.youtube.com/playlist?list=PLpkkg2iiC8yjkhmHDs42arEqvJm-m7006)
 
 ### Twitch
 
