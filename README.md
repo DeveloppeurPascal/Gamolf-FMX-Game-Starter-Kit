@@ -70,7 +70,7 @@ I use comments in [XMLDOC](https://docwiki.embarcadero.com/RADStudio/en/XML_Docu
 
 I regularly use the [DocInsight](https://devjetsoftware.com/products/documentation-insight/) tool to enter them and check their formatting.
 
-Documentation is exported in HTML by [DocInsight](https://devjetsoftware.com/products/documentation-insight/) or [PasDoc](https://pasdoc.github.io) to the /docs folder of the repository. You can also [access it online](https://developpeurpascal.github.io/Gamolf-FMX-Game-Starter-Kit) through the hosting offered by GitHub Pages.
+Documentation is exported in HTML by [DocInsight](https://devjetsoftware.com/products/documentation-insight/) or [PasDoc](https://pasdoc.github.io) to the /docs folder of the repository. You can also [access it online](https://fmxgamestarterkit.developpeur-pascal.fr/dev-corner.html) on the project website.
 
 Further information (tutorials, articles, videos, FAQ, talks and links) can be found on [the project website](https://fmxgamestarterkit.developpeur-pascal.fr) or [the project devlog](https://developpeur-pascal.fr/gamolf-fmx-game-starter-kit.html).
 

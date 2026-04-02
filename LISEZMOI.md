@@ -70,7 +70,7 @@ Je passe par des commentaires au format [XMLDOC](https://docwiki.embarcadero.com
 
 J'utilise régulièrement l'outil [DocInsight](https://devjetsoftware.com/products/documentation-insight/) pour les saisir et contrôler leur formatage.
 
-L'export de la documentation est fait en HTML par [DocInsight](https://devjetsoftware.com/products/documentation-insight/) ou [PasDoc](https://pasdoc.github.io) vers le dossier /docs du dépôt. Vous y avez aussi [accès en ligne](https://developpeurpascal.github.io/Gamolf-FMX-Game-Starter-Kit) grâce à l'hébergement offert par GitHub Pages.
+L'export de la documentation est fait en HTML par [DocInsight](https://devjetsoftware.com/products/documentation-insight/) ou [PasDoc](https://pasdoc.github.io) vers le dossier /docs du dépôt. Vous y avez aussi [accès en ligne](https://fmxgamestarterkit.developpeur-pascal.fr/dev-corner.html) depuis le site web du projet.
 
 D'autres informations (tutoriels, articles, vidéos, FAQ, présentations et liens) sont disponibles sur [le site web du projet](https://fmxgamestarterkit.developpeur-pascal.fr) ou [le devlog du projet](https://developpeur-pascal.fr/gamolf-fmx-game-starter-kit.html).
 
