@@ -35,7 +35,8 @@ Consultez [le site du starter kit](https://fmxgamestarterkit.developpeur-pascal.
 
 ### Embarcadero CodeRage 2025
 
-* [The Christmas Game Evolution](https://coderage.embarcadero.com) (in English)
+* [A Starter Kit For Your FireMonkey Projects](https://codeberg.org/ConferencePapersFromPP/CodeRage2025-AStarterKitForYourFireMonkeyProjects-ConfTalk) (en français et en anglais selon les vidéos et documents)
+* [The Christmas Game Evolution](https://codeberg.org/ConferencePapersFromPP/CodeRage2025-TheChristmasGameEvolution-ConfTalk) (en français et en anglais selon les vidéos et documents)
 
 ### Dev Days of Summer 2024
 
