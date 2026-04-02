@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{87706FC8-4DC5-4317-A9F8-B0A71009830A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\lib-externes\AboutDialog-Delphi-Component\packages\12-Athens\Olf.FMX.AboutBoxPackage.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\lib-externes\Delphi-Game-Engine\packages\12-Athens\Gamolf.DelphiGameEnginePackage.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\lib-externes\Delphi-Game-Engine\packages\12-Athens\Gamolf.DelphiGameEngineFMXPackage.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Olf_FMX_AboutBoxPackage">
+        <MSBuild Projects="..\..\lib-externes\AboutDialog-Delphi-Component\packages\12-Athens\Olf.FMX.AboutBoxPackage.dproj"/>
+    </Target>
+    <Target Name="Olf_FMX_AboutBoxPackage:Clean">
+        <MSBuild Projects="..\..\lib-externes\AboutDialog-Delphi-Component\packages\12-Athens\Olf.FMX.AboutBoxPackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Olf_FMX_AboutBoxPackage:Make">
+        <MSBuild Projects="..\..\lib-externes\AboutDialog-Delphi-Component\packages\12-Athens\Olf.FMX.AboutBoxPackage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Gamolf_DelphiGameEnginePackage">
+        <MSBuild Projects="..\..\lib-externes\Delphi-Game-Engine\packages\12-Athens\Gamolf.DelphiGameEnginePackage.dproj"/>
+    </Target>
+    <Target Name="Gamolf_DelphiGameEnginePackage:Clean">
+        <MSBuild Projects="..\..\lib-externes\Delphi-Game-Engine\packages\12-Athens\Gamolf.DelphiGameEnginePackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Gamolf_DelphiGameEnginePackage:Make">
+        <MSBuild Projects="..\..\lib-externes\Delphi-Game-Engine\packages\12-Athens\Gamolf.DelphiGameEnginePackage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Gamolf_DelphiGameEngineFMXPackage">
+        <MSBuild Projects="..\..\lib-externes\Delphi-Game-Engine\packages\12-Athens\Gamolf.DelphiGameEngineFMXPackage.dproj"/>
+    </Target>
+    <Target Name="Gamolf_DelphiGameEngineFMXPackage:Clean">
+        <MSBuild Projects="..\..\lib-externes\Delphi-Game-Engine\packages\12-Athens\Gamolf.DelphiGameEngineFMXPackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Gamolf_DelphiGameEngineFMXPackage:Make">
+        <MSBuild Projects="..\..\lib-externes\Delphi-Game-Engine\packages\12-Athens\Gamolf.DelphiGameEngineFMXPackage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Olf_FMX_AboutBoxPackage;Gamolf_DelphiGameEnginePackage;Gamolf_DelphiGameEngineFMXPackage"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Olf_FMX_AboutBoxPackage:Clean;Gamolf_DelphiGameEnginePackage:Clean;Gamolf_DelphiGameEngineFMXPackage:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Olf_FMX_AboutBoxPackage:Make;Gamolf_DelphiGameEnginePackage:Make;Gamolf_DelphiGameEngineFMXPackage:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
