@@ -17,8 +17,8 @@ Evitez autant que possible de modifier les fichiers du starter kit, créez plut�
 
 Vous ignorez comment coder des jeux ? Regardez ces projets:
 
-* [Jeux vidéos basés sur ce starter kit](https://github.com/DeveloppeurPascal?tab=repositories&q=gfgsk-game)
-* [Jeux vidéo en Delphi](https://github.com/DeveloppeurPascal?tab=repositories&q=delphi-game)
+* Jeux vidéos basés sur ce starter kit : [sur GitHub](https://github.com/search?q=gfgsk-game&type=repositories) ou [sur Codeberg](https://codeberg.org/explore/repos?q=gfgsk-game&only_show_relevant=true&sort=recentupdate)
+* Jeux vidéo en Delphi : [sur GitHub](https://github.com/search?q=delphi-game&type=repositories) ou [sur Codeberg](https://codeberg.org/explore/repos?q=delphi-game&only_show_relevant=true&sort=recentupdate)](https://github.com/DeveloppeurPascal?tab=repositories&q=gfgsk-game)
 * [Delphi FMX Game Snippets](https://fmxgamesnippets.developpeur-pascal.fr)
 * [Delphi Game Engine](https://delphigameengine.developpeur-pascal.fr)
 
