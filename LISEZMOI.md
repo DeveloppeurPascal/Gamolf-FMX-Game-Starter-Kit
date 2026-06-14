@@ -2,6 +2,9 @@
 
 [This page in English.](README.md)
 
+> [!WARNING]
+> Suite à la décision de Microsoft de fondre GitHub dans sa division IA à l'été 2025, j'ai pris la décision d'arrêter la maintenance des dépôts ici. Je mettrai à jour ce dépôt de temps en temps par copie des modifications manquantes depuis le dépôt principal désormais sur [Codeberg](https://codeberg.org/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit).
+
 "[Gamolf FMX Game Starter Kit](https://fmxgamestarterkit.developpeur-pascal.fr/)" est à la fois un exemple "technique" de jeu vidéo développé en Delphi avec tout ce qu'il faut dedans et un modèle de projet réutilisable à personnaliser pour vos propres jeux.
 
 Les fichiers fournis sont fonctionnels. De nombreux commentaires sont inclus dans les sources pour expliquer leur fonctionnement et ce que vous devez copier, surcharger ou personnaliser pour faire des jeux vidéo sans partir de zéro.
@@ -54,7 +57,7 @@ Suivez mes streams de développement de logiciels, jeux vidéo, applications mob
 
 ## Installation des codes sources
 
-Pour télécharger ce dépôt de code il est recommandé de passer par "git" mais vous pouvez aussi télécharger un ZIP directement depuis [son dépôt GitHub](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit).
+Pour télécharger ce dépôt de code il est recommandé de passer par "git" mais vous pouvez aussi télécharger un ZIP directement depuis [son dépôt Codeberg](https://codeberg.org/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit).
 
 Ce projet utilise des dépendances sous forme de sous modules. Ils seront absents du fichier ZIP. Vous devrez les télécharger à la main.
 
@@ -83,7 +86,7 @@ Normalement mes librairies et composants doivent aussi fonctionner au moins sur 
 
 Aucune garantie de compatibilité avec des versions antérieures n'est fournie même si je m'efforce de faire du code propre et ne pas trop utiliser les nouvelles façons d'écrire dedans (type inference, inline var et multilines strings).
 
-Si vous détectez des anomalies sur des versions antérieures n'hésitez pas à [les rapporter](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit/issues) pour que je teste et tente de corriger ou fournir un contournement.
+Si vous détectez des anomalies sur des versions antérieures n'hésitez pas à [les rapporter](https://codeberg.org/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit/issues) pour que je teste et tente de corriger ou fournir un contournement.
 
 ## Licence d'utilisation de ce dépôt de code et de son contenu
 
@@ -102,7 +105,7 @@ Les codes sources de ce dépôt de code comme leur éventuelle version compilée
 
 ## Comment demander une nouvelle fonctionnalité, signaler un bogue ou une faille de sécurité ?
 
-Si vous voulez une réponse du propriétaire de ce dépôt la meilleure façon de procéder pour demander une nouvelle fonctionnalité ou signaler une anomalie est d'aller sur [le dépôt de code sur GitHub](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit) et [d'ouvrir un ticket](https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit/issues).
+Si vous voulez une réponse du propriétaire de ce dépôt la meilleure façon de procéder pour demander une nouvelle fonctionnalité ou signaler une anomalie est d'aller sur [le dépôt de code sur Codeberg](https://codeberg.org/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit) et [d'ouvrir un ticket](https://codeberg.org/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit/issues).
 
 Si vous avez trouvé une faille de sécurité n'en parlez pas en public avant qu'un correctif n'ait été déployé ou soit disponible. [Contactez l'auteur du dépôt en privé](https://developpeur-pascal.fr/nous-contacter.php) pour expliquer votre trouvaille.
 
