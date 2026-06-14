@@ -36,10 +36,10 @@
   https://fmxgamestarterkit.developpeur-pascal.fr/
 
   Project site :
-  https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
+  https://codeberg.org/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 
   ***************************************************************************
-  File last update : 2025-05-25T17:43:44.614+02:00
+  File last update : 2026-04-02T19:25:40.776+02:00
   Signature : 403b9842c5408b9152e82c0013f6427a6f4618f1
   ***************************************************************************
 *)

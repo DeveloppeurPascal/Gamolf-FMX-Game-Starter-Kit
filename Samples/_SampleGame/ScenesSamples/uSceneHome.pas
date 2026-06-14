@@ -1,4 +1,4 @@
-(* C2PP
+﻿(* C2PP
   ***************************************************************************
 
   Gamolf FMX Game Starter Kit
@@ -36,10 +36,10 @@
   https://fmxgamestarterkit.developpeur-pascal.fr/
 
   Project site :
-  https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
+  https://codeberg.org/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit
 
   ***************************************************************************
-  File last update : 2025-05-25T17:43:44.531+02:00
+  File last update : 2026-04-02T19:25:40.697+02:00
   Signature : 319dc7db82046c00f658c359e9872cd7eca05387
   ***************************************************************************
 *)
